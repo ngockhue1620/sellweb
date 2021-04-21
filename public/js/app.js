@@ -2375,8 +2375,8 @@ function HomePage() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePage);
 
-if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}), document.getElementById('example'));
+if (document.getElementById('homepage')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(HomePage, {}), document.getElementById('homepage'));
 }
 
 /***/ }),

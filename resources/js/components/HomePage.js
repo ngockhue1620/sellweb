@@ -14,6 +14,6 @@ function HomePage() {
 
 export default HomePage;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<HomePage />, document.getElementById('example'));
+if (document.getElementById('homepage')) {
+    ReactDOM.render(<HomePage />, document.getElementById('homepage'));
 }

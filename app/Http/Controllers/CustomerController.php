@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -13,7 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        return Customer::all();
     }
 
     /**
@@ -34,7 +35,24 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            // find is has => update
+            // find is none => create
+            $customer = Customer::firstOrCreate($request->all());
+            $customer->save();
+            return response()->json(['customer'=> $customer],200);
+
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -68,7 +86,29 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try{
+            $customer =Customer::find($id);
+            if(empty($customer))
+            {
+                return \response()->json(['error'=>'Data is not found'],404);
+            }
+            else
+            {
+                $customer->update($request->all());
+                return response()->json(['category'=>$customer],200);
+                
+            }
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -79,6 +119,28 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $customer =Customer::find($id);
+            if(empty($customer))
+            {
+                return \response()->json(['error'=>'Data is not found'],404);
+            }
+            else
+            {
+                $customer->delete();
+                return response()->json(['message'=>"Delete successful"],200);
+                
+            }
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 }
