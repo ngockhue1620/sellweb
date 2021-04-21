@@ -15,3 +15,10 @@
 5. php artisan serve (start laravel serve)
 6. npm run watch (start react in laravel) 
 
+## database
+1. vào file .env
+2. vào mysql tạo một cái db tên sell-web
+3. tại dòng 13 14 15 , đổi tên db của minh với tk , mk
+4. mở techmial
+5. php artisan migrate
+
