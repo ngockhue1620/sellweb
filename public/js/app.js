@@ -1942,6 +1942,7 @@ function Example() {
   });
 }
 
+x;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Example);
 
 if (document.getElementById('example')) {
