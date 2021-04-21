@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\InCart;
 class In_CartController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class In_CartController extends Controller
      */
     public function index()
     {
-        //
+        return InCart::all();
     }
 
     /**
@@ -34,7 +34,21 @@ class In_CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $in_cart = InCart::firstOrCreate($request->all());
+            $in_cart->save();
+            return \response()->json(['in_cart'=>$in_cart]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -45,7 +59,24 @@ class In_CartController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $in_carts = InCart::where("customerid",$id)->get();
+            if(count($in_carts)==0) 
+            {
+                return \response()->json(["in_cart"=>"Your cart is null"]);
+            }
+            return \response()->json(['in_cart'=>$in_carts]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -79,6 +110,20 @@ class In_CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $in_cart = InCart::find($id);
+            $in_cart->delete();
+            return /response()->json(['status'=>true])
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 }
