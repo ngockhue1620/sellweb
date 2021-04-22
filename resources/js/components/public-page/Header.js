@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router'
-import Body from './Body'
-import Test from './Test'
+
+
 
 export default class Header extends Component {
     render() {

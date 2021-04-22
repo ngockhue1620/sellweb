@@ -7,13 +7,19 @@ function HomePage() {
     return (
         <div className="container">
             <Header></Header>
-            <Body/>
-            
+            <Body></Body>
         </div>
     );
 }
 
 export default HomePage;
+
+if (document.getElementById('root')) {
+    ReactDOM.render(<HomePage />, document.getElementById('root'));
+}
+
+
+
 
 
 
