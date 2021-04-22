@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router'
+import Body from './Body'
+import Test from './Test'
 
 export default class Header extends Component {
     render() {
         return (
+            
             <div className='Header'>
+                
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div class="container">
                         <a class="navbar-brand" href="#">Clothes Shop</a>
@@ -13,8 +18,8 @@ export default class Header extends Component {
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
+                                    <a class="nav-link" to="/">Home
+                        
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -33,6 +38,7 @@ export default class Header extends Component {
                         </div>
                     </div>
                 </nav>
+                
             </div>
         )
     }
