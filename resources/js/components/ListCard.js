@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import Card from './Card'
+
 export default class ListCard extends Component {
     render() {
+        const {children} =this.props
         return (
             <div className='row ListCard'>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                {children}
             </div>
         )
     }

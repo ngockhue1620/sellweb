@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Menu from './Menu'
-import Content from './Content'
+
+import '../../sass/Body.scss'
 export default class Body extends Component {
     render() {
+        const {children} =this.props
         return (
             <div class="Body container">
-                <Menu></Menu>
-                <Content></Content>
+                {children}
             </div>
         )
     }
