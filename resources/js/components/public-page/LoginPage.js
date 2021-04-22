@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import '../../sass/LoginPage.scss'
+import '../../../sass/LoginPage.scss'
 export default class LoginPage extends Component {
     render() {
         return (

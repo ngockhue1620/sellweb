@@ -10,7 +10,7 @@ import Content from './Content'
 import Slider from './Slider'
 import ListCard from './ListCard'
 import Card from './Card'
-import '../../sass/HomePage.scss'
+import '../../../sass/HomePage.scss'
 export default class HomePage extends Component {
     constructor(props) {
         super(props)

@@ -1,0 +1,47 @@
+bán quần áo
+
+supplier:
+    id  
+    supplierName
+
+
+category:
+    id
+    categoryName
+    supplierId
+
+product:
+    id
+    categoryId
+    productName
+    price
+    quantity
+    imageAdress
+    description
+    color
+
+    
+
+orderDetail:
+    orderId 
+    productId
+    quantity
+    price
+    total
+
+order
+    id
+    customerId
+    orderTime
+    
+inCart
+    customerId
+    productId
+    quantity
+
+customer:
+    id
+    customerName
+    phone
+    userName
+    password
