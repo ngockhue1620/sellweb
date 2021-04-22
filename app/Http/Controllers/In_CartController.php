@@ -113,7 +113,7 @@ class In_CartController extends Controller
         try{
             $in_cart = InCart::find($id);
             $in_cart->delete();
-            return /response()->json(['status'=>true])
+            return response()->json(['status'=>true]);
         }
         catch(\Exception $e)
         {
