@@ -18,13 +18,17 @@
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.14.0",
+        "react-dom": "^16.14.0",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+<<<<<<< HEAD
         "react-router-dom": "^5.2.0"
+=======
+        "reactstrap": "^8.9.0"
+>>>>>>> 49a4f56eaecb3cf6384549a23a0c9adbd9a683bc
     }
 }
