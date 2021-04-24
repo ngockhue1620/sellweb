@@ -14,8 +14,8 @@ class AddForeignsToOrderDetails extends Migration
     public function up()
     {
         Schema::table('order_details', function (Blueprint $table) {
-            if (!Schema::hasColumn('order_details', 'orderId')) {
-                $table->bigInteger('orderId');
+            if (!Schema::hasColumn('order_details', 'order_Id')) {
+                $table->bigInteger('order_Id');
             }
             $table->foreign('order_Id')->references('id')->on('orders')->onDelete('cascade');
         });
