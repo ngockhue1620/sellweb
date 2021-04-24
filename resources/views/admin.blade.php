@@ -8,7 +8,7 @@
         <link href="{{asset('css/admin.css')}}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div id="homepage"></div>
+        <div id="root"></div>
         <script src="{{asset('js/admin.js')}}" ></script>
     </body>
 </html>

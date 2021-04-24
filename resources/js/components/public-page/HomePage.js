@@ -10,15 +10,40 @@ import Content from './Content'
 import Slider from './Slider'
 import ListCard from './ListCard'
 import Card from './Card'
+import axiosClient from './axiosClient'
 import '../../../sass/HomePage.scss'
 export default class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            listCategories:[],  
+            listProducts:[],
             showLogin: false
 
         }
     }
+    componentDidMount(){
+        this.getCategories()
+    }
+    getCategories   ()  {
+        // console.log('Bearer ',this.state.token)
+        // const res = await fetch('https://teambuilding-final.herokuapp.com/group/get-all-group',
+        //   {
+        //     method: 'GET',
+        //     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${this.state.token}` }
+        //   })
+        // const data = await res.json()
+        // // console.log(data)
+        // return data
+        axiosClient.get('/api/category')
+        .then((data)=>{
+            this.setState({
+                listCategories:data
+              })
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
     clickLogin() {
         this.setState({
             showLogin: !this.state.showLogin
@@ -28,12 +53,12 @@ export default class HomePage extends Component {
         return (
 
             <div className="Homepage">
-                <Header></Header>
+                
                 <Body>
                     <Menu>
-                        <Category>Đồ Nam</Category>
-                        <Category>Đồ Nữ</Category>
-                        <Category>Đồ Đôi</Category>
+                        
+                        
+                        {this.state.listCategories.map((item,index)=>(<Category>{item.categoryName}</Category>))}
                     </Menu>
                     <Content>
                         <Slider></Slider>
@@ -51,13 +76,6 @@ export default class HomePage extends Component {
             </div>
         )
     }
-}
-
-
-
-
-if (document.getElementById('root')) {
-    ReactDOM.render(<HomePage />, document.getElementById('root'));
 }
 
 
