@@ -1,0 +1,22 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.admin-container .left {
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+.admin-container .right {
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}

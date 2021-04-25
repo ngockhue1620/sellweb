@@ -1,14 +1,27 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom';
-function HomePage() {
-    return (
-        <div className="container">
-            <h1>Hello</h1>
-        </div>
-    );
+import React, { Component } from 'react'
+import Header from './header'
+import Table from './table'
+export default class HomePage extends Component {
+    render() {
+        return (
+            <div>
+                <Header />
+                <div className="admin-container">
+                    <div className="left"> 
+                          <Table/>  
+                    </div>
+                    <div className="right">
+                        note
+                    </div>
+                </div>
+                
+            </div>
+        )
+    }
 }
 
-export default HomePage;
 
 if (document.getElementById('homepage')) {
     
