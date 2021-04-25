@@ -90,7 +90,7 @@ class ProductSeeder extends Seeder
             ],
             [   
                 'id'    =>7,
-                'productName' =>'',
+                'productName' =>'Đầm Váy Sơ Mi Cổ Đức Cao Cấp',
                 'categoryId'  =>4,
                 'price'       =>250000,
                 'quantity'    =>40,

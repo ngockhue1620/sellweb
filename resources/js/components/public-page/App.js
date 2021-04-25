@@ -7,9 +7,10 @@ import {
 } from "react-router-dom"
 
 import React, { Component, Suspense, lazy } from 'react'
+import About from "./About/About"
 const HomePage = lazy(() => import('./HomePage'))
 // const TestPage = lazy(() => import('./test'))
-// const PageLogin = lazy(() => import('./pageLogin'))
+const LoginPage = lazy(() => import('./LoginPage'))
 export default class App extends Component {
   render() {
     return (
@@ -19,6 +20,13 @@ export default class App extends Component {
           <Switch>
             <Route exact path='/' render={props => (
               <HomePage {...props} />
+            )}/>
+            <Route exact path='/login' render={props => (
+              <LoginPage {...props} />
+            )}/>
+
+            <Route exact path='/about' render={props => (
+              <About {...props} />
             )}/>
             
           </Switch>
