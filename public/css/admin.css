@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Menu.col-lg-2.menu-class {
   height: 500px;
   position: fixed;
@@ -24,4 +25,27 @@ img.Card-Img-Detail.card-img {
   width: 200px;
   margin: 0 auto;
   height: 250px;
+=======
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.admin-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.admin-container .left {
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+.admin-container .right {
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+>>>>>>> 6330437c5a8f4a5b40a175eaff7aeb4f99521942
 }
