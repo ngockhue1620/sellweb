@@ -17,3 +17,32 @@ img.card-img-top {
 .category-menu{
     position:fixed;
 }
+.Body{
+    margin-top: 5rem;
+    display: flex;
+}
+.LoginPage{
+    background-color: black;
+    max-width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    .container{
+
+        background-color: lightgreen;
+    
+        max-width: 50rem;
+        padding-top: 7rem;
+        height: 30rem;
+        margin: auto;
+        margin-top: 10rem;
+        Form{
+            
+            max-width: 30rem;
+            margin: auto;
+            Button{
+                margin-right: 1rem;
+            }
+        }
+    }
+    
+}
