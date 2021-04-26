@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+.Menu.col-lg-2.menu-class {
+  height: 500px;
+  position: fixed;
+  top: 10%;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+}
+
+.Body {
+  display: flex;
+}
+
+img.image-product-admin {
+  width: 70px;
+}
+
+.conten-component-admin {
+  position: absolute;
+  left: 20%;
+  top: 15%;
+}
+
+img.Card-Img-Detail.card-img {
+  width: 200px;
+  margin: 0 auto;
+  height: 250px;
+=======
 html, body {
   padding: 0;
   margin: 0;
@@ -19,4 +47,5 @@ html, body {
   width: 500px;
   height: 500px;
   border: 1px solid red;
+>>>>>>> 6330437c5a8f4a5b40a175eaff7aeb4f99521942
 }
