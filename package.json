@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
-        "axios": "^0.21",
+        "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
@@ -25,6 +25,8 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "query-string": "^7.0.0",
+        "react-router-dom": "^5.2.0",
         "reactstrap": "^8.9.0"
     }
 }

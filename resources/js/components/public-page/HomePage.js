@@ -2,49 +2,70 @@
 import ReactDOM from 'react-dom';
 import Header from './Header'
 import Body from './Body'
-import LoginPage from './LoginPage'
+
 import React, { Component } from 'react'
 import Menu from './Menu'
 import Category from './Category'
 import Content from './Content'
 import Slider from './Slider'
-import ListCard from './ListCard'
+
 import Card from './Card'
+import axiosClient from './axiosClient'
 import '../../../sass/HomePage.scss'
 export default class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            listCategories: [],
+            listProducts: [],
             showLogin: false
 
         }
     }
-    clickLogin() {
-        this.setState({
-            showLogin: !this.state.showLogin
-        })
+    componentDidMount() {
+        this.getCategories(),
+        this.getProduct(),
+        console.log("list proudtc ne",this.state.listProducts)
+        console.log("list proudtc ne",this.state.listCategories)
+
     }
+    getCategories() {
+        axiosClient.get('/api/category')
+            .then((data) => {
+                this.setState({
+                    listCategories: data
+                })
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+    getProduct () {
+        axiosClient.get('/api/product')
+            .then((response) => {                
+               this.setState( {listProducts: response})                
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+    
     render() {
         return (
 
             <div className="Homepage">
-                <Header></Header>
+
                 <Body>
                     <Menu>
-                        <Category>Đồ Nam</Category>
-                        <Category>Đồ Nữ</Category>
-                        <Category>Đồ Đôi</Category>
+                        
+                        {this.state.listCategories.map((item, index) => (<Category key={index}>{item.categoryName}</Category>))}
                     </Menu>
                     <Content>
                         <Slider></Slider>
-                        <ListCard>
-                            <Card></Card>
-                            <Card></Card>
-                            <Card></Card>
-                            <Card></Card>
-                            <Card></Card>
-                            <Card></Card>
-                        </ListCard>
+                        {/* <ListCard listProduct={this.state.listProducts} /> */}
+                        <div className='row ListCard'>
+                            {this.state.listProducts.map((item, index) => (<Card  key={index} product={item}/>))}
+                        </div>
+                        
+                      
                     </Content>
                 </Body>
                 {/* <LoginPage></LoginPage> */}
@@ -56,6 +77,5 @@ export default class HomePage extends Component {
 
 
 
-if (document.getElementById('homepage')) {
-    ReactDOM.render(<HomePage />, document.getElementById('homepage'));
-}
+
+

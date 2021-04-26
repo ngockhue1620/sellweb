@@ -13,4 +13,7 @@ class Category extends Model
     public function supplier(){
     	return $this->belongsTo('App\Models\Supplier','supplierId');
     }
+    public function product(){
+    	return $this->hasMany('App\Models\Product','categoryId');
+    }
 }

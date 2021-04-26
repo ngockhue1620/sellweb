@@ -10002,3 +10002,15 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.aboutComponet {
+  margin-top: 70px;
+}
+
+img.card-img-top {
+  width: 200px;
+  height: 230px;
+}
+
+.category-menu {
+  position: fixed;
+}
