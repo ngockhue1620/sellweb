@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter as Router, // bao boc app cua minh
   Switch, // switch 
