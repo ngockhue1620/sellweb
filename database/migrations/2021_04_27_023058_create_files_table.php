@@ -22,7 +22,7 @@ class CreateFilesTable extends Migration
             $table->string('access_mode')->default('public');
             $table->timestamps();
         });
-       
+
     }
 
     /**
