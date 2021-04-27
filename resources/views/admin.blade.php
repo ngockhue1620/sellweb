@@ -16,7 +16,7 @@
         
         
     </body>
-    <script src="{{asset('js/resources_js_components_admin_admin-components_product_Index_js.js')}}" ></script>
+    
     <script src="{{ mix('js/admin.js') }}"></script>
     <script src="{{ mix('js/axiosClient.js') }}"></script>
 </html>

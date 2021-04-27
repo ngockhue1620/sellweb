@@ -11,8 +11,7 @@
         <div id="root"></div>
         
     </body>
-    <script src="{{asset('js/app.js')}}" ></script>
-    <script src="{{asset('js/resources_js_components_public-page_HomePage_js')}}" ></script>
-    <script src="{{ mix('js/axiosClient.js') }}"></script>
-    <script src="{{asset('resources_js_components_admin_admin-components_category_index_js')}}"></script>
+    <script src="{{mix('js/app.js')}}" ></script>   
+    <script src="{{mix('js/axiosClient.js') }}"></script>
+    
 </html>
