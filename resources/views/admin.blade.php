@@ -13,7 +13,8 @@
     </head>
     <body>
         <div id="root"></div>
-        <script src="{{asset('js/admin.js')}}" ></script>
+        {{-- <script src="{{asset('js/admin.js')}}" ></script> --}}
         <script src="{{ mix('js/admin.js') }}"></script>
+        <script src="{{ mix('js/axiosClient.js') }}"></script>
     </body>
 </html>
