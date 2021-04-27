@@ -1,7 +1,6 @@
 
 
 import Body from './Body'
-
 import React, { Component } from 'react'
 import Menu from './Menu'
 import Category from './Category'
