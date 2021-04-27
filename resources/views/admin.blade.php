@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SELL-WEB</title>
+        <title>SELL-WEB-ADMIN-PAGE</title>
         <!-- CSS only -->
         <link href="{{asset('css/admin.css')}}" rel="stylesheet" type="text/css">
         <!-- JavaScript Bundle with Popper -->
@@ -13,8 +13,10 @@
     </head>
     <body>
         <div id="root"></div>
-        {{-- <script src="{{asset('js/admin.js')}}" ></script> --}}
-        <script src="{{ mix('js/admin.js') }}"></script>
-        <script src="{{ mix('js/axiosClient.js') }}"></script>
+        
+        
     </body>
+    <script src="{{asset('js/resources_js_components_admin_admin-components_product_Index_js.js')}}" ></script>
+    <script src="{{ mix('js/admin.js') }}"></script>
+    <script src="{{ mix('js/axiosClient.js') }}"></script>
 </html>
