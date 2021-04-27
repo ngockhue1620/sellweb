@@ -8,7 +8,8 @@ import Content from './Content'
 import Slider from './Slider'
 
 import Card from './Card'
-import axiosClient from '../../axiosClient'
+
+import axios from 'axios'
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -28,19 +29,19 @@ export default class HomePage extends Component {
 
     }
     getCategories() {
-        axiosClient.get('/api/category')
+        axios.get(`https://laravel-react-sell-web.herokuapp.com/api/category`)
             .then((data) => {
                 this.setState({
-                    listCategories: data
+                    listCategories: data.data
                 })
             }).catch(function (error) {
                 console.log(error);
             });
     }
     getProduct () {
-        axiosClient.get('/api/product')
+        axios.get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
             .then((response) => {                
-               this.setState( {listProducts: response})                
+               this.setState( {listProducts: response.data})                
             }).catch(function (error) {
                 console.log(error);
             });

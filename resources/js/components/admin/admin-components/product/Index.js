@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import axiosClient from '../../../../axiosClient'
+// import axiosClient from '../../../../axiosClient'
 import ProductItem from './ProductItem';
 import { Label, Table } from 'reactstrap';
 import { Form, CardImg, Button, Input, Modal, ModalHeader, ModalBody, ModalFooter, Card, InputGroupAddon, InputGroup } from 'reactstrap';
+import axios from 'axios';
 
 export default class Index extends Component {
     constructor(props) {
@@ -28,10 +29,11 @@ export default class Index extends Component {
             
     }
     getProduct() {
-        axiosClient.get('/api/product')
-            .then((data) => {
+        axios.get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+            .then((response) => {
+                
                 this.setState({
-                    listProducts: data
+                    listProducts: response.data
                 })
 
 
