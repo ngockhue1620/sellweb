@@ -7,9 +7,11 @@ import {
 
 import React, { Component, Suspense, lazy } from 'react'
 import About from "./About/About"
-const HomePage = lazy(() => import('./HomePage'))
-// const TestPage = lazy(() => import('./test'))
-const LoginPage = lazy(() => import('./LoginPage'))
+// const HomePage = lazy(() => import('./HomePage'))
+// // const TestPage = lazy(() => import('./test'))
+// const LoginPage = lazy(() => import('./LoginPage'))
+import LoginPage from './LoginPage'
+import HomePage from './HomePage'
 export default class App extends Component {
   render() {
     return (
