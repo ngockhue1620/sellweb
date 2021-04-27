@@ -2,7 +2,7 @@ import axios from 'axios'
 import queryString from 'query-string'
 
 const axiosClient = axios.create({
-  baseURL: 'https://laravel-react-sell-web.herokuapp.com',
+  baseURL: 'https://laravel-react-sell-web.herokuapp.com/',
   headers: {
     'content-type': 'application/json'
   },

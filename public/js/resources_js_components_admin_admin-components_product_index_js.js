@@ -102,7 +102,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var axiosClient = axios__WEBPACK_IMPORTED_MODULE_1___default().create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: 'https://laravel-react-sell-web.herokuapp.com/',
   headers: {
     'content-type': 'application/json'
   },
