@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Card,CardImg, CardText } from 'reactstrap';
-export default function ProductItem(product,showDetaiProduct) {
+export default function ProductItem(product) {
     
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
@@ -10,9 +10,9 @@ export default function ProductItem(product,showDetaiProduct) {
 
     return (
         <>
-        <tr onClick={toggle}>
+        <tr >
             <th scope="row">{product.product.id}</th>
-            <td>{product.product.productName}</td>
+            <td onClick={toggle}>{product.product.productName}</td>
             <td>{product.product.price}</td>
             <td><img className="image-product-admin" src={product.product.imageAddress} /></td>
             <td><button className="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

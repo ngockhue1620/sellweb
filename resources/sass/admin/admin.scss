@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 .Menu.col-lg-2.menu-class {
     height: 500px;
     position: fixed;
@@ -27,28 +25,16 @@
     margin: 0 auto;
     height: 250px;
 }
+.add-button-admin {
+  display: flex;
+  justify-content: flex-end;
+}
 
-=======
-html,body{
-    padding: 0;
-    margin: 0;
-    
+
+label.label-insert-admin {
+  width: 150px;
 }
-.admin-container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    .left{
-        width:500px;
-        height:500px;
-        border: 1px solid red;
-    }
-    .right{
-        width:500px;
-        height:500px;
-        border: 1px solid red;
-    }
+
+.input-group {
+  padding: 5px;
 }
->>>>>>> 6330437c5a8f4a5b40a175eaff7aeb4f99521942

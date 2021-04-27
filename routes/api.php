@@ -55,3 +55,18 @@ Route::post('order','App\Http\Controllers\OrderController@store');
 Route::get('order','App\Http\Controllers\OrderController@index');
 // Route::put('order/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
+
+//file
+
+Route::group([
+    'prefix' => 'download'
+], function() {
+    Route::get('/files/{id}','App\Http\Controllers\Api\FileController@download');
+});
+
+Route::post('files','App\Http\Controllers\FileController@store');
+
+Route::put('files/{id}','App\Http\Controllers\FileController@update');
+Route::delete('files/{id}','App\Http\Controllers\FileController@destroy');
+Route::get('files/{id}','App\Http\Controllers\FileController@show');
+Route::get('files','App\Http\Controllers\FileController@index');
