@@ -5,7 +5,6 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 const Table = () => {
     return (
         <div class="Menu col-lg-2 menu-class">
-
             <div class="list-group ">
                 <ListGroup>
                    
@@ -15,7 +14,6 @@ const Table = () => {
                     <ListGroupItem tag="a" href="/admin/product">Product</ListGroupItem>
                 </ListGroup>
             </div>
-
         </div>
 
     );
