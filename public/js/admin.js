@@ -2177,7 +2177,7 @@ var Wellcome = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function
   return __webpack_require__.e(/*! import() */ "resources_js_components_admin_admin-components_Wellcome_js").then(__webpack_require__.bind(__webpack_require__, /*! ../admin-components/Wellcome */ "./resources/js/components/admin/admin-components/Wellcome.js"));
 });
 var Product = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () {
-  return __webpack_require__.e(/*! import() */ "resources_js_components_admin_admin-components_product_Index_js").then(__webpack_require__.bind(__webpack_require__, /*! ../admin-components/product/Index */ "./resources/js/components/admin/admin-components/product/Index.js"));
+  return __webpack_require__.e(/*! import() */ "resources_js_components_admin_admin-components_product_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ../admin-components/product */ "./resources/js/components/admin/admin-components/product/index.js"));
 });
 var Customer = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_components_admin_admin-components_customer_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ../admin-components/customer/index */ "./resources/js/components/admin/admin-components/customer/index.js"));
@@ -71725,7 +71725,7 @@ function valueEqual(a, b) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_admin_admin-components_category_index_js":1,"resources_js_components_admin_admin-components_Wellcome_js":1,"resources_js_components_admin_admin-components_product_Index_js":1,"resources_js_components_admin_admin-components_customer_index_js":1,"resources_js_components_admin_admin-components_order_index_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_admin_admin-components_category_index_js":1,"resources_js_components_admin_admin-components_Wellcome_js":1,"resources_js_components_admin_admin-components_product_index_js":1,"resources_js_components_admin_admin-components_customer_index_js":1,"resources_js_components_admin_admin-components_order_index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
