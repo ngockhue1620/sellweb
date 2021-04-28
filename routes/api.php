@@ -70,3 +70,6 @@ Route::put('files/{id}','App\Http\Controllers\FileController@update');
 Route::delete('files/{id}','App\Http\Controllers\FileController@destroy');
 Route::get('files/{id}','App\Http\Controllers\FileController@show');
 Route::get('files','App\Http\Controllers\FileController@index');
+
+//order detail
+Route::get('order-detail','App\Http\Controllers\Order_DetailController@index');
