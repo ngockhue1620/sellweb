@@ -33,18 +33,12 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      * id
-    categoryId
-    productName
-    price
-    quantity
-    imageAdress
-    description
-    color
+   
      */
     public function store(Request $request)
     {
         try{
-            if($request == null) return \response()->json(["message"=>"Data is none"]);
+            if($request == null) return \response()->json(["message"=>"Data is none"],404);
             $product = Product::firstOrCreate([
                 "categoryId"  =>$request->categoryId,
                 "productName" =>$request->productName,

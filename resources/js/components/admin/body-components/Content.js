@@ -10,7 +10,7 @@ import React, { Component, Suspense, lazy } from 'react'
 
 const Category = lazy(() => import('../admin-components/category'))
 const Wellcome = lazy(() => import('../admin-components/Wellcome'))
-const Product = lazy(() => import('../admin-components/product/Index'))
+const Product = lazy(() => import('../admin-components/product'))
 const Customer = lazy(() => import('../admin-components/customer/index'))
 const Order = lazy(() => import('../admin-components/order/index'))
 export default class Content extends Component {

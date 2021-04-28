@@ -38885,12 +38885,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./resources/sass/admin/admin.scss ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n48 │ >>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77\r\n   │                                                 ^\n   ╵\n  D:\\congcuvaptpm\\sellweb\\resources\\sass\\admin\\admin.scss 48:49  root stylesheet\n    at processResult (D:\\congcuvaptpm\\sellweb\\node_modules\\webpack\\lib\\NormalModule.js:676:19)\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\webpack\\lib\\NormalModule.js:778:5\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:92439:16)\n    at _render_closure1.call$2 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:80990:12)\n    at _RootZone.runBinary$3$3 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:27220:18)\n    at _FutureListener.handleError$1 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:25776:19)");
 
 /***/ }),
 
@@ -78963,8 +78960,7 @@ function valueEqual(a, b) {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
-/******/ 			"css/admin": 0
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -78976,7 +78972,7 @@ function valueEqual(a, b) {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^css\/a(dmin|pp)$/.test(chunkId)) {
+/******/ 						if("css/app" != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -79049,9 +79045,9 @@ function valueEqual(a, b) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/sass/admin/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/admin/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

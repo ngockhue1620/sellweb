@@ -206,7 +206,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Content */ "./resources/js/components/public-page/Content.js");
 /* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Slider */ "./resources/js/components/public-page/Slider.js");
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Card */ "./resources/js/components/public-page/Card.js");
-/* harmony import */ var _axiosClient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../axiosClient */ "./resources/js/axiosClient.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -270,7 +271,16 @@ var HomePage = /*#__PURE__*/function (_Component) {
   }, {
     key: "getCategories",
     value: function getCategories() {
+<<<<<<< HEAD
       _axiosClient__WEBPACK_IMPORTED_MODULE_7__.default.get('/api/category').then(function (data) {// console.log(data)
+=======
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_7___default().get("https://laravel-react-sell-web.herokuapp.com/api/category").then(function (data) {
+        _this2.setState({
+          listCategories: data.data
+        });
+>>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77
       })["catch"](function (error) {
         console.log(error);
       });
@@ -280,9 +290,15 @@ var HomePage = /*#__PURE__*/function (_Component) {
     value: function getProduct() {
       var _this2 = this;
 
+<<<<<<< HEAD
       _axiosClient__WEBPACK_IMPORTED_MODULE_7__.default.get('/api/product').then(function (response) {
         _this2.setState({
           listProducts: response
+=======
+      axios__WEBPACK_IMPORTED_MODULE_7___default().get("https://laravel-react-sell-web.herokuapp.com/api/product").then(function (response) {
+        _this3.setState({
+          listProducts: response.data
+>>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77
         });
       })["catch"](function (error) {
         console.log(error);
@@ -445,6 +461,7 @@ var Slider = /*#__PURE__*/function (_Component) {
 
 
 
+<<<<<<< HEAD
 /***/ }),
 
 /***/ "./resources/js/components/public-page/components/Category/Category.js":
@@ -558,6 +575,8 @@ function Menu(props) {
   });
 }
 
+=======
+>>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77
 /***/ })
 
 }]);

@@ -9,6 +9,9 @@
     </head>
     <body>
         <div id="root"></div>
-        <script src="{{asset('js/app.js')}}" ></script>
+        
     </body>
+    <script src="{{mix('js/app.js')}}" ></script>   
+    <script src="{{mix('js/axiosClient.js') }}"></script>
+    
 </html>
