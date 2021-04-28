@@ -2450,7 +2450,7 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function getProduct() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default().get("http://127.0.0.1:8000/api/product").then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().get("https://laravel-react-sell-web.herokuapp.com/api/product").then(function (response) {
         _this2.setState({
           listProducts: response.data
         });
@@ -2567,7 +2567,7 @@ var Index = /*#__PURE__*/function (_Component) {
         color: this.state.color,
         imageAddress: this.state.url
       };
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post("http://127.0.0.1:8000/api/product", formdata).then(function (data) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("https://laravel-react-sell-web.herokuapp.com/api/product", formdata).then(function (data) {
         if (data.status == 200) {
           console.log("insert successfull");
         } else {
