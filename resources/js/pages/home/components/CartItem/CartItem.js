@@ -1,59 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import addIcon from '../../../../assets/addIcon.svg'
-import minusIcon from '../../../../assets/minusIcon.svg'
-import cancelIcon from '../../../../assets/cancel.svg'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from "react";
+import addIcon from "../../../../assets/addIcon.svg";
+import minusIcon from "../../../../assets/minusIcon.svg";
+import cancelIcon from "../../../../assets/cancel.svg";
+import { useDispatch } from "react-redux";
 
-import { removeProduct, setQuantity } from '../../../../reducers/cartSlice'
-import { Col, Row } from 'reactstrap'
-
+import { removeProduct, setQuantity } from "../../../../reducers/cartSlice";
+import { Col, Row } from "reactstrap";
 
 export default function CartItem(props) {
+    const { product, onQuatityClick, editQuantityId } = props;
 
-    const { product, onQuatityClick, editQuantityId } = props
+    const [quantityInput, setQuantityInput] = useState(product.quantity);
 
-    const [quantityInput, setQuantityInput] = useState(product.quantity)
-
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const onAddClick = () => {
-        dispatch(setQuantity({
-            id: product.product.id,
-            quantity: product.quantity + 1
-        }))
-        setQuantityInput(quantityInput + 1)
-    }
+        dispatch(
+            setQuantity({
+                id: product.product.id,
+                quantity: product.quantity + 1,
+            })
+        );
+        setQuantityInput(quantityInput + 1);
+    };
     const onSubClick = () => {
-        dispatch(setQuantity({
-            id: product.product.id,
-            quantity: product.quantity - 1
-        }))
-        setQuantityInput(quantityInput + 1)
-    }
+        dispatch(
+            setQuantity({
+                id: product.product.id,
+                quantity: product.quantity - 1,
+            })
+        );
+        setQuantityInput(quantityInput + 1);
+    };
     const onRemoveClick = () => {
-        dispatch(removeProduct(product.product.id))
-    }
+        dispatch(removeProduct(product.product.id));
+    };
     const onChange = (e) => {
-        const value=parseInt(e.target.value)
-        
+        const value = parseInt(e.target.value);
 
-        setQuantityInput(e.target.value)
-        if(value>0)
-        dispatch(setQuantity({
-            id: product.product.id,
-            quantity: e.target.value
-        }))
-
-    }
+        setQuantityInput(e.target.value);
+        if (value > 0)
+            dispatch(
+                setQuantity({
+                    id: product.product.id,
+                    quantity: e.target.value,
+                })
+            );
+    };
     const onKeyUp = (e) => {
-        
         if (e.keyCode === 13) {
-            if(parseInt(quantityInput)>0)
-            onQuatityClick(null)
+            if (parseInt(quantityInput) > 0) onQuatityClick(null);
         }
-
-    }
+    };
     return (
-
         <Row className="cart-item container">
             <Col xs="8" className="cart-item__container">
                 <Row className="cart-item__container__row">
@@ -64,38 +62,55 @@ export default function CartItem(props) {
                         {product.product.productName}
                     </Col>
                 </Row>
-
-
-
             </Col>
             <Col xs="4" className="cart-item__container">
                 <Row className="cart-item__container__quantity">
                     <Col xs="2">
-                        <img onClick={() => onAddClick(product.product.id)} width={20} height={20} src={addIcon}></img>
+                        <img
+                            onClick={() => onAddClick(product.product.id)}
+                            width={20}
+                            height={20}
+                            src={addIcon}
+                        ></img>
                     </Col>
-                    <Col xs="2" onClick={() => onQuatityClick(product)} className="quantity">
-                        {editQuantityId === product.product.id ?
-                            <input min="1" onKeyUp={onKeyUp} onChange={onChange} type="number" value={quantityInput}></input>
-                            : (product.quantity)}
+                    <Col
+                        xs="2"
+                        onClick={() => onQuatityClick(product)}
+                        className="quantity"
+                    >
+                        {editQuantityId === product.product.id ? (
+                            <input
+                                min="1"
+                                onKeyUp={onKeyUp}
+                                onChange={onChange}
+                                type="number"
+                                value={quantityInput}
+                            ></input>
+                        ) : (
+                            product.quantity
+                        )}
                     </Col>
-                    <Col xs="2" >
-                        <img onClick={() => onSubClick(product.product.id)} width={20} height={20} src={minusIcon}></img>
+                    <Col xs="2">
+                        <img
+                            onClick={() => onSubClick(product.product.id)}
+                            width={20}
+                            height={20}
+                            src={minusIcon}
+                        ></img>
                     </Col>
-                    <Col xs="2" >
-                        <img onClick={() => onRemoveClick(product.product.id)} width={20} height={20} src={cancelIcon}></img>
+                    <Col xs="2">
+                        <img
+                            onClick={() => onRemoveClick(product.product.id)}
+                            width={20}
+                            height={20}
+                            src={cancelIcon}
+                        ></img>
                     </Col>
-
-
-
-
                 </Row>
                 <Row className="cart-item__container__price">
                     {product.product.price * product.quantity + " đ"}
                 </Row>
-
-
             </Col>
-
         </Row>
-    )
+    );
 }
