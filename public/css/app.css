@@ -10041,3 +10041,56 @@ img.card-img-top {
 .LoginPage .container Form Button {
   margin-right: 1rem;
 }
+
+.cart {
+  position: relative;
+}
+.cart .quantity {
+  position: absolute;
+  z-index: 1;
+  color: red;
+  font-weight: 800;
+  top: -5px;
+}
+
+.cart-container {
+  z-index: 1;
+  position: fixed;
+  right: 0px;
+  width: 30%;
+  height: 100%;
+  background-color: black;
+}
+.cart-item {
+  display: flex;
+  width: 100%;
+}
+.cart-item__container-left {
+  height: 3rem;
+  display: flex;
+  width: 80%;
+}
+.cart-item__container-left > img {
+  width: 10%;
+}
+.cart-item__container-left > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+  padding: 15px;
+}
+.cart-item__container-right {
+  width: 20%;
+}
+.cart-item__container-right__quantity {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  padding: 1rem 0rem;
+}
+.cart-item__container-right__quantity > * {
+  margin: 0rem 0.25rem;
+}
+.cart-item__container-right__quantity > quanlity {
+  margin: 0 1rem;
+}

@@ -24,6 +24,8 @@ img.Card-Img-Detail.card-img {
   width: 200px;
   margin: 0 auto;
   height: 250px;
+<<<<<<< HEAD
+=======
 }
 
 .add-button-admin {
@@ -37,4 +39,5 @@ label.label-insert-admin {
 
 .input-group {
   padding: 5px;
+>>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77
 }

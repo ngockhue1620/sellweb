@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
+import axiosClient from '../../../../api/axiosClient'
+=======
 // import axiosClient from '../../../../axiosClient'
+>>>>>>> 8327a685106e74e4a6189965b30fc2b771699c77
 import ProductItem from './ProductItem';
 import { Label, Table } from 'reactstrap';
 import { Form, CardImg, Button, Input, Modal, ModalHeader, ModalBody, ModalFooter, Card, InputGroupAddon, InputGroup } from 'reactstrap';

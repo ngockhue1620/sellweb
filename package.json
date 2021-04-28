@@ -25,9 +25,13 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "@reduxjs/toolkit": "^1.5.1",
+        "classnames": "^2.3.1",
         "query-string": "^7.0.0",
         "react-icons": "^4.2.0",
+        "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
-        "reactstrap": "^8.9.0"
+        "reactstrap": "^8.9.0",
+        "redux-persist": "^6.0.0"
     }
 }
