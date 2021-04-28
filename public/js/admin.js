@@ -2610,6 +2610,8 @@ var Index = /*#__PURE__*/function (_Component) {
   }, {
     key: "addProduct",
     value: function addProduct() {
+      var _this3 = this;
+
       this.setState({
         errorsValue: []
       });
@@ -2654,10 +2656,16 @@ var Index = /*#__PURE__*/function (_Component) {
         description: this.state.description,
         color: this.state.color,
         imageAddress: this.state.url
-      };
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post("https://laravel-react-sell-web.herokuapp.com/api/product", formdata).then(function (data) {
-        if (data.status == 200) {
-          console.log("insert successfull");
+      }; //http://127.0.0.1:8000/
+
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post("https://laravel-react-sell-web.herokuapp.com/api/product", formdata).then(function (response) {
+        if (response.status == 200) {
+          var products = _this3.state.listProducts;
+          products.push(response.data.product);
+
+          _this3.setState({
+            listProducts: products
+          });
         } else {
           console.log("errors");
         }
@@ -2671,7 +2679,7 @@ var Index = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -2682,7 +2690,7 @@ var Index = /*#__PURE__*/function (_Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
               className: "btn btn-outline-success ",
               onClick: function onClick() {
-                return _this3.handleClick(_this3.state.value);
+                return _this4.handleClick(_this4.state.value);
               },
               children: ["Add", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
                 xmlns: "http://www.w3.org/2000/svg",
@@ -2743,7 +2751,7 @@ var Index = /*#__PURE__*/function (_Component) {
                     type: "text" // value={this.state.selectedFile}
                     ,
                     onChange: function onChange(e) {
-                      return _this3.AddImage(e);
+                      return _this4.AddImage(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2755,7 +2763,7 @@ var Index = /*#__PURE__*/function (_Component) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     onChange: function onChange(e) {
-                      return _this3.handleChangeCategoryId(e);
+                      return _this4.handleChangeCategoryId(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2767,7 +2775,7 @@ var Index = /*#__PURE__*/function (_Component) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     onChange: function onChange(e) {
-                      return _this3.handleChangeProductName(e);
+                      return _this4.handleChangeProductName(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2780,7 +2788,7 @@ var Index = /*#__PURE__*/function (_Component) {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     type: "number",
                     onChange: function onChange(e) {
-                      return _this3.handleChangePrice(e);
+                      return _this4.handleChangePrice(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2793,7 +2801,7 @@ var Index = /*#__PURE__*/function (_Component) {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     type: "number",
                     onChange: function onChange(e) {
-                      return _this3.handleChangeQuantity(e);
+                      return _this4.handleChangeQuantity(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2805,7 +2813,7 @@ var Index = /*#__PURE__*/function (_Component) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     onChange: function onChange(e) {
-                      return _this3.handleChangeColor(e);
+                      return _this4.handleChangeColor(e);
                     }
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
@@ -2817,7 +2825,7 @@ var Index = /*#__PURE__*/function (_Component) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_15__.default, {
                     onChange: function onChange(e) {
-                      return _this3.handleChangeDescription(e);
+                      return _this4.handleChangeDescription(e);
                     }
                   })]
                 })]
@@ -2834,13 +2842,13 @@ var Index = /*#__PURE__*/function (_Component) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_17__.default, {
               color: "secondary",
               onClick: function onClick() {
-                return _this3.handleClick(_this3.state.value);
+                return _this4.handleClick(_this4.state.value);
               },
               children: "Close"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_17__.default, {
               color: "primary",
               onClick: function onClick() {
-                return _this3.addProduct();
+                return _this4.addProduct();
               },
               children: "Th\xEAm"
             })]
