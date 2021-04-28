@@ -5197,9 +5197,9 @@ function Menu(props) {
     "class": "Menu col-lg-3",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       "class": "category-menu",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
         "class": "my-4",
-        children: "Clothes Shop"
+        children: "Danh M\u1EE5c S\u1EA3n Ph\u1EA9m"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         "class": "list-group ",
         children: categoryList.map(function (category, index) {

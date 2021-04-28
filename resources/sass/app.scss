@@ -33,7 +33,7 @@
         img {
             width: 100%;
 
-            height: auto;
+            height: 27em;
         }
     }
 
@@ -113,9 +113,9 @@
         font-size: 13px;
         font-weight: 800;
         text-transform: uppercase;
-        line-height: 45px;
-        height: 45px;
-        width: 45px;
+        line-height: 60px;
+        height: 60px;
+        width: 60px;
         border-radius: 50%;
         position: absolute;
         left: 10px;
@@ -239,15 +239,14 @@ nav {
         color: rgb(105, 86, 86);
         font-size: 27px;
         font-weight: 600;
-
-        padding-left: 10%;
+       
     }
 
     .navbar-nav {
         float: right;
-        margin-left: 10%;
+        right: 7%;
         list-style-type: none;
-        position: relative;
+        position: absolute;
 
         .nav-item {
             border-radius: 5px;
@@ -331,6 +330,7 @@ img.card-img-top {
     width: 30%;
     right: 0px;
     height: 40rem;
+    background-color: wheat;
 }
 // <<<<<<< HEAD
 // .cart-item {
