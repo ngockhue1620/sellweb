@@ -47,7 +47,7 @@ class OrderController extends Controller
         // delete cart of customer
         InCart::destroy($request->customerId);
         DB::commit();
-        return \response()->json(['order'=>$order]);
+        return \response()->json(['order'=>$order,'status'=>true]);
         }
         
         catch (\Exception $e){
@@ -111,12 +111,12 @@ class OrderController extends Controller
             $order =Order::find($id);
             if(empty($order))
             {
-                return \response()->json(['error'=>'Data is not found'],404);
+                return \response()->json(['error'=>'Data is not found','status'=>false],404);
             }
             else
             {
                 $order->delete();
-                return response()->json(['message'=>"Delete successful"],200);
+                return response()->json(['message'=>"Delete successful",'status'=>true],200);
             }
         }
         catch(\Exception $e)

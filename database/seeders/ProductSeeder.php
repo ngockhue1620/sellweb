@@ -10,7 +10,7 @@ class ProductSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
-     * ['id','productName','categoryId','price','quantity','imageAddress','color','description'];
+     * ['id','productName','category_id','price','quantity','imageAddress','color','description'];
      */
     public function run()
     {
@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>1,
                 'productName' =>'Bộ Đồ Tập Quần Short + Ngắn Tay Butz',
-                'categoryId'  =>1,
+                'category_id'  =>1,
                 'price'       =>350000,
                 'quantity'    =>50,
                 'imageAddress'=>'https://likefit.vn/wp-content/uploads/2020/07/snb2.jpg',
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>2,
                 'productName' =>'Áo Ba Lỗ – Tank Top CRNS',
-                'categoryId'  =>1,
+                'category_id'  =>1,
                 'price'       =>150000,
                 'quantity'    =>20,
                 'imageAddress'=>'https://likefit.vn/wp-content/uploads/2020/07/11155955490_1603545263.jpg',
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>3,
                 'productName' =>'ĐỒNG PHỤC ÁO THUN – ÁO THUN CỔ TRỤ MÀU ĐEN TAY NGẮN 02',
-                'categoryId'  =>2,
+                'category_id'  =>2,
                 'price'       =>50000,
                 'quantity'    =>100,
                 'imageAddress'=>'https://dongphuctanbinh.com/wp-content/uploads/2018/11/09-3-400x600.jpg',
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>4,
                 'productName' =>'ĐỒNG PHỤC NHÀ HÀNG KHÁCH SẠN',
-                'categoryId'  =>2,
+                'category_id'  =>2,
                 'price'       =>499000,
                 'quantity'    =>50,
                 'imageAddress'=>'https://dongphuctanbinh.com/wp-content/uploads/2019/06/dong-phuc-quan-ly-khach-san-mau-06-6475_HasThumb-400x600.jpg',
@@ -66,7 +66,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>5,
                 'productName' =>'ÁO POLO NAM ARISTINO APS035S1',
-                'categoryId'  =>3,
+                'category_id'  =>3,
                 'price'       =>550000,
                 'quantity'    =>50,
                 'imageAddress'=>'https://aristino.com/Data/ResizeImage/images/product/ao-polo/aps035s1/ao-polo-nam-aristino-APS035S1-14x500x500x4.jpg',
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>6,
                 'productName' =>'ÁO SƠ MI NAM THỜI TRANG GEREFL DÀI TAY',
-                'categoryId'  =>3,
+                'category_id'  =>3,
                 'price'       =>570000,
                 'quantity'    =>40,
                 'imageAddress'=>'https://img.alicdn.com/imgextra/i4/1999887296/O1CN01yjvNsc23lcHO7KSDe_!!0-item_pic.jpg',
@@ -91,7 +91,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>7,
                 'productName' =>'Đầm Váy Sơ Mi Cổ Đức Cao Cấp',
-                'categoryId'  =>4,
+                'category_id'  =>4,
                 'price'       =>250000,
                 'quantity'    =>40,
                 'imageAddress'=>'https://w.ladicdn.com/s650x800/5cb1e5c5e0b1531913bd7a70/dam-so-mi-trung-nien-20201002024854.jpg',
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>8,
                 'productName' =>'Đầm bút chì kẻ nơ vai',
-                'categoryId'  =>4,
+                'category_id'  =>4,
                 'price'       =>420000,
                 'quantity'    =>60,
                 'imageAddress'=>'https://hhluxury.vn/storage/images/GMlsdFwVSPwramV3juoNgPfXANjJKt0pjqeJTHDh.jpg',
@@ -115,7 +115,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>9,
                 'productName' =>'ĐỒNG PHỤC CÔNG SỞ – ÁO SƠ MI NAM DÀI TAY MÀU TRẮNG ',
-                'categoryId'  =>5,
+                'category_id'  =>5,
                 'price'       =>200000,
                 'quantity'    =>60,
                 'imageAddress'=>'https://dongphuctanbinh.com/wp-content/uploads/2018/11/09-9-400x600.jpg',
@@ -127,7 +127,7 @@ class ProductSeeder extends Seeder
             [
                 'id'    =>10,
                 'productName' =>'ÁO SƠ MI NỮ MÀU TRẮNG TAY DÀI PHỐI SỌC ĐEN',
-                'categoryId'  =>5,
+                'category_id'  =>5,
                 'price'       =>150,
                 'quantity'    =>200000,
                 'imageAddress'=>'https://dongphuctanbinh.com/wp-content/uploads/2019/04/may-dong-phuc-ao-so-mi-cong-so-cao-cap-tai-binh-duong-5489-2016-09-07-1-400x600.jpg',
@@ -139,7 +139,7 @@ class ProductSeeder extends Seeder
             [   
                 'id'    =>11,
                 'productName' =>'Quần Rin Nam',
-                'categoryId'  =>6,
+                'category_id'  =>6,
                 'price'       =>175000,
                 'quantity'    =>45,
                 'imageAddress'=>'https://media3.scdn.vn/img4/2020/05_08/ITXYrrwjcTs9IBoIFAii_simg_de2fe0_500x500_maxb.jpg',

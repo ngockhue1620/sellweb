@@ -28,7 +28,7 @@ export default class Index extends Component {
             
     }
     getProduct() {
-        axios.get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+        axios.get(`http://127.0.0.1:8000/api/product`)
             .then((response) => {
                 
                 this.setState({
@@ -115,7 +115,8 @@ export default class Index extends Component {
              color:this.state.color,
              imageAddress:this.state.url
          }
-        axiosClient.post('/api/product',formdata)
+         //https://laravel-react-sell-web.herokuapp.com/api/product
+        axios.post(`http://127.0.0.1:8000/api/product`,formdata)
         .then((data) => {
             if(data.status==200)
             {
@@ -132,7 +133,7 @@ export default class Index extends Component {
         }).catch(function (error) {
             console.log(error);
         });
-        this.setState({ value: !value})
+        this.setState({ value: !this.state.value})
 
 
     }
