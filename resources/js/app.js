@@ -3,25 +3,33 @@
  * includes React and other helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
- import React from 'react';
- import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
- import App from './components/public-page/App';
- import Header from './components/public-page/Header';
+import App from './pages/home/Router';
+import Header from './pages/home/components/Header/Header';
+import store, { persistor } from './reducer/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
- 
- ReactDOM.render(
-   <React.StrictMode>
-     <Header></Header>
-     <App></App>
-   </React.StrictMode>,
-   document.getElementById('root')
- );
- 
- // If you want to start measuring performance in your app, pass a function
- // to log results (for example: reportWebVitals(console.log))
- // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+ReactDOM.render(
+  <Provider store={store} >
+    <PersistGate loading={null} persistor={persistor}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </PersistGate>
+
+  </Provider>
+  ,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 require('./bootstrap');
 
