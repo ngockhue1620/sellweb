@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements("id")->generatedAs()->always();
+            $table->bigIncrements("id")->first();
             $table->bigInteger("category_id")->unsigned()->nullable();;
             $table->string("productName");
             $table->longText("imageAddress");
