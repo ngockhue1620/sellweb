@@ -9,7 +9,7 @@ class Category extends Model
 {
     
     protected $table = 'categories';
-    protected $fillable = ['id','categoryName','supplierId'];
+    protected $fillable = ['id','categoryName'];
     // public function supplier(){
     // 	return $this->belongsTo('App\Models\Supplier','supplierId');
     // }

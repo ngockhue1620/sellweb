@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['id','productName','categoryId','price','quantity','imageAddress','color','description'];
-    public function supplier(){
-    	return $this->belongsTo('App\Models\Category','categoryId');
-    }
+    protected $fillable = ['id','productName','category_id','price','quantity','imageAddress','color','description'];
+    
 }
