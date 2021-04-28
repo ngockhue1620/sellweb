@@ -111,9 +111,7 @@ export default class Index extends Component {
             errors.push("Bạn Chưa nhập vào hình ảnh cho sản phẩm");
         }
 
-        this.setState({
-            errorsValue: errors,
-        });
+        this.setState({ errorsValue: errors });
         let formdata = {
             productName: this.state.productName,
             categoryId: this.state.categoryId,
@@ -123,14 +121,17 @@ export default class Index extends Component {
             color: this.state.color,
             imageAddress: this.state.url,
         };
+        //http://127.0.0.1:8000/
         axios
             .post(
                 `https://laravel-react-sell-web.herokuapp.com/api/product`,
                 formdata
             )
-            .then((data) => {
-                if (data.status == 200) {
-                    console.log("insert successfull");
+            .then((response) => {
+                if (response.status == 200) {
+                    let products = this.state.listProducts;
+                    products.push(response.data.product);
+                    this.setState({ listProducts: products });
                 } else {
                     console.log("errors");
                 }
@@ -138,6 +139,7 @@ export default class Index extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+
         this.setState({ value: !this.state.value });
     }
 
