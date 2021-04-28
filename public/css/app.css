@@ -10089,9 +10089,9 @@ h3 {
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 45px;
-  height: 45px;
-  width: 45px;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   position: absolute;
   left: 10px;
@@ -10299,6 +10299,7 @@ img.card-img-top {
   width: 30%;
   right: 0px;
   height: 40rem;
+  background-color: wheat;
 }
 
 .cart-item {
