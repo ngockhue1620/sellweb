@@ -6,7 +6,6 @@ import {
 } from "react-router-dom"
 
 import React, { Component, Suspense } from 'react'
-
 import HomePage from './HomePage'
 import About from "../About/About"
 import Header from "./components/Header/Header"
