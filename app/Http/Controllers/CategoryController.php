@@ -40,7 +40,7 @@ class CategoryController extends Controller
             // find is none => create
             $category = Category::firstOrCreate($request->all());
             $category->save();
-            return response()->json(['category'=> $category],200);
+            return response()->json(['category'=> $category,'status'=>true],200);
 
         }
         catch(\Exception $e)
@@ -95,7 +95,7 @@ class CategoryController extends Controller
             else
             {
                 $category->update($request->all());
-                return response()->json(['category'=>$category],200);
+                return response()->json(['category'=>$category,'status'=>true],200);
                 
             }
         }
@@ -129,7 +129,7 @@ class CategoryController extends Controller
             else
             {
                 $supplier->delete();
-                return response()->json(['message'=>"Delete successful"],200);
+                return response()->json(['message'=>"Delete successful",'status'=>true],200);
                 
             }
         }

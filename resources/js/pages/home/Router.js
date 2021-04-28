@@ -5,32 +5,36 @@ import {
   Link // <a></a> 
 } from "react-router-dom"
 
-import React, { Component, Suspense, lazy } from 'react'
+import React, { Component, Suspense } from 'react'
+
+import HomePage from './HomePage'
 import About from "../About/About"
 import Header from "./components/Header/Header"
-const HomePage = lazy(() => import('./HomePage'))
-// const TestPage = lazy(() => import('./test'))
+
+
+
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <Router>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Header></Header>
-          <Switch>
-            <Route exact path='/' render={props => (
-              <HomePage {...props} />
-            )}/>
-            
+          <Suspense fallback={<div>Loading...</div>}>
+            <Header></Header>
+            <Switch>
+              <Route exact path='/' render={props => (
+                <HomePage {...props} />
+              )} />
 
-            <Route exact path='/about' render={props => (
-              <About {...props} />
-            )}/>
-            
-          </Switch>
-        </Suspense>
-      </Router>
+              <Route exact path='/about' render={props => (
+                <About {...props} />
+              )} />
+
+              
+
+            </Switch>
+          </Suspense>
+        </Router>
       </div>
     )
   }
