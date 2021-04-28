@@ -5418,21 +5418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 
-var initialState = [{
-  product: {
-    "id": 1,
-    "categoryId": 1,
-    "productName": "Bộ Đồ Tập Quần Short + Ngắn Tay Butz",
-    "imageAddress": "https://likefit.vn/wp-content/uploads/2020/07/snb2.jpg",
-    "color": "Đen",
-    "description": "Bộ đồ quần short + Ngắn tay Butz. Form ôm, vải co dãn 4 chiều, lên form tôn dáng thoải mái tập luyện",
-    "quantity": 50,
-    "price": 350000,
-    "created_at": "2021-04-26T14:27:46.000000Z",
-    "updated_at": "2021-04-26T14:27:46.000000Z"
-  },
-  quantity: 1
-}];
+var initialState = [];
 var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
   name: 'cartListProduct',
   initialState: initialState,

@@ -120,11 +120,15 @@ export default class Index extends Component {
              color:this.state.color,
              imageAddress:this.state.url
          }
+         //http://127.0.0.1:8000/
         axios.post(`https://laravel-react-sell-web.herokuapp.com/api/product`,formdata)
-        .then((data) => {
-            if(data.status==200)
-            {
-                console.log("insert successfull")
+        .then((response) => {
+            
+            if(response.status==200)
+            {   
+                let products = this.state.listProducts               
+                products.push(response.data.product)                
+                this.setState({listProducts:products})
             }
             else
             {
