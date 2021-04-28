@@ -4,6 +4,7 @@ import minusIcon from '../../../../assets/minusIcon.svg'
 import cancelIcon from '../../../../assets/cancel.svg'
 import { useDispatch } from 'react-redux'
 import { addQuatity, subQuatity ,removeProduct} from '../../../../reducer/cartSlice'
+import { Col, Row } from 'reactstrap'
 export default function CartItem(props) {
     const { product } = props
     const dispatch=useDispatch()
@@ -17,13 +18,14 @@ export default function CartItem(props) {
         dispatch(removeProduct(id))
     }
     return (
-        <div className="cart-item">
-            <div className="cart-item__container-left">
+        <Row className="cart-item">
+
+            <Col className="cart-item__container-left "  xs="9">
                 <img src={product.product.imageAddress}></img>
                 <div>{product.product.productName}</div>
 
-            </div>
-            <div className="cart-item__container-right">
+            </Col>
+            <Col className="cart-item__container-right " xs="3">
                 <div className="cart-item__container-right__quantity">
                     <img onClick={()=>onAddClick(product.product.id)} width={20} height={20} src={addIcon}></img>
                     <div className="quanlity">
@@ -36,8 +38,8 @@ export default function CartItem(props) {
                     {product.product.price*product.quantity+" đ"}
                 </div>
 
-            </div>
+            </Col>
 
-        </div>
+        </Row>
     )
 }
