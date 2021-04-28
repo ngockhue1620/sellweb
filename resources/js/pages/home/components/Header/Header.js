@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+
 import Cart from '../Cart/Cart'
 
 
 
-export default class Header extends Component {
-    render() {
-        return (
+import React from 'react'
+import { useEffect } from 'react'
 
-            <div className='Header'>
+export default function Header(props) {
+    const {onClickCart}=props
+    
+    return (
+        <div className='Header'>
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div class="container">
@@ -29,9 +32,9 @@ export default class Header extends Component {
                                 <li class="nav-item">
                                     <a class="nav-link" href="/">Services</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">
-                                        <Cart></Cart>
+                                <li  onClick={onClickCart} class="nav-item">
+                                    <a class="nav-link" >
+                                        <Cart ></Cart>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -43,6 +46,6 @@ export default class Header extends Component {
                 </nav>
 
             </div>
-        )
-    }
+    )
 }
+

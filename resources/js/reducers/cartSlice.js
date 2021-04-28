@@ -44,28 +44,26 @@ const cartSlice = createSlice({
             }
                        
           },
-          addQuatity: (state, action) => {
-            
-            let addQuantityId=state.findIndex((item)=>{
-                
-                return item.product.id===action.payload
-                
-            })
-            state[addQuantityId].quantity++
-          },
-          subQuatity: (state, action) => {
-            
-            let addQuantityId=state.findIndex((item)=>{
-                
-                return item.product.id===action.payload
-                
-            })
-            state[addQuantityId].quantity--
-          },
+          
           removeProduct: (state, action) => {
             
             const removeId=action.payload
             return state.filter((item)=>item.product.id!==removeId)
+          },
+          setQuantity: (state, action) => {
+            
+            const {payload}=action
+            const {id,quantity}=payload
+            const quantityNumber=parseInt(quantity)
+            if(quantityNumber<1){
+                return state.filter((item)=>item.product.id!=id)
+            }
+            let setQuantityId=state.findIndex((item)=>{
+                
+                return item.product.id===id
+                
+            })
+            state[setQuantityId].quantity=quantityNumber
           },
         
           
@@ -75,5 +73,5 @@ const cartSlice = createSlice({
   });
   
   const { reducer:cartReducer ,actions} = cartSlice;
-  export const { addProduct,addQuatity,subQuatity,removeProduct } = actions;
+  export const { addProduct,addQuatity,subQuatity,removeProduct,setQuantity } = actions;
   export default cartReducer;

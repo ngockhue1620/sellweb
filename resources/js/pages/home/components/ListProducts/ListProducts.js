@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAll } from '../../../../reducer/productSlice';
+import { getAll } from '../../../../reducers/productSlice';
 import ProductCard from '../ProductCard/ProductCard';
 
 
