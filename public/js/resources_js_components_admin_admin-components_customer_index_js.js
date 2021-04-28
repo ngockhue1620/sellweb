@@ -357,6 +357,24 @@ var Index = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "deleteCustomer",
+    value: function deleteCustomer() {
+      _axiosClient__WEBPACK_IMPORTED_MODULE_1__.default.delete("/api/customer/".concat(id)).then(function (data) {
+        data.status == true;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "putCustom",
+    value: function putCustom() {
+      _axiosClient__WEBPACK_IMPORTED_MODULE_1__.default.put('/api/customer/').then(function (data) {
+        data.status == true;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       console.log(this.state.listCustomers);

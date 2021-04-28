@@ -12,7 +12,7 @@ export default class Index extends Component {
     }
     componentDidMount() {
         this.getCustomer()
-        
+
 
     }
     getCustomer() {
@@ -28,12 +28,18 @@ export default class Index extends Component {
             });
     }
     deleteCustomer() {
-        axiosClient.get('/api/customer/')
+        axiosClient.delete(`/api/customer/${id}`)
             .then((data) => {
-                this.setState({
-                    listCustomers: data
-                })
-                
+                data.status==true;
+               
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+    putCustom () {
+        axiosClient.put('/api/customer/')
+            .then((data) => {
+                data.status==true;
                
             }).catch(function (error) {
                 console.log(error);
