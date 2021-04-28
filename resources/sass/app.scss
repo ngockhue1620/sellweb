@@ -1,12 +1,285 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://kit.fontawesome.com/148040cbf9.js");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+//header
+.product-grid4 {
+    position: relative;
 
+    .product-image4 {
+        position: relative;
+    }
+
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-image4 {
+        a {
+            display: flex;
+        }
+
+        img {
+            width: 100%;
+
+            height: auto;
+        }
+    }
+
+    .social {
+        width: 180px;
+        padding: 0;
+        margin: 0 auto;
+        list-style: none;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease 0s;
+    }
+
+    &:hover .social li {
+        opacity: 1;
+    }
+
+    .social li a {
+        color: #222;
+        background: #fff;
+        font-size: 17px;
+        line-height: 36px;
+        width: 40px;
+        height: 36px;
+        border-radius: 2px;
+        margin: 0 5px;
+        display: block;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            color: #fff;
+            background: #16a085;
+        }
+
+        &:after,
+        &:before {
+            content: attr(data-tip);
+            color: #fff;
+            background-color: #000;
+            font-size: 12px;
+            line-height: 20px;
+            border-radius: 3px;
+            padding: 0 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -30px;
+        }
+
+        &:after {
+            content: "";
+            height: 15px;
+            width: 15px;
+            border-radius: 0;
+            transform: translateX(-50%) rotate(45deg);
+            top: -22px;
+            z-index: -1;
+        }
+
+        &:hover {
+            &:after,
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    .product-discount-label,
+    .product-new-label {
+        color: #fff;
+        background-color: #16a085;
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 45px;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        transition: all 0.3s;
+    }
+
+    .product-discount-label {
+        left: auto;
+        right: 10px;
+        background-color: #d7292a;
+    }
+
+    &:hover .product-new-label {
+        opacity: 0;
+    }
+
+    .product-content {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin: 0 0 7px;
+        transition: all 0.3s ease 0s;
+
+        a {
+            color: #222;
+
+            &:hover {
+                color: #16a085;
+            }
+        }
+    }
+
+    .price {
+        color: #16a085;
+        font-size: 17px;
+        font-weight: 700;
+        margin: 0 2px 15px 0;
+        display: block;
+    }
+
+    .add-to-cart {
+        border: 1px solid #e5e5e5;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #888;
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+
+    &:hover .add-to-cart {
+        border: 1px solid transparent;
+        background: #16a085;
+        color: #fff;
+    }
+
+    .add-to-cart:hover {
+        background-color: #505050;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .product-grid4 {
+        margin-bottom: 30px;
+    }
+}
+
+.aboutComponet {
+    margin-top: 70px;
+}
+img.card-img-top {
+    width: 100%;
+    height: auto;
+}
+.category-menu {
+    position: fixed;
+}
+.Body {
+    margin-top: 5rem;
+    display: flex;
+}
+.LoginPage {
+    background-color: black;
+    max-width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    .container {
+        background-color: lightgreen;
+
+        max-width: 50rem;
+        padding-top: 7rem;
+        height: 30rem;
+        margin: auto;
+        margin-top: 10rem;
+        Form {
+            max-width: 30rem;
+            margin: auto;
+            Button {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    .navbar-brand {
+        color: rgb(105, 86, 86);
+        font-size: 27px;
+        font-weight: 600;
+
+        padding-left: 10%;
+    }
+
+    .navbar-nav {
+        float: right;
+        margin-left: 10%;
+        list-style-type: none;
+        position: relative;
+
+        .nav-item {
+            border-radius: 5px;
+            display: inline-block;
+            background: #1b1b1b;
+            margin: 0 5px;
+
+            .nav-link {
+                color: white;
+
+                text-decoration: none;
+                font-size: 18px;
+                padding: 8px 15px;
+
+                &:hover {
+                    color: cyan;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+                }
+            }
+        }
+    }
+}
+.quantity {
+    padding-left: 1.75rem;
+    padding-bottom: 3rem;
+}
+//////header////////
 .aboutComponet {
     margin-top: 70px;
 }
@@ -14,77 +287,66 @@ img.card-img-top {
     width: 200px;
     height: 230px;
 }
-.category-menu{
-    position:fixed;
+.category-menu {
+    position: fixed;
 }
-<<<<<<< HEAD
-=======
-.Body{
+
+.Body {
     margin-top: 5rem;
     display: flex;
 }
-.LoginPage{
+.LoginPage {
     background-color: black;
     max-width: 100%;
     margin-top: 0px;
     margin-left: 0px;
-    .container{
-
+    .container {
         background-color: lightgreen;
-    
+
         max-width: 50rem;
         padding-top: 7rem;
         height: 30rem;
         margin: auto;
         margin-top: 10rem;
-        Form{
-            
+        Form {
             max-width: 30rem;
             margin: auto;
-            Button{
+            Button {
                 margin-right: 1rem;
             }
         }
     }
-    
 }
-.cart{
+.cart {
     position: relative;
-    .quantity{
+    .quantity {
         position: absolute;
         z-index: 1;
         color: red;
         font-weight: 800;
-        top:-5px
+        top: -5px;
     }
 }
-.cart-container{
-    
+.cart-container {
     z-index: 1;
     position: fixed;
-    right:0px;
+    right: 0px;
     width: 30%;
     height: 100%;
     background-color: black;
-    ListGroup{
-        ListGroupItem{
-
-        }
-    }
 }
-.cart-item{
-   display: flex;
+.cart-item {
+    display: flex;
     width: 100%;
-    &__container-left{
+    &__container-left {
         height: 3rem;
         display: flex;
         width: 80%;
         // background-color: black;
-        &>img{
+        & > img {
             width: 10%;
-            ;
         }
-        &>div{
+        & > div {
             // line-height: 2;
             // -webkit-box-orient: vertical;
             // -webkit-line-clamp:0;
@@ -94,13 +356,13 @@ img.card-img-top {
             padding: 15px;
         }
     }
-    &__container-right{
+    &__container-right {
         width: 20%;
-        &__quantity{
-            >*{
-              margin: 0rem 0.25rem;  
+        &__quantity {
+            > * {
+                margin: 0rem 0.25rem;
             }
-            &>quanlity{
+            & > quanlity {
                 margin: 0 1rem;
             }
             width: 20%;
@@ -108,7 +370,5 @@ img.card-img-top {
             text-align: center;
             padding: 1rem 0rem;
         }
-        
     }
 }
->>>>>>> faa864778fc8f56f38ebb88cd7bac15685a1822d
