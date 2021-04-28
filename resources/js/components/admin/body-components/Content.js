@@ -6,13 +6,13 @@ import {
     Link // <a></a> 
 } from "react-router-dom"
 
-import React, { Component, Suspense, lazy } from 'react'
+import React, { Component, Suspense } from 'react'
 
-const Category = lazy(() => import('../admin-components/category'))
-const Wellcome = lazy(() => import('../admin-components/Wellcome'))
-const Product = lazy(() => import('../admin-components/product'))
-const Customer = lazy(() => import('../admin-components/customer/index'))
-const Order = lazy(() => import('../admin-components/order/index'))
+import Wellcome from '../admin-components/Wellcome'
+import Product from '../admin-components/product/Index'
+import Customer from '../admin-components/customer/index'
+import Order from '../admin-components/order/index'
+import Category from '../admin-components/category/index'
 export default class Content extends Component {
     render() {
         return (

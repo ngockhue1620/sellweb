@@ -1,7 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/admin.js": "/js/admin.js",
-    "/js/axiosClient.js": "/js/axiosClient.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css"
 }

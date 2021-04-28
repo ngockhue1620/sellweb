@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Cart from '../Cart/Cart'
 
 
 
@@ -29,7 +30,9 @@ export default class Header extends Component {
                                     <a class="nav-link" href="/">Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Contact</a>
+                                    <a class="nav-link" href="/">
+                                        <Cart></Cart>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>

@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
 
-export default class Slider extends Component {
-    render() {
-        return (
-            <div id="carouselExampleIndicators" class="Slider carousel slide my-4" data-ride="carousel">
+
+import React from 'react'
+
+export default function Slider() {
+    return (
+        <div id="carouselExampleIndicators" class="Slider carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -29,6 +30,6 @@ export default class Slider extends Component {
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        )
-    }
+    )
 }
+
