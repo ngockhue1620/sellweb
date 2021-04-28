@@ -3,6 +3,25 @@
  * includes React and other helpers. It's a great starting point while
  * building robust, powerful web applications using React + Laravel.
  */
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+
+ import App from './components/public-page/App';
+ import Header from './components/public-page/Header';
+
+
+ 
+ ReactDOM.render(
+   <React.StrictMode>
+     <Header></Header>
+     <App></App>
+   </React.StrictMode>,
+   document.getElementById('root')
+ );
+ 
+ // If you want to start measuring performance in your app, pass a function
+ // to log results (for example: reportWebVitals(console.log))
+ // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 require('./bootstrap');
 
@@ -12,4 +31,3 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/public-page/HomePage');

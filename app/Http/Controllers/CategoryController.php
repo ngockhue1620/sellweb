@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return Category::with(['supplier'])->get();
+        return Category::with(['product'])->get();
     }
 
     /**

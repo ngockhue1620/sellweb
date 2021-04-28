@@ -41,7 +41,8 @@ class SupplierController extends Controller
             // find is has => update
             // find is none => create
             $supplier = Supplier::firstOrCreate([
-                'supplierName'=>$request->supplierName
+                'supplierName'=>$request->supplierName,
+                'address'     =>$request->address
             ]);
             $supplier->save();
             return response()->json(['category'=> $supplier],200);
