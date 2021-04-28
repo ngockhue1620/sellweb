@@ -4160,10 +4160,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _pages_home_Router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/home/Router */ "./resources/js/pages/home/Router.js");
-/* harmony import */ var _pages_home_components_Header_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/home/components/Header/Header */ "./resources/js/pages/home/components/Header/Header.js");
-/* harmony import */ var _reducer_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducer/store */ "./resources/js/reducer/store.js");
-/* harmony import */ var redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux-persist/integration/react */ "./node_modules/redux-persist/es/integration/react.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _reducer_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducer/store */ "./resources/js/reducer/store.js");
+/* harmony import */ var redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-persist/integration/react */ "./node_modules/redux-persist/es/integration/react.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -4176,14 +4175,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
-  store: _reducer_store__WEBPACK_IMPORTED_MODULE_5__.default,
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_6__.PersistGate, {
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
+  store: _reducer_store__WEBPACK_IMPORTED_MODULE_4__.default,
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_5__.PersistGate, {
     loading: null,
-    persistor: _reducer_store__WEBPACK_IMPORTED_MODULE_5__.persistor,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_home_Router__WEBPACK_IMPORTED_MODULE_3__.default, {})
+    persistor: _reducer_store__WEBPACK_IMPORTED_MODULE_4__.persistor,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_home_Router__WEBPACK_IMPORTED_MODULE_3__.default, {})
     })
   })
 }), document.getElementById('root')); // If you want to start measuring performance in your app, pass a function
