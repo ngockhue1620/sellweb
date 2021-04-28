@@ -1,22 +1,44 @@
-import React from 'react'
+
+import React, {  useState } from 'react'
 import { useSelector } from 'react-redux'
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { Button, Col, Container, Row } from 'reactstrap'
 import CartItem from '../CartItem/CartItem'
 
-export default function CartContainer() {
+export default function CartContainer(props) {
+  
     const listProducts = useSelector(state => state.cartProducts)
+    const [editQuantityId,setEditQuantityId]=useState(null)
+    // const [sumPay,setsumPay]=useState(null)
+    const onQuatityClick=(product)=>{
+        
+        setEditQuantityId(product?product.product.id:null)
+    }
+    const calculatorSumPay=()=>{
+        return listProducts.reduce((a,b)=>{
+            return a+b.product.price*b.quantity
+        },0)
+        
+    }
+    
     return (
-        <div className="cart-container">
-            <ListGroup>
+        <Container className="cart-container">
+            
                 {listProducts.map((product, index) => (
-                    <ListGroupItem tag="a" href="#" >
-                        <CartItem product={product}></CartItem>
-                    </ListGroupItem>
+                    
+                        <CartItem key={index} editQuantityId={editQuantityId} onQuatityClick={onQuatityClick} product={product}></CartItem>
+                    
                 ))}
 
-
-            </ListGroup>
-        </div>
+                <Row className="cart-container__paycontainer">
+                    <Col xs="8" className="cart-container__paycontainer__value">Tổng: {calculatorSumPay()+" đ"}</Col>
+                    
+                    <Col>
+                    <Button xs="3" color="primary" size="lg">Đặt hàng</Button>{' '}
+                    </Col>
+                    
+                </Row>
+            
+        </Container>
 
     )
 }

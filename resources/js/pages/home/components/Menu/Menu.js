@@ -4,13 +4,13 @@
 import  { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getAll } from '../../../../reducer/categorySlice'
+import { getAll } from '../../../../reducers/categorySlice'
 import Category from '../Category/Category'
 
 
 
 import React from 'react'
-import { showProductsByCategoryId } from '../../../../reducer/productSlice'
+import { showProductsByCategoryId } from '../../../../reducers/productSlice'
 
 export default function Menu(props) {
   const [idClick,setIdClick]=useState(null)
