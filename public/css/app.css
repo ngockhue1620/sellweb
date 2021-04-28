@@ -10014,3 +10014,30 @@ img.card-img-top {
 .category-menu {
   position: fixed;
 }
+
+.Body {
+  margin-top: 5rem;
+  display: flex;
+}
+
+.LoginPage {
+  background-color: black;
+  max-width: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.LoginPage .container {
+  background-color: lightgreen;
+  max-width: 50rem;
+  padding-top: 7rem;
+  height: 30rem;
+  margin: auto;
+  margin-top: 10rem;
+}
+.LoginPage .container Form {
+  max-width: 30rem;
+  margin: auto;
+}
+.LoginPage .container Form Button {
+  margin-right: 1rem;
+}

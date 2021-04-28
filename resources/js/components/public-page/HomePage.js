@@ -1,6 +1,5 @@
 
-import ReactDOM from 'react-dom';
-import Header from './Header'
+
 import Body from './Body'
 
 import React, { Component } from 'react'
@@ -10,8 +9,8 @@ import Content from './Content'
 import Slider from './Slider'
 
 import Card from './Card'
-import axiosClient from './axiosClient'
-import '../../../sass/HomePage.scss'
+import axiosClient from '../../axiosClient'
+
 export default class HomePage extends Component {
     constructor(props) {
         super(props)
