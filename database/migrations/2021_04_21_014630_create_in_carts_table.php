@@ -14,7 +14,7 @@ class CreateInCartsTable extends Migration
     public function up()
     {
         Schema::create('in_carts', function (Blueprint $table) {
-            $table->bigIncrements("id")->generatedAs()->always();
+            $table->bigIncrements("id")->serial();
             $table->bigInteger("customerId")->unsigned()->nullable();;
             $table->bigInteger("productId")->unsigned()->nullable();;
             $table->timestamps();

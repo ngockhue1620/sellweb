@@ -10,10 +10,10 @@ class Category extends Model
     
     protected $table = 'categories';
     protected $fillable = ['id','categoryName','supplierId'];
-    public function supplier(){
-    	return $this->belongsTo('App\Models\Supplier','supplierId');
-    }
+    // public function supplier(){
+    // 	return $this->belongsTo('App\Models\Supplier','supplierId');
+    // }
     public function product(){
-    	return $this->hasMany('App\Models\Product','categoryId');
+    	return $this->hasMany('App\Models\Product','category_id');
     }
 }
