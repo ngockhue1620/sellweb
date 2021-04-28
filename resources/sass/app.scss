@@ -1,10 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://kit.fontawesome.com/148040cbf9.js");
-@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
-
 // Variables
 @import "variables";
 
@@ -130,7 +126,7 @@
     .product-discount-label {
         left: auto;
         right: 10px;
-        background-color: #d7292a;
+        background-color: yellowgreen;
     }
 
     &:hover .product-new-label {
@@ -336,24 +332,76 @@ img.card-img-top {
     right: 0px;
     height: 40rem;
 }
+// <<<<<<< HEAD
+// .cart-item {
+//     display: flex;
+//     background-color: rosybrown;
+//     width: 100%;
+//     height: 50%;
+//     border-radius: 10px;
+//     &__container {
+//         &__row {
+//             width: 13px;
+//             height: 13px;
+//             &__col {
+//                 img {
+//                     width: 100px;
+//                     height: 100px;
+//                 }
+//             }
+//             &__name {
+//             }
+//         }
+//     }
+// }
+
 .cart-item {
-    display: flex;
-    background-color: rosybrown;
-    width: 100%;
-    height: 50%;
-    border-radius: 10px;
+    border: 1px solid red;
+
+    padding-right: 0px;
+
     &__container {
         &__row {
-            width: 13px;
-            height: 13px;
             &__col {
-                img {
-                    width: 100px;
-                    height: 100px;
+                & > img {
+                    width: 3rem;
+                    height: 3rem;
                 }
             }
             &__name {
+                display: flex;
+
+                align-items: center;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
             }
         }
+        &__quantity {
+            & .quantity {
+                margin-right: 15px;
+                width: 1rem;
+                input {
+                    width: 2.5rem;
+                    outline: none;
+                    text-align: center;
+                }
+
+                text-align: center;
+            }
+        }
+        &__price {
+            padding-left: 1rem;
+        }
     }
+}
+.paypage {
+    background-color: black;
+    width: 20rem;
+    height: 20rem;
+}
+
+.cart-icon-header {
+    background: aliceblue;
+    border-radius: 7px;
 }

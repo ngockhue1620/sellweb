@@ -19,7 +19,7 @@ export default function ProductCard(props) {
                     </a>
 
                     <span class="product-new-label">New</span>
-                    <span class="product-discount-label">-10%</span>
+                    <span class="product-discount-label">LIMITED</span>
                 </div>
                 <div class="product-content">
                     <h3 class="title">

@@ -43,7 +43,7 @@ export default function Header(props) {
                                 </a>
                             </li>
                             <li onClick={onClickCart} class="nav-item">
-                                <a class="nav-link">
+                                <a class="nav-link cart-icon-header">
                                     <Cart></Cart>
                                 </a>
                             </li>

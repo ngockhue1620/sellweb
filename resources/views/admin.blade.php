@@ -18,9 +18,5 @@
     </body>
     
     <script src="{{ mix('js/admin.js') }}"></script>
-<<<<<<< HEAD
-   
-=======
-    
->>>>>>> 58fe47f81b50e511f92a66801faf8332e1818c9a
+
 </html>

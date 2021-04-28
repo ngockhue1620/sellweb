@@ -4556,7 +4556,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Body(props) {
+function Body() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     "class": "Body ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Menu_Menu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Content_Content__WEBPACK_IMPORTED_MODULE_1__.default, {})]
@@ -4830,7 +4830,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _assets_cart_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/cart.svg */ "./resources/js/assets/cart.svg");
+/* harmony import */ var _assets_shopping_cart_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/shopping-cart.svg */ "./resources/js/assets/shopping-cart.svg");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -4853,9 +4853,11 @@ function Cart() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "quantity",
       children: countQuantity()
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-      "class": "glyphicon glyphicon-shopping-cart"
-    }), " "]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      src: _assets_shopping_cart_svg__WEBPACK_IMPORTED_MODULE_2__.default,
+      height: 32,
+      width: 32
+    })]
   });
 }
 
@@ -5001,7 +5003,7 @@ function Header(props) {
               onClick: onClickCart,
               "class": "nav-item",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                "class": "nav-link",
+                "class": "nav-link cart-icon-header",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
@@ -5273,7 +5275,7 @@ function ProductCard(props) {
           children: "New"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           "class": "product-discount-label",
-          children: "-10%"
+          children: "LIMITED"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         "class": "product-content",
@@ -10415,21 +10417,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/assets/cart.svg":
-/*!**************************************!*\
-  !*** ./resources/js/assets/cart.svg ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/cart.svg?891d6e7904d70eb9a53cc2483e44c4f8");
-
-/***/ }),
-
 /***/ "./resources/js/assets/minusIcon.svg":
 /*!*******************************************!*\
   !*** ./resources/js/assets/minusIcon.svg ***!
@@ -10442,6 +10429,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/minusIcon.svg?088c3818d8b8f098e2fed83765b30619");
+
+/***/ }),
+
+/***/ "./resources/js/assets/shopping-cart.svg":
+/*!***********************************************!*\
+  !*** ./resources/js/assets/shopping-cart.svg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/shopping-cart.svg?95e6201dc89e79df2b5ed932632d648f");
 
 /***/ }),
 

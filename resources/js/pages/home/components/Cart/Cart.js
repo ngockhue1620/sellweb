@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import cart from "../../../../assets/cart.svg";
+import cart from "../../../../assets/shopping-cart.svg";
 
 export default function Cart() {
     const cartProducts = useSelector((state) => state.cartProducts);
@@ -12,7 +12,7 @@ export default function Cart() {
     return (
         <div className="cart">
             <div className="quantity">{countQuantity()}</div>
-            <span class="glyphicon glyphicon-shopping-cart"></span>{" "}
+            <img src={cart} height={32} width={32}></img>
         </div>
     );
 }

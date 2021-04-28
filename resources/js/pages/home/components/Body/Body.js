@@ -4,7 +4,7 @@ import Content from "../Content/Content";
 
 import Menu from "../Menu/Menu";
 
-export default function Body(props) {
+export default function Body() {
     return (
         <div class="Body ">
             <Menu></Menu>

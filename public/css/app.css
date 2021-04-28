@@ -1,7 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://kit.fontawesome.com/148040cbf9.js);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10104,7 +10101,7 @@ h3 {
 .product-grid4 .product-discount-label {
   left: auto;
   right: 10px;
-  background-color: #d7292a;
+  background-color: yellowgreen;
 }
 .product-grid4:hover .product-new-label {
   opacity: 0;
@@ -10306,17 +10303,41 @@ img.card-img-top {
 }
 
 .cart-item {
+  border: 1px solid red;
+  padding-right: 0px;
+}
+.cart-item__container__row__col > img {
+  width: 3rem;
+  height: 3rem;
+}
+.cart-item__container__row__name {
   display: flex;
-  background-color: rosybrown;
-  width: 100%;
-  height: 50%;
-  border-radius: 10px;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-.cart-item__container__row {
-  width: 13px;
-  height: 13px;
+.cart-item__container__quantity .quantity {
+  margin-right: 15px;
+  width: 1rem;
+  text-align: center;
 }
-.cart-item__container__row__col img {
-  width: 100px;
-  height: 100px;
+.cart-item__container__quantity .quantity input {
+  width: 2.5rem;
+  outline: none;
+  text-align: center;
+}
+.cart-item__container__price {
+  padding-left: 1rem;
+}
+
+.paypage {
+  background-color: black;
+  width: 20rem;
+  height: 20rem;
+}
+
+.cart-icon-header {
+  background: aliceblue;
+  border-radius: 7px;
 }
