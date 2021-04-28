@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/js/components/public-page/Slider.js
 import React, { Component } from "react";
 
 export default class Slider extends Component {
@@ -8,6 +9,15 @@ export default class Slider extends Component {
                 class="carousel slide"
                 data-ride="carousel"
             >
+=======
+
+
+import React from 'react'
+
+export default function Slider() {
+    return (
+        <div id="carouselExampleIndicators" class="Slider carousel slide my-4" data-ride="carousel">
+>>>>>>> faa864778fc8f56f38ebb88cd7bac15685a1822d:resources/js/pages/home/components/Slider/Slider.js
                 <ol class="carousel-indicators">
                     <li
                         data-target="#carouselExampleIndicators"
@@ -71,6 +81,11 @@ export default class Slider extends Component {
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+<<<<<<< HEAD:resources/js/components/public-page/Slider.js
         );
     }
+=======
+    )
+>>>>>>> faa864778fc8f56f38ebb88cd7bac15685a1822d:resources/js/pages/home/components/Slider/Slider.js
 }
+

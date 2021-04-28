@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/js/components/public-page/Header.js
 import React, { Component } from "react";
 import "../../../sass/Header.scss";
 export default class Header extends Component {
@@ -10,6 +11,48 @@ export default class Header extends Component {
                             <a class="navbar-brand" href="#">
                                 FCT TEAMWORK
                             </a>
+=======
+import React, { Component } from 'react'
+import Cart from '../Cart/Cart'
+
+
+
+export default class Header extends Component {
+    render() {
+        return (
+
+            <div className='Header'>
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">Clothes Shop</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+
+                                    <a class="nav-link" href="/">Home
+                                         <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">
+                                        <Cart></Cart>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">Login</a>
+                                </li>
+                            </ul>
+>>>>>>> faa864778fc8f56f38ebb88cd7bac15685a1822d:resources/js/pages/home/components/Header/Header.js
                         </div>
                         <ul class="nav navbar-nav navbar-right">
                             <form
