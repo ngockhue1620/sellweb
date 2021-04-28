@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import ProductItem from './ProductItem';
 import { Label, Table } from 'reactstrap';
 import { Form, CardImg, Button, Input, Modal, ModalHeader, ModalBody, ModalFooter, Card, InputGroupAddon, InputGroup } from 'reactstrap';
@@ -29,7 +28,7 @@ export default class Index extends Component {
             
     }
     getProduct() {
-        axios.get(`http://127.0.0.1:8000/api/product`)
+        axios.get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
             .then((response) => {
                 
                 this.setState({
@@ -117,7 +116,7 @@ export default class Index extends Component {
              imageAddress:this.state.url
          }
          //https://laravel-react-sell-web.herokuapp.com/api/product
-        axios.post(`http://127.0.0.1:8000/api/product`,formdata)
+        axios.post(`https://laravel-react-sell-web.herokuapp.com/api/product`,formdata)
         .then((data) => {
             if(data.status==200)
             {
