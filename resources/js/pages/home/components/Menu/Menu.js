@@ -33,7 +33,7 @@ export default function Menu(props) {
   return (
     <div class="Menu col-lg-3">
         <div class="category-menu">
-          <h1 class="my-4">Clothes Shop</h1>
+          <h3 class="my-4">Danh Mục Sản Phẩm</h3>
           <div class="list-group ">
             
           {categoryList.map((category, index) => (<Category idClick={idClick} handelCategoryClick={handelCategoryClick} key={index} category={category}></Category>))}

@@ -10022,7 +10022,7 @@ h3 {
 }
 .product-grid4 .product-image4 img {
   width: 100%;
-  height: auto;
+  height: 27em;
 }
 .product-grid4 .social {
   width: 180px;
@@ -10209,13 +10209,12 @@ nav .navbar-brand {
   color: #695656;
   font-size: 27px;
   font-weight: 600;
-  padding-left: 10%;
 }
 nav .navbar-nav {
   float: right;
-  margin-left: 10%;
+  right: 7%;
   list-style-type: none;
-  position: relative;
+  position: absolute;
 }
 nav .navbar-nav .nav-item {
   border-radius: 5px;
