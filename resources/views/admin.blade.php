@@ -18,5 +18,5 @@
     </body>
     
     <script src="{{ mix('js/admin.js') }}"></script>
-    
+
 </html>

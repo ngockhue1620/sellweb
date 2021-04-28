@@ -13,13 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_Body_Body__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Body/Body */ "./resources/js/pages/home/components/Body/Body.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_Menu_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Menu/Menu */ "./resources/js/pages/home/components/Menu/Menu.js");
-/* harmony import */ var _components_Category_Category__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Category/Category */ "./resources/js/pages/home/components/Category/Category.js");
-/* harmony import */ var _components_Content_Content__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Content/Content */ "./resources/js/pages/home/components/Content/Content.js");
-/* harmony import */ var _components_Slider_Slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Slider/Slider */ "./resources/js/pages/home/components/Slider/Slider.js");
-/* harmony import */ var _components_ProductCard_ProductCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ProductCard/ProductCard */ "./resources/js/pages/home/components/ProductCard/ProductCard.js");
-/* harmony import */ var _api_axiosClient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../api/axiosClient */ "./resources/js/api/axiosClient.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _api_axiosClient__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api/axiosClient */ "./resources/js/api/axiosClient.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41,11 +36,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-
 
 
 
@@ -81,7 +71,7 @@ var HomePage = /*#__PURE__*/function (_Component) {
   }, {
     key: "getCategories",
     value: function getCategories() {
-      _api_axiosClient__WEBPACK_IMPORTED_MODULE_7__.default.get('/api/category').then(function (data) {// console.log(data)
+      _api_axiosClient__WEBPACK_IMPORTED_MODULE_2__.default.get('/api/category').then(function (data) {// console.log(data)
       })["catch"](function (error) {
         console.log(error);
       });
@@ -91,7 +81,7 @@ var HomePage = /*#__PURE__*/function (_Component) {
     value: function getProduct() {
       var _this2 = this;
 
-      _api_axiosClient__WEBPACK_IMPORTED_MODULE_7__.default.get('/api/product').then(function (response) {
+      _api_axiosClient__WEBPACK_IMPORTED_MODULE_2__.default.get('/api/product').then(function (response) {
         _this2.setState({
           listProducts: response
         });
@@ -102,9 +92,9 @@ var HomePage = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "Homepage",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Body_Body__WEBPACK_IMPORTED_MODULE_0__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Body_Body__WEBPACK_IMPORTED_MODULE_0__.default, {})
       });
     }
   }]);

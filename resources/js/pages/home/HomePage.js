@@ -1,14 +1,7 @@
 
 
 import Body from './components/Body/Body'
-
 import React, { Component } from 'react'
-import Menu from './components/Menu/Menu'
-import Category from './components/Category/Category'
-import Content from './components/Content/Content'
-import Slider from './components/Slider/Slider'
-
-import Card from './components/ProductCard/ProductCard'
 import axiosClient from '../../api/axiosClient'
 
 export default class HomePage extends Component {

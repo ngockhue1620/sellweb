@@ -3,8 +3,10 @@ import addIcon from '../../../../assets/addIcon.svg'
 import minusIcon from '../../../../assets/minusIcon.svg'
 import cancelIcon from '../../../../assets/cancel.svg'
 import { useDispatch } from 'react-redux'
+
 import { removeProduct, setQuantity } from '../../../../reducers/cartSlice'
 import { Col, Row } from 'reactstrap'
+
 
 export default function CartItem(props) {
 
@@ -51,6 +53,7 @@ export default function CartItem(props) {
 
     }
     return (
+
         <Row className="cart-item container">
             <Col xs="8" className="cart-item__container">
                 <Row className="cart-item__container__row">
@@ -89,6 +92,7 @@ export default function CartItem(props) {
                 <Row className="cart-item__container__price">
                     {product.product.price * product.quantity + " đ"}
                 </Row>
+
 
             </Col>
 

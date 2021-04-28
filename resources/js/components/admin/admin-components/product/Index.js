@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
+
 import axiosClient from '../../../../api/axiosClient'
+
 
 import ProductItem from './ProductItem';
 import { Label, Table } from 'reactstrap';
@@ -118,7 +120,7 @@ export default class Index extends Component {
              color:this.state.color,
              imageAddress:this.state.url
          }
-        axiosClient.post('/api/product',formdata)
+        axios.post(`https://laravel-react-sell-web.herokuapp.com/api/product`,formdata)
         .then((data) => {
             if(data.status==200)
             {
@@ -135,7 +137,7 @@ export default class Index extends Component {
         }).catch(function (error) {
             console.log(error);
         });
-        this.setState({ value: !value})
+        this.setState({ value: !this.state.value})
 
 
     }

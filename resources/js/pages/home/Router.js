@@ -5,11 +5,18 @@ import {
   Link // <a></a> 
 } from "react-router-dom"
 
-import { Suspense, lazy, useState } from 'react'
+
+import { Suspense, useState } from 'react'
+
+
+import HomePage from './HomePage'
+
 import About from "../About/About"
 import Header from "./components/Header/Header"
-const HomePage = lazy(() => import('./HomePage'))
-// const TestPage = lazy(() => import('./test'))
+
+
+
+
 
 import React from 'react'
 import CartContainer from "./components/CartContainer/CartContainer"
@@ -22,6 +29,7 @@ export default function App() {
   const isClickCart = () => {
     console.log("isClickCart")
     setIsShowCart(!isShowCart)
+
   }
   return (
     <Router>

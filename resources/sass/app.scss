@@ -11,8 +11,10 @@
     margin-top: 70px;
 }
 img.card-img-top {
-    width: 200px;
-    height: 230px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: 300px;
 }
 .category-menu{
     position:fixed;
@@ -61,7 +63,7 @@ img.card-img-top {
     transition: all 1000s ease-in-out 0s;
     z-index: 1000;
     position: fixed;
-    right:0px;
+    right:0;
     width: 30%;
     height: 45rem;
     background-color: whitesmoke;
@@ -86,6 +88,7 @@ img.card-img-top {
 }
 
 .cart-item{
+
     border: 1px solid lightgray;
     
     padding-right: 0px;
@@ -134,6 +137,8 @@ img.card-img-top {
        &__price{
         
         padding-left: 1rem;
+
+ 
         
     }
    }
