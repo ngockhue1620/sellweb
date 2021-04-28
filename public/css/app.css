@@ -10248,8 +10248,11 @@ nav .navbar-nav .nav-item .nav-link:hover {
 }
 
 img.card-img-top {
-  width: 200px;
-  height: 230px;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 300px;
 }
 
 .category-menu {
@@ -10297,7 +10300,7 @@ img.card-img-top {
 .cart-container {
   z-index: 1;
   position: fixed;
-  right: 0px;
+  right: 0;
   width: 30%;
   height: 100%;
   background-color: black;
@@ -10310,19 +10313,16 @@ img.card-img-top {
 .cart-item__container-left {
   height: 3rem;
   display: flex;
-  width: 80%;
 }
 .cart-item__container-left > img {
   width: 10%;
 }
 .cart-item__container-left > div {
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 90%;
   padding: 15px;
-}
-.cart-item__container-right {
-  width: 20%;
 }
 .cart-item__container-right__quantity {
   width: 20%;

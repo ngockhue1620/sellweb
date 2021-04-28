@@ -21,7 +21,6 @@ class CreateOrderDetailsTable extends Migration
             $table->float('price', 8, 2);
             $table->float('total', 8, 2);
 
-
             $table->timestamps();
         });
     }

@@ -2,8 +2,8 @@
 
 
 import React from 'react'
-import CartContainer from '../CartContainer/CartContainer'
 import Content from '../Content/Content'
+import CartContainer from  '../CartContainer/CartContainer'
 import Menu from '../Menu/Menu'
 
 export default function Body(props) {

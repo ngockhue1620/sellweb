@@ -14,10 +14,6 @@
 .product-grid4 {
     position: relative;
 
-    .product-image4 {
-        position: relative;
-    }
-
     font-family: Poppins, sans-serif;
     text-align: center;
     border-radius: 5px;
@@ -30,14 +26,14 @@
     }
 
     .product-image4 {
+        position: relative;
         a {
             display: flex;
-        }
+            img {
+                width: 100%;
 
-        img {
-            width: 100%;
-
-            height: auto;
+                height: auto;
+            }
         }
     }
 
@@ -52,62 +48,6 @@
         top: 50%;
         transform: translateY(-50%);
         transition: all 0.3s ease 0s;
-    }
-
-    &:hover .social li {
-        opacity: 1;
-    }
-
-    .social li a {
-        color: #222;
-        background: #fff;
-        font-size: 17px;
-        line-height: 36px;
-        width: 40px;
-        height: 36px;
-        border-radius: 2px;
-        margin: 0 5px;
-        display: block;
-        transition: all 0.3s ease 0s;
-
-        &:hover {
-            color: #fff;
-            background: #16a085;
-        }
-
-        &:after,
-        &:before {
-            content: attr(data-tip);
-            color: #fff;
-            background-color: #000;
-            font-size: 12px;
-            line-height: 20px;
-            border-radius: 3px;
-            padding: 0 5px;
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(-50%);
-            position: absolute;
-            left: 50%;
-            top: -30px;
-        }
-
-        &:after {
-            content: "";
-            height: 15px;
-            width: 15px;
-            border-radius: 0;
-            transform: translateX(-50%) rotate(45deg);
-            top: -22px;
-            z-index: -1;
-        }
-
-        &:hover {
-            &:after,
-            &:before {
-                opacity: 1;
-            }
-        }
     }
 
     .product-discount-label,
@@ -286,6 +226,11 @@ nav {
 img.card-img-top {
     width: 200px;
     height: 230px;
+
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: 300px;
 }
 .category-menu {
     position: fixed;
@@ -330,7 +275,11 @@ img.card-img-top {
 .cart-container {
     z-index: 1;
     position: fixed;
+
     right: 0px;
+
+    right: 0;
+
     width: 30%;
     height: 100%;
     background-color: black;
@@ -341,7 +290,7 @@ img.card-img-top {
     &__container-left {
         height: 3rem;
         display: flex;
-        width: 80%;
+
         // background-color: black;
         & > img {
             width: 10%;
@@ -350,25 +299,32 @@ img.card-img-top {
             // line-height: 2;
             // -webkit-box-orient: vertical;
             // -webkit-line-clamp:0;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             width: 90%;
             padding: 15px;
         }
     }
-    &__container-right {
-        width: 20%;
-        &__quantity {
-            > * {
-                margin: 0rem 0.25rem;
+
+    &_quantity {
+        > * {
+            margin: 0rem 0.25rem;
+
+            &__container-right {
+                &_quantity {
+                    > * {
+                        margin: 0rem 0.25rem;
+                    }
+                    & > quanlity {
+                        margin: 0 1rem;
+                    }
+                    width: 20%;
+                    display: flex;
+                    text-align: center;
+                    padding: 1rem 0rem;
+                }
             }
-            & > quanlity {
-                margin: 0 1rem;
-            }
-            width: 20%;
-            display: flex;
-            text-align: center;
-            padding: 1rem 0rem;
         }
     }
 }
