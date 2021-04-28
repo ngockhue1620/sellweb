@@ -18,5 +18,5 @@
     </body>
     
     <script src="{{ mix('js/admin.js') }}"></script>
-    <script src="{{ mix('js/axiosClient.js') }}"></script>
+    
 </html>

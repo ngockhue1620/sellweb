@@ -141,141 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 function Body(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     "class": "Body ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Menu_Menu__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Content_Content__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CartContainer_CartContainer__WEBPACK_IMPORTED_MODULE_1__.default, {})]
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/pages/home/components/CartContainer/CartContainer.js":
-/*!***************************************************************************!*\
-  !*** ./resources/js/pages/home/components/CartContainer/CartContainer.js ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ CartContainer)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ListGroup.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ListGroupItem.js");
-/* harmony import */ var _CartItem_CartItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../CartItem/CartItem */ "./resources/js/pages/home/components/CartItem/CartItem.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-function CartContainer() {
-  var listProducts = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.cartProducts;
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "cart-container",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
-      children: listProducts.map(function (product, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          tag: "a",
-          href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_CartItem_CartItem__WEBPACK_IMPORTED_MODULE_2__.default, {
-            product: product
-          })
-        });
-      })
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/pages/home/components/CartItem/CartItem.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/pages/home/components/CartItem/CartItem.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ CartItem)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _assets_addIcon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../assets/addIcon.svg */ "./resources/js/assets/addIcon.svg");
-/* harmony import */ var _assets_minusIcon_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/minusIcon.svg */ "./resources/js/assets/minusIcon.svg");
-/* harmony import */ var _assets_cancel_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../assets/cancel.svg */ "./resources/js/assets/cancel.svg");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducer_cartSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../reducer/cartSlice */ "./resources/js/reducer/cartSlice.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-
-
-function CartItem(props) {
-  var product = props.product;
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
-
-  var onAddClick = function onAddClick(id) {
-    dispatch((0,_reducer_cartSlice__WEBPACK_IMPORTED_MODULE_5__.addQuatity)(id));
-  };
-
-  var onSubClick = function onSubClick(id) {
-    dispatch((0,_reducer_cartSlice__WEBPACK_IMPORTED_MODULE_5__.subQuatity)(id));
-  };
-
-  var onRemoveClick = function onRemoveClick(id) {
-    dispatch((0,_reducer_cartSlice__WEBPACK_IMPORTED_MODULE_5__.removeProduct)(id));
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "cart-item",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "cart-item__container-left",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-        src: product.product.imageAddress
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        children: product.product.productName
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "cart-item__container-right",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "cart-item__container-right__quantity",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-          onClick: function onClick() {
-            return onAddClick(product.product.id);
-          },
-          width: 20,
-          height: 20,
-          src: _assets_addIcon_svg__WEBPACK_IMPORTED_MODULE_1__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "quanlity",
-          children: product.quantity
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-          onClick: function onClick() {
-            return onSubClick(product.product.id);
-          },
-          width: 20,
-          height: 20,
-          src: _assets_minusIcon_svg__WEBPACK_IMPORTED_MODULE_2__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-          onClick: function onClick() {
-            return onRemoveClick(product.product.id);
-          },
-          width: 20,
-          height: 20,
-          src: _assets_cancel_svg__WEBPACK_IMPORTED_MODULE_3__.default
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "cart-item__container-right__price",
-        children: product.product.price * product.quantity + " đ"
-      })]
-    })]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Menu_Menu__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Content_Content__WEBPACK_IMPORTED_MODULE_2__.default, {})]
   });
 }
 
@@ -361,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducer_productSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../reducer/productSlice */ "./resources/js/reducer/productSlice.js");
+/* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../reducers/productSlice */ "./resources/js/reducers/productSlice.js");
 /* harmony import */ var _ProductCard_ProductCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ProductCard/ProductCard */ "./resources/js/pages/home/components/ProductCard/ProductCard.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -392,7 +258,7 @@ function ListProducts(props) {
             switch (_context.prev = _context.next) {
               case 0:
                 // You can await here
-                dispatch((0,_reducer_productSlice__WEBPACK_IMPORTED_MODULE_3__.getAll)()); // ...
+                dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_3__.getAll)()); // ...
 
               case 1:
               case "end":
@@ -433,9 +299,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducer_categorySlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../reducer/categorySlice */ "./resources/js/reducer/categorySlice.js");
+/* harmony import */ var _reducers_categorySlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../reducers/categorySlice */ "./resources/js/reducers/categorySlice.js");
 /* harmony import */ var _Category_Category__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Category/Category */ "./resources/js/pages/home/components/Category/Category.js");
-/* harmony import */ var _reducer_productSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../reducer/productSlice */ "./resources/js/reducer/productSlice.js");
+/* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../reducers/productSlice */ "./resources/js/reducers/productSlice.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -475,7 +341,7 @@ function Menu(props) {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
 
   var handelCategoryClick = function handelCategoryClick(category) {
-    dispatch((0,_reducer_productSlice__WEBPACK_IMPORTED_MODULE_5__.showProductsByCategoryId)(category));
+    dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_5__.showProductsByCategoryId)(category));
     setIdClick(category.id);
   };
 
@@ -491,7 +357,7 @@ function Menu(props) {
             switch (_context.prev = _context.next) {
               case 0:
                 // You can await here
-                dispatch((0,_reducer_categorySlice__WEBPACK_IMPORTED_MODULE_3__.getAll)()); // ...
+                dispatch((0,_reducers_categorySlice__WEBPACK_IMPORTED_MODULE_3__.getAll)()); // ...
 
               case 1:
               case "end":
@@ -551,7 +417,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducer_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../reducer/cartSlice */ "./resources/js/reducer/cartSlice.js");
+/* harmony import */ var _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../reducers/cartSlice */ "./resources/js/reducers/cartSlice.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -568,7 +434,7 @@ function ProductCard(props) {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
 
   var _onClick = function onClick(product) {
-    dispatch((0,_reducer_cartSlice__WEBPACK_IMPORTED_MODULE_2__.addProduct)(product));
+    dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.addProduct)(product));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -579,7 +445,6 @@ function ProductCard(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       "class": "card h-100",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        href: "#",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
           "class": "card-img-top",
           src: imageAddress,
@@ -590,7 +455,6 @@ function ProductCard(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
           "class": "card-title",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-            href: "#",
             children: productName
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
@@ -760,603 +624,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	} else {}
 }());
 
-
-/***/ }),
-
-/***/ "./node_modules/classnames/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/classnames/index.js ***!
-  \******************************************/
-/***/ ((module, exports) => {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-  Copyright (c) 2018 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames() {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				if (arg.length) {
-					var inner = classNames.apply(null, arg);
-					if (inner) {
-						classes.push(inner);
-					}
-				}
-			} else if (argType === 'object') {
-				if (arg.toString === Object.prototype.toString) {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				} else {
-					classes.push(arg.toString());
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if ( true && module.exports) {
-		classNames.default = classNames;
-		module.exports = classNames;
-	} else if (true) {
-		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else {}
-}());
-
-
-/***/ }),
-
-/***/ "./resources/js/assets/addIcon.svg":
-/*!*****************************************!*\
-  !*** ./resources/js/assets/addIcon.svg ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/addIcon.svg?c6f2e133007f44613b0d8814fe8ae64c");
-
-/***/ }),
-
-/***/ "./resources/js/assets/cancel.svg":
-/*!****************************************!*\
-  !*** ./resources/js/assets/cancel.svg ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/cancel.svg?c88be099e498ed448a45f12919b779ed");
-
-/***/ }),
-
-/***/ "./resources/js/assets/minusIcon.svg":
-/*!*******************************************!*\
-  !*** ./resources/js/assets/minusIcon.svg ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/minusIcon.svg?088c3818d8b8f098e2fed83765b30619");
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/ListGroup.js":
-/*!*************************************************!*\
-  !*** ./node_modules/reactstrap/es/ListGroup.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
-
-
-
-
-
-
-var propTypes = {
-  tag: _utils__WEBPACK_IMPORTED_MODULE_5__.tagPropType,
-  flush: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
-  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object),
-  horizontal: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string)])
-};
-var defaultProps = {
-  tag: 'ul',
-  horizontal: false
-};
-
-var getHorizontalClass = function getHorizontalClass(horizontal) {
-  if (horizontal === false) {
-    return false;
-  } else if (horizontal === true || horizontal === "xs") {
-    return "list-group-horizontal";
-  }
-
-  return "list-group-horizontal-" + horizontal;
-};
-
-var ListGroup = function ListGroup(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      Tag = props.tag,
-      flush = props.flush,
-      horizontal = props.horizontal,
-      attributes = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(props, ["className", "cssModule", "tag", "flush", "horizontal"]);
-
-  var classes = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()(className, 'list-group', // list-group-horizontal cannot currently be mixed with list-group-flush
-  // we only try to apply horizontal classes if flush is false
-  flush ? 'list-group-flush' : getHorizontalClass(horizontal)), cssModule);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, attributes, {
-    className: classes
-  }));
-};
-
-ListGroup.propTypes = propTypes;
-ListGroup.defaultProps = defaultProps;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListGroup);
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/ListGroupItem.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/reactstrap/es/ListGroupItem.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
-
-
-
-
-
-
-var propTypes = {
-  tag: _utils__WEBPACK_IMPORTED_MODULE_5__.tagPropType,
-  active: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
-  disabled: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
-  color: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
-  action: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().any),
-  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object)
-};
-var defaultProps = {
-  tag: 'li'
-};
-
-var handleDisabledOnClick = function handleDisabledOnClick(e) {
-  e.preventDefault();
-};
-
-var ListGroupItem = function ListGroupItem(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      Tag = props.tag,
-      active = props.active,
-      disabled = props.disabled,
-      action = props.action,
-      color = props.color,
-      attributes = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(props, ["className", "cssModule", "tag", "active", "disabled", "action", "color"]);
-
-  var classes = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()(className, active ? 'active' : false, disabled ? 'disabled' : false, action ? 'list-group-item-action' : false, color ? "list-group-item-" + color : false, 'list-group-item'), cssModule); // Prevent click event when disabled.
-
-  if (disabled) {
-    attributes.onClick = handleDisabledOnClick;
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, attributes, {
-    className: classes
-  }));
-};
-
-ListGroupItem.propTypes = propTypes;
-ListGroupItem.defaultProps = defaultProps;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListGroupItem);
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/utils.js":
-/*!*********************************************!*\
-  !*** ./node_modules/reactstrap/es/utils.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getScrollbarWidth": () => (/* binding */ getScrollbarWidth),
-/* harmony export */   "setScrollbarWidth": () => (/* binding */ setScrollbarWidth),
-/* harmony export */   "isBodyOverflowing": () => (/* binding */ isBodyOverflowing),
-/* harmony export */   "getOriginalBodyPadding": () => (/* binding */ getOriginalBodyPadding),
-/* harmony export */   "conditionallyUpdateScrollbar": () => (/* binding */ conditionallyUpdateScrollbar),
-/* harmony export */   "setGlobalCssModule": () => (/* binding */ setGlobalCssModule),
-/* harmony export */   "mapToCssModules": () => (/* binding */ mapToCssModules),
-/* harmony export */   "omit": () => (/* binding */ omit),
-/* harmony export */   "pick": () => (/* binding */ pick),
-/* harmony export */   "warnOnce": () => (/* binding */ warnOnce),
-/* harmony export */   "deprecated": () => (/* binding */ deprecated),
-/* harmony export */   "DOMElement": () => (/* binding */ DOMElement),
-/* harmony export */   "targetPropType": () => (/* binding */ targetPropType),
-/* harmony export */   "tagPropType": () => (/* binding */ tagPropType),
-/* harmony export */   "TransitionTimeouts": () => (/* binding */ TransitionTimeouts),
-/* harmony export */   "TransitionPropTypeKeys": () => (/* binding */ TransitionPropTypeKeys),
-/* harmony export */   "TransitionStatuses": () => (/* binding */ TransitionStatuses),
-/* harmony export */   "keyCodes": () => (/* binding */ keyCodes),
-/* harmony export */   "PopperPlacements": () => (/* binding */ PopperPlacements),
-/* harmony export */   "canUseDOM": () => (/* binding */ canUseDOM),
-/* harmony export */   "isReactRefObj": () => (/* binding */ isReactRefObj),
-/* harmony export */   "toNumber": () => (/* binding */ toNumber),
-/* harmony export */   "isObject": () => (/* binding */ isObject),
-/* harmony export */   "isFunction": () => (/* binding */ isFunction),
-/* harmony export */   "findDOMElements": () => (/* binding */ findDOMElements),
-/* harmony export */   "isArrayOrNodeList": () => (/* binding */ isArrayOrNodeList),
-/* harmony export */   "getTarget": () => (/* binding */ getTarget),
-/* harmony export */   "defaultToggleEvents": () => (/* binding */ defaultToggleEvents),
-/* harmony export */   "addMultipleEventListeners": () => (/* binding */ addMultipleEventListeners),
-/* harmony export */   "focusableElements": () => (/* binding */ focusableElements)
-/* harmony export */ });
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_0__);
- // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.4/js/src/modal.js#L436-L443
-
-function getScrollbarWidth() {
-  var scrollDiv = document.createElement('div'); // .modal-scrollbar-measure styles // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.4/scss/_modal.scss#L106-L113
-
-  scrollDiv.style.position = 'absolute';
-  scrollDiv.style.top = '-9999px';
-  scrollDiv.style.width = '50px';
-  scrollDiv.style.height = '50px';
-  scrollDiv.style.overflow = 'scroll';
-  document.body.appendChild(scrollDiv);
-  var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
-  document.body.removeChild(scrollDiv);
-  return scrollbarWidth;
-}
-function setScrollbarWidth(padding) {
-  document.body.style.paddingRight = padding > 0 ? padding + "px" : null;
-}
-function isBodyOverflowing() {
-  return document.body.clientWidth < window.innerWidth;
-}
-function getOriginalBodyPadding() {
-  var style = window.getComputedStyle(document.body, null);
-  return parseInt(style && style.getPropertyValue('padding-right') || 0, 10);
-}
-function conditionallyUpdateScrollbar() {
-  var scrollbarWidth = getScrollbarWidth(); // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/js/src/modal.js#L433
-
-  var fixedContent = document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top')[0];
-  var bodyPadding = fixedContent ? parseInt(fixedContent.style.paddingRight || 0, 10) : 0;
-
-  if (isBodyOverflowing()) {
-    setScrollbarWidth(bodyPadding + scrollbarWidth);
-  }
-}
-var globalCssModule;
-function setGlobalCssModule(cssModule) {
-  globalCssModule = cssModule;
-}
-function mapToCssModules(className, cssModule) {
-  if (className === void 0) {
-    className = '';
-  }
-
-  if (cssModule === void 0) {
-    cssModule = globalCssModule;
-  }
-
-  if (!cssModule) return className;
-  return className.split(' ').map(function (c) {
-    return cssModule[c] || c;
-  }).join(' ');
-}
-/**
- * Returns a new object with the key/value pairs from `obj` that are not in the array `omitKeys`.
- */
-
-function omit(obj, omitKeys) {
-  var result = {};
-  Object.keys(obj).forEach(function (key) {
-    if (omitKeys.indexOf(key) === -1) {
-      result[key] = obj[key];
-    }
-  });
-  return result;
-}
-/**
- * Returns a filtered copy of an object with only the specified keys.
- */
-
-function pick(obj, keys) {
-  var pickKeys = Array.isArray(keys) ? keys : [keys];
-  var length = pickKeys.length;
-  var key;
-  var result = {};
-
-  while (length > 0) {
-    length -= 1;
-    key = pickKeys[length];
-    result[key] = obj[key];
-  }
-
-  return result;
-}
-var warned = {};
-function warnOnce(message) {
-  if (!warned[message]) {
-    /* istanbul ignore else */
-    if (typeof console !== 'undefined') {
-      console.error(message); // eslint-disable-line no-console
-    }
-
-    warned[message] = true;
-  }
-}
-function deprecated(propType, explanation) {
-  return function validate(props, propName, componentName) {
-    if (props[propName] !== null && typeof props[propName] !== 'undefined') {
-      warnOnce("\"" + propName + "\" property of \"" + componentName + "\" has been deprecated.\n" + explanation);
-    }
-
-    for (var _len = arguments.length, rest = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-      rest[_key - 3] = arguments[_key];
-    }
-
-    return propType.apply(void 0, [props, propName, componentName].concat(rest));
-  };
-} // Shim Element if needed (e.g. in Node environment)
-
-var Element = typeof window === 'object' && window.Element || function () {};
-
-function DOMElement(props, propName, componentName) {
-  if (!(props[propName] instanceof Element)) {
-    return new Error('Invalid prop `' + propName + '` supplied to `' + componentName + '`. Expected prop to be an instance of Element. Validation failed.');
-  }
-}
-var targetPropType = prop_types__WEBPACK_IMPORTED_MODULE_0___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_0___default().string), (prop_types__WEBPACK_IMPORTED_MODULE_0___default().func), DOMElement, prop_types__WEBPACK_IMPORTED_MODULE_0___default().shape({
-  current: (prop_types__WEBPACK_IMPORTED_MODULE_0___default().any)
-})]);
-var tagPropType = prop_types__WEBPACK_IMPORTED_MODULE_0___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_0___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_0___default().string), prop_types__WEBPACK_IMPORTED_MODULE_0___default().shape({
-  $$typeof: (prop_types__WEBPACK_IMPORTED_MODULE_0___default().symbol),
-  render: (prop_types__WEBPACK_IMPORTED_MODULE_0___default().func)
-}), prop_types__WEBPACK_IMPORTED_MODULE_0___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_0___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_0___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_0___default().string), prop_types__WEBPACK_IMPORTED_MODULE_0___default().shape({
-  $$typeof: (prop_types__WEBPACK_IMPORTED_MODULE_0___default().symbol),
-  render: (prop_types__WEBPACK_IMPORTED_MODULE_0___default().func)
-})]))]);
-/* eslint key-spacing: ["error", { afterColon: true, align: "value" }] */
-// These are all setup to match what is in the bootstrap _variables.scss
-// https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
-
-var TransitionTimeouts = {
-  Fade: 150,
-  // $transition-fade
-  Collapse: 350,
-  // $transition-collapse
-  Modal: 300,
-  // $modal-transition
-  Carousel: 600 // $carousel-transition
-
-}; // Duplicated Transition.propType keys to ensure that Reactstrap builds
-// for distribution properly exclude these keys for nested child HTML attributes
-// since `react-transition-group` removes propTypes in production builds.
-
-var TransitionPropTypeKeys = ['in', 'mountOnEnter', 'unmountOnExit', 'appear', 'enter', 'exit', 'timeout', 'onEnter', 'onEntering', 'onEntered', 'onExit', 'onExiting', 'onExited'];
-var TransitionStatuses = {
-  ENTERING: 'entering',
-  ENTERED: 'entered',
-  EXITING: 'exiting',
-  EXITED: 'exited'
-};
-var keyCodes = {
-  esc: 27,
-  space: 32,
-  enter: 13,
-  tab: 9,
-  up: 38,
-  down: 40,
-  home: 36,
-  end: 35,
-  n: 78,
-  p: 80
-};
-var PopperPlacements = ['auto-start', 'auto', 'auto-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-end', 'bottom', 'bottom-start', 'left-end', 'left', 'left-start'];
-var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-function isReactRefObj(target) {
-  if (target && typeof target === 'object') {
-    return 'current' in target;
-  }
-
-  return false;
-}
-
-function getTag(value) {
-  if (value == null) {
-    return value === undefined ? '[object Undefined]' : '[object Null]';
-  }
-
-  return Object.prototype.toString.call(value);
-}
-
-function toNumber(value) {
-  var type = typeof value;
-  var NAN = 0 / 0;
-
-  if (type === 'number') {
-    return value;
-  }
-
-  if (type === 'symbol' || type === 'object' && getTag(value) === '[object Symbol]') {
-    return NAN;
-  }
-
-  if (isObject(value)) {
-    var other = typeof value.valueOf === 'function' ? value.valueOf() : value;
-    value = isObject(other) ? "" + other : other;
-  }
-
-  if (type !== 'string') {
-    return value === 0 ? value : +value;
-  }
-
-  value = value.replace(/^\s+|\s+$/g, '');
-  var isBinary = /^0b[01]+$/i.test(value);
-  return isBinary || /^0o[0-7]+$/i.test(value) ? parseInt(value.slice(2), isBinary ? 2 : 8) : /^[-+]0x[0-9a-f]+$/i.test(value) ? NAN : +value;
-}
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type === 'object' || type === 'function');
-}
-function isFunction(value) {
-  if (!isObject(value)) {
-    return false;
-  }
-
-  var tag = getTag(value);
-  return tag === '[object Function]' || tag === '[object AsyncFunction]' || tag === '[object GeneratorFunction]' || tag === '[object Proxy]';
-}
-function findDOMElements(target) {
-  if (isReactRefObj(target)) {
-    return target.current;
-  }
-
-  if (isFunction(target)) {
-    return target();
-  }
-
-  if (typeof target === 'string' && canUseDOM) {
-    var selection = document.querySelectorAll(target);
-
-    if (!selection.length) {
-      selection = document.querySelectorAll("#" + target);
-    }
-
-    if (!selection.length) {
-      throw new Error("The target '" + target + "' could not be identified in the dom, tip: check spelling");
-    }
-
-    return selection;
-  }
-
-  return target;
-}
-function isArrayOrNodeList(els) {
-  if (els === null) {
-    return false;
-  }
-
-  return Array.isArray(els) || canUseDOM && typeof els.length === 'number';
-}
-function getTarget(target, allElements) {
-  var els = findDOMElements(target);
-
-  if (allElements) {
-    if (isArrayOrNodeList(els)) {
-      return els;
-    }
-
-    if (els === null) {
-      return [];
-    }
-
-    return [els];
-  } else {
-    if (isArrayOrNodeList(els)) {
-      return els[0];
-    }
-
-    return els;
-  }
-}
-var defaultToggleEvents = ['touchstart', 'click'];
-function addMultipleEventListeners(_els, handler, _events, useCapture) {
-  var els = _els;
-
-  if (!isArrayOrNodeList(els)) {
-    els = [els];
-  }
-
-  var events = _events;
-
-  if (typeof events === 'string') {
-    events = events.split(/\s+/);
-  }
-
-  if (!isArrayOrNodeList(els) || typeof handler !== 'function' || !Array.isArray(events)) {
-    throw new Error("\n      The first argument of this function must be DOM node or an array on DOM nodes or NodeList.\n      The second must be a function.\n      The third is a string or an array of strings that represents DOM events\n    ");
-  }
-
-  Array.prototype.forEach.call(events, function (event) {
-    Array.prototype.forEach.call(els, function (el) {
-      el.addEventListener(event, handler, useCapture);
-    });
-  });
-  return function removeEvents() {
-    Array.prototype.forEach.call(events, function (event) {
-      Array.prototype.forEach.call(els, function (el) {
-        el.removeEventListener(event, handler, useCapture);
-      });
-    });
-  };
-}
-var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled]):not([type=hidden])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'object', 'embed', '[tabindex]:not(.modal)', 'audio[controls]', 'video[controls]', '[contenteditable]:not([contenteditable="false"])'];
 
 /***/ })
 

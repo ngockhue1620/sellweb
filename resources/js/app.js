@@ -8,8 +8,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './pages/home/Router';
-import Header from './pages/home/components/Header/Header';
-import store, { persistor } from './reducer/store';
+
+import store, { persistor } from './reducers/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
 
