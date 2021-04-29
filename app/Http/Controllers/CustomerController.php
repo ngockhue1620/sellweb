@@ -28,8 +28,10 @@ class CustomerController extends Controller
             // find is has => update
             // find is none => create
             
-             $customer = Customer::where('email','=',$request->email,"and",'password','=',$request->password)->with(['getInCart'])->get();
-             
+             $customer = Customer::where('email','=',$request->email)
+                                 ->where('password','=',$request->password)
+                                 ->with(['getInCart'])->get();
+             return $customer;
             if(empty($customer)|| count($customer)==0)
             {
                 return \response()->json(["status"=>false],404);
