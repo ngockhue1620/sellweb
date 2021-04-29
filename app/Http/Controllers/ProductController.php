@@ -33,20 +33,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      * id
-    categoryId
-    productName
-    price
-    quantity
-    imageAdress
-    description
-    color
+   
      */
     public function store(Request $request)
     {
         try{
-            if($request == null) return \response()->json(["message"=>"Data is none"]);
+            if($request == null) return \response()->json(["message"=>"Data is none"],404);
             $product = Product::firstOrCreate([
-                "categoryId"  =>$request->categoryId,
+                "category_id"  =>$request->categoryId,
                 "productName" =>$request->productName,
                 "price"       =>$request->price,
                 "quantity"    =>$request->quantity,
@@ -55,7 +49,7 @@ class ProductController extends Controller
                 "color"       =>$request->color  
             ]);
             $product->save();
-            return response()->json(['product'=> $product],200);
+            return response()->json(['product'=> $product,'status'=>true]);
         }
         catch(\Exception $e)
         {
@@ -105,7 +99,7 @@ class ProductController extends Controller
             if($request == null) return \response()->json(["message"=>"Data is none"]);
             $product = Product::find($id);
             $product->update($request->all());
-            return response()->json(['product'=> $product],200);
+            return response()->json(['product'=> $product,'status'=>true],200);
         }
         catch(\Exception $e)
         {
@@ -131,7 +125,7 @@ class ProductController extends Controller
             
             $product = Product::find($id);
             $product->delete();
-            return response()->json(['message'=> "Delete successful"],200);
+            return response()->json(['message'=> "Delete successful",'status'=>true],200);
         }
         catch(\Exception $e)
         {

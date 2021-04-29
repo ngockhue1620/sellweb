@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axiosClient from '../../../../axiosClient'
 import CustomerItem from './CustomerItem';
 import { Table } from 'reactstrap';
 export default class Index extends Component {
@@ -16,7 +15,7 @@ export default class Index extends Component {
 
     }
     getCustomer() {
-        axiosClient.get('/api/customer')
+        axios.get('/api/customer')
             .then((data) => {
                 this.setState({
                     listCustomers: data

@@ -37,7 +37,7 @@ class In_CartController extends Controller
         try{
             $in_cart = InCart::firstOrCreate($request->all());
             $in_cart->save();
-            return \response()->json(['in_cart'=>$in_cart]);
+            return \response()->json(['in_cart'=>$in_cart,'status'=>true]);
         }
         catch(\Exception $e)
         {
@@ -63,9 +63,9 @@ class In_CartController extends Controller
             $in_carts = InCart::where("customerid",$id)->get();
             if(count($in_carts)==0) 
             {
-                return \response()->json(["in_cart"=>"Your cart is null"]);
+                return \response()->json(["in_cart"=>"Your cart is null",'status'=>false]);
             }
-            return \response()->json(['in_cart'=>$in_carts]);
+            return \response()->json(['in_cart'=>$in_carts,'status'=>true]);
         }
         catch(\Exception $e)
         {

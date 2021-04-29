@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axiosClient from '../../../../axiosClient'
 import CategoryItem from './CategoryItem';
 import { Table } from 'reactstrap';
 export default class Index extends Component {
