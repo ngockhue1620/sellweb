@@ -415,6 +415,9 @@ img.card-img-top {
 .user-avt {
     // width: 50%;
     height: 2rem;
+    &__toggle{
+        height: 100%;
+    }
     
 }
 .error{
