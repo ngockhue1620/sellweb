@@ -72,7 +72,10 @@ export default function CartItem(props) {
     }
 
     return (
-        <Row className="cart-item container">
+        <Row 
+        data-aos="fade-up"
+     data-aos-anchor-placement="center-center"
+        className="cart-item container">
             <Col xs="8" className="cart-item__container">
                 <Row className="cart-item__container__row">
                     <Col className="cart-item__container__row__col" xs="3">

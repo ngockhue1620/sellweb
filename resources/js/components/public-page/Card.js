@@ -2,7 +2,10 @@ import "../../../sass/Card.scss";
 export default function Card({ product }) {
     return (
         <div class="Container">
-            <div class="row">
+            <div class="row"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
+            >
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid4">
                         <div class="product-image4">

@@ -4073,7 +4073,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var axiosClient = axios__WEBPACK_IMPORTED_MODULE_1___default().create({
-  baseURL: "https://laravel-react-sell-web.herokuapp.com/",
+  baseURL: "http://127.0.0.1:8000/",
   headers: {
     "content-type": "application/json"
   },
@@ -4623,6 +4623,8 @@ function CartContainer(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+    "data-aos": "fade-up",
+    "data-aos-anchor-placement": "center-center",
     className: "cart-container",
     children: [listProducts.map(function (product, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_CartItem_CartItem__WEBPACK_IMPORTED_MODULE_2__.default, {
@@ -4752,6 +4754,8 @@ function CartItem(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+    "data-aos": "fade-up",
+    "data-aos-anchor-placement": "center-center",
     className: "cart-item container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
       xs: "8",
@@ -4862,6 +4866,10 @@ function Cart() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "cart",
+    "data-aos": "fade-left",
+    "data-aos-anchor": "#example-anchor",
+    "data-aos-offset": "500",
+    "data-aos-duration": "500",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "quantity",
       children: countQuantity()
@@ -5110,7 +5118,8 @@ function ListProducts(props) {
     className: "row ListProducts",
     children: listProducts.map(function (product, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ProductCard_ProductCard__WEBPACK_IMPORTED_MODULE_4__.default, {
-        product: product
+        product: product,
+        index: index
       }, index);
     })
   });
@@ -5265,15 +5274,18 @@ function ProductCard(props) {
       productName = _props$product.productName,
       price = _props$product.price,
       description = _props$product.description;
+  var index = props.index;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
 
   var _onClick = function onClick() {
     dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.addProduct)(props.product));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    "data-aos": index > 2 && "fade-up",
+    "data-aos-anchor-placement": index > 2 && "center-center",
     "class": "ProductCard col-lg-4 col-md-6 mb-4 ",
-    children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       "class": "product-grid4",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         "class": "product-image4",
@@ -5308,7 +5320,7 @@ function ProductCard(props) {
           children: "ADD TO CART"
         })]
       })]
-    })]
+    })
   });
 }
 
