@@ -31,6 +31,7 @@
         "query-string": "^7.0.0",
         "react-alert": "^7.0.2",
         "react-icons": "^4.2.0",
+        "react-promise-tracker": "^2.1.0",
         "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
         "reactstrap": "^8.9.0",

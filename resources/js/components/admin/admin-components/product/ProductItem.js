@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 // import { Spinner } from 'reactstrap';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Card,CardImg, CardText } from 'reactstrap';
-export default function ProductItem(product,products) {
+import { Spinner,Alert,Button, Modal, ModalHeader, ModalBody, ModalFooter,Card,CardImg, CardText } from 'reactstrap';
+export default function ProductItem(product) {
     
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
@@ -30,7 +30,7 @@ export default function ProductItem(product,products) {
                 .catch(function (error) {
                     console.log(error);
                 });
-            
+ 
             setDelete("show-product-item-admin");
             setConfirm(false);
         }
@@ -40,6 +40,33 @@ export default function ProductItem(product,products) {
         }
     }
 
+    // update product 
+    // const [confirmUpdate,setConfirmUpdate] = useState(false);
+    // const [isUpdate,setUpdate] = useState("");
+    // const confirmUpdate =(value) =>{
+    //     if(value==true)
+    //     {   
+    //         axios
+    //             .put(`http://127.0.0.1:8000/api/product/${product.product.id}`)
+    //             .then((response) => {
+    //                 if (response.status == 200) {                        
+    //                     alert('Delete Success success')
+    //                 } else {
+    //                     console.log("errors");
+    //                 }
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error);
+    //             });
+ 
+            
+    //         setConfirm(false);
+    //     }
+    //     else
+    //     {
+    //         setConfirm(false)
+    //     }
+    // }
 
     return (
         <>
@@ -80,7 +107,7 @@ export default function ProductItem(product,products) {
       </Modal>
         {/* confirm delete */}
       <Modal isOpen={confirm} >
-        <ModalHeader>{product.product.productName}</ModalHeader>
+        <ModalHeader><Alert color="danger">Bạn Có Chắc Chắc Xóa Mặc Hàng Này</Alert></ModalHeader>
         <ModalBody>
           <Card>
               <CardImg  className="Card-Img-Detail" src={product.product.imageAddress}/>
@@ -91,9 +118,28 @@ export default function ProductItem(product,products) {
         </ModalBody>
         <ModalFooter>
           <Button color="secondary" onClick={()=>{confirmDelete(true)}}>Delete</Button>
-          <Button color="secondary" onClick={()=>{confirmDelete(false)}}>Close</Button>
+          <Button color="success" onClick={()=>{confirmDelete(false)}}>Close</Button>
         </ModalFooter>
       </Modal>
+
+
+      <Modal isOpen={confirm} >
+        <ModalHeader style={{margin:"auto "}}><Alert color="danger">Bạn Có Chắc Chắc Xóa Mặc Hàng Này</Alert></ModalHeader>
+        <ModalBody>
+          <Card>
+              <CardImg  className="Card-Img-Detail" src={product.product.imageAddress}/>
+              <CardText>Tồn Kho:{product.product.quantity}</CardText>
+              <CardText>Giá Cả :{product.product.price}</CardText>
+              <CardText>Mô tả  :{product.product.description}</CardText>
+          </Card>
+        </ModalBody>
+        <ModalFooter style={{margin:"auto "}}>
+          <Button color="secondary" onClick={()=>{confirmDelete(true)}}>Delete</Button>
+          <Button color="success" onClick={()=>{confirmDelete(false)}}>Close</Button>
+        </ModalFooter>
+            <Spinner className="container" type="grow" color="danger" >a</Spinner>
+      </Modal>
+      
       </>
         
     )

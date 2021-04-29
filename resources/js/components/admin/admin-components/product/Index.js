@@ -16,6 +16,7 @@ import {
     Card,
     InputGroupAddon,
     InputGroup,
+    
 } from "reactstrap";
 import axios from "axios";
 
@@ -44,7 +45,7 @@ export default class Index extends Component {
     }
     getProduct() {
         axios
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+            .get(`http://127.0.0.1:8000/api/product`)
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
@@ -132,7 +133,7 @@ export default class Index extends Component {
         //http://127.0.0.1:8000/
         axios
             .post(
-                `https://laravel-react-sell-web.herokuapp.com/api/product`,
+                `http://127.0.0.1:8000/api/product`,
                 formdata
             )
             .then((response) => {
@@ -196,9 +197,12 @@ export default class Index extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.listProducts.map((product, index) => (
-                                <ProductItem key={index} product={product}   />
-                            ))}
+                            {
+                                
+                                   this.state.listProducts.map((product, index) => (
+                                    <ProductItem key={index} product={product}   />
+                                ))
+                            }
                         </tbody>
                     </Table>
                 </div>
