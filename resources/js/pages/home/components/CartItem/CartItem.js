@@ -37,20 +37,35 @@ export default function CartItem(props) {
         
 
         setQuantityInput(e.target.value)
-        if(value>0)
-        dispatch(setQuantity({
-            id: product.product.id,
-            quantity: e.target.value
-        }))
+        if(e.target.value!="")
+        {
+            dispatch(setQuantity({
+                id: product.product.id,
+                quantity: e.target.value
+            })
+            )
+        }
+        
 
+    }
+    const onClick=()=>{
+        setQuantityInput(product.quantity)
+        onQuatityClick(product)
+        
     }
     const onKeyUp = (e) => {
         
+        
         if (e.keyCode === 13) {
-            if(parseInt(quantityInput)>0)
+            if(quantityInput==="") return;
+            if(parseInt(quantityInput)<1) return;
             onQuatityClick(null)
         }
 
+    }
+    const onBlur=()=>{
+        console.log("onblur")
+        onQuatityClick(null)
     }
     return (
 
@@ -73,9 +88,9 @@ export default function CartItem(props) {
                     <Col xs="2">
                         <img onClick={() => onAddClick(product.product.id)} width={20} height={20} src={addIcon}></img>
                     </Col>
-                    <Col xs="2" onClick={() => onQuatityClick(product)} className="quantity">
+                    <Col xs="2"   onClick={onClick} className="quantity">
                         {editQuantityId === product.product.id ?
-                            <input min="1" onKeyUp={onKeyUp} onChange={onChange} type="number" value={quantityInput}></input>
+                            <input onBlur={onBlur} autoFocus="true" min="1"  onKeyUp={onKeyUp} onChange={onChange} type="number" value={quantityInput}></input>
                             : (product.quantity)}
                     </Col>
                     <Col xs="2" >
