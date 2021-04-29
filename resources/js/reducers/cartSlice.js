@@ -3,10 +3,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
 
-const initialState=[]
+
 const cartSlice = createSlice({
     name: 'cartListProduct',
-    initialState: initialState,
+    initialState: [],
     reducers: {
         addProduct: (state, action) => {
             
@@ -40,7 +40,7 @@ const cartSlice = createSlice({
             const {id,quantity}=payload
             const quantityNumber=parseInt(quantity)
             if(quantityNumber<1){
-                return state.filter((item)=>item.product.id!=id)
+                return state;
             }
             let setQuantityId=state.findIndex((item)=>{
                 

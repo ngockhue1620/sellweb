@@ -7,6 +7,12 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 //header
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 .product-grid4 {
     position: relative;
 
@@ -254,6 +260,9 @@ nav {
             background: #1b1b1b;
             margin: 0 5px;
 
+
+
+
             .nav-link {
                 color: white;
 
@@ -274,7 +283,7 @@ nav {
     padding-left: 1.75rem;
     padding-bottom: 3rem;
 }
-//////header////////
+
 .aboutComponet {
     margin-top: 70px;
 }

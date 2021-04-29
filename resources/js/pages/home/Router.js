@@ -18,7 +18,7 @@ export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
 
     const isClickCart = () => {
-        console.log("isClickCart");
+        
         setIsShowCart(!isShowCart);
     };
     return (

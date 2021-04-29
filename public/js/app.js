@@ -4499,7 +4499,6 @@ function App() {
       setIsShowCart = _useState2[1];
 
   var isClickCart = function isClickCart() {
-    console.log("isClickCart");
     setIsShowCart(!isShowCart);
   };
 
@@ -4725,18 +4724,31 @@ function CartItem(props) {
   };
 
   var onChange = function onChange(e) {
-    var value = parseInt(e.target.value);
     setQuantityInput(e.target.value);
-    if (value > 0) dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_5__.setQuantity)({
-      id: product.product.id,
-      quantity: e.target.value
-    }));
+
+    if (e.target.value != "") {
+      dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_5__.setQuantity)({
+        id: product.product.id,
+        quantity: e.target.value
+      }));
+    }
+  };
+
+  var onClick = function onClick() {
+    setQuantityInput(product.quantity);
+    onQuatityClick(product);
   };
 
   var onKeyUp = function onKeyUp(e) {
     if (e.keyCode === 13) {
-      if (parseInt(quantityInput) > 0) onQuatityClick(null);
+      if (quantityInput === "") return;
+      if (parseInt(quantityInput) < 1) return;
+      onQuatityClick(null);
     }
+  };
+
+  var onBlur = function onBlur() {
+    onQuatityClick(null);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
@@ -4775,11 +4787,11 @@ function CartItem(props) {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
           xs: "2",
-          onClick: function onClick() {
-            return onQuatityClick(product);
-          },
+          onClick: onClick,
           className: "quantity",
           children: editQuantityId === product.product.id ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+            onBlur: onBlur,
+            autoFocus: "true",
             min: "1",
             onKeyUp: onKeyUp,
             onChange: onChange,
@@ -5432,10 +5444,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 
-var initialState = [];
 var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
   name: 'cartListProduct',
-  initialState: initialState,
+  initialState: [],
   reducers: {
     addProduct: function addProduct(state, action) {
       var idx = state.findIndex(function (item) {
@@ -5464,9 +5475,7 @@ var cartSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
       var quantityNumber = parseInt(quantity);
 
       if (quantityNumber < 1) {
-        return state.filter(function (item) {
-          return item.product.id != id;
-        });
+        return state;
       }
 
       var setQuantityId = state.findIndex(function (item) {
