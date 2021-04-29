@@ -15,32 +15,55 @@ class OrderSeeder extends Seeder
     {
         DB::table('orders')->insert([
             [
-                'id' =>1,
+                
                 'customerId'=>1,
+                'recipientPhone'=>'1234312345',
+                'recipientName'=>'dao ngoc khue',
+                'recipientAddress'=>"234/4 ton duc thang",
+                'note'=>"giao truoc 5 ngay",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'id' =>2,
+                
                 'customerId'=>2,
+                'recipientPhone'=>'6754312345',
+                'recipientName'=>'nguyen van a',
+                'recipientAddress'=>"234/4 ton dan",
+                'note'=>"giao truoc 5 ngay",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'id' =>3,
+                
                 'customerId'=>3,
+                'customerId'=>2,
+                'recipientPhone'=>'6754312345',
+                'recipientName'=>'nguyen van a',
+                'recipientAddress'=>"234/4 ton dan",
+                'note'=>"giao truoc 5 ngay",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'id' =>4,
+                
                 'customerId'=>4,
+                'customerId'=>2,
+                'recipientPhone'=>'6754312345',
+                'recipientName'=>'nguyen van a',
+                'recipientAddress'=>"234/4 ton dan",
+                'note'=>"giao truoc 5 ngay",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'id' =>5,
+                
                 'customerId'=>5,
+                'customerId'=>2,
+                'recipientPhone'=>'6754312345',
+                'recipientName'=>'nguyen van a',
+                'recipientAddress'=>"234/4 ton dan",
+                'note'=>"giao truoc 5 ngay",
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
