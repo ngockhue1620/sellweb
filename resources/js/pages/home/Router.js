@@ -2,7 +2,8 @@ import {
     BrowserRouter as Router, // bao boc app cua minh
     Switch, // switch
     Route, // case => path, exact
-    Link, // <a></a>
+    Link,
+    Redirect, // <a></a>
 } from "react-router-dom";
 
 import { Suspense, useState } from "react";
@@ -18,7 +19,6 @@ export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
 
     const isClickCart = () => {
-        
         setIsShowCart(!isShowCart);
     };
     return (
@@ -32,9 +32,9 @@ export default function App() {
                 {isShowCart && <CartContainer></CartContainer>}
 
                 <Switch>
+                    <Redirect exact from="/" to="/homepage" />
                     <Route
-                        exact
-                        path="/"
+                        path="/homepage"
                         render={(props) => <HomePage {...props} />}
                     />
 

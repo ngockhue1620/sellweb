@@ -5,12 +5,18 @@ import { addProduct } from "../../../../reducers/cartSlice";
 
 export default function ProductCard(props) {
     const { imageAddress, productName, price, description } = props.product;
+    const {index}=props
     const dispatch = useDispatch();
     const onClick = () => {
         dispatch(addProduct(props.product));
     };
+    useEffect(()=>{
+        console.log(index)
+    })
     return (
-        <div class="ProductCard col-lg-4 col-md-6 mb-4 ">
+        <div data-aos={index>2?"fade-up":""}
+        data-aos-anchor-placement={index>2?"bottom-bottom":""}
+         class="ProductCard col-lg-4 col-md-6 mb-4 ">
             {" "}
             <div class="product-grid4">
                 <div class="product-image4">
