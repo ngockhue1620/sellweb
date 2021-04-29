@@ -14,10 +14,12 @@ class AddForeignsToInCarts extends Migration
     public function up()
     {
         Schema::table('in_carts', function (Blueprint $table) {
-            if (!Schema::hasColumn('in_carts', 'customerId')) {
-                $table->bigInteger('customerId');
-            }
-            $table->foreign('customerId')->references('id')->on('customers')->onDelete('cascade');
+            Schema::table('in_carts', function (Blueprint $table) {
+                if (!Schema::hasColumn('in_carts', 'customer_id')) {
+                    $table->bigInteger('customer_id')->unsigned()->nullable();
+                }
+                $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            });
         });
     }
 
@@ -28,8 +30,6 @@ class AddForeignsToInCarts extends Migration
      */
     public function down()
     {
-        Schema::table('in_carts', function (Blueprint $table) {
-            //
-        });
+        
     }
 }

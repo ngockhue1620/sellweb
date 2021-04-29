@@ -3,7 +3,7 @@
 import Body from './components/Body/Body'
 import React, { Component } from 'react'
 import axiosClient from '../../api/axiosClient'
-
+import {Spinner} from 'reactstrap'
 export default class HomePage extends Component {
     constructor(props) {
         super(props)
@@ -40,12 +40,11 @@ export default class HomePage extends Component {
     
     render() {
         return (
-
+            
             <div className="Homepage">
-
-                <Body>
-                    
-                </Body>
+               
+                <Body/>
+                
                 {/* <LoginPage></LoginPage> */}
             </div>
         )

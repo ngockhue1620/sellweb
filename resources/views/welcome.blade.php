@@ -8,6 +8,8 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
     <body>
         <div id="root"></div>
@@ -15,7 +17,11 @@
     </body>
     <script src="{{mix('js/app.js')}}" ></script>   
     <script>
-  AOS.init();
-</script>
+
+
+        AOS.init();
+      </script>
+
+
     
 </html>

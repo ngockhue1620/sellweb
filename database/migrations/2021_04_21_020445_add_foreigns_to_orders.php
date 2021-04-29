@@ -14,10 +14,10 @@ class AddForeignsToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            if (!Schema::hasColumn('orders', 'customerId')) {
-                $table->bigInteger('customerId');
+            if (!Schema::hasColumn('orders', 'customer_id')) {
+                $table->bigInteger('customer_id')->unsigned()->nullable();
             }
-            $table->foreign('customerId')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

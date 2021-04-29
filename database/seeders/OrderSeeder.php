@@ -9,14 +9,14 @@ class OrderSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * @return void
+     * @return vo_id
      */
     public function run()
     {
         DB::table('orders')->insert([
             [
                 
-                'customerId'=>1,
+                'customer_id'=>1,
                 'recipientPhone'=>'1234312345',
                 'recipientName'=>'dao ngoc khue',
                 'recipientAddress'=>"234/4 ton duc thang",
@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
             ],
             [
                 
-                'customerId'=>2,
+                'customer_id'=>2,
                 'recipientPhone'=>'6754312345',
                 'recipientName'=>'nguyen van a',
                 'recipientAddress'=>"234/4 ton dan",
@@ -36,8 +36,8 @@ class OrderSeeder extends Seeder
             ],
             [
                 
-                'customerId'=>3,
-                'customerId'=>2,
+                'customer_id'=>3,
+                
                 'recipientPhone'=>'6754312345',
                 'recipientName'=>'nguyen van a',
                 'recipientAddress'=>"234/4 ton dan",
@@ -47,8 +47,8 @@ class OrderSeeder extends Seeder
             ],
             [
                 
-                'customerId'=>4,
-                'customerId'=>2,
+                'customer_id'=>4,
+                
                 'recipientPhone'=>'6754312345',
                 'recipientName'=>'nguyen van a',
                 'recipientAddress'=>"234/4 ton dan",
@@ -58,8 +58,8 @@ class OrderSeeder extends Seeder
             ],
             [
                 
-                'customerId'=>5,
-                'customerId'=>2,
+                'customer_id'=>5,
+                
                 'recipientPhone'=>'6754312345',
                 'recipientName'=>'nguyen van a',
                 'recipientAddress'=>"234/4 ton dan",

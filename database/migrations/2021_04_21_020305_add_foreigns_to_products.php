@@ -15,7 +15,7 @@ class AddForeignsToProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             if (!Schema::hasColumn('products', 'category_id')) {
-                $table->bigInteger('category_id');                
+                $table->bigInteger('category_id')->unsigned()->nullable();                
             }
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
