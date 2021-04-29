@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { render } from 'react-dom'
 
 import ProductItem from "./ProductItem";
 import { Label, Table } from "reactstrap";
+
 import {
     Form,
     CardImg,
@@ -33,14 +35,16 @@ export default class Index extends Component {
             price: 0,
             errorsValue: [],
             isChangeUrl: false,
+            
         };
+        
     }
     componentDidMount() {
         this.getProduct();
     }
     getProduct() {
         axios
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+            .get(`http://127.0.0.1:8000/api/product`)
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
@@ -49,6 +53,8 @@ export default class Index extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+            
+           
     }
     handleClick(value) {
         this.setState({ value: !value, errorsValue: [] });
@@ -85,6 +91,8 @@ export default class Index extends Component {
     handleChangePrice(e) {
         this.setState({ price: e.target.value });
     }
+    //
+    
     // function thêm
     addProduct() {
         this.setState({ errorsValue: [] });
@@ -124,7 +132,7 @@ export default class Index extends Component {
         //http://127.0.0.1:8000/
         axios
             .post(
-                `https://laravel-react-sell-web.herokuapp.com/api/product`,
+                `http://127.0.0.1:8000/api/product`,
                 formdata
             )
             .then((response) => {
@@ -132,6 +140,7 @@ export default class Index extends Component {
                     let products = this.state.listProducts;
                     products.push(response.data.product);
                     this.setState({ listProducts: products });
+                    alert('insert success')
                 } else {
                     console.log("errors");
                 }
@@ -142,10 +151,13 @@ export default class Index extends Component {
 
         this.setState({ value: !this.state.value });
     }
+    // xoa san pham
+   
 
     render() {
         return (
             <>
+                
                 <div
                     className="conten-component-admin"
                     disable={this.state.value}
@@ -185,7 +197,7 @@ export default class Index extends Component {
                         </thead>
                         <tbody>
                             {this.state.listProducts.map((product, index) => (
-                                <ProductItem key={index} product={product} />
+                                <ProductItem key={index} product={product}   />
                             ))}
                         </tbody>
                     </Table>
@@ -309,6 +321,7 @@ export default class Index extends Component {
                         <Button
                             color="primary"
                             onClick={() => this.addProduct()}
+                            
                         >
                             Thêm
                         </Button>

@@ -15,19 +15,19 @@ class InCartSeeder extends Seeder
     {
         DB::table('in_carts')->insert([
             [
-                'customerId' =>1,
+                'customer_id' =>1,
                 'productId'  =>1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'customerId' =>2,
+                'customer_id' =>2,
                 'productId'  =>1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'customerId' =>3,
+                'customer_id' =>3,
                 'productId'  =>5,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
