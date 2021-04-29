@@ -31,7 +31,7 @@ class CustomerController extends Controller
              $customer = Customer::where('email','=',$request->email)
                                  ->where('password','=',$request->password)
                                  ->with(['getInCart'])->get();
-             return $customer;
+             
             if(empty($customer)|| count($customer)==0)
             {
                 return \response()->json(["status"=>false],404);
