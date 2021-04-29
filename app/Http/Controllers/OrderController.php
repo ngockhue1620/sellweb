@@ -40,7 +40,7 @@ class OrderController extends Controller
         DB::beginTransaction();
         try{
             
-        $data = $request->only('customerId');
+        $data = $request->only('customerId','recipientPhone','recipientName','recipientAddress','note');
         $order = Order::Create($data);
         // create order detail
         $order->orderDetail()->createMany($request->orderDetails);
