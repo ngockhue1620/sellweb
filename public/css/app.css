@@ -10355,6 +10355,9 @@ img.card-img-top {
 .user-avt {
   height: 2rem;
 }
+.user-avt__toggle {
+  height: 100%;
+}
 
 .error {
   color: red;
