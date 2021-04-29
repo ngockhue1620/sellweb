@@ -43,7 +43,8 @@ export default function ProductItem(product,products) {
 
     return (
         <>
-        <tr className={isDelete}>
+        <tr className={isDelete} data-aos="fade-up"
+             data-aos-anchor-placement="bottom-bottom">
             <th scope="row">{product.product.id}</th>
             <td onClick={toggle}>{product.product.productName}</td>
             <td>{product.product.price}</td>

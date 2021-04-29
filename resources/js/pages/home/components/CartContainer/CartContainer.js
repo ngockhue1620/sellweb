@@ -21,7 +21,10 @@ export default function CartContainer(props) {
     }
     
     return (
-        <Container className="cart-container">
+        <Container 
+        data-aos="fade-up"
+     data-aos-anchor-placement="center-center"
+        className="cart-container">
             
                 {listProducts.map((product, index) => (
                     

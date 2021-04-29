@@ -23,7 +23,7 @@ export default function ListProducts(props) {
         return (
             <div className='row ListProducts'>
                 {listProducts.map((product,index)=>(
-                    <ProductCard key={index} product={product}></ProductCard>
+                    <ProductCard key={index} product={product} index={index}></ProductCard>
               
                 ))}
      

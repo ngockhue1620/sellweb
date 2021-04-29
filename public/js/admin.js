@@ -2865,6 +2865,8 @@ function ProductItem(product, products) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
       className: isDelete,
+      "data-aos": "fade-up",
+      "data-aos-anchor-placement": "bottom-bottom",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
         scope: "row",
         children: product.product.id
