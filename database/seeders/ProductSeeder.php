@@ -10,13 +10,12 @@ class ProductSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
-     * ['id','productName','category_id','price','quantity','imageAddress','color','description'];
+     * [Name','category_id','price','quantity','imageAddress','color','description'];
      */
     public function run()
     {
         DB::table('products')->insert([
             [   
-                'id'    =>1,
                 'productName' =>'Bộ Đồ Tập Quần Short + Ngắn Tay Butz',
                 'category_id'  =>1,
                 'price'       =>350000,
@@ -28,7 +27,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>2,
                 'productName' =>'Áo Ba Lỗ – Tank Top CRNS',
                 'category_id'  =>1,
                 'price'       =>150000,
@@ -40,7 +38,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>3,
                 'productName' =>'ĐỒNG PHỤC ÁO THUN – ÁO THUN CỔ TRỤ MÀU ĐEN TAY NGẮN 02',
                 'category_id'  =>2,
                 'price'       =>50000,
@@ -52,7 +49,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>4,
                 'productName' =>'ĐỒNG PHỤC NHÀ HÀNG KHÁCH SẠN',
                 'category_id'  =>2,
                 'price'       =>499000,
@@ -64,7 +60,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>5,
                 'productName' =>'ÁO POLO NAM ARISTINO APS035S1',
                 'category_id'  =>3,
                 'price'       =>550000,
@@ -77,7 +72,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>6,
                 'productName' =>'ÁO SƠ MI NAM THỜI TRANG GEREFL DÀI TAY',
                 'category_id'  =>3,
                 'price'       =>570000,
@@ -89,7 +83,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>7,
                 'productName' =>'Đầm Váy Sơ Mi Cổ Đức Cao Cấp',
                 'category_id'  =>4,
                 'price'       =>250000,
@@ -101,7 +94,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>8,
                 'productName' =>'Đầm bút chì kẻ nơ vai',
                 'category_id'  =>4,
                 'price'       =>420000,
@@ -113,7 +105,6 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>9,
                 'productName' =>'ĐỒNG PHỤC CÔNG SỞ – ÁO SƠ MI NAM DÀI TAY MÀU TRẮNG ',
                 'category_id'  =>5,
                 'price'       =>200000,
@@ -125,7 +116,7 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
-                'id'    =>10,
+                            
                 'productName' =>'ÁO SƠ MI NỮ MÀU TRẮNG TAY DÀI PHỐI SỌC ĐEN',
                 'category_id'  =>5,
                 'price'       =>150,
@@ -137,7 +128,7 @@ class ProductSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [   
-                'id'    =>11,
+                            
                 'productName' =>'Quần Rin Nam',
                 'category_id'  =>6,
                 'price'       =>175000,
