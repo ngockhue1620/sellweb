@@ -9,7 +9,7 @@ import InputField from "../InputField/InputField";
 
 export default function CustomForm(props) {
     const dispatch=useDispatch()
-    const { listFormGroups ,massage} = props;
+    const { btnLabel,listFormGroups ,massage} = props;
    
     const initialValues = {};
     return (
@@ -41,7 +41,7 @@ export default function CustomForm(props) {
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}
-                                Login
+                                {btnLabel}
                             </Button>
                         </FormGroup>
                     </Form>

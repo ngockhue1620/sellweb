@@ -61,7 +61,10 @@ export default function Header(props) {
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">
                                             <span class="glyphicon glyphicon-user"></span>{" "}
-                                            Sign Up
+                                            <CustomModal
+                                                buttonLabel="Sign Up"
+                                                className="modal-signup"
+                                            ></CustomModal>
                                         </a>
                                     </li>
                                     <li class="nav-item">

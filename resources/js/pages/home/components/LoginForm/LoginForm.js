@@ -37,6 +37,7 @@ export default function LoginForm(props) {
     };
     return (
         <CustomForm
+        btnLabel="Login"
             massage={massage}
             onSubmit={handleSubmit}
             listFormGroups={listFormGroups}
