@@ -38,32 +38,38 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {   
+        $credentials = $request->only('email', 'password');
+
+       
+           
+            try{
+                if($request == null) return \response()->json(["message"=>"Data is none"],404);
+                $product = Product::firstOrCreate([
+                    "category_id"  =>$request->categoryId,
+                    "productName" =>$request->productName,
+                    "price"       =>$request->price,
+                    "quantity"    =>$request->quantity,
+                    "imageAddress"=>$request->imageAddress,
+                    "description" =>$request->description,
+                    "color"       =>$request->color  
+                ]);
+                $product->save();
+                return response()->json(['product'=> $product,'status'=>true]);
+            }
+            catch(\Exception $e)
+            {
+                return response()->json([
+                    'error'=>[
+                        'file' => $e->getFile(),
+                        'line' => $e->getLine(),
+                        'message' => $e->getMessage()
+                    ]
+                    ],500);
+            }
         
+                   
         
-          try{
-            if($request == null) return \response()->json(["message"=>"Data is none"],404);
-            $product = Product::firstOrCreate([
-                "category_id"  =>$request->categoryId,
-                "productName" =>$request->productName,
-                "price"       =>$request->price,
-                "quantity"    =>$request->quantity,
-                "imageAddress"=>$request->imageAddress,
-                "description" =>$request->description,
-                "color"       =>$request->color  
-            ]);
-            $product->save();
-            return response()->json(['product'=> $product,'status'=>true]);
-        }
-        catch(\Exception $e)
-        {
-            return response()->json([
-                'error'=>[
-                    'file' => $e->getFile(),
-                    'line' => $e->getLine(),
-                    'message' => $e->getMessage()
-                ]
-                ],500);
-        }
+          
         
     }
 
