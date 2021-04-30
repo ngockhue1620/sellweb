@@ -5,6 +5,7 @@ import productApi from '../api/productApi';
 
 
 export const getAll=createAsyncThunk('product/getAll',async(params,thunkAPI)=>{
+    
     const listProducts=await productApi.getAll();
     
     return listProducts;

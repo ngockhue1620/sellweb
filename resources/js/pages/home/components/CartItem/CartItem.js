@@ -35,27 +35,37 @@ export default function CartItem(props) {
         dispatch(removeProduct(product.product.id));
     };
     const onChange = (e) => {
-        const value = parseInt(e.target.value);
-
         setQuantityInput(e.target.value);
-        if (value > 0)
+        if (e.target.value != "") {
             dispatch(
                 setQuantity({
                     id: product.product.id,
                     quantity: e.target.value,
                 })
             );
+        }
+    };
+    const onClick = () => {
+        setQuantityInput(product.quantity);
+        onQuatityClick(product);
     };
     const onKeyUp = (e) => {
         if (e.keyCode === 13) {
-            if (parseInt(quantityInput) > 0) onQuatityClick(null);
+            if (quantityInput === "") return;
+            if (parseInt(quantityInput) < 1) return;
+            onQuatityClick(null);
         }
     };
+    const onBlur = () => {
+        onQuatityClick(null);
+    };
+
     return (
-        <Row 
-        data-aos="fade-up"
-     data-aos-anchor-placement="center-center"
-        className="cart-item container">
+        <Row
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            className="cart-item container"
+        >
             <Col xs="8" className="cart-item__container">
                 <Row className="cart-item__container__row">
                     <Col className="cart-item__container__row__col" xs="3">
@@ -76,13 +86,12 @@ export default function CartItem(props) {
                             src={addIcon}
                         ></img>
                     </Col>
-                    <Col
-                        xs="2"
-                        onClick={() => onQuatityClick(product)}
-                        className="quantity"
-                    >
+
+                    <Col xs="2" onClick={onClick} className="quantity">
                         {editQuantityId === product.product.id ? (
                             <input
+                                onBlur={onBlur}
+                                autoFocus="true"
                                 min="1"
                                 onKeyUp={onKeyUp}
                                 onChange={onChange}

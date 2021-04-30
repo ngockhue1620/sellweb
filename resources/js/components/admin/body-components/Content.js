@@ -13,12 +13,13 @@ import Product from '../admin-components/product/Index'
 import Customer from '../admin-components/customer/index'
 import Order from '../admin-components/order/index'
 import Category from '../admin-components/category/index'
+import { Spinner } from "reactstrap"
 export default class Content extends Component {
     render() {
         return (
             <div className="content-class">
                 <Router>
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense >
                         <Switch>
                             <Route exact path='/admin' render={props => (
                                 <Wellcome {...props} />
