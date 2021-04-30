@@ -37,11 +37,11 @@ export default function UserAvatar() {
             </DropdownToggle>
             <DropdownMenu>
                 <DropdownItem >
-                    Thông tin tài khoản
+                    Information Account
                 </DropdownItem>
-                <DropdownItem>Lịch sử mua hàng</DropdownItem>
-                <DropdownItem>Đổi mật khẩu</DropdownItem>
-                <DropdownItem onClick={handleLogout}>Đăng xuất</DropdownItem>
+                <DropdownItem>History order</DropdownItem>
+                <DropdownItem>Change password</DropdownItem>
+                <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
             </DropdownMenu>
         </Dropdown>
         //     <div >

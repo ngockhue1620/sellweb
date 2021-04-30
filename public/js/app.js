@@ -4435,6 +4435,14 @@ var userApi = {
   login: function login(data) {
     var url = 'api/login';
     return _axiosClient__WEBPACK_IMPORTED_MODULE_0__.default.post(url, data);
+  },
+  signUp: function signUp(data) {
+    var url = 'api/customer';
+    return _axiosClient__WEBPACK_IMPORTED_MODULE_0__.default.post(url, data);
+  },
+  getAll: function getAll() {
+    var url = 'api/customer';
+    return _axiosClient__WEBPACK_IMPORTED_MODULE_0__.default.get(url);
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userApi);
@@ -5183,7 +5191,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function CustomForm(props) {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var listFormGroups = props.listFormGroups,
+  var btnLabel = props.btnLabel,
+      listFormGroups = props.listFormGroups,
       massage = props.massage;
   var initialValues = {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(formik__WEBPACK_IMPORTED_MODULE_0__.Formik, {
@@ -5218,7 +5227,7 @@ function CustomForm(props) {
             color: "primary",
             children: [isSubmitting && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_10__.default, {
               size: "sm"
-            }), "Login"]
+            }), btnLabel]
           })
         })]
       });
@@ -5240,12 +5249,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ CustomModal)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Button.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Modal.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalHeader.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalBody.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Button.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Modal.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalHeader.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalBody.js");
 /* harmony import */ var _LoginForm_LoginForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../LoginForm/LoginForm */ "./resources/js/pages/home/components/LoginForm/LoginForm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _SignUpForm_SignUpForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../SignUpForm/SignUpForm */ "./resources/js/pages/home/components/SignUpForm/SignUpForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5257,6 +5267,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -5276,22 +5287,24 @@ function CustomModal(props) {
     return setModal(!modal);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
       color: "danger",
       onClick: toggle,
       children: buttonLabel
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
       isOpen: modal,
       toggle: toggle,
       className: className,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
         toggle: toggle,
-        children: "Login"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_LoginForm_LoginForm__WEBPACK_IMPORTED_MODULE_1__.default, {
+        children: buttonLabel
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+        children: [buttonLabel === 'Login' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_LoginForm_LoginForm__WEBPACK_IMPORTED_MODULE_1__.default, {
           onToggle: toggle
-        })
+        }), buttonLabel === 'Sign Up' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_SignUpForm_SignUpForm__WEBPACK_IMPORTED_MODULE_2__.default, {
+          onToggle: toggle
+        })]
       })]
     })]
   });
@@ -5400,7 +5413,10 @@ function Header(props) {
                   href: "#",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                     "class": "glyphicon glyphicon-user"
-                  }), " ", "Sign Up"]
+                  }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
+                    buttonLabel: "Sign Up",
+                    className: "modal-signup"
+                  })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 "class": "nav-item",
@@ -5659,6 +5675,7 @@ function LoginForm(props) {
   }();
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomForm_CustomForm__WEBPACK_IMPORTED_MODULE_4__.default, {
+    btnLabel: "Login",
     massage: massage,
     onSubmit: handleSubmit,
     listFormGroups: listFormGroups
@@ -5873,6 +5890,235 @@ function ProductCard(props) {
 
 /***/ }),
 
+/***/ "./resources/js/pages/home/components/SignUpForm/SignUpForm.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/pages/home/components/SignUpForm/SignUpForm.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LoginForm)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Label.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Button.js");
+/* harmony import */ var _api_userApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../api/userApi */ "./resources/js/api/userApi.js");
+/* harmony import */ var _CustomForm_CustomForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CustomForm/CustomForm */ "./resources/js/pages/home/components/CustomForm/CustomForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function LoginForm(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isSignUpSuccess = _useState2[0],
+      setIsSignUpSuccess = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      massage = _useState4[0],
+      setMassage = _useState4[1];
+
+  var onToggle = props.onToggle;
+  var history = (0,react_router__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
+  var listFormGroups = [{
+    label: "Name",
+    type: "text",
+    placeholder: "Enter your name here"
+  }, {
+    label: "Email",
+    type: "text",
+    placeholder: "Enter your user here"
+  }, {
+    label: "Phone",
+    type: "text",
+    placeholder: "Enter your phonenumber here"
+  }, {
+    label: "Password",
+    type: "password",
+    placeholder: "Enter your password here"
+  }, {
+    label: "Password againt",
+    type: "password",
+    placeholder: "Enter your password againt"
+  }];
+
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(values) {
+      var listUsers, name, email, password, phone, passwordAgaint, regExp, isExist, idExist;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _api_userApi__WEBPACK_IMPORTED_MODULE_3__.default.getAll();
+
+            case 2:
+              listUsers = _context.sent;
+              console.log(listUsers);
+              name = values.name, email = values.email, password = values.password, phone = values.phone;
+              passwordAgaint = values["password againt"];
+              regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
+
+              if (regExp.test(name)) {
+                _context.next = 10;
+                break;
+              }
+
+              setMassage("Your Name is invalid!");
+              return _context.abrupt("return");
+
+            case 10:
+              regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
+
+              if (regExp.test(email)) {
+                _context.next = 14;
+                break;
+              }
+
+              setMassage("Your Email is invalid!");
+              return _context.abrupt("return");
+
+            case 14:
+              isExist = function isExist(element, index, array) {
+                return element.email === email;
+              };
+
+              idExist = listUsers.findIndex(isExist);
+
+              if (!(idExist >= 0)) {
+                _context.next = 19;
+                break;
+              }
+
+              setMassage("Your Email is exist");
+              return _context.abrupt("return");
+
+            case 19:
+              regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+              if (phone.match(regExp)) {
+                _context.next = 23;
+                break;
+              }
+
+              setMassage("Your Phone number is invalid!");
+              return _context.abrupt("return");
+
+            case 23:
+              isExist = function isExist(element, index, array) {
+                return element.phone === phone;
+              };
+
+              idExist = listUsers.findIndex(isExist);
+
+              if (!(idExist >= 0)) {
+                _context.next = 28;
+                break;
+              }
+
+              setMassage("Your phone number is exist");
+              return _context.abrupt("return");
+
+            case 28:
+              regExp = /[a-zA-Z0-9!@#$%^&*]{8,}/;
+
+              if (regExp.test(password)) {
+                _context.next = 32;
+                break;
+              }
+
+              setMassage("Your Password is invalid!");
+              return _context.abrupt("return");
+
+            case 32:
+              if (!(passwordAgaint != password)) {
+                _context.next = 35;
+                break;
+              }
+
+              setMassage("Password againt is not true!");
+              return _context.abrupt("return");
+
+            case 35:
+              _context.next = 37;
+              return _api_userApi__WEBPACK_IMPORTED_MODULE_3__.default.signUp({
+                email: email,
+                password: password,
+                phone: phone,
+                customerName: name
+              });
+
+            case 37:
+              setIsSignUpSuccess(true);
+
+            case 38:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function handleSubmit(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var onClickComeBack = function onClickComeBack() {
+    history.push("/homepage");
+    setIsSignUpSuccess(false);
+    onToggle();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    children: isSignUpSuccess ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+        children: "Sign Up Success"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
+        onClick: onClickComeBack,
+        children: "Comeback to Homepage"
+      })]
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomForm_CustomForm__WEBPACK_IMPORTED_MODULE_4__.default, {
+      btnLabel: "Sign Up",
+      massage: massage,
+      onSubmit: handleSubmit,
+      listFormGroups: listFormGroups
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/pages/home/components/Slider/Slider.js":
 /*!*************************************************************!*\
   !*** ./resources/js/pages/home/components/Slider/Slider.js ***!
@@ -6073,14 +6319,14 @@ function UserAvatar() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_10__.default, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
-        children: "Th\xF4ng tin t\xE0i kho\u1EA3n"
+        children: "Information Account"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
-        children: "L\u1ECBch s\u1EED mua h\xE0ng"
+        children: "History order"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
-        children: "\u0110\u1ED5i m\u1EADt kh\u1EA9u"
+        children: "Change password"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
         onClick: handleLogout,
-        children: "\u0110\u0103ng xu\u1EA5t"
+        children: "Logout"
       })]
     })]
   }) //     <div >
