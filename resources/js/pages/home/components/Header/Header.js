@@ -51,7 +51,7 @@ export default function Header(props) {
                                 </a>
                             </li>
                             {user ? (
-                                <li onClick={onClickCart} class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link ">
                                         <UserAvatar></UserAvatar>
                                     </a>
@@ -61,11 +61,14 @@ export default function Header(props) {
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">
                                             <span class="glyphicon glyphicon-user"></span>{" "}
-                                            Sign Up
+                                            <CustomModal
+                                                buttonLabel="Sign Up"
+                                                className="modal-signup"
+                                            ></CustomModal>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" >
+                                        <a class="nav-link">
                                             <span class="glyphicon glyphicon-log-in"></span>{" "}
                                             <CustomModal
                                                 buttonLabel="Login"

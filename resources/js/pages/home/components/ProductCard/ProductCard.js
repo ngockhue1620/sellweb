@@ -12,9 +12,7 @@ export default function ProductCard(props) {
     const onClick = () => {
         dispatch(addProduct(props.product));
     };
-    useEffect(() => {
-        console.log(index);
-    });
+
     return (
         <div
             data-aos={index > 2 && "fade-up"}

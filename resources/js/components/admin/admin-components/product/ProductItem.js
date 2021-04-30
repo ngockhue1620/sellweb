@@ -18,7 +18,7 @@ export default function ProductItem(product) {
                
             
             axios
-                .delete(`http://127.0.0.1:8000/api/product/${product.product.id}`)
+                .delete(`https://laravel-react-sell-web.herokuapp.com/api/product/${product.product.id}`)
                 .then((response) => {
                     if (response.status == 200) {                        
                         alert('Delete Success success')
@@ -105,7 +105,7 @@ export default function ProductItem(product) {
         </ModalFooter>
       </Modal>
         {/* confirm delete */}
-      <Modal isOpen={confirm} >
+      {/* <Modal isOpen={confirm} >
         <ModalHeader><Alert color="danger">Bạn Có Chắc Chắc Xóa Mặc Hàng Này</Alert></ModalHeader>
         <ModalBody>
           <Card>
@@ -119,7 +119,7 @@ export default function ProductItem(product) {
           <Button color="secondary" onClick={()=>{confirmDelete(true)}}>Delete</Button>
           <Button color="success" onClick={()=>{confirmDelete(false)}}>Close</Button>
         </ModalFooter>
-      </Modal>
+      </Modal> */}
 
 
       <Modal isOpen={confirm} >

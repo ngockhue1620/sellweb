@@ -7,7 +7,7 @@ import { login } from "../../../../reducers/userSlice";
 import CustomForm from "../CustomForm/CustomForm";
 
 export default function LoginForm(props) {
-    const [massage,setMassage]=useState("")
+    const [massage, setMassage] = useState("");
     const { onToggle } = props;
     const dispatch = useDispatch();
     const history = useHistory();
@@ -27,17 +27,17 @@ export default function LoginForm(props) {
     const handleSubmit = async (values) => {
         const actionResult = await dispatch(login(values));
         const user = unwrapResult(actionResult);
-        
-        if (user){
-            console.log("user",user)
+
+        if (user) {
+            console.log("user", user);
             onToggle();
-        }
-        else {
-            setMassage("Nhập sai r tg ngu")
+        } else {
+            setMassage("Nhập sai r tg ngu");
         }
     };
     return (
         <CustomForm
+        btnLabel="Login"
             massage={massage}
             onSubmit={handleSubmit}
             listFormGroups={listFormGroups}
