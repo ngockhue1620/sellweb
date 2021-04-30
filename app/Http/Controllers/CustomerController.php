@@ -38,8 +38,29 @@ class CustomerController extends Controller
         try{
             // find is has => update
             // find is none => create
-            $customer = Customer::firstOrCreate($request->all());
+
+            $customer=Customer::where('email','=',$request->email)
+                               ->orWhere('phone','=',$request->phone)->get();
+                              
+            $erro=[];
+            if(!empty($customer)&& count($customer)>0)
+            {
+                if($customer[0]->email==$request->email)
+                {
+                    array_push($erro,"Email đã tồn tại");
+                }
+
+                if($customer[0]->phone==$request->phone)
+                {
+                    
+                    array_push($erro,"SDt đã tồn tại");
+                }
+                return response()->json(["status"=>$erro]);
+            }
+            
+            $customer = Customer::Create($request->all());
             $customer->save();
+            
             return response()->json(['customer'=> $customer,'status'=>true],200);
 
         }
