@@ -62,7 +62,9 @@ export default class Index extends Component {
     }
     getProduct() {
         axios
+
             .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
