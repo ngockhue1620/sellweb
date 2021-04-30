@@ -39,7 +39,7 @@ Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy');
 //customer
 Route::post('customer','App\Http\Controllers\CustomerController@store');
 // Route::get('customer','App\Http\Controllers\CustomerController@index');
-Route::get('customer/create','App\Http\Controllers\CustomerController@create');
+Route::post('login','App\Http\Controllers\CustomerController@login');
 // Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
