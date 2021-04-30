@@ -44,8 +44,6 @@ export default function OrderForm(props) {
     const handleSubmit = async (values) => {
         
         
-        
-        const { name, phone,address,note } = values;
 
         
 
@@ -73,7 +71,7 @@ export default function OrderForm(props) {
                 total:product.quantity*product.product.price
             })
         })
-        D
+        
         const order={
             customer_id: user.id,
             recipientPhone: phone,
@@ -82,7 +80,7 @@ export default function OrderForm(props) {
             note: note,
             orderDetails:orderDetails
         }
-        D
+        console.log(order)
         const res=await orderApi.postOrder(order);
         if(res.status)
         {
