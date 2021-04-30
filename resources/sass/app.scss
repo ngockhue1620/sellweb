@@ -7,6 +7,12 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 //header
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 .product-grid4 {
     position: relative;
 
@@ -239,7 +245,6 @@ nav {
         color: rgb(105, 86, 86);
         font-size: 27px;
         font-weight: 600;
-       
     }
 
     .navbar-nav {
@@ -274,7 +279,7 @@ nav {
     padding-left: 1.75rem;
     padding-bottom: 3rem;
 }
-//////header////////
+
 .aboutComponet {
     margin-top: 70px;
 }
@@ -317,11 +322,13 @@ img.card-img-top {
 .cart {
     position: relative;
     .quantity {
+        text-align: center;
         position: absolute;
         z-index: 1;
         color: red;
         font-weight: 800;
-        top: -5px;
+        top: -10px;
+        right: -4px;
     }
 }
 .cart-container {
@@ -404,4 +411,15 @@ img.card-img-top {
 .cart-icon-header {
     background: aliceblue;
     border-radius: 7px;
+}
+.user-avt {
+    // width: 50%;
+    height: 2rem;
+    &__toggle{
+        height: 100%;
+    }
+    
+}
+.error{
+    color: red;
 }

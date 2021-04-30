@@ -10002,6 +10002,14 @@ h3 {
     border-color: #dee2e6;
   }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 .product-grid4 {
   position: relative;
   font-family: Poppins, sans-serif;
@@ -10286,11 +10294,13 @@ img.card-img-top {
   position: relative;
 }
 .cart .quantity {
+  text-align: center;
   position: absolute;
   z-index: 1;
   color: red;
   font-weight: 800;
-  top: -5px;
+  top: -10px;
+  right: -4px;
 }
 
 .cart-container {
@@ -10340,4 +10350,15 @@ img.card-img-top {
 .cart-icon-header {
   background: aliceblue;
   border-radius: 7px;
+}
+
+.user-avt {
+  height: 2rem;
+}
+.user-avt__toggle {
+  height: 100%;
+}
+
+.error {
+  color: red;
 }

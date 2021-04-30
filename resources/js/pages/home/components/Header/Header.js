@@ -1,11 +1,14 @@
 import Cart from "../Cart/Cart";
 
 import React from "react";
-import { useEffect } from "react";
+
+import { useSelector } from "react-redux";
+import UserAvatar from "../UserAvatar/UserAvatar";
+import CustomModal from "../CustomModal/CustomModal";
 
 export default function Header(props) {
     const { onClickCart } = props;
-
+    const user = useSelector((state) => state.user);
     return (
         <div className="Header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -47,18 +50,31 @@ export default function Header(props) {
                                     <Cart></Cart>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span class="glyphicon glyphicon-user"></span>{" "}
-                                    Sign Up
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">
-                                    <span class="glyphicon glyphicon-log-in"></span>{" "}
-                                    Login
-                                </a>
-                            </li>
+                            {user ? (
+                                <li class="nav-item">
+                                    <a class="nav-link ">
+                                        <UserAvatar></UserAvatar>
+                                    </a>
+                                </li>
+                            ) : (
+                                <>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span class="glyphicon glyphicon-user"></span>{" "}
+                                            Sign Up
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <span class="glyphicon glyphicon-log-in"></span>{" "}
+                                            <CustomModal
+                                                buttonLabel="Login"
+                                                className="modal-login"
+                                            ></CustomModal>
+                                        </a>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                 </div>
