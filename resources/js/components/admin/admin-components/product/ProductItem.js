@@ -23,6 +23,7 @@ export default function ProductItem(product,products) {
                 .then((response) => {
                     if (response.status == 200) {                        
                         alert('Delete Success success')
+                        setDelete("show-product-item-admin");
                     } else {
                         console.log("errors");
                     }
@@ -31,7 +32,7 @@ export default function ProductItem(product,products) {
                     console.log(error);
                 });
             
-            setDelete("show-product-item-admin");
+           
             setConfirm(false);
         }
         else

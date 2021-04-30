@@ -2107,10 +2107,10 @@ var HomePage = /*#__PURE__*/function (_Component) {
   _createClass(HomePage, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_body_components_Header__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_body_components_Body__WEBPACK_IMPORTED_MODULE_1__.default, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_body_components_Body__WEBPACK_IMPORTED_MODULE_1__.default, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_body_components_Table__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_body_components_Content__WEBPACK_IMPORTED_MODULE_4__.default, {})]
-        })]
+        })
       });
     }
   }]);
@@ -2849,13 +2849,13 @@ function ProductItem(product, products) {
       axios["delete"]("http://127.0.0.1:8000/api/product/".concat(product.product.id)).then(function (response) {
         if (response.status == 200) {
           alert('Delete Success success');
+          setDelete("show-product-item-admin");
         } else {
           console.log("errors");
         }
       })["catch"](function (error) {
         console.log(error);
       });
-      setDelete("show-product-item-admin");
       setConfirm(false);
     } else {
       setConfirm(false);
