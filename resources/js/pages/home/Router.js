@@ -14,6 +14,7 @@ import Header from "./components/Header/Header";
 import React from "react";
 import CartContainer from "./components/CartContainer/CartContainer";
 import PayPage from "../pay/PayPage";
+import Footer from "../footer/footer";
 
 export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
@@ -48,6 +49,7 @@ export default function App() {
                         render={(props) => <PayPage {...props} />}
                     />
                 </Switch>
+                <Footer/>
             </Suspense>
         </Router>
     );
