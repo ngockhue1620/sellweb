@@ -18,6 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Route::middleware(['auth'])->group(function () {
+//     Route::post('product','App\Http\Controllers\ProductController@store');
+//     Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy');
+// });
+
 //supplier
 Route::post('supplier','App\Http\Controllers\SupplierController@store');
 Route::get('supplier','App\Http\Controllers\SupplierController@index');
@@ -38,10 +43,10 @@ Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy')->
 
 //customer
 Route::post('customer','App\Http\Controllers\CustomerController@store');
-
-// Route::get('customer','App\Http\Controllers\CustomerController@index');
-Route::get('customer/create','App\Http\Controllers\CustomerController@create');
-Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth.basic');
+Route::post('login','App\Http\Controllers\CustomerController@login');
+Route::get('customer','App\Http\Controllers\CustomerController@index');
+// Route::get('customer/create','App\Http\Controllers\CustomerController@create');
+Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth');
 
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
@@ -69,7 +74,6 @@ Route::group([
 });
 
 Route::post('files','App\Http\Controllers\FileController@store');
-
 Route::put('files/{id}','App\Http\Controllers\FileController@update');
 Route::delete('files/{id}','App\Http\Controllers\FileController@destroy');
 Route::get('files/{id}','App\Http\Controllers\FileController@show');
