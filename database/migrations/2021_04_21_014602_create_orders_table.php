@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string("recipientPhone");
             $table->string("recipientName");
             $table->string("recipientAddress");
-            $table->string("note");
+            $table->string("note")->nullable();
             $table->timestamps();
         });
     }
