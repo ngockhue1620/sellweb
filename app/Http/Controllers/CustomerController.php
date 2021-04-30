@@ -22,9 +22,34 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        try{
+            // find is has => update
+            // find is none => create
+            
+             $customer = Customer::where('email','=',$request->email)
+                                 ->where('password','=',$request->password)
+                                 ->with(['getInCart'])->get();
+             
+            if(empty($customer)|| count($customer)==0)
+            {
+                return \response()->json(["status"=>false],404);
+            }
+            
+            return response()->json(['customer'=> $customer,'status'=>true],200);
+
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -63,7 +88,30 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            // find is has => update
+            // find is none => create
+            
+             $customer = Customer::where('id','=',$id)->with(['getInCart'])->get();
+             
+            if(empty($customer))
+            {
+                return \response()->json(["status"=>false],404);
+            }
+            
+            return response()->json(['customer'=> $customer,'status'=>true],200);
+
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**

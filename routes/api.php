@@ -38,7 +38,9 @@ Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy');
 
 //customer
 Route::post('customer','App\Http\Controllers\CustomerController@store');
-Route::get('customer','App\Http\Controllers\CustomerController@index');
+// Route::get('customer','App\Http\Controllers\CustomerController@index');
+Route::get('customer/create','App\Http\Controllers\CustomerController@create');
+// Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
 
@@ -70,3 +72,6 @@ Route::put('files/{id}','App\Http\Controllers\FileController@update');
 Route::delete('files/{id}','App\Http\Controllers\FileController@destroy');
 Route::get('files/{id}','App\Http\Controllers\FileController@show');
 Route::get('files','App\Http\Controllers\FileController@index');
+
+//order detail
+Route::get('order-detail','App\Http\Controllers\Order_DetailController@index');

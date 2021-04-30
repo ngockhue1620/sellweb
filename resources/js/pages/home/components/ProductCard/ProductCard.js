@@ -1,33 +1,45 @@
-import { useEffect } from "react"
-import React from 'react'
-import { useDispatch } from "react-redux"
-import { addProduct } from "../../../../reducer/cartSlice"
-
-
+import { useEffect } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../../../reducers/cartSlice";
 
 export default function ProductCard(props) {
+    const { imageAddress, productName, price, description } = props.product;
 
-    const { imageAddress, productName, price, description } = props.product
-    const dispatch=useDispatch()
-    const onClick=(product)=>{
-        dispatch(addProduct(product))
-    }
+    const { index } = props;
+
+    const dispatch = useDispatch();
+    const onClick = () => {
+        dispatch(addProduct(props.product));
+    };
+    useEffect(() => {
+        console.log(index);
+    });
     return (
-        <div onClick={()=>onClick(props.product)} class="ProductCard col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <a href="#"><img class="card-img-top" src={imageAddress} alt=""></img></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">{productName}</a>
-                    </h4>
-                    <h5>{price}</h5>
-                    <p class="card-text">{description}</p>
+        <div
+            data-aos={index > 2 && "fade-up"}
+            data-aos-anchor-placement={index > 2 && "center-center"}
+            class="ProductCard col-lg-4 col-md-6 mb-4 "
+        >
+            <div class="product-grid4">
+                <div class="product-image4">
+                    <a>
+                        <img class="pic-1" src={imageAddress}></img>
+                    </a>
+
+                    <span class="product-new-label">New</span>
+                    <span class="product-discount-label">LIMITED</span>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <div class="product-content">
+                    <h3 class="title">
+                        <a href="#">{productName}</a>
+                    </h3>
+                    <div class="price">{price} VND</div>
+                    <a class="add-to-cart" onClick={() => onClick()}>
+                        ADD TO CART
+                    </a>
                 </div>
             </div>
         </div>
-    )
-
+    );
 }

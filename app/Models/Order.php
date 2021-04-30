@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $table='orders';
-    protected $fillable=['id','customerId'];
+    protected $fillable=['id','customer_id'];
 
     public function orderDetail()
     {
-        return $this->hasMany('App\Models\OrderDetail','order_Id');
+        return $this->hasMany('App\Models\OrderDetail','order_id');
     }
+    
     
 }

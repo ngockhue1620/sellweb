@@ -38,3 +38,7 @@ label.label-insert-admin {
 .input-group {
   padding: 5px;
 }
+
+.show-product-item-admin {
+  display: none;
+}

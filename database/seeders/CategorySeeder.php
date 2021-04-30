@@ -17,6 +17,7 @@ class CategorySeeder extends Seeder
         DB::table("categories")->insert([
             [   
 
+<<<<<<< HEAD
                 "id"    :1,
                 "categoryName" :"Quần áo thể thao",               
                 "created_at" : date("Y-m-d H:i:s"),
@@ -51,6 +52,42 @@ class CategorySeeder extends Seeder
                 "categoryName" :"Quần Rin",                
                 "created_at" : date("Y-m-d H:i:s"),
                 "updated_at" : date("Y-m-d H:i:s")
+=======
+               
+                'categoryName' =>'Quần áo thể thao',               
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [   
+                
+                'categoryName' =>'Đồng phục',                
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [   
+                
+                'categoryName' =>'Thời trang nam',               
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [   
+                
+                'categoryName' =>'Thời trang nữ',              
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [   
+                
+                'categoryName' =>'Áo sơ mi ',               
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [   
+                
+                'categoryName' =>'Quần Rin',                
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+>>>>>>> 69d8bf902a2a5338e756127238bce449fe1be789
             ],
         ]);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\OrderDetail;
 
 class Order_DetailController extends Controller
 {
@@ -13,7 +14,7 @@ class Order_DetailController extends Controller
      */
     public function index()
     {
-        //
+        return OrderDetail::all();
     }
 
     /**

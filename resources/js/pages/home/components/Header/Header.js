@@ -1,48 +1,84 @@
-import React, { Component } from 'react'
-import Cart from '../Cart/Cart'
+import Cart from "../Cart/Cart";
 
+import React from "react";
 
+import { useSelector } from "react-redux";
+import UserAvatar from "../UserAvatar/UserAvatar";
+import CustomModal from "../CustomModal/CustomModal";
 
-export default class Header extends Component {
-    render() {
-        return (
-
-            <div className='Header'>
-
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                    <div class="container">
-                        <a class="navbar-brand" href="/">Clothes Shop</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-
-                                    <a class="nav-link" href="/">Home
-                                         <span class="sr-only">(current)</span>
+export default function Header(props) {
+    const { onClickCart } = props;
+    const user = useSelector((state) => state.user);
+    return (
+        <div className="Header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        FCT TEAMWORK
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">
+                                    Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">
+                                    Services
+                                </a>
+                            </li>
+                            <li onClick={onClickCart} class="nav-item">
+                                <a class="nav-link cart-icon-header">
+                                    <Cart></Cart>
+                                </a>
+                            </li>
+                            {user ? (
+                                <li onClick={onClickCart} class="nav-item">
+                                    <a class="nav-link ">
+                                        <UserAvatar></UserAvatar>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">
-                                        <Cart></Cart>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">Login</a>
-                                </li>
-                            </ul>
-                        </div>
+                            ) : (
+                                <>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span class="glyphicon glyphicon-user"></span>{" "}
+                                            Sign Up
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" >
+                                            <span class="glyphicon glyphicon-log-in"></span>{" "}
+                                            <CustomModal
+                                                buttonLabel="Login"
+                                                className="modal-login"
+                                            ></CustomModal>
+                                        </a>
+                                    </li>
+                                </>
+                            )}
+                        </ul>
                     </div>
-                </nav>
-
-            </div>
-        )
-    }
+                </div>
+            </nav>
+        </div>
+    );
 }
