@@ -10,7 +10,7 @@ export default function Category(props) {
     
     return (
         
-            <a onClick={()=>handelCategoryClick(category)} href="#" className={classNames("Category", "list-group-item",{active:idClick==category.id})}>{category.categoryName}</a>
+            <a onClick={()=>handelCategoryClick(category)}  className={classNames("Category", "list-group-item",{active:idClick==category.id})}>{category.categoryName}</a>
         
     )
 }

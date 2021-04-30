@@ -13,8 +13,8 @@ import Header from "./components/Header/Header";
 
 import React from "react";
 import CartContainer from "./components/CartContainer/CartContainer";
-import PayPage from "../pay/PayPage";
-import Footer from "../footer/footer";
+import Footer from "./components/Footer/Footer";
+
 
 export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
@@ -42,11 +42,6 @@ export default function App() {
                     <Route
                         path="/about"
                         render={(props) => <About {...props} />}
-                    />
-
-                    <Route
-                        path="/pay"
-                        render={(props) => <PayPage {...props} />}
                     />
                 </Switch>
                 <Footer/>
