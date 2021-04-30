@@ -2447,20 +2447,6 @@ var Index = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getProduct();
-      this.getcustomer();
-    }
-  }, {
-    key: "getcustomer",
-    value: function getcustomer() {
-      var data = {
-        email: "ngockhuentca2k@gmail.com",
-        password: "123"
-      };
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post("https://laravel-react-sell-web.herokuapp.com/api/login", data).then(function (response) {
-        console.log(response);
-      })["catch"](function (error) {
-        console.log(error);
-      });
     }
   }, {
     key: "getProduct",
