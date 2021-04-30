@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../../../reducers/cartSlice";
@@ -15,14 +15,16 @@ export default function ProductCard(props) {
 
     return (
         <div
-            data-aos={index > 2 && "fade-up"}
-            data-aos-anchor-placement={index > 2 && "center-center"}
+            
             class="ProductCard col-lg-4 col-md-6 mb-4 "
         >
-            <div class="product-grid4">
+            <div class="product-grid4"
+                data-aos={index > 2 && "fade-up"}
+                data-aos-anchor-placement={index > 2 && "center-center"}
+            >
                 <div class="product-image4">
                     <a>
-                        <img class="pic-1" src={imageAddress}></img>
+                        <img  class="pic-1" src={imageAddress}></img>
                     </a>
 
                     <span class="product-new-label">New</span>

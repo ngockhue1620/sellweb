@@ -10365,3 +10365,10 @@ img.card-img-top {
 .error {
   color: red;
 }
+
+.footer-page {
+  width: 100%;
+  background: chartreuse;
+  height: 10rem;
+  margin-top: 10em;
+}

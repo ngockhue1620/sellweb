@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from 'react-dom'
 
 import ProductItem from "./ProductItem";
-import { Label, Table } from "reactstrap";
+import { Label, Table,Spinner } from "reactstrap";
 
 import {
     Form,
@@ -42,10 +42,14 @@ export default class Index extends Component {
     }
     componentDidMount() {
         this.getProduct();
+        
     }
+    
     getProduct() {
         axios
-            .get(`http://127.0.0.1:8000/api/product`)
+
+            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
@@ -133,7 +137,7 @@ export default class Index extends Component {
         //http://127.0.0.1:8000/
         axios
             .post(
-                `http://127.0.0.1:8000/api/product`,
+                `https://laravel-react-sell-web.herokuapp.com/api/product`,
                 formdata
             )
             .then((response) => {
@@ -198,7 +202,7 @@ export default class Index extends Component {
                         </thead>
                         <tbody>
                             {
-                                
+                                this.state.listProducts.length==0 ? <Spinner style={{margin:"0 auto"}} type="grow" color="danger" >a</Spinner>:
                                    this.state.listProducts.map((product, index) => (
                                     <ProductItem key={index} product={product}   />
                                 ))

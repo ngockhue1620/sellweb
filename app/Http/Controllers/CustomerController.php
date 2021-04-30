@@ -24,32 +24,7 @@ class CustomerController extends Controller
      */
     public function create(Request $request)
     {
-        try{
-            // find is has => update
-            // find is none => create
-            
-             $customer = Customer::where('email','=',$request->email)
-                                 ->where('password','=',$request->password)
-                                 ->with(['getInCart'])->get();
-             
-            if(empty($customer)|| count($customer)==0)
-            {
-                return \response()->json(["status"=>false],404);
-            }
-            
-            return response()->json(['customer'=> $customer,'status'=>true],200);
-
-        }
-        catch(\Exception $e)
-        {
-            return response()->json([
-                'error'=>[
-                    'file' => $e->getFile(),
-                    'line' => $e->getLine(),
-                    'message' => $e->getMessage()
-                ]
-                ],500);
-        }
+        
     }
 
     /**
@@ -63,8 +38,29 @@ class CustomerController extends Controller
         try{
             // find is has => update
             // find is none => create
-            $customer = Customer::firstOrCreate($request->all());
+
+            $customer=Customer::where('email','=',$request->email)
+                               ->orWhere('phone','=',$request->phone)->get();
+                              
+            $erro=[];
+            if(!empty($customer)&& count($customer)>0)
+            {
+                if($customer[0]->email==$request->email)
+                {
+                    array_push($erro,"Email đã tồn tại");
+                }
+
+                if($customer[0]->phone==$request->phone)
+                {
+                    
+                    array_push($erro,"SDt đã tồn tại");
+                }
+                return response()->json(["status"=>$erro]);
+            }
+            
+            $customer = Customer::Create($request->all());
             $customer->save();
+            
             return response()->json(['customer'=> $customer,'status'=>true],200);
 
         }
@@ -179,6 +175,35 @@ class CustomerController extends Controller
                 return response()->json(['message'=>"Delete successful",'status'=>true],200);
                 
             }
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
+    }
+
+    public function login(Request $request)
+    {   
+        
+        try{
+                        
+             $customer = Customer::where('email','=',$request->email)
+                                 ->where('password','=',$request->password)
+                                 ->with(['getInCart'])->get();
+             return $customer;
+            if(empty($customer)|| count($customer)==0)
+            {   
+                return \response()->json(["status"=>false],404);
+            }
+            
+            return response()->json(['customer'=> $customer,'status'=>true],200);
+
         }
         catch(\Exception $e)
         {
