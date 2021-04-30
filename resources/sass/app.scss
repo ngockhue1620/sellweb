@@ -338,6 +338,10 @@ img.card-img-top {
     right: 0px;
     height: 40rem;
     background-color: wheat;
+    &__paycontainer {
+        margin-bottom: 1rem;
+        
+    }
 }
 // <<<<<<< HEAD
 // .cart-item {
@@ -415,11 +419,10 @@ img.card-img-top {
 .user-avt {
     // width: 50%;
     height: 2rem;
-    &__toggle{
+    &__toggle {
         height: 100%;
     }
-    
 }
-.error{
+.error {
     color: red;
 }
