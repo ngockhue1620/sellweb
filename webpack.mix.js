@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,6 +12,13 @@ const mix = require("laravel-mix");
  */
 
 
+<<<<<<< HEAD
+ mix.js('resources/js/app.js', 'public/js')
+ .js('resources/js/admin.js', 'public/js')    
+ .react()
+ .sass("resources/sass/app.scss", "public/css")
+ .sass("resources/sass/admin/admin.scss", "public/css/admin.css");
+=======
 mix.js('resources/js/app.js', 'public/js')
 
     .js('resources/js/admin.js', 'public/js')    
@@ -20,3 +27,4 @@ mix.js('resources/js/app.js', 'public/js')
     .react()
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/admin/admin.scss", "public/css/admin.css");
+>>>>>>> dfcac31230d60a9db753c4b4d29bc7561e515a0a

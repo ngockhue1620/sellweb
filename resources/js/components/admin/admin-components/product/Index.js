@@ -42,24 +42,9 @@ export default class Index extends Component {
     }
     componentDidMount() {
         this.getProduct();
-        this.getcustomer()
+        
     }
-    getcustomer()
-    {   
-        let data={
-            email:"ngockhuentca2k@gmail.com",
-            password:"123"
-        }
-        axios
-            .post(`https://laravel-react-sell-web.herokuapp.com/api/login`,data)
-            .then((response) => {
-                console.log(response)
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
-    }
+    
     getProduct() {
         axios
 

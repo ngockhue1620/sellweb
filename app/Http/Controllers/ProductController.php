@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -36,8 +37,10 @@ class ProductController extends Controller
    
      */
     public function store(Request $request)
-    {
-        try{
+    {   
+        
+        
+          try{
             if($request == null) return \response()->json(["message"=>"Data is none"],404);
             $product = Product::firstOrCreate([
                 "category_id"  =>$request->categoryId,

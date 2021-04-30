@@ -31,16 +31,18 @@ Route::put('category/{id}','App\Http\Controllers\CategoryController@update');
 Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy');
 
 //product
-Route::post('product','App\Http\Controllers\ProductController@store');
+Route::post('product','App\Http\Controllers\ProductController@store')->middleware('auth.basic');
 Route::get('product','App\Http\Controllers\ProductController@index');
-Route::put('product/{id}','App\Http\Controllers\ProductController@update');
-Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy');
+Route::put('product/{id}','App\Http\Controllers\ProductController@update')->middleware('auth.basic');
+Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy')->middleware('auth.basic');
 
 //customer
 Route::post('customer','App\Http\Controllers\CustomerController@store');
-Route::get('customer','App\Http\Controllers\CustomerController@index');
-Route::post('login','App\Http\Controllers\CustomerController@login');
-// Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
+
+// Route::get('customer','App\Http\Controllers\CustomerController@index');
+Route::get('customer/create','App\Http\Controllers\CustomerController@create');
+Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth.basic');
+
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
 
