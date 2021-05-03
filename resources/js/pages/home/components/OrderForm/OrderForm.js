@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 import { Button, Label } from "reactstrap";
 import orderApi from "../../../../api/orderApi";
@@ -11,6 +12,7 @@ import CustomForm from "../CustomForm/CustomForm";
 
 export default function OrderForm(props) {
     const cartProducts=useSelector(state=>state.cartProducts)
+    const history=useHistory()
     const user=useSelector(state=>state.user)
     const dispatch=useDispatch()
     const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
@@ -44,7 +46,7 @@ export default function OrderForm(props) {
     const handleSubmit = async (values) => {
         
         
-
+        const {name,phone,address,note}=values
         
 
         let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
@@ -84,16 +86,18 @@ export default function OrderForm(props) {
         const res=await orderApi.postOrder(order);
         if(res.status)
         {
-            dispatch(removeAll())
-        
+            
+            
             setIsSignUpSuccess(true);
+            
         }
         
         
     };
     const onClickComeBack = () => {
-        setIsSignUpSuccess(false);
         onToggle();
+        setIsSignUpSuccess(false);
+        dispatch(removeAll())
     };
     return (
         <div>

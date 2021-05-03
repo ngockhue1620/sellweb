@@ -8,17 +8,22 @@ import SignUpForm from "../SignUpForm/SignUpForm";
 export default function CustomModal(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
     const { buttonLabel, className } = props;
-
+    const user=useSelector(state=>state.user)
     const [modal, setModal] = useState(false);
 
     const toggle = () => {
         if (buttonLabel === "Order" && cartProducts.length < 1) {
-            alert("Your cart is empty");
-            return;
+            alert("Your cart is empty"); return;
+            
         }
+        if (buttonLabel === "Order" && !user) {
+            alert("ban da dang nhap deo dau"); return;
+            
+        }
+        
         setModal(!modal);
     };
-
+    
     return (
         <div>
             <Button className="LoginSignUp_btn" onClick={toggle}>
