@@ -10311,6 +10311,9 @@ img.card-img-top {
   height: 40rem;
   background-color: wheat;
 }
+.cart-container__paycontainer {
+  margin-bottom: 1rem;
+}
 
 .cart-item {
   border: 1px solid red;
@@ -10361,4 +10364,11 @@ img.card-img-top {
 
 .error {
   color: red;
+}
+
+.footer-page {
+  width: 100%;
+  background: chartreuse;
+  height: 10rem;
+  margin-top: 10em;
 }

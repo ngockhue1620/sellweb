@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Button, Col, Container, Row } from "reactstrap";
 import CartItem from "../CartItem/CartItem";
+import CustomForm from "../CustomForm/CustomForm";
+import CustomModal from "../CustomModal/CustomModal";
 
 export default function CartContainer(props) {
     const listProducts = useSelector((state) => state.cartProducts);
@@ -24,6 +26,18 @@ export default function CartContainer(props) {
             data-aos-duration="500"
             className="cart-container"
         >
+            <Row className="cart-container__paycontainer">
+                <Col xs="8" className="cart-container__paycontainer__value">
+                    Tổng: {calculatorSumPay() + " đ"}
+                </Col>
+
+                <Col>
+                    <CustomModal
+                        buttonLabel="Order"
+                        className="modal-order"
+                    ></CustomModal>
+                </Col>
+            </Row>
             {listProducts.map((product, index) => (
                 <CartItem
                     key={index}
@@ -32,18 +46,6 @@ export default function CartContainer(props) {
                     product={product}
                 ></CartItem>
             ))}
-
-            <Row className="cart-container__paycontainer">
-                <Col xs="8" className="cart-container__paycontainer__value">
-                    Tổng: {calculatorSumPay() + " đ"}
-                </Col>
-
-                <Col>
-                    <Button xs="3" color="primary" size="lg">
-                        Đặt hàng
-                    </Button>{" "}
-                </Col>
-            </Row>
         </Container>
     );
 }

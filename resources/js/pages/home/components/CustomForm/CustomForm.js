@@ -1,10 +1,7 @@
 import { FastField, Form, Formik } from "formik";
-import { values } from "lodash-es";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Button, FormGroup, Label, Spinner } from "reactstrap";
-import userApi from '../../../../api/userApi'
-import { login } from "../../../../reducers/userSlice";
 import InputField from "../InputField/InputField";
 
 export default function CustomForm(props) {
@@ -20,7 +17,7 @@ export default function CustomForm(props) {
         >
             {(formikProps) => {
                 const { values, errors, touched, isSubmitting } = formikProps;
-                console.log({ values, errors, touched });
+                // console.log({ values, errors, touched });
                 
 
                 return (

@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+
 import { Button, Label } from "reactstrap";
 import userApi from "../../../../api/userApi";
 
 import CustomForm from "../CustomForm/CustomForm";
 
-export default function LoginForm(props) {
+export default function SignUpForm(props) {
     const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
     const [massage, setMassage] = useState("");
     const { onToggle } = props;
 
-    const history = useHistory();
     const listFormGroups = [
         {
             label: "Name",
@@ -43,7 +41,6 @@ export default function LoginForm(props) {
     const handleSubmit = async (values) => {
         const listUsers = await userApi.getAll();
 
-        console.log(listUsers);
         const { name, email, password, phone } = values;
 
         const passwordAgaint = values["password againt"];
@@ -85,7 +82,7 @@ export default function LoginForm(props) {
         regExp = /[a-zA-Z0-9!@#$%^&*]{8,}/;
 
         if (!regExp.test(password)) {
-            setMassage("Your Password is invalid!");
+            setMassage("Minimum 8 character for password!");
             return;
         }
         if (passwordAgaint != password) {
@@ -99,20 +96,20 @@ export default function LoginForm(props) {
             customerName: name,
         });
         setIsSignUpSuccess(true);
-        
     };
-    const onClickComeBack=()=>{
-        history.push("/homepage");
-        setIsSignUpSuccess(false)
-        onToggle()
-    }
+    const onClickComeBack = () => {
+        setIsSignUpSuccess(false);
+        onToggle();
+    };
     return (
         <div>
             {isSignUpSuccess ? (
                 <div>
                     <Label>Sign Up Success</Label>
                     <br></br>
-                    <Button onClick={onClickComeBack}>Comeback to Homepage</Button>
+                    <Button onClick={onClickComeBack}>
+                        Comeback to Homepage
+                    </Button>
                 </div>
             ) : (
                 <CustomForm
