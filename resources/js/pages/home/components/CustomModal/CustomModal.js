@@ -19,7 +19,9 @@ export default function CustomModal(props) {
         }
         setModal(!modal);
     };
-
+    const onClickOrder=()=>{
+        
+    }
     return (
         <div>
             <Button color="danger" onClick={toggle}>

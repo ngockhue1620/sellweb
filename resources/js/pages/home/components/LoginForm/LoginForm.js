@@ -14,7 +14,7 @@ export default function LoginForm(props) {
     const listFormGroups = [
         {
             label: "Email",
-            type: "text",
+            type: "email",
             placeholder: "Enter your user here",
         },
         {

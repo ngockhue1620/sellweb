@@ -5296,6 +5296,8 @@ function CustomModal(props) {
     setModal(!modal);
   };
 
+  var onClickOrder = function onClickOrder() {};
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
       color: "danger",
@@ -5680,7 +5682,7 @@ function LoginForm(props) {
   var history = (0,react_router__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
   var listFormGroups = [{
     label: "Email",
-    type: "text",
+    type: "email",
     placeholder: "Enter your user here"
   }, {
     label: "Password",
@@ -5874,8 +5876,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Label.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Button.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Label.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Button.js");
 /* harmony import */ var _api_orderApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../api/orderApi */ "./resources/js/api/orderApi.js");
 /* harmony import */ var _api_userApi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../api/userApi */ "./resources/js/api/userApi.js");
 /* harmony import */ var _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../reducers/cartSlice */ "./resources/js/reducers/cartSlice.js");
@@ -5908,10 +5911,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function OrderForm(props) {
   var cartProducts = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.cartProducts;
   });
+  var history = (0,react_router__WEBPACK_IMPORTED_MODULE_8__.useHistory)();
   var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.user;
   });
@@ -5948,33 +5953,34 @@ function OrderForm(props) {
 
   var handleSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(values) {
-      var regExp, orderDetails, order, res;
+      var name, phone, address, note, regExp, orderDetails, order, res;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              name = values.name, phone = values.phone, address = values.address, note = values.note;
               regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
               if (regExp.test(name)) {
-                _context.next = 4;
+                _context.next = 5;
                 break;
               }
 
               setMassage("Name is invalid!");
               return _context.abrupt("return");
 
-            case 4:
+            case 5:
               regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
               if (phone.match(regExp)) {
-                _context.next = 8;
+                _context.next = 9;
                 break;
               }
 
               setMassage("Phone number is invalid!");
               return _context.abrupt("return");
 
-            case 8:
+            case 9:
               orderDetails = [];
               cartProducts.map(function (product) {
                 orderDetails.push({
@@ -5993,18 +5999,17 @@ function OrderForm(props) {
                 orderDetails: orderDetails
               };
               console.log(order);
-              _context.next = 14;
+              _context.next = 15;
               return _api_orderApi__WEBPACK_IMPORTED_MODULE_3__.default.postOrder(order);
 
-            case 14:
+            case 15:
               res = _context.sent;
 
               if (res.status) {
-                dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_5__.removeAll)());
                 setIsSignUpSuccess(true);
               }
 
-            case 16:
+            case 17:
             case "end":
               return _context.stop();
           }
@@ -6018,15 +6023,16 @@ function OrderForm(props) {
   }();
 
   var onClickComeBack = function onClickComeBack() {
-    setIsSignUpSuccess(false);
     onToggle();
+    setIsSignUpSuccess(false);
+    dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_5__.removeAll)());
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
     children: isSignUpSuccess ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
         children: "Order Success!Check your email for more information"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_10__.default, {
         onClick: onClickComeBack,
         children: "Comeback to Homepage"
       })]
@@ -6180,7 +6186,7 @@ function SignUpForm(props) {
     placeholder: "Enter your name here"
   }, {
     label: "Email",
-    type: "text",
+    type: "email",
     placeholder: "Enter your user here"
   }, {
     label: "Phone",
@@ -6221,17 +6227,6 @@ function SignUpForm(props) {
               return _context.abrupt("return");
 
             case 9:
-              regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
-
-              if (regExp.test(email)) {
-                _context.next = 13;
-                break;
-              }
-
-              setMassage("Your Email is invalid!");
-              return _context.abrupt("return");
-
-            case 13:
               isExist = function isExist(element, index, array) {
                 return element.email === email;
               };
@@ -6239,25 +6234,25 @@ function SignUpForm(props) {
               idExist = listUsers.findIndex(isExist);
 
               if (!(idExist >= 0)) {
-                _context.next = 18;
+                _context.next = 14;
                 break;
               }
 
               setMassage("Your Email is exist");
               return _context.abrupt("return");
 
-            case 18:
+            case 14:
               regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
               if (phone.match(regExp)) {
-                _context.next = 22;
+                _context.next = 18;
                 break;
               }
 
               setMassage("Your Phone number is invalid!");
               return _context.abrupt("return");
 
-            case 22:
+            case 18:
               isExist = function isExist(element, index, array) {
                 return element.phone === phone;
               };
@@ -6265,35 +6260,35 @@ function SignUpForm(props) {
               idExist = listUsers.findIndex(isExist);
 
               if (!(idExist >= 0)) {
-                _context.next = 27;
+                _context.next = 23;
                 break;
               }
 
               setMassage("Your phone number is exist");
               return _context.abrupt("return");
 
-            case 27:
+            case 23:
               regExp = /[a-zA-Z0-9!@#$%^&*]{8,}/;
 
               if (regExp.test(password)) {
-                _context.next = 31;
+                _context.next = 27;
                 break;
               }
 
               setMassage("Minimum 8 character for password!");
               return _context.abrupt("return");
 
-            case 31:
+            case 27:
               if (!(passwordAgaint != password)) {
-                _context.next = 34;
+                _context.next = 30;
                 break;
               }
 
               setMassage("Password againt is not true!");
               return _context.abrupt("return");
 
-            case 34:
-              _context.next = 36;
+            case 30:
+              _context.next = 32;
               return _api_userApi__WEBPACK_IMPORTED_MODULE_2__.default.signUp({
                 email: email,
                 password: password,
@@ -6301,10 +6296,10 @@ function SignUpForm(props) {
                 customerName: name
               });
 
-            case 36:
+            case 32:
               setIsSignUpSuccess(true);
 
-            case 37:
+            case 33:
             case "end":
               return _context.stop();
           }
