@@ -12,7 +12,6 @@ export default function CustomModal(props) {
     const [modal, setModal] = useState(false);
 
     const toggle = () => {
-        
         if (buttonLabel === "Order" && cartProducts.length < 1) {
             alert("Your cart is empty");
             return;
@@ -22,7 +21,7 @@ export default function CustomModal(props) {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>
+            <Button className="LoginSignUp_btn" onClick={toggle}>
                 {buttonLabel}
             </Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
