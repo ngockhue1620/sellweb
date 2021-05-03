@@ -5280,6 +5280,9 @@ function CustomModal(props) {
   });
   var buttonLabel = props.buttonLabel,
       className = props.className;
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.user;
+  });
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -5292,10 +5295,13 @@ function CustomModal(props) {
       return;
     }
 
+    if (buttonLabel === "Order" && !user) {
+      alert("ban da dang nhap deo dau");
+      return;
+    }
+
     setModal(!modal);
   };
-
-  var onClickOrder = function onClickOrder() {};
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
