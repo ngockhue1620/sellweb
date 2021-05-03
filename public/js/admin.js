@@ -2202,8 +2202,6 @@ function CategoryItem(category, showDetaiCategory) {
         children: category.category.id
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
         children: category.category.categoryName
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-        children: category.category.supplierId
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
           onClick: toggle,
@@ -2340,7 +2338,7 @@ var Index = /*#__PURE__*/function (_Component) {
     value: function getCategories() {
       var _this2 = this;
 
-      axiosClient.get('/api/category').then(function (data) {
+      axiosClient.get("https://laravel-react-sell-web.herokuapp.com/api/category").then(function (data) {
         _this2.setState({
           listCategories: data
         });
@@ -2351,7 +2349,7 @@ var Index = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state.listCategories);
+      // console.log(this.state.listCategories);
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "conten-component-admin",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
@@ -2363,10 +2361,6 @@ var Index = /*#__PURE__*/function (_Component) {
                 children: "Id"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
                 children: "Category Name"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-                children: "SupplierId"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-                children: "Edit"
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {

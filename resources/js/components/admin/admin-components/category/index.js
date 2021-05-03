@@ -11,26 +11,26 @@ export default class Index extends Component {
     }
     componentDidMount() {
         this.getCategories()
-        
+
 
     }
     getCategories() {
-        axiosClient.get('/api/category')
+        axiosClient.get(`https://laravel-react-sell-web.herokuapp.com/api/category`)
             .then((data) => {
                 this.setState({
                     listCategories: data
                 })
-                
-               
+
+
             }).catch(function (error) {
                 console.log(error);
             });
     }
-    
+
     render() {
-        console.log(this.state.listCategories);
-        
-        
+        // console.log(this.state.listCategories);
+
+
         return (
             <div className="conten-component-admin">
                 <Table bordered className="col-lg-6">
@@ -38,18 +38,16 @@ export default class Index extends Component {
                         <tr>
                             <th>Id</th>
                             <th>Category Name</th>
-                            <th>SupplierId</th>
-                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        {this.state.listCategories.map((category,index)=>
-                            (<CategoryItem
-                                    key={index} category={category}
-                                     
-                             />))}                        
-                        
+
+                        {this.state.listCategories.map((category, index) =>
+                        (<CategoryItem
+                            key={index} category={category}
+
+                        />))}
+
                     </tbody>
                 </Table>
             </div>
