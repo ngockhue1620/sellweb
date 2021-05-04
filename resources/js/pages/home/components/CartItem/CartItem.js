@@ -61,11 +61,7 @@ export default function CartItem(props) {
     };
 
     return (
-        <Row
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-center"
-            className="cart-item container"
-        >
+        <Row className="cart-item container">
             <Col xs="8" className="cart-item__container">
                 <Row className="cart-item__container__row">
                     <Col className="cart-item__container__row__col" xs="3">
@@ -118,9 +114,9 @@ export default function CartItem(props) {
                             src={cancelIcon}
                         ></img>
                     </Col>
-                </Row>
-                <Row className="cart-item__container__price">
-                    {product.product.price * product.quantity + " đ"}
+                    <Col className="cart-item__container__price">
+                        {product.product.price * product.quantity + " đ"}
+                    </Col>
                 </Row>
             </Col>
         </Row>

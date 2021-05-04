@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css);
 @charset "UTF-8";
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
@@ -10004,7 +10005,6 @@ h3 {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
   margin: 0;
   /* <-- Apparently some margin are still there even though it's hidden */
@@ -10162,6 +10162,166 @@ input::-webkit-inner-spin-button {
     margin-bottom: 30px;
   }
 }
+.Category {
+  background-color: #1b1b1b;
+}
+
+.sidebar-category {
+  position: fixed;
+  width: 250px;
+  height: 25%;
+  left: 0;
+  margin-top: -12px;
+  background: #1b1b1b;
+}
+.sidebar-category .text-category {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sidebar-category .ul-category {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+.sidebar-category .ul-category .li-category {
+  line-height: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar-category .ul-category .li-category:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.sidebar-category .ul-category .li-category .list-group-item {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 40px;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  border-top: none;
+  border-bottom: none;
+  border-left: 3px solid transparent;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: #1e1e1e;
+}
+.sidebar-category .ul-category .li-category .list-group-item.active {
+  color: cyan;
+  border-left-color: cyan;
+}
+.sidebar-category .ul-category .li-category .list-group-item:hover {
+  color: cyan;
+  background: #1e1e1e;
+}
+
+.footer {
+  line-height: 1.5;
+  background-color: #24262b;
+  padding: 20px 0;
+  /*responsive*/
+}
+.footer .container {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer .h2-footer {
+  padding-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer .ul-footer {
+  list-style: none;
+}
+.footer .footer-col {
+  width: 25%;
+  padding: 0 20px;
+}
+.footer .footer-col .h4-footer {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer .footer-col .h4-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer .footer-col .p-footer {
+  color: #fff;
+}
+.footer .footer-col .ul-footer .li-footer:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer .footer-col .ul-footer .li-footer .a-footer {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer .footer-col .ul-footer .li-footer .a-footer:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer .footer-col .social-links .a-footer {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer .footer-col .social-links .a-footer:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+.footer .footer-col:nth-child(1) {
+  width: 18rem;
+}
+@media (max-width: 767px) {
+  .footer .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer .footer-col {
+    width: 100%;
+  }
+}
+
 .aboutComponet {
   margin-top: 70px;
 }
@@ -10242,6 +10402,22 @@ nav .navbar-nav .nav-item .nav-link:hover {
   box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
 }
 
+.LoginSignUp_btn {
+  background-color: #1b1b1b;
+  border: none;
+  font-size: 18px;
+  padding-top: 0;
+}
+.LoginSignUp_btn:hover {
+  color: cyan;
+  background-color: #1b1b1b;
+}
+.LoginSignUp_btn:active,
+.LoginSignUp_btn :focus {
+  border: none;
+  background-color: #1b1b1b;
+}
+
 .quantity {
   padding-left: 1.75rem;
   padding-bottom: 3rem;
@@ -10308,27 +10484,69 @@ img.card-img-top {
   position: fixed;
   width: 30%;
   right: 0px;
-  height: 40rem;
-  background-color: wheat;
+  height: 30rem;
+  background-color: #1f2739;
+  border-radius: 10px;
+  overflow: auto;
 }
 .cart-container__paycontainer {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: #1f2739;
+  border-radius: 10px;
+  align-items: center;
+}
+.cart-container__paycontainer__value {
+  padding-left: 5rem;
+  font-size: x-large;
+  overflow: hidden;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cart-container::-webkit-scrollbar {
+  width: 0;
 }
 
 .cart-item {
-  border: 1px solid red;
+  box-sizing: border-box;
+  font-family: "Poppins";
   padding-right: 0px;
+  background-color: none;
+  transition: all 0.5s;
+  height: 5rem;
+  width: 28.5rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  color: #4dc3fa;
+}
+.cart-item:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
+  background-color: #fff842;
+  color: #403e10;
+}
+.cart-item ::nth-child(odd) {
+  background-color: #323c50;
+}
+.cart-item ::nth-child(even) {
+  background-color: #2c3446;
 }
 .cart-item__container__row__col > img {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
+  margin-left: -30px;
+  border-radius: 10px;
 }
 .cart-item__container__row__name {
-  display: flex;
+  display: block;
   align-items: center;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  text-transform: uppercase;
+  padding-top: 8%;
+  font-size: 15px;
+  font-weight: bold;
 }
 .cart-item__container__quantity .quantity {
   margin-right: 15px;
@@ -10340,8 +10558,17 @@ img.card-img-top {
   outline: none;
   text-align: center;
 }
+.cart-item__container__quantity img {
+  width: 20px;
+  height: 20px;
+  padding-right: 0.5px;
+  padding-top: 0.5px;
+  background: gainsboro;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
 .cart-item__container__price {
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 
 .paypage {
@@ -10364,4 +10591,8 @@ img.card-img-top {
 
 .error {
   color: red;
+}
+
+.col-2 {
+  height: 2rem;
 }
