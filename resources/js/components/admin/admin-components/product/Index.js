@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { render } from 'react-dom'
+
 
 import ProductItem from "./ProductItem";
-import { Label, Table,Spinner } from "reactstrap";
+import { Label, Table, Spinner } from "reactstrap";
 
 import {
     Form,
@@ -17,6 +17,7 @@ import {
     InputGroupAddon,
     InputGroup,
     
+
 } from "reactstrap";
 import axios from "axios";
 
@@ -25,6 +26,7 @@ export default class Index extends Component {
         super(props);
         this.state = {
             listProducts: [],
+            listCategory: [],
             showLogin: false,
             value: false,
             url: "https://reactstrap.github.io/assets/318x180.svg",
@@ -36,17 +38,17 @@ export default class Index extends Component {
             price: 0,
             errorsValue: [],
             isChangeUrl: false,
-            
+
         };
-        
+
     }
     componentDidMount() {
         this.getProduct();
-        
+        this.getCategory();
     }
-    
-    getProduct() {
-        axios
+
+    async getProduct() {
+        await axios 
 
             .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
 
@@ -58,12 +60,29 @@ export default class Index extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-            
            
     }
+
+   async  getCategory() {
+       await axios
+
+            .get(`https://laravel-react-sell-web.herokuapp.com/api/category`)
+
+            .then((response) => {
+                this.setState({
+                    listCategory: response.data,
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            console.log("category",this.state.listCategory)
+    }
+
     handleClick(value) {
         this.setState({ value: !value, errorsValue: [] });
     }
+
     AddImage(e) {
         this.setState({
             url: e.target.value,
@@ -97,7 +116,7 @@ export default class Index extends Component {
         this.setState({ price: e.target.value });
     }
     //
-    
+
     // function thêm
     addProduct() {
         this.setState({ errorsValue: [] });
@@ -125,44 +144,48 @@ export default class Index extends Component {
         }
 
         this.setState({ errorsValue: errors });
-        let formdata = {
-            productName: this.state.productName,
-            categoryId: this.state.categoryId,
-            price: this.state.price,
-            quantity: this.state.quantity,
-            description: this.state.description,
-            color: this.state.color,
-            imageAddress: this.state.url,
-        };
-        //http://127.0.0.1:8000/
-        axios
-            .post(
-                `https://laravel-react-sell-web.herokuapp.com/api/product`,
-                formdata
-            )
-            .then((response) => {
-                if (response.status == 200) {
-                    let products = this.state.listProducts;
-                    products.push(response.data.product);
-                    this.setState({ listProducts: products });
-                    alert('insert success')
-                } else {
-                    console.log("errors");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        if(errors.length==0)
+        {
+            let formdata = {
+                productName: this.state.productName,
+                categoryId: this.state.categoryId,
+                price: this.state.price,
+                quantity: this.state.quantity,
+                description: this.state.description,
+                color: this.state.color,
+                imageAddress: this.state.url,
+            };
+            //http://127.0.0.1:8000/
+            axios
+                .post(
+                    `http://127.0.0.1:8000/api/product`,
+                    formdata
+                )
+                .then((response) => {
+                    if (response.status == 200) {
+                        let products = this.state.listProducts;
+                        products.push(response.data.product);
+                        this.setState({ listProducts: products });
+                        this.setState({ value: !this.state.value });
+                        alert('insert success')
+                    } else {
+                        console.log("errors");
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
 
-        this.setState({ value: !this.state.value });
+        
     }
     // xoa san pham
-   
+
 
     render() {
         return (
             <>
-                
+
                 <div
                     className="conten-component-admin"
                     disable={this.state.value}
@@ -202,10 +225,10 @@ export default class Index extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.listProducts.length==0 ? <Spinner style={{margin:"0 auto"}} type="grow" color="danger" >a</Spinner>:
-                                   this.state.listProducts.map((product, index) => (
-                                    <ProductItem key={index} product={product}   />
-                                ))
+                                this.state.listProducts.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :
+                                    this.state.listProducts.map((product, index) => (
+                                        <ProductItem key={index} product={product} category={this.state.listCategory}/>
+                                    ))
                             }
                         </tbody>
                     </Table>
@@ -238,12 +261,25 @@ export default class Index extends Component {
                                             Danh Mục Sản Phẩm
                                         </Label>
                                     </InputGroupAddon>
-                                    <Input
+                                    {/* <Input
                                         onChange={(e) =>
                                             this.handleChangeCategoryId(e)
                                         }
-                                    />
+                                    /> */}
+                                    <Input type="select" onChange={(e) =>
+                                            this.handleChangeCategoryId(e)
+                                        }>
+                                            <option>Kích vào để chọn</option>
+                                        {
+                                            this.state.listCategory.map((category,index)=>
+                                            <option key={index} value={category.id}>{category.categoryName}</option>
+                                        )}
+                                        
+                                        
+                                    </Input>
                                 </InputGroup>
+
+
 
                                 <InputGroup>
                                     <InputGroupAddon addonType="append">
@@ -329,7 +365,7 @@ export default class Index extends Component {
                         <Button
                             color="primary"
                             onClick={() => this.addProduct()}
-                            
+
                         >
                             Thêm
                         </Button>
