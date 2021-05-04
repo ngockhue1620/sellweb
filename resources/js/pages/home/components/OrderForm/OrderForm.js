@@ -14,7 +14,7 @@ export default function OrderForm(props) {
 
     const [isOrder, setIsOrder] = useState(false);
 
-    const [massage, setMassage] = useState("");
+    const [message, setMessage] = useState("");
 
     const { onToggle, setTitle } = props;
 
@@ -52,13 +52,13 @@ export default function OrderForm(props) {
         let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
         if (!regExp.test(name)) {
-            setMassage("Name is invalid!");
+            setMessage("Name is invalid!");
             return;
         }
 
         regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         if (!phone.match(regExp)) {
-            setMassage("Phone number is invalid!");
+            setMessage("Phone number is invalid!");
             return;
         }
         let orderDetails = [];
@@ -161,7 +161,7 @@ export default function OrderForm(props) {
             ) : (
                 <CustomForm
                     btnLabel="Order"
-                    massage={massage}
+                    message={message}
                     onSubmit={handleSubmit}
                     listFormGroups={listFormGroups}
                 ></CustomForm>

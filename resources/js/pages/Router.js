@@ -15,6 +15,7 @@ import React from "react";
 import CartContainer from "./home/components/CartContainer/CartContainer";
 import Footer from "./home/components/Footer/Footer";
 import Account from "./account/Account";
+import Changepassword from "./changepassword/Changepassword";
 
 export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
@@ -47,6 +48,11 @@ export default function App() {
                     <Route
                         path="/account"
                         render={(props) => <Account {...props} />}
+                    />
+
+<Route
+                        path="/changepassword"
+                        render={(props) => <Changepassword {...props} />}
                     />
                 </Switch>
                 <Footer />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table, Button, Label } from "reactstrap";
+import { Table, Button, Label, Input } from "reactstrap";
 import userApi from "../../api/userApi";
 import { login } from "../../reducers/userSlice";
 
@@ -69,13 +69,13 @@ export default function Account() {
                         <th scope="row">Name</th>
                         <td>
                             {isEdit ? (
-                                <input
+                                <Input
                                     autoFocus
                                     onChange={onChange}
                                     type="text"
                                     name="name"
                                     value={inputName}
-                                ></input>
+                                ></Input>
                             ) : (
                                 <Label>{user.customerName}</Label>
                             )}
@@ -85,12 +85,12 @@ export default function Account() {
                         <th scope="row">Phone</th>
                         <td>
                             {isEdit ? (
-                                <input
+                                <Input
                                     onChange={onChange}
                                     type="text"
                                     name="phone"
                                     value={inputPhone}
-                                ></input>
+                                ></Input>
                             ) : (
                                 <Label>{user.phone}</Label>
                             )}

@@ -15,6 +15,7 @@ export default function UserAvatar() {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleLogout = async () => {
+        console.log("logout");
         const actionResult = await dispatch(
             login({
                 email: "",
@@ -38,22 +39,17 @@ export default function UserAvatar() {
                 />
             </DropdownToggle>
             <DropdownMenu>
-                <DropdownItem>
-                    <a href="/account">Information Account</a>
-                </DropdownItem>
-                <DropdownItem>
-                    <a href="/account">History order</a>
-                </DropdownItem>
-                <DropdownItem>
-                    <a href="/account">Change password</a>
-                </DropdownItem>
-                <DropdownItem onClick={handleLogout}>
-                    <a href="/homepage">Logout</a>
-                </DropdownItem>
+                <a href="/account">
+                    <DropdownItem>Information Account</DropdownItem>
+                </a>
+                <a href="/account">
+                    <DropdownItem>History order</DropdownItem>
+                </a>
+                <a href="/changepassword">
+                    <DropdownItem>Change password</DropdownItem>
+                </a>
+                <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
             </DropdownMenu>
         </Dropdown>
-        //     <div >
-
-        // </div>
     );
 }
