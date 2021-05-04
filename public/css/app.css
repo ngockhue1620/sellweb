@@ -10608,9 +10608,12 @@ img.card-img-top {
   padding-top: 5rem;
   height: 40rem;
 }
-.account-page input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid lightgray;
-  background-color: #F8FAFC;
+
+.changepassword-page {
+  margin-top: 5rem;
+  padding-top: 5rem;
+  height: 40rem;
+}
+.changepassword-page a {
+  color: white;
 }

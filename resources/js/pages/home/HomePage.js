@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 export default function HomePage(props) {
     return (
         <div className="Homepage">
-            <Body />
+            <Body className="body-homepage"/>
             
         </div>
     );
