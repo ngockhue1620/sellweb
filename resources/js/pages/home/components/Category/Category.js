@@ -5,7 +5,7 @@ export default function Category(props) {
     const { idClick, category, handelCategoryClick } = props;
 
     return (
-        <a href=""
+        <a 
             onClick={() => handelCategoryClick(category)}
             className={classNames("Category", "list-group-item", {
                 active: idClick == category.id,
