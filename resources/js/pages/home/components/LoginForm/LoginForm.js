@@ -7,7 +7,7 @@ import { login } from "../../../../reducers/userSlice";
 import CustomForm from "../CustomForm/CustomForm";
 
 export default function LoginForm(props) {
-    const [massage, setMassage] = useState("");
+    const [message, setMessage] = useState("");
     const { onToggle } = props;
     const dispatch = useDispatch();
     const history = useHistory();
@@ -25,6 +25,7 @@ export default function LoginForm(props) {
     ];
 
     const handleSubmit = async (values) => {
+        console.log(values)
         const actionResult = await dispatch(login(values));
         const user = unwrapResult(actionResult);
 
@@ -32,13 +33,13 @@ export default function LoginForm(props) {
             console.log("user", user);
             onToggle();
         } else {
-            setMassage("Email or password is wrong!!!");
+            setMessage("Email or password is wrong!!!");
         }
     };
     return (
         <CustomForm
         btnLabel="Login"
-            massage={massage}
+            message={message}
             onSubmit={handleSubmit}
             listFormGroups={listFormGroups}
         ></CustomForm>

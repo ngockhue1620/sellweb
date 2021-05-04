@@ -1,12 +1,12 @@
 import { FastField, Form, Formik } from "formik";
 import React from "react";
-import { useDispatch } from "react-redux";
+
 import { Button, FormGroup, Label, Spinner } from "reactstrap";
 import InputField from "../InputField/InputField";
 
 export default function CustomForm(props) {
-    const dispatch=useDispatch()
-    const { btnLabel,listFormGroups ,massage} = props;
+    
+    const { btnLabel,listFormGroups ,message} = props;
    
     const initialValues = {};
     return (
@@ -34,7 +34,7 @@ export default function CustomForm(props) {
                                 ></FastField>
                             );
                         })}
-                        <Label className="error">{massage}</Label>
+                        <Label className="error">{message}</Label>
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}
