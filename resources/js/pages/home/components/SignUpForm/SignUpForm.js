@@ -7,7 +7,7 @@ import CustomForm from "../CustomForm/CustomForm";
 
 export default function SignUpForm(props) {
     const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
-    const [massage, setMassage] = useState("");
+    const [message, setMessage] = useState("");
     const { onToggle } = props;
 
     const listFormGroups = [
@@ -39,6 +39,7 @@ export default function SignUpForm(props) {
     ];
 
     const handleSubmit = async (values) => {
+        
         const listUsers = await userApi.getAll();
 
         const { name, email, password, phone } = values;
@@ -48,7 +49,7 @@ export default function SignUpForm(props) {
         let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
         if (!regExp.test(name)) {
-            setMassage("Your Name is invalid!");
+            setMessage("Your Name is invalid!");
             return;
         }
         
@@ -57,13 +58,13 @@ export default function SignUpForm(props) {
         };
         let idExist = listUsers.findIndex(isExist);
         if (idExist >= 0) {
-            setMassage("Your Email is exist");
+            setMessage("Your Email is exist");
             return;
         }
 
         regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         if (!phone.match(regExp)) {
-            setMassage("Your Phone number is invalid!");
+            setMessage("Your Phone number is invalid!");
             return;
         }
         isExist = (element, index, array) => {
@@ -71,17 +72,17 @@ export default function SignUpForm(props) {
         };
         idExist = listUsers.findIndex(isExist);
         if (idExist >= 0) {
-            setMassage("Your phone number is exist");
+            setMessage("Your phone number is exist");
             return;
         }
         regExp = /[a-zA-Z0-9!@#$%^&*]{8,}/;
 
         if (!regExp.test(password)) {
-            setMassage("Minimum 8 character for password!");
+            setMessage("Minimum 8 character for password!");
             return;
         }
         if (passwordAgaint != password) {
-            setMassage("Password againt is not true!");
+            setMessage("Password againt is not true!");
             return;
         }
         await userApi.signUp({
@@ -109,7 +110,7 @@ export default function SignUpForm(props) {
             ) : (
                 <CustomForm
                     btnLabel="Sign Up"
-                    massage={massage}
+                    message={message}
                     onSubmit={handleSubmit}
                     listFormGroups={listFormGroups}
                 ></CustomForm>

@@ -13,6 +13,10 @@ const userApi = {
     getAll:()=>{
       const url = 'api/customer';
       return axiosClient.get(url);
+    },
+    putById:(data)=>{
+      const url = `api/customer/${data.id}`;
+      return axiosClient.put(url,data);
     }
   
    

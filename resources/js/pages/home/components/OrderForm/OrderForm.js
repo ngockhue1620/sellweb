@@ -12,7 +12,7 @@ export default function OrderForm(props) {
 
     const dispatch = useDispatch();
 
-    const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
+    const [isOrder, setIsOrder] = useState(false);
 
     const [massage, setMassage] = useState("");
 
@@ -88,16 +88,16 @@ export default function OrderForm(props) {
             setTitle("Oops!!!Order failed");
         }
 
-        setIsSignUpSuccess(true);
+        setIsOrder(true);
     };
     const onClickComeBack = () => {
         onToggle();
-        setIsSignUpSuccess(false);
+        setIsOrder(false);
         dispatch(removeAll());
     };
     return (
         <div>
-            {isSignUpSuccess ? (
+            {isOrder ? (
                 <div>
                     <Label>Recipient Name: {resOrder.recipientName}</Label>
                     <br></br>
