@@ -5728,6 +5728,7 @@ function CustomModal(props) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+      color: "black",
       className: "LoginSignUp_btn",
       onClick: toggle,
       children: buttonLabel
@@ -6314,11 +6315,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_categorySlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../reducers/categorySlice */ "./resources/js/reducers/categorySlice.js");
-/* harmony import */ var _Category_Category__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Category/Category */ "./resources/js/pages/home/components/Category/Category.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Spinner.js");
-/* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../reducers/productSlice */ "./resources/js/reducers/productSlice.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _assets_menu_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../assets/menu.svg */ "./resources/js/assets/menu.svg");
+/* harmony import */ var _reducers_categorySlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../reducers/categorySlice */ "./resources/js/reducers/categorySlice.js");
+/* harmony import */ var _Category_Category__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Category/Category */ "./resources/js/pages/home/components/Category/Category.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Spinner.js");
+/* harmony import */ var _reducers_productSlice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../reducers/productSlice */ "./resources/js/reducers/productSlice.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -6346,6 +6350,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 function Menu(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -6358,8 +6364,17 @@ function Menu(props) {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
 
   var handelCategoryClick = function handelCategoryClick(category) {
-    dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_5__.showProductsByCategoryId)(category));
+    dispatch((0,_reducers_productSlice__WEBPACK_IMPORTED_MODULE_6__.showProductsByCategoryId)(category));
     setIdClick(category.id);
+  };
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      collapsed = _useState4[0],
+      setCollapsed = _useState4[1];
+
+  var toggleNavbar = function toggleNavbar() {
+    return setCollapsed(!collapsed);
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
@@ -6374,7 +6389,7 @@ function Menu(props) {
             switch (_context.prev = _context.next) {
               case 0:
                 // You can await here
-                dispatch((0,_reducers_categorySlice__WEBPACK_IMPORTED_MODULE_3__.getAll)()); // ...
+                dispatch((0,_reducers_categorySlice__WEBPACK_IMPORTED_MODULE_4__.getAll)()); // ...
 
               case 1:
               case "end":
@@ -6388,44 +6403,64 @@ function Menu(props) {
 
     fetchData();
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-    "class": "Menu col-lg-3",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      "class": "sidebar-category",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-        "class": "text-category",
-        children: "categories"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
-        "class": "ul-category",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-          "class": "li-category",
-          children: categoryList.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "Menu col-lg-3",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "Menu__mobie",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+        onClick: toggleNavbar,
+        widt: 32,
+        height: 32,
+        src: _assets_menu_svg__WEBPACK_IMPORTED_MODULE_3__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
+        "class": classnames__WEBPACK_IMPORTED_MODULE_7___default()("ul-category", "ul-category-responsive", {
+          none: collapsed
+        }),
+        children: categoryList.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
+          className: "container",
+          type: "grow",
+          color: "danger",
+          children: "a"
+        }) : categoryList.map(function (category, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            "class": "li-category",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Category_Category__WEBPACK_IMPORTED_MODULE_5__.default, {
+              idClick: idClick,
+              handelCategoryClick: handelCategoryClick,
+              category: category
+            }, index)
+          });
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      className: "Menu__laptop",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        "class": "sidebar-category",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+          "class": "text-category",
+          children: "categories"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
+          "class": "ul-category",
+          children: categoryList.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
             className: "container",
             type: "grow",
             color: "danger",
             children: "a"
           }) : categoryList.map(function (category, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Category_Category__WEBPACK_IMPORTED_MODULE_4__.default, {
-              idClick: idClick,
-              handelCategoryClick: handelCategoryClick,
-              category: category
-            }, index);
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+              "class": "li-category",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Category_Category__WEBPACK_IMPORTED_MODULE_5__.default, {
+                idClick: idClick,
+                handelCategoryClick: handelCategoryClick,
+                category: category
+              }, index)
+            });
           })
-        })
-      })]
-    })
+        })]
+      })
+    })]
   });
-} // async function fetchData() {
-//   // You can await here
-//   const actionResult=await categoryApi.getAll();
-// const currentCategory=unwrapResult(actionResult);
-//   console.log("asdasdasd")
-// this.setState({
-//   categoryList:actionResult
-// })
-//   // ...
-// }
-// fetchData();
+}
 
 /***/ }),
 
@@ -12739,6 +12774,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/cancel.svg?c88be099e498ed448a45f12919b779ed");
+
+/***/ }),
+
+/***/ "./resources/js/assets/menu.svg":
+/*!**************************************!*\
+  !*** ./resources/js/assets/menu.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/menu.svg?2a7fc5467ee6018f65da6b83463c414c");
 
 /***/ }),
 
