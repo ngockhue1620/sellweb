@@ -73,7 +73,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::where('customer_id','=',$id)->with(['orderDetail'])->get();
+        return $order;
     }
 
     /**
