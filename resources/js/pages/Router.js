@@ -7,14 +7,14 @@ import {
 } from "react-router-dom";
 
 import { Suspense, useState } from "react";
-import HomePage from "./HomePage";
-import About from "../About/About";
-import Header from "./components/Header/Header";
+import HomePage from "./home/HomePage";
+import About from "./About/About";
+import Header from "./home/components/Header/Header";
 
 import React from "react";
-import CartContainer from "./components/CartContainer/CartContainer";
-import Footer from "./components/Footer/Footer";
-
+import CartContainer from "./home/components/CartContainer/CartContainer";
+import Footer from "./home/components/Footer/Footer";
+import Account from "./account/Account";
 
 export default function App() {
     const [isShowCart, setIsShowCart] = useState(false);
@@ -43,8 +43,13 @@ export default function App() {
                         path="/about"
                         render={(props) => <About {...props} />}
                     />
+
+                    <Route
+                        path="/account"
+                        render={(props) => <Account {...props} />}
+                    />
                 </Switch>
-                <Footer/>
+                <Footer />
             </Suspense>
         </Router>
     );

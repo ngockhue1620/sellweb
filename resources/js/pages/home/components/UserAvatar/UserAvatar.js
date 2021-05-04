@@ -12,6 +12,7 @@ import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
 export default function UserAvatar() {
     const dispatch = useDispatch();
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleLogout = async () => {
         const actionResult = await dispatch(
@@ -20,6 +21,7 @@ export default function UserAvatar() {
                 password: "",
             })
         );
+
         const user = unwrapResult(actionResult);
     };
     const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -36,12 +38,18 @@ export default function UserAvatar() {
                 />
             </DropdownToggle>
             <DropdownMenu>
-                <DropdownItem >
-                    Information Account
+                <DropdownItem>
+                    <a href="/account">Information Account</a>
                 </DropdownItem>
-                <DropdownItem>History order</DropdownItem>
-                <DropdownItem>Change password</DropdownItem>
-                <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
+                <DropdownItem>
+                    <a href="/account">History order</a>
+                </DropdownItem>
+                <DropdownItem>
+                    <a href="/account">Change password</a>
+                </DropdownItem>
+                <DropdownItem onClick={handleLogout}>
+                    <a href="/homepage">Logout</a>
+                </DropdownItem>
             </DropdownMenu>
         </Dropdown>
         //     <div >
