@@ -12,6 +12,7 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         return Customer::all();
@@ -86,8 +87,7 @@ class CustomerController extends Controller
     {
         try{
             // find is has => update
-            // find is none => create
-            
+            // find is none => create            
              $customer = Customer::where('id','=',$id)->with(['getInCart'])->get();
              
             if(empty($customer))
@@ -139,7 +139,7 @@ class CustomerController extends Controller
             else
             {
                 $customer->update($request->all());
-                return response()->json(['category'=>$customer,'status'=>true],200);
+                return response()->json(['customer'=>$customer,'status'=>true],200);
                 
             }
         }

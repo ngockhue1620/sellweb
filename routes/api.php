@@ -62,7 +62,7 @@ Route::delete('cart/{id}','App\Http\Controllers\In_CartController@destroy');
 //order
 Route::post('order','App\Http\Controllers\OrderController@store');
 Route::get('order','App\Http\Controllers\OrderController@index');
-// Route::put('order/{id}','App\Http\Controllers\CustomerController@update');
+Route::get('order/{id}','App\Http\Controllers\OrderController@show');
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
 
 //file
