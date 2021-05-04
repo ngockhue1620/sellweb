@@ -32,7 +32,7 @@ export default function LoginForm(props) {
             console.log("user", user);
             onToggle();
         } else {
-            setMassage("Nhập sai r tg ngu");
+            setMassage("Email or password is wrong!!!");
         }
     };
     return (

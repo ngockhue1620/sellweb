@@ -10,14 +10,14 @@ export default function CustomModal(props) {
     const { buttonLabel, className } = props;
     const user=useSelector(state=>state.user)
     const [modal, setModal] = useState(false);
-
+    const [title,setTitle]=useState(buttonLabel==="Order" ? "Enter some information about the recipient" : buttonLabel)
     const toggle = () => {
         if (buttonLabel === "Order" && cartProducts.length < 1) {
             alert("Your cart is empty"); return;
             
         }
         if (buttonLabel === "Order" && !user) {
-            alert("ban da dang nhap deo dau"); return;
+            alert("You are not logged in"); return;
             
         }
         
@@ -31,9 +31,7 @@ export default function CustomModal(props) {
             </Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}>
-                    {buttonLabel === "Order"
-                        ? "Enter some information about the recipient"
-                        : buttonLabel}
+                    {title}
                 </ModalHeader>
                 <ModalBody>
                     {buttonLabel === "Login" && (
@@ -43,7 +41,7 @@ export default function CustomModal(props) {
                         <SignUpForm onToggle={toggle}></SignUpForm>
                     )}
                     {buttonLabel === "Order" && (
-                        <OrderForm onToggle={toggle}></OrderForm>
+                        <OrderForm onToggle={toggle} setTitle={setTitle}></OrderForm>
                     )}
                 </ModalBody>
             </Modal>
