@@ -27,7 +27,7 @@ export default function Menu(props) {
     }, []);
     return (
         <div class="Menu col-lg-3">
-            <div class="sidebar-category">
+            <div class="sidebar sidebar-category">
                 <h3 class="text-category">categories</h3>
                 <ul class="ul-category">
                     <li class="li-category">

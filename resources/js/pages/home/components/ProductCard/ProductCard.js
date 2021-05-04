@@ -19,11 +19,7 @@ export default function ProductCard(props) {
                 productName={productName}
                 description={description}
             ></ProductDetail>
-            <div
-                class="product-grid4"
-                data-aos={index > 2 && "fade-up"}
-                data-aos-anchor-placement={index > 2 && "center-center"}
-            >
+            <div class="product-grid4">
                 <div class="product-image4">
                     <a>
                         <img class="pic-1" src={imageAddress}></img>
