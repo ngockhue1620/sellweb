@@ -18,7 +18,7 @@ export default function SignUpForm(props) {
         },
         {
             label: "Email",
-            type: "text",
+            type: "email",
             placeholder: "Enter your user here",
         },
         {
@@ -51,12 +51,7 @@ export default function SignUpForm(props) {
             setMassage("Your Name is invalid!");
             return;
         }
-        regExp = /^[A-Za-z][\w$.]+@[\w]+\.\w+$/;
-
-        if (!regExp.test(email)) {
-            setMassage("Your Email is invalid!");
-            return;
-        }
+        
         let isExist = (element, index, array) => {
             return element.email === email;
         };

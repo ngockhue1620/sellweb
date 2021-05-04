@@ -10422,6 +10422,12 @@ nav .navbar-nav .nav-item .nav-link:hover {
   padding-left: 1.75rem;
   padding-bottom: 3rem;
 }
+.quantity > input {
+  outline: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
 
 .aboutComponet {
   margin-top: 70px;

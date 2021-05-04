@@ -14,7 +14,7 @@ export default function LoginForm(props) {
     const listFormGroups = [
         {
             label: "Email",
-            type: "text",
+            type: "email",
             placeholder: "Enter your user here",
         },
         {
@@ -32,7 +32,7 @@ export default function LoginForm(props) {
             console.log("user", user);
             onToggle();
         } else {
-            setMassage("Nhập sai r tg ngu");
+            setMassage("Email or password is wrong!!!");
         }
     };
     return (

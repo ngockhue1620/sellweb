@@ -476,6 +476,12 @@ nav {
 .quantity {
     padding-left: 1.75rem;
     padding-bottom: 3rem;
+    >input{
+        outline: none;
+        border-left: none;
+        border-right:none ;
+        border-top:none;
+    }
 }
 
 .aboutComponet {
