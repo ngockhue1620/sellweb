@@ -5,7 +5,11 @@ export const login = createAsyncThunk(
     "user/login",
     async (data, params, thunkAPI) => {
         const user = await userApi.login(data);
-        if (user.length > 0) return user[0];
+        if (user.length > 0) 
+        {
+            console.log("user",user)
+            return user[0];
+        }
         return null;
     }
 );

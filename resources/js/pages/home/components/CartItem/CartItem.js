@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 import { removeProduct, setQuantity } from "../../../../reducers/cartSlice";
 import { Col, Row } from "reactstrap";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 export default function CartItem(props) {
     const { product, onQuatityClick, editQuantityId } = props;

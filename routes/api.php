@@ -46,7 +46,7 @@ Route::post('customer','App\Http\Controllers\CustomerController@store');
 Route::post('login','App\Http\Controllers\CustomerController@login');
 Route::get('customer','App\Http\Controllers\CustomerController@index');
 // Route::get('customer/create','App\Http\Controllers\CustomerController@create');
-Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth');
+Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
 
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');

@@ -139,7 +139,7 @@ class CustomerController extends Controller
             else
             {
                 $customer->update($request->all());
-                return response()->json(['category'=>$customer,'status'=>true],200);
+                return response()->json(['customer'=>$customer,'status'=>true],200);
                 
             }
         }
