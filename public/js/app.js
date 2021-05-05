@@ -6746,14 +6746,13 @@ function ProductCard(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    "class": "ProductCard col-lg-4 col-md-6 mb-4 ",
+    "class": "ProductCard col-lg-3  ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ProductDetail_ProductDetail__WEBPACK_IMPORTED_MODULE_3__.default, {
       productName: productName,
       description: description
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       "class": "product-grid4",
-      "data-aos": index > 2 && "fade-up",
-      "data-aos-anchor-placement": index > 2 && "center-center",
+      "data-aos": "fade-up",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         "class": "product-image4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {

@@ -14,15 +14,16 @@ export default function ProductCard(props) {
     };
 
     return (
-        <div class="ProductCard col-lg-4 col-md-6 mb-4 ">
+        <div class="ProductCard col-lg-3  "
+        >
             <ProductDetail
                 productName={productName}
                 description={description}
             ></ProductDetail>
             <div
                 class="product-grid4"
-                data-aos={index > 2 && "fade-up"}
-                data-aos-anchor-placement={index > 2 && "center-center"}
+                data-aos="fade-up"
+                
             >
                 <div class="product-image4">
                     <a>
