@@ -10222,6 +10222,32 @@ input::-webkit-inner-spin-button {
   background: #1e1e1e;
 }
 
+@media screen and (max-width: 576px) {
+  .Menu {
+    width: 0px;
+  }
+  .Menu__mobie {
+    display: inline;
+  }
+  .Menu__laptop {
+    display: none;
+  }
+}
+.Menu__mobie {
+  display: none;
+  position: fixed;
+  z-index: 100;
+}
+.Menu__mobie > .ul-category-responsive {
+  width: 10rem;
+  list-style: none;
+  position: absolute;
+  display: inline;
+}
+.Menu__mobie .none {
+  display: none;
+}
+
 .footer {
   line-height: 1.5;
   background-color: #24262b;
@@ -10403,18 +10429,16 @@ nav .navbar-nav .nav-item .nav-link:hover {
 }
 
 .LoginSignUp_btn {
-  background-color: #1b1b1b;
+  color: white;
   border: none;
   font-size: 18px;
   padding-top: 0;
 }
 .LoginSignUp_btn:hover {
   color: cyan;
-  background-color: #1b1b1b;
 }
-.LoginSignUp_btn:active,
-.LoginSignUp_btn :focus {
-  border: none;
+.LoginSignUp_btn:focus {
+  box-shadow: none;
   background-color: #1b1b1b;
 }
 

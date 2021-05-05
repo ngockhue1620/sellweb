@@ -261,6 +261,36 @@ input::-webkit-inner-spin-button {
         }
     }
 }
+@media screen and (max-width: 576px) {
+    .Menu {
+        width: 0px;
+        // background-color: black;
+        &__mobie {
+            display: inline;
+        }
+        &__laptop {
+            display: none;
+        }
+    }
+}
+
+.Menu {
+    &__mobie {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        & > .ul-category-responsive {
+            width: 10rem;
+            list-style: none;
+            position: absolute;
+            display: inline;
+        }
+        .none {
+            display: none;
+        }
+    }
+}
+
 //menu//
 //footer//
 .footer {
@@ -457,18 +487,16 @@ nav {
     }
 }
 .LoginSignUp_btn {
-    background-color: #1b1b1b;
+    // background-color: #1b1b1b;
+    color: white;
     border: none;
     font-size: 18px;
     padding-top: 0;
     &:hover {
         color: cyan;
-        background-color: #1b1b1b;
     }
-    &:active,
-    :focus {
-        border: none;
-
+    &:focus {
+        box-shadow: none;
         background-color: #1b1b1b;
     }
 }

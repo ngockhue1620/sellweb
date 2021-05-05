@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string("recipientName");
             $table->string("recipientAddress");
             $table->string("note")->nullable();
+            $table->boolean("isProcess");
             $table->timestamps();
         });
     }

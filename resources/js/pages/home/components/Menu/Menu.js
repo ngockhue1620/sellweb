@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import menuIcon from "../../../../assets/plus-solid.svg";
 import { getAll } from "../../../../reducers/categorySlice";
 import Category from "../Category/Category";
-import { Spinner } from "reactstrap";
+import {
+    Collapse,
+    Nav,
+    Navbar,
+    NavbarToggler,
+    NavItem,
+    NavLink,
+    Spinner,
+} from "reactstrap";
 
 import React from "react";
 import { showProductsByCategoryId } from "../../../../reducers/productSlice";
+import className from "classnames";
 
 export default function Menu(props) {
     const [idClick, setIdClick] = useState(null);
@@ -17,6 +26,10 @@ export default function Menu(props) {
         setIdClick(category.id);
     };
 
+    const [collapsed, setCollapsed] = useState(true);
+
+    const toggleNavbar = () => setCollapsed(!collapsed);
+
     useEffect(() => {
         async function fetchData() {
             // You can await here
@@ -26,11 +39,46 @@ export default function Menu(props) {
         fetchData();
     }, []);
     return (
-        <div class="Menu col-lg-3">
-            <div class="sidebar sidebar-category">
-                <h3 class="text-category">categories</h3>
-                <ul class="ul-category">
-                    <li class="li-category">
+        <div className="Menu col-lg-3">
+            <div className="Menu__mobie">
+                <img
+                    onClick={toggleNavbar}
+                    widt={32}
+                    height={32}
+                    src={menuIcon}
+                ></img>
+
+                <ul
+                    class={className("ul-category", "ul-category-responsive", {
+                        none: collapsed,
+                    })}
+                >
+                    {categoryList.length == 0 ? (
+                        <Spinner
+                            className="container"
+                            type="grow"
+                            color="danger"
+                        >
+                            a
+                        </Spinner>
+                    ) : (
+                        categoryList.map((category, index) => (
+                            <li class="li-category">
+                                <Category
+                                    idClick={idClick}
+                                    handelCategoryClick={handelCategoryClick}
+                                    key={index}
+                                    category={category}
+                                ></Category>
+                            </li>
+                        ))
+                    )}
+                </ul>
+            </div>
+            <div className="Menu__laptop">
+                <div class="sidebar-category">
+                    <h3 class="text-category">categories</h3>
+                    <ul class="ul-category">
                         {categoryList.length == 0 ? (
                             <Spinner
                                 className="container"
@@ -41,29 +89,21 @@ export default function Menu(props) {
                             </Spinner>
                         ) : (
                             categoryList.map((category, index) => (
-                                <Category
-                                    idClick={idClick}
-                                    handelCategoryClick={handelCategoryClick}
-                                    key={index}
-                                    category={category}
-                                ></Category>
+                                <li class="li-category">
+                                    <Category
+                                        idClick={idClick}
+                                        handelCategoryClick={
+                                            handelCategoryClick
+                                        }
+                                        key={index}
+                                        category={category}
+                                    ></Category>
+                                </li>
                             ))
                         )}
-                    </li>
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     );
 }
-
-// async function fetchData() {
-//   // You can await here
-//   const actionResult=await categoryApi.getAll();
-// const currentCategory=unwrapResult(actionResult);
-//   console.log("asdasdasd")
-// this.setState({
-//   categoryList:actionResult
-// })
-//   // ...
-// }
-// fetchData();
