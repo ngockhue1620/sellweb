@@ -1,21 +1,42 @@
 
-import React, { useState } from 'react';
+import React, { useState,useCallback } from 'react';
 // import { Spinner } from 'reactstrap';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardImg, CardText } from 'reactstrap';
 import UpdateProduct from './UpdateProduct';
 export default function ProductItem(props) {
-
+  const [product,setProduct] = useState(props.product);
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal); 
   const [confirm, setConfirm] = useState(false);
   const [isDelete, setDelete] = useState("");
-  
+  const [isUpdate,setUpdate] = useState(false);  
+  const  handleClickUpdate=useCallback((value)=>{
+      if(value==false)
+      {
+        setUpdate(false)
+      }
+      else
+      {
+        console.log("product",product)
+        setUpdate(false)
+         setProduct({...product,
+                  price:value.price,
+                  imageAddress:value.imageAddress,
+                  productName:value.productName,
+                  description:value.description,
+                  quantity:value.quantity,
+                  id:value.id
+                })
+        console.log("value",product)
+       
+      }
+  },[product]);
   const confirmDelete = (value) => {
     if (value == true) {
 
 
       axios
-        .delete(`https://laravel-react-sell-web.herokuapp.com/api/product/${props,product.id}`)
+        .delete(`https://laravel-react-sell-web.herokuapp.com/api/product/${product.id}`)
         .then((response) => {
           if (response.status == 200) {
             alert('Delete Success success')
@@ -41,10 +62,10 @@ export default function ProductItem(props) {
     <>
       <tr className={isDelete} data-aos="fade-up"
         data-aos-anchor-placement="bottom-bottom">
-        <th scope="row">{props.product.id}</th>
-        <td onClick={toggle}>{props.product.productName}</td>
-        <td>{props.product.price}</td>
-        <td><img className="image-product-admin" src={props.product.imageAddress} /></td>
+        <th scope="row">{product.id}</th>
+        <td onClick={toggle}>{product.productName}</td>
+        <td>{product.price}</td>
+        <td><img className="image-product-admin" src={product.imageAddress} /></td>
         <td><button className="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"
           onClick={() => setConfirm(true)}
         >
@@ -52,7 +73,9 @@ export default function ProductItem(props) {
           <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
         </svg></button>
 
-          <button className="btn btn-warning" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <button className="btn btn-warning"
+          onClick={() => setUpdate(true)}
+          ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
           </svg></button>
@@ -60,13 +83,13 @@ export default function ProductItem(props) {
         </td>
       </tr>
       <Modal isOpen={modal} toggle={toggle} >
-        <ModalHeader toggle={toggle}>{props.product.productName}</ModalHeader>
+        <ModalHeader toggle={toggle}>{product.productName}</ModalHeader>
         <ModalBody>
           <Card>
-            <CardImg className="Card-Img-Detail" src={props.product.imageAddress} />
-            <CardText>Tồn Kho:{props.product.quantity}</CardText>
-            <CardText>Giá Cả :{props.product.price}</CardText>
-            <CardText>Mô tả  :{props.product.description}</CardText>
+            <CardImg className="Card-Img-Detail" src={product.imageAddress} />
+            <CardText>Tồn Kho:{product.quantity}</CardText>
+            <CardText>Giá Cả :{product.price}</CardText>
+            <CardText>Mô tả  :{product.description}</CardText>
           </Card>
         </ModalBody>
         <ModalFooter>
@@ -79,10 +102,10 @@ export default function ProductItem(props) {
         <ModalHeader style={{ margin: "auto " }}><Alert color="danger">Bạn Có Chắc Chắc Xóa Mặc Hàng Này</Alert></ModalHeader>
         <ModalBody>
           <Card>
-            <CardImg className="Card-Img-Detail" src={props.product.imageAddress} />
-            <CardText>Tồn Kho:{props.product.quantity}</CardText>
-            <CardText>Giá Cả :{props.product.price}</CardText>
-            <CardText>Mô tả  :{props.product.description}</CardText>
+            <CardImg className="Card-Img-Detail" src={product.imageAddress} />
+            <CardText>Tồn Kho:{product.quantity}</CardText>
+            <CardText>Giá Cả :{product.price}</CardText>
+            <CardText>Mô tả  :{product.description}</CardText>
           </Card>
         </ModalBody>
         <ModalFooter style={{ margin: "auto " }}>
@@ -92,9 +115,9 @@ export default function ProductItem(props) {
         <Spinner className="container" type="grow" color="danger" >a</Spinner>
       </Modal>
       {/* update */}
-      <Modal isOpen={false}>
-        <UpdateProduct product={props}/>
-      </Modal>
+     
+      <UpdateProduct product={product} category={props.category} isUpdate={isUpdate} handleClickUpdate={handleClickUpdate} />
+      
     </>
 
   )
