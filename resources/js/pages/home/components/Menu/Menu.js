@@ -43,7 +43,7 @@ export default function Menu(props) {
             <div className="Menu__mobie">
                 <img
                     onClick={toggleNavbar}
-                    widt={32}
+                    width={32}
                     height={32}
                     src={menuIcon}
                 ></img>

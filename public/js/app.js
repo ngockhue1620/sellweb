@@ -6409,7 +6409,7 @@ function Menu(props) {
       className: "Menu__mobie",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
         onClick: toggleNavbar,
-        widt: 32,
+        width: 32,
         height: 32,
         src: _assets_plus_solid_svg__WEBPACK_IMPORTED_MODULE_3__.default
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
