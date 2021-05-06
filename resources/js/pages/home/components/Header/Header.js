@@ -107,7 +107,7 @@ export default function Header(props) {
                                 </li>
                             ) : (
                                 <>
-                                    <li class="nav-item sign-up">
+                                    <li class="nav-item sign-up1">
                                         <a class="nav-link" >
                                             <span class="glyphicon glyphicon-user"></span>{" "}
                                             <CustomModal
