@@ -16,6 +16,55 @@ export default function Header(props) {
                     <a class="navbar-brand" href="/">
                         FCT TEAMWORK
                     </a>
+
+                    <li onClick={onClickCart} class="nav-item nav-item1">
+                        <a class="nav-link cart-icon-header">
+                            <Cart></Cart>
+                        </a>
+                    </li>
+                    {user ? (
+                        <li class="nav-item nav-item1">
+                            <a class="nav-link ">
+                                <UserAvatar></UserAvatar>
+                            </a>
+                        </li>
+                    ) : (
+                        <>
+                            <li class="nav-item sign-up nav-item1">
+                                <a class="nav-link" >
+                                    <span class="glyphicon glyphicon-user"></span>{" "}
+                                    <CustomModal
+                                        buttonLabel="Sign Up"
+                                        className="modal-signup"
+                                    ></CustomModal>
+                                </a>
+                            </li>
+                            <li class="nav-item nav-item1">
+                                <a class="nav-link">
+                                    <span class="glyphicon glyphicon-log-in"></span>{" "}
+                                    <CustomModal
+                                        buttonLabel="Login"
+                                        className="modal-login"
+                                    ></CustomModal>
+                                </a>
+                            </li>
+                        </>
+                    )}
+                    <button
+                        onClick={onClickCart}
+                        class="nav-item"
+                        class="navbar-toggler"
+                        type="button"
+                        // data-toggle="collapse"
+                        data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                    // aria-label="Toggle navigation"
+                    >
+                        <a class="nav-link cart-icon-header">
+                            <Cart></Cart>
+                        </a>
+                    </button>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -51,15 +100,15 @@ export default function Header(props) {
                                 </a>
                             </li>
                             {user ? (
-                                <li class="nav-item">
+                                <li class="nav-item login">
                                     <a class="nav-link ">
                                         <UserAvatar></UserAvatar>
                                     </a>
                                 </li>
                             ) : (
                                 <>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                    <li class="nav-item sign-up">
+                                        <a class="nav-link" >
                                             <span class="glyphicon glyphicon-user"></span>{" "}
                                             <CustomModal
                                                 buttonLabel="Sign Up"
@@ -67,7 +116,7 @@ export default function Header(props) {
                                             ></CustomModal>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item login">
                                         <a class="nav-link">
                                             <span class="glyphicon glyphicon-log-in"></span>{" "}
                                             <CustomModal
@@ -82,6 +131,6 @@ export default function Header(props) {
                     </div>
                 </div>
             </nav>
-        </div>
+        </div >
     );
 }

@@ -4,6 +4,12 @@ import { Button, Label, Table } from "reactstrap";
 import orderApi from "../../../../api/orderApi";
 import { removeAll } from "../../../../reducers/cartSlice";
 import CustomForm from "../CustomForm/CustomForm";
+import {
+    ListGroup,
+    ListGroupItem,
+    
+  
+  } from "reactstrap";
 
 export default function OrderForm(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
@@ -12,9 +18,11 @@ export default function OrderForm(props) {
 
     const dispatch = useDispatch();
 
-    const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
+    const [isOrder, setIsOrder] = useState(false);
 
-    const [massage, setMassage] = useState("");
+    const [message, setMessage] = useState("");
+
+    const [errors, setError] = useState([]);
 
     const { onToggle, setTitle } = props;
 
@@ -52,13 +60,13 @@ export default function OrderForm(props) {
         let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
         if (!regExp.test(name)) {
-            setMassage("Name is invalid!");
+            setMessage("Name is invalid!");
             return;
         }
 
         regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         if (!phone.match(regExp)) {
-            setMassage("Phone number is invalid!");
+            setMessage("Phone number is invalid!");
             return;
         }
         let orderDetails = [];
@@ -81,23 +89,26 @@ export default function OrderForm(props) {
         };
 
         const res = await orderApi.postOrder(order);
+        console.log(res.errors);
         if (res.status) {
             setResOrder(res.order);
+            setIsOrder(true);
             setTitle("Order Success! This is details for your order.");
         } else {
-            setTitle("Oops!!!Order failed");
+            setTitle("Một vài sản phẩm không đủ số lượng");
+            setError(res.errors);
         }
 
-        setIsSignUpSuccess(true);
+        
     };
     const onClickComeBack = () => {
         onToggle();
-        setIsSignUpSuccess(false);
+        setIsOrder(false);
         dispatch(removeAll());
     };
     return (
         <div>
-            {isSignUpSuccess ? (
+            {isOrder ? (
                 <div>
                     <Label>Recipient Name: {resOrder.recipientName}</Label>
                     <br></br>
@@ -159,12 +170,19 @@ export default function OrderForm(props) {
                     </Button>
                 </div>
             ) : (
+                <>
+
                 <CustomForm
                     btnLabel="Order"
-                    massage={massage}
+                    message={message}
                     onSubmit={handleSubmit}
                     listFormGroups={listFormGroups}
                 ></CustomForm>
+                <ListGroup>
+                    {errors.map(item=><ListGroupItem color="danger">{item}</ListGroupItem>)}
+                    
+                </ListGroup>
+                </>
             )}
         </div>
     );

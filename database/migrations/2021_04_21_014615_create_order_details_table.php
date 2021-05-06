@@ -18,8 +18,8 @@ class CreateOrderDetailsTable extends Migration
             $table->bigInteger("order_id")->unsigned()->nullable();;
             $table->bigInteger("productId")->unsigned()->nullable();;
             $table->integer("quantity");
-            $table->float('price', 8, 2);
-            $table->float('total', 8, 2);
+            $table->double('price', 8, 2);
+            $table->double('total', 8, 2);
 
             $table->timestamps();
         });

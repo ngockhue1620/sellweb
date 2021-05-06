@@ -1,7 +1,7 @@
-
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../../../reducers/cartSlice";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 export default function ProductCard(props) {
     const { imageAddress, productName, price, description } = props.product;
@@ -14,17 +14,20 @@ export default function ProductCard(props) {
     };
 
     return (
-        <div
-            
-            class="ProductCard col-lg-4 col-md-6 mb-4 "
+        <div class="ProductCard col-lg-3  "
         >
-            <div class="product-grid4"
-                data-aos={index > 2 && "fade-up"}
-                data-aos-anchor-placement={index > 2 && "center-center"}
+            <ProductDetail
+                productName={productName}
+                description={description}
+            ></ProductDetail>
+            <div
+                class="product-grid4"
+                data-aos="fade-up"
+                
             >
                 <div class="product-image4">
                     <a>
-                        <img  class="pic-1" src={imageAddress}></img>
+                        <img class="pic-1" src={imageAddress}></img>
                     </a>
 
                     <span class="product-new-label">New</span>

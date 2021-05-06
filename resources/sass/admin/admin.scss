@@ -1,25 +1,24 @@
 
 
 .Menu.col-lg-2.menu-class {
-    height: 500px;
-    position: fixed;
-    top: 10%;
-    background-color: cornflowerblue;
-    border-radius: 5px;
+  height: 500px;
+  position: fixed;
+  top: 10%;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  width: 15%;
+  overflow: hidden;
   }
   
-  .Body {
-    display: flex;
-  }
+  
   
   img.image-product-admin {
     width: 70px;
   }
   
   .conten-component-admin {
-    position: absolute;
-    left: 20%;
-    top: 15%;
+   margin-left: 20%;
+   margin-top: 10%;
   }
   
   img.Card-Img-Detail.card-img {
@@ -44,5 +43,16 @@ label.label-insert-admin {
 
 .show-product-item-admin{
   display: none;
+}
+
+
+
+.footer-admin-page {
+  background: chartreuse;
+  display: flex;
+    justify-content: space-between;
+  position: relative;
+  top: 40px;
+ 
 }
 

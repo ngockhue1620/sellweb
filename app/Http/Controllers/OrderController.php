@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\InCart;
+use App\Models\Product;
 use DB;
 
 class OrderController extends Controller
@@ -42,7 +43,29 @@ class OrderController extends Controller
             
         $data = $request->only('customer_id','recipientPhone','recipientName','recipientAddress','note');
         $order = Order::Create($data);
+        $errors=[];
         // create order detail
+        
+        foreach( $request->orderDetails as $value)
+        {   
+            
+            $product = Product::find($value['productId']);
+            if($product->quantity<$value['quantity'])
+            {  
+                array_push($errors,$product->productName.' còn '.$product->quantity . ' sản phẩm');
+            }
+            else
+            {
+                $product->quantity=(int)$product->quantity-(int)$value['quantity'];
+                $product->save();
+            }
+        }
+        
+        if(count($errors)>0)
+        {
+            DB::rollback();
+            return \response()->json(['errors'=>$errors,'status'=>false]);
+        }
         $order->orderDetail()->createMany($request->orderDetails);
         // delete cart of customer
         InCart::destroy($request->customerId);
@@ -73,7 +96,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::where('customer_id','=',$id)->with(['orderDetail'])->get();
+        return $order;
     }
 
     /**

@@ -46,7 +46,7 @@ Route::post('customer','App\Http\Controllers\CustomerController@store');
 Route::post('login','App\Http\Controllers\CustomerController@login');
 Route::get('customer','App\Http\Controllers\CustomerController@index');
 // Route::get('customer/create','App\Http\Controllers\CustomerController@create');
-Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth');
+Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
 
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
@@ -61,8 +61,13 @@ Route::delete('cart/{id}','App\Http\Controllers\In_CartController@destroy');
 
 //order
 Route::post('order','App\Http\Controllers\OrderController@store');
+
 Route::get('order','App\Http\Controllers\OrderController@index');   
 // Route::put('order/{id}','App\Http\Controllers\CustomerController@update');
+
+Route::get('order','App\Http\Controllers\OrderController@index');
+Route::get('order/{id}','App\Http\Controllers\OrderController@show');
+
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
 
 //file
