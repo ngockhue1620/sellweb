@@ -6647,7 +6647,7 @@ function OrderForm(props) {
               orderDetails = [];
               cartProducts.map(function (product) {
                 orderDetails.push({
-                  productId: product.product.id,
+                  product_id: product.product.id,
                   quantity: product.quantity,
                   price: product.product.price,
                   total: product.quantity * product.product.price

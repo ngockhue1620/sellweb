@@ -17,7 +17,11 @@ class AddForeignsToOrderDetails extends Migration
             if (!Schema::hasColumn('order_details', 'order_id')) {
                 $table->bigInteger('order_id')->unsigned()->nullable();
             }
+            if (!Schema::hasColumn('order_details', 'product_id')) {
+                $table->bigInteger('product_id')->unsigned()->nullable();
+            }
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

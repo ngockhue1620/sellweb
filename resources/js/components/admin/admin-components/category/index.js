@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CategoryItem from './CategoryItem';
 import { Table, Spinner } from "reactstrap";
+import axios from 'axios';
 export default class Index extends Component {
     constructor(props) {
         super(props)
@@ -14,12 +15,13 @@ export default class Index extends Component {
 
 
     }
-    getCategories() {
-        axiosClient.get("https://laravel-react-sell-web.herokuapp.com/api/category")
+    async getCategories() {
+       await axios.get("https://laravel-react-sell-web.herokuapp.com/api/category")
             .then((data) => {
                 this.setState({
                     listCategories: data
                 })
+                console.log("cate",this.state.listCategories)
 
 
             }).catch(function (error) {
@@ -28,7 +30,7 @@ export default class Index extends Component {
     }
 
     render() {
-        console.log(this.state.listCategories);
+        
 
 
         return (
@@ -44,9 +46,10 @@ export default class Index extends Component {
 
                         {
                             this.state.listCategories.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :
-                                this.state.listCategories.map((categorie, index) => (
-                                    <CategoryItem key={index} categorie={categorie} />
-                                ))
+                               "Da La trang Category"    
+                            // this.state.listCategories.map((category, index) =>{ 
+                            //         <CategoryItem key={index} category={category} />
+                            // })
                         }
 
                     </tbody>
