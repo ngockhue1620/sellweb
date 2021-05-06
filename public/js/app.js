@@ -5938,6 +5938,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../UserAvatar/UserAvatar */ "./resources/js/pages/home/components/UserAvatar/UserAvatar.js");
 /* harmony import */ var _CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../CustomModal/CustomModal */ "./resources/js/pages/home/components/CustomModal/CustomModal.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -5947,6 +5949,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Header(props) {
+  var _jsx2;
+
   var onClickCart = props.onClickCart;
   var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.user;
@@ -5961,7 +5965,50 @@ function Header(props) {
           "class": "navbar-brand",
           href: "/",
           children: "FCT TEAMWORK"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+          onClick: onClickCart,
+          "class": "nav-item nav-item1",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            "class": "nav-link cart-icon-header",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
+          })
+        }), user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+          "class": "nav-item nav-item1",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+            "class": "nav-link ",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_3__.default, {})
+          })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+            "class": "nav-item sign-up nav-item1",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+              "class": "nav-link",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                "class": "glyphicon glyphicon-user"
+              }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
+                buttonLabel: "Sign Up",
+                className: "modal-signup"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+            "class": "nav-item nav-item1",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+              "class": "nav-link",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                "class": "glyphicon glyphicon-log-in"
+              }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
+                buttonLabel: "Login",
+                className: "modal-login"
+              })]
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", (_jsx2 = {
+          onClick: onClickCart,
+          "class": "nav-item"
+        }, _defineProperty(_jsx2, "class", "navbar-toggler"), _defineProperty(_jsx2, "type", "button"), _defineProperty(_jsx2, "data-target", "#navbarResponsive"), _defineProperty(_jsx2, "aria-controls", "navbarResponsive"), _defineProperty(_jsx2, "aria-expanded", "false"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+          "class": "nav-link cart-icon-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
+        })), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           "class": "navbar-toggler",
           type: "button",
           "data-toggle": "collapse",
@@ -6009,14 +6056,14 @@ function Header(props) {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
               })
             }), user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              "class": "nav-item",
+              "class": "nav-item login",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                 "class": "nav-link ",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_3__.default, {})
               })
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                "class": "nav-item",
+                "class": "nav-item sign-up",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
                   "class": "nav-link",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
@@ -6027,7 +6074,7 @@ function Header(props) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                "class": "nav-item",
+                "class": "nav-item login",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
                   "class": "nav-link",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {

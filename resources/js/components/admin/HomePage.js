@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import Body from './body-components/Body'
 import Header from './body-components/Header'
