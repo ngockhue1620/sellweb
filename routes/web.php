@@ -23,8 +23,8 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/admin/{any}', function () {
     
     return view('home');
-})->middleware('auth');
-
+});
+//->middleware('auth');
 Route::get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');

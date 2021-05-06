@@ -1,4 +1,5 @@
 
+
 import React, { Component } from 'react'
 import axiosAdmin from '../../axiosAdmin'
 import {
@@ -33,9 +34,14 @@ export default class index extends Component {
             });    
     }
 
+
     render() {
+        console.log(this.state.listCustomers);
+        
+        
         return (
             <div className="conten-component-admin">
+
                 <Table responsive> 
                         <thead>
                             <tr>
@@ -55,6 +61,7 @@ export default class index extends Component {
                                  <CustomerItem key={index} customer={item} num={index}/>
                             ))}
                         </tbody>
+
                 </Table>
             </div>
         )
