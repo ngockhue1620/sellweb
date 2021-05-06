@@ -14,7 +14,7 @@ export default function ProductCard(props) {
     };
 
     return (
-        <div class="ProductCard col-lg-4 col-md-6 mb-4 ">
+        <div class="ProductCard col-lg-3  ">
             <ProductDetail
                 productName={productName}
                 description={description}

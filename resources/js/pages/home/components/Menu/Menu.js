@@ -41,13 +41,7 @@ export default function Menu(props) {
     return (
         <div className="Menu col-lg-3">
             <div className="Menu__mobie">
-                <img
-                    onClick={toggleNavbar}
-                    width={32}
-                    height={32}
-                    src={menuIcon}
-                ></img>
-
+                <i class="fas fa-plus icon" onClick={toggleNavbar}></i>
                 <ul
                     class={className("ul-category", "ul-category-responsive", {
                         none: collapsed,

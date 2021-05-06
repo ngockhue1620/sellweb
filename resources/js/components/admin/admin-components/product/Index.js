@@ -158,7 +158,7 @@ export default class Index extends Component {
             //http://127.0.0.1:8000/
             axios
                 .post(
-                    `http://127.0.0.1:8000/api/product`,
+                    `https://laravel-react-sell-web.herokuapp.com/api/product`,
                     formdata
                 )
                 .then((response) => {

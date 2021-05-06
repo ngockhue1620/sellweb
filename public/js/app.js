@@ -5972,6 +5972,25 @@ function Header(props) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             "class": "navbar-toggler-icon"
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          "class": "div-res",
+          children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
+            "class": "navbar-nav ",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("li", {
+              "class": "nav-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
+                "class": "fas fa-home"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                "class": "sr-only",
+                children: "(current)"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              "class": "nav-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
+                "class": "fas fa-users"
+              })
+            })]
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           "class": "collapse navbar-collapse",
           id: "navbarResponsive",
@@ -6407,11 +6426,9 @@ function Menu(props) {
     className: "Menu col-lg-3",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "Menu__mobie",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-        onClick: toggleNavbar,
-        width: 32,
-        height: 32,
-        src: _assets_plus_solid_svg__WEBPACK_IMPORTED_MODULE_3__.default
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+        "class": "fas fa-plus icon",
+        onClick: toggleNavbar
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
         "class": classnames__WEBPACK_IMPORTED_MODULE_7___default()("ul-category", "ul-category-responsive", {
           none: collapsed
@@ -6746,7 +6763,7 @@ function ProductCard(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    "class": "ProductCard col-lg-4 col-md-6 mb-4 ",
+    "class": "ProductCard col-lg-3  ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ProductDetail_ProductDetail__WEBPACK_IMPORTED_MODULE_3__.default, {
       productName: productName,
       description: description

@@ -27,6 +27,19 @@ export default function Header(props) {
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div class="div-res">
+                        {" "}
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <i class="fas fa-home"></i>
+                                <span class="sr-only">(current)</span>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fas fa-users"></i>
+                            </li>
+                        </ul>
+                    </div>
+
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ">
                             <li class="nav-item active">
@@ -59,7 +72,7 @@ export default function Header(props) {
                             ) : (
                                 <>
                                     <li class="nav-item">
-                                        <a class="nav-link" >
+                                        <a class="nav-link">
                                             <span class="glyphicon glyphicon-user"></span>{" "}
                                             <CustomModal
                                                 buttonLabel="Sign Up"
