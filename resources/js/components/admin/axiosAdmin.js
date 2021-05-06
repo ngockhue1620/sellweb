@@ -1,21 +1,21 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const axiosClient = axios.create({
-    baseURL: "https://laravel-react-sell-web.herokuapp.com/",
+const axiosAdmin = axios.create({
+    baseURL: "http://127.0.0.1:8000/",
     headers: {
         "content-type": "application/json",
     },
     paramsSerializer: (param) => queryString.stringify(param),
 });
 
-axiosClient.interceptors.request.use(async (config) => {
+axiosAdmin.interceptors.request.use(async (config) => {
     const token = localStorage.getItem("token");
     config.headers.Authorization = "";
     return config;
 });
 
-axiosClient.interceptors.response.use(
+axiosAdmin.interceptors.response.use(
     (response) => {
         if (response && response.data) {
             return response.data;
@@ -30,4 +30,4 @@ axiosClient.interceptors.response.use(
     }
 );
 
-export default axiosClient;
+export default axiosAdmin;

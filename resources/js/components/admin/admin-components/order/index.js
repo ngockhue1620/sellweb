@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState,useCallback } from 'react'
+import axiosAdmin from '../../axiosAdmin'
+import React, { useState,useEffect } from 'react'
 import {
     Button,
     Progress,
@@ -8,28 +8,30 @@ import {
 
 
 } from 'reactstrap';
+
 import ConfimOrder from './ConfimOrder';
 export default function Index(){
 
     const [OrderList,setOrderList]=useState([])
 
     const [isProgress,setIsProgress]=useState(0)
-
-    const getOrder=  useCallback(
-        async ()=> {
-            await axios
-                .get('https://laravel-react-sell-web.herokuapp.com/api/order')
-                .then(response => {
-                    setOrderList(response.data)
-                })
-        }
-    )
-    if(OrderList.length==0)
-    {
-        getOrder()
-    } 
+    
     
 
+    useEffect(() => {
+        async function fetchData() {
+            
+            await axiosAdmin
+            .get("api/order")
+            .then((data) => {
+                setOrderList(data)
+
+            }).catch(function (error) {
+                console.log(error);
+            });           
+        }
+        fetchData();
+    }, []);
    
     const isProgressSuccess=()=>         
     {

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axiosAdmin from '../../axiosAdmin';
 import {React,useState} from 'react';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {
@@ -32,9 +32,9 @@ export default function UpdateProduct(props) {
     setproduct({...product,color:value})
   }
 
-  const confimUpdate=()=>{
-    axios
-    .put(`https://laravel-react-sell-web.herokuapp.com/api/product/${product.id}`,product)
+  const confimUpdate=async ()=>{
+    await axiosAdmin
+    .put(`api/product/${product.id}`,product)
     .then(response=>{
       
       if(response.data.status==true)

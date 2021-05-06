@@ -1,60 +1,58 @@
-import React, { Component } from 'react'
+import React, {useState,useEffect} from 'react'
+import {
+    Table
+
+} from 'reactstrap';
+
 import CategoryItem from './CategoryItem';
-import { Table, Spinner } from "reactstrap";
-import axios from 'axios';
-export default class Index extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            listCategories: [],
-            showLogin: false
-        }
-    }
-    componentDidMount() {
-        this.getCategories()
+
+import axiosAdmin from '../../axiosAdmin';
+
+export default function Index() {
+
+    const [listCategory, setListCategory] = useState([]);
 
 
-    }
-    async getCategories() {
-       await axios.get("https://laravel-react-sell-web.herokuapp.com/api/category")
+    
+
+    useEffect(() => {
+        async function fetchData() {
+            
+        await axiosAdmin
+            .get("api/category")
             .then((data) => {
-                this.setState({
-                    listCategories: data
-                })
-                console.log("cate",this.state.listCategories)
-
+                setListCategory(data)
 
             }).catch(function (error) {
                 console.log(error);
             });
-    }
+            
+        }
+        fetchData();
+    }, []);
 
-    render() {
-        
+    return (
+        <div className="conten-component-admin">
+            <Table responsive>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Mã Danh Mục</th>
+                        <th>Tên Danh Mục</th>
+                        <th>Chi Tiết</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
 
-
-        return (
-            <div className="conten-component-admin">
-                <Table bordered className="col-lg-6">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Category Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        {
-                            this.state.listCategories.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :
-                               "Da La trang Category"    
-                            // this.state.listCategories.map((category, index) =>{ 
-                            //         <CategoryItem key={index} category={category} />
-                            // })
-                        }
-
-                    </tbody>
-                </Table>
-            </div>
-        )
-    }
+                    {
+                        listCategory.map((item,index)=>(
+                            <CategoryItem category={item} num={index} key={index}/>
+                        ))
+                    }
+                </tbody>
+            </Table>
+        </div>
+    )
 }

@@ -19,7 +19,7 @@ import {
     
 
 } from "reactstrap";
-import axios from "axios";
+import axiosAdmin from "../../axiosAdmin";
 
 export default class Index extends Component {
     constructor(props) {
@@ -48,14 +48,15 @@ export default class Index extends Component {
     }
 
     async getProduct() {
-        await axios 
+        await axiosAdmin 
 
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+            .get(`api/product`)
 
             .then((response) => {
                 this.setState({
-                    listProducts: response.data,
+                    listProducts: response,
                 });
+                console.log("res pro",response)
             })
             .catch(function (error) {
                 console.log(error);
@@ -64,14 +65,15 @@ export default class Index extends Component {
     }
 
    async  getCategory() {
-       await axios
+       await axiosAdmin
 
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/category`)
+            .get(`api/category`)
 
             .then((response) => {
                 this.setState({
-                    listCategory: response.data,
+                    listCategory: response,
                 });
+                console.log("response cate",response)
             })
             .catch(function (error) {
                 console.log(error);
@@ -118,7 +120,7 @@ export default class Index extends Component {
     //
 
     // function thêm
-    addProduct() {
+    async addProduct() {
         this.setState({ errorsValue: [] });
         var errors = [];
         if (this.state.productName == "") {
@@ -156,9 +158,9 @@ export default class Index extends Component {
                 imageAddress: this.state.url,
             };
             //http://127.0.0.1:8000/
-            axios
+            await axiosAdmin
                 .post(
-                    `https://laravel-react-sell-web.herokuapp.com/api/product`,
+                    `api/product`,
                     formdata
                 )
                 .then((response) => {
