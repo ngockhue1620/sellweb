@@ -17,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return Order::with(['orderDetail'])->get();
+        return Order::whereNull('isProcess')
+        ->with(['orderDetail'])->get();
     }
 
     /**
@@ -49,7 +50,7 @@ class OrderController extends Controller
         foreach( $request->orderDetails as $value)
         {   
             
-            $product = Product::find($value['productId']);
+            $product = Product::find($value['product_id']);
             if($product->quantity<$value['quantity'])
             {  
                 array_push($errors,$product->productName.' còn '.$product->quantity . ' sản phẩm');
@@ -96,7 +97,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where('customer_id','=',$id)->with(['orderDetail'])->get();
+        $order = Order::where('customer_id','=',$id)
+                        ->whereNotNull('isProcess')
+                        ->with(['orderDetail'])->get();
         return $order;
     }
 
@@ -120,7 +123,23 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        try{
+            $order=Order::find($id);
+            $order->isProcess=$request->isProcess;
+            $order->save();
+            return \response()->json(['status'=>true]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**

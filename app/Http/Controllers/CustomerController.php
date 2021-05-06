@@ -14,8 +14,21 @@ class CustomerController extends Controller
      */
 
     public function index()
-    {
-        return Customer::all();
+    {   
+        try{
+            return Customer::orderBy('created_at','desc')->get();
+            // return \response()->json(['customer'=>$customer,'status'=>true]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**

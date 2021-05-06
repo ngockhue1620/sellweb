@@ -61,8 +61,10 @@ Route::delete('cart/{id}','App\Http\Controllers\In_CartController@destroy');
 
 //order
 Route::post('order','App\Http\Controllers\OrderController@store');
+// Route::get('order','App\Http\Controllers\OrderController@index')->middleware('auth.basic');
 Route::get('order','App\Http\Controllers\OrderController@index');
 Route::get('order/{id}','App\Http\Controllers\OrderController@show');
+Route::put('order/{id}','App\Http\Controllers\OrderController@update');
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
 
 //file
@@ -81,3 +83,4 @@ Route::get('files','App\Http\Controllers\FileController@index');
 
 //order detail
 Route::get('order-detail','App\Http\Controllers\Order_DetailController@index');
+Route::get('order-detail/{id}','App\Http\Controllers\Order_DetailController@show');

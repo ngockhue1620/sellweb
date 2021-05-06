@@ -47,3 +47,11 @@ label.label-insert-admin {
   position: relative;
   top: 40px;
 }
+
+.modal-dialog.order-detail-customer-admin {
+  max-width: 100%;
+}
+
+.img-order-detail {
+  width: 10%;
+}

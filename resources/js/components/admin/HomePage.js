@@ -14,8 +14,9 @@ export default class HomePage extends Component {
                 <Body>
                     <Table />
                     <Content />
+                    <Footer/>
                 </Body>
-                <Footer/>
+                
             </div>
         )
     }

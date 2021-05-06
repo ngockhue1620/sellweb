@@ -59,7 +59,7 @@ class OrderSeeder extends Seeder
             [
                 
                 'customer_id'=>5,
-                
+                                
                 'recipientPhone'=>'6754312345',
                 'recipientName'=>'nguyen van a',
                 'recipientAddress'=>"234/4 ton dan",
