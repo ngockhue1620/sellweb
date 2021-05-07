@@ -1,14 +1,23 @@
 import React, { useState, useCallback } from 'react';
 // import { Spinner } from 'reactstrap';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardImg, CardText } from 'reactstrap';
+
 import UpdateProduct from './UpdateProduct';
+
 export default function ProductItem(props) {
+
   const [product, setProduct] = useState(props.product);
+
   const [modal, setModal] = useState(false);
+
   const toggle = () => setModal(!modal);
+
   const [confirm, setConfirm] = useState(false);
+
   const [isDelete, setDelete] = useState("");
+
   const [isUpdate, setUpdate] = useState(false);
+
   const handleClickUpdate = useCallback((value) => {
     if (value == false) {
       setUpdate(false)
@@ -29,12 +38,11 @@ export default function ProductItem(props) {
 
     }
   }, [product]);
+
   const confirmDelete = (value) => {
     if (value == true) {
-
-
       axios
-        .delete(`https://laravel-react-sell-web.herokuapp.com/api/product/${product.id}`)
+        .delete(`/api/product/${product.id}`)
         .then((response) => {
           if (response.status == 200) {
             alert('Delete Success success')

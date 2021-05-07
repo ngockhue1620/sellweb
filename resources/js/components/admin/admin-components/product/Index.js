@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-
 import ProductItem from "./ProductItem";
 import { Label, Table, Spinner } from "reactstrap";
 
@@ -50,13 +48,15 @@ export default class Index extends Component {
     async getProduct() {
         await axios 
 
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+            .get(`/api/product`)
 
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
                 });
+                console.log('pro',response.data)
             })
+            
             .catch(function (error) {
                 console.log(error);
             });
@@ -66,12 +66,15 @@ export default class Index extends Component {
    async  getCategory() {
        await axios
 
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/category`)
+            .get(`/api/category`)
 
             .then((response) => {
-                this.setState({
-                    listCategory: response.data,
-                });
+                if(response.status==200)
+                {
+                    this.setState({
+                        listCategory: response.data,
+                    });
+                }
             })
             .catch(function (error) {
                 console.log(error);
@@ -158,14 +161,18 @@ export default class Index extends Component {
             //http://127.0.0.1:8000/
             axios
                 .post(
-                    `https://laravel-react-sell-web.herokuapp.com/api/product`,
+                    `/api/product`,
                     formdata
                 )
                 .then((response) => {
                     if (response.status == 200) {
+
                         let products = this.state.listProducts;
+
                         products.push(response.data.product);
+
                         this.setState({ listProducts: products });
+                        
                         this.setState({ value: !this.state.value });
                         alert('insert success')
                     } else {
@@ -188,7 +195,7 @@ export default class Index extends Component {
 
                 <div
                     className="conten-component-admin"
-                    disable={this.state.value}
+                    
                 >
                     <div className="add-button-admin">
                         <button
@@ -225,10 +232,12 @@ export default class Index extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.listProducts.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :
-                                    this.state.listProducts.map((product, index) => (
-                                        <ProductItem key={index} product={product} category={this.state.listCategory}/>
-                                    ))
+                                this.state.listProducts.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :(
+                                    Array.isArray(this.state.listProducts) ?
+                                        this.state.listProducts.map((product, index) => (
+                                            <ProductItem key={index} product={product} category={this.state.listCategory}/>
+                                        )):"Data response is erro"
+                                )
                             }
                         </tbody>
                     </Table>

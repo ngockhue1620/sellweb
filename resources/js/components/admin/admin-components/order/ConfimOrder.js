@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Table } from 'reactstrap';
 import Detail from './Detail'
+import axios from 'axios'
 export default function ConfimOrder(props) {
 
     const [order, setOrder] = useState(props.order);
@@ -14,7 +15,7 @@ export default function ConfimOrder(props) {
     const isDisabled = () => {
 
         axios
-            .put(`https://laravel-react-sell-web.herokuapp.com/api/order/${order.id}`, { isProcess: true })
+            .put(`/api/order/${order.id}`, { isProcess: true })
             .then(response => {
                 if (response.data.status == true) {
                     setIsShow(false)

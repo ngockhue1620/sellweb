@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState,useCallback } from 'react'
+
+import React, { useState,useEffect } from 'react'
 import {
     Button,
     Progress,
@@ -9,25 +9,28 @@ import {
 
 } from 'reactstrap';
 import ConfimOrder from './ConfimOrder';
+import axios from 'axios';
 export default function Index(){
 
     const [OrderList,setOrderList]=useState([])
 
     const [isProgress,setIsProgress]=useState(0)
 
-    const getOrder=  useCallback(
-        async ()=> {
+    useEffect(() => {
+        async function fetchData() {
+            
             await axios
-                .get('https://laravel-react-sell-web.herokuapp.com/api/order')
-                .then(response => {
-                    setOrderList(response.data)
-                })
+            .get("/api/order")
+            .then((response) => {
+                console.log("data ne",response )
+                setOrderList(response.data)
+
+            }).catch(function (error) {
+                console.log(error);
+            });           
         }
-    )
-    if(OrderList.length==0)
-    {
-        getOrder()
-    } 
+        fetchData();
+    }, []);
     
 
    
@@ -66,12 +69,13 @@ export default function Index(){
                         <tbody>
                             
                             {
-                            OrderList.map((item,index)=>(
-                                
-                                 <ConfimOrder key={index} order={item} number={index} isProgressSuccess={isProgressSuccess} />
-                                
-                                
-                            ))}
+
+                               Array.isArray(OrderList) ?  
+                                                       OrderList.map((item,index)=>(                         
+                                                                    <ConfimOrder key={index} order={item} number={index} isProgressSuccess={isProgressSuccess} />                               
+                                                       )) 
+                                                         : "Có Một Chút Vấn Đề Sảy Ra"
+                            }
                         </tbody>
                     </Table>
                 </div>
