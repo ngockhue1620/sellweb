@@ -64,7 +64,15 @@ export default class Index extends Component {
             await axios 
                     .post('/api/category',{categoryName:this.state.categoryName})
                     .then(response=>{
-                        console.log(response)
+                        if(response.data.status==true)
+                        {   
+                            let categories = this.state.listCategories;
+                            categories.push(response.data.category)
+                            this.setState({listCategories:categories})
+                            console.log("sau khi insert",this.state.listCategories)
+                            alert('Insert successful')
+                            this.setState({value:false})
+                        }
                     })
                     .catch((e)=>{
                         console.log(e)
@@ -104,6 +112,7 @@ export default class Index extends Component {
                             <tr>
                                 <th>Id</th>
                                 <th>Category Name</th>
+                                <th>Chi Tiết</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
