@@ -14,31 +14,31 @@ export default function ProductCard(props) {
     };
 
     return (
-        <div class="ProductCard col-lg-3  "
+        <div className="ProductCard col-lg-3  "
         >
             <ProductDetail
                 productName={productName}
                 description={description}
             ></ProductDetail>
             <div
-                class="product-grid4"
+                className="product-grid4"
                 data-aos="fade-up"
                 
             >
-                <div class="product-image4">
+                <div className="product-image4">
                     <a>
-                        <img class="pic-1" src={imageAddress}></img>
+                        <img className="pic-1" src={imageAddress}></img>
                     </a>
 
-                    <span class="product-new-label">New</span>
-                    <span class="product-discount-label">LIMITED</span>
+                    <span className="product-new-label">New</span>
+                    <span className="product-discount-label">LIMITED</span>
                 </div>
-                <div class="product-content">
-                    <h3 class="title">
+                <div className="product-content">
+                    <h3 className="title">
                         <a href="#">{productName}</a>
                     </h3>
-                    <div class="price">{price} VND</div>
-                    <a class="add-to-cart" onClick={() => onClick()}>
+                    <div className="price">{price} VND</div>
+                    <a className="add-to-cart" onClick={() => onClick()}>
                         ADD TO CART
                     </a>
                 </div>

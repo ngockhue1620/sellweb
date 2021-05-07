@@ -2440,7 +2440,7 @@ function CategoryItem(props) {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-          "class": "list-group alert-danger",
+          className: "list-group alert-danger",
           children: errorsValue.map(function (item) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
               children: item
@@ -2814,7 +2814,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 width: "16",
                 height: "16",
                 fill: "currentColor",
-                "class": "bi bi-file-plus",
+                className: "bi bi-file-plus",
                 viewBox: "0 0 16 16",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
                   d: "M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"
@@ -2874,7 +2874,7 @@ var Index = /*#__PURE__*/function (_Component) {
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-                "class": "list-group alert-danger",
+                className: "list-group alert-danger",
                 children: this.state.errorsValue.map(function (item) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
                     children: item
@@ -4178,7 +4178,7 @@ var Index = /*#__PURE__*/function (_Component) {
                 width: "16",
                 height: "16",
                 fill: "currentColor",
-                "class": "bi bi-file-plus",
+                className: "bi bi-file-plus",
                 viewBox: "0 0 16 16",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
                   d: "M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z"
@@ -4328,7 +4328,7 @@ var Index = /*#__PURE__*/function (_Component) {
                   })]
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-                "class": "list-group alert-danger",
+                className: "list-group alert-danger",
                 children: this.state.errorsValue.map(function (item) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
                     children: item
@@ -4503,7 +4503,7 @@ function ProductItem(props) {
             width: "16",
             height: "16",
             fill: "currentColor",
-            "class": "bi bi-trash",
+            className: "bi bi-trash",
             viewBox: "0 0 16 16",
             onClick: function onClick() {
               return setConfirm(true);
@@ -4525,7 +4525,7 @@ function ProductItem(props) {
             width: "16",
             height: "16",
             fill: "currentColor",
-            "class": "bi bi-pencil-square",
+            className: "bi bi-pencil-square",
             viewBox: "0 0 16 16",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
               d: "M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
@@ -4924,7 +4924,7 @@ var Body = /*#__PURE__*/function (_Component) {
     value: function render() {
       var children = this.props.children;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "Body ",
+        className: "Body ",
         children: children
       });
     }
@@ -5117,13 +5117,13 @@ __webpack_require__.r(__webpack_exports__);
 
 function Header() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("nav", {
-    "class": "navbar navbar-expand-lg navbar-light bg-light fixed-top",
+    className: "navbar navbar-expand-lg navbar-light bg-light fixed-top",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-      "class": "navbar-brand",
+      className: "navbar-brand",
       href: "#",
       children: "Admin Site"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
-      "class": "navbar-toggler",
+      className: "navbar-toggler",
       type: "button",
       "data-toggle": "collapse",
       "data-target": "#navbarNavAltMarkup",
@@ -5131,30 +5131,30 @@ function Header() {
       "aria-expanded": "false",
       "aria-label": "Toggle navigation",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-        "class": "navbar-toggler-icon"
+        className: "navbar-toggler-icon"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-      "class": "collapse navbar-collapse",
+      className: "collapse navbar-collapse",
       id: "navbarNavAltMarkup",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        "class": "navbar-nav",
+        className: "navbar-nav",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-          "class": "nav-item nav-link active",
+          className: "nav-item nav-link active",
           href: "#",
           children: ["Home ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-            "class": "sr-only",
+            className: "sr-only",
             children: "(current)"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          "class": "nav-item nav-link",
+          className: "nav-item nav-link",
           href: "#",
           children: "Features"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          "class": "nav-item nav-link",
+          className: "nav-item nav-link",
           href: "#",
           children: "Pricing"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          "class": "nav-item nav-link disabled",
+          className: "nav-item nav-link disabled",
           href: "#",
           children: "Disabled"
         })]
@@ -5187,9 +5187,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var Table = function Table() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    "class": "Menu col-lg-2 menu-class",
+    className: "Menu col-lg-2 menu-class",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      "class": "list-group ",
+      className: "list-group ",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_2__.default, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_3__.default, {
           tag: "a",
