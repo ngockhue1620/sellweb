@@ -14,9 +14,9 @@ import HomePage from './components/admin/HomePage';
 
 ReactDOM.render(
 
-  <React.StrictMode>
+  
     <HomePage />
-  </React.StrictMode>,
+  ,
 
   document.getElementById('root')
 );
