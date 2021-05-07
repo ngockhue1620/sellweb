@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { render } from 'react-dom'
-
 import ProductItem from "./ProductItem";
-import { Label, Table,Spinner } from "reactstrap";
+import { Label, Table, Spinner } from "reactstrap";
 
 import {
     Form,
     CardImg,
     Button,
-    Input,
+    Input, 
     Modal,
     ModalHeader,
     ModalBody,
@@ -17,7 +15,9 @@ import {
     InputGroupAddon,
     InputGroup,
     
+
 } from "reactstrap";
+
 import axios from "axios";
 
 export default class Index extends Component {
@@ -25,6 +25,7 @@ export default class Index extends Component {
         super(props);
         this.state = {
             listProducts: [],
+            listCategory: [],
             showLogin: false,
             value: false,
             url: "https://reactstrap.github.io/assets/318x180.svg",
@@ -36,34 +37,56 @@ export default class Index extends Component {
             price: 0,
             errorsValue: [],
             isChangeUrl: false,
-            
+
         };
-        
+
     }
     componentDidMount() {
         this.getProduct();
-        
+        this.getCategory();
     }
-    
-    getProduct() {
-        axios
 
-            .get(`https://laravel-react-sell-web.herokuapp.com/api/product`)
+    async getProduct() {
+        await axios
+
+            .get(`/api/product`)
+
 
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
                 });
             })
+            
             .catch(function (error) {
                 console.log(error);
             });
-            
            
     }
+
+   async  getCategory() {
+       await axios
+            .get(`/api/category`)
+
+            .then((response) => {
+                if(response.status==200)
+                {
+                    this.setState({
+                        listCategory: response.data,
+                    });
+                }
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            console.log("category",this.state.listCategory)
+    }
+
     handleClick(value) {
         this.setState({ value: !value, errorsValue: [] });
     }
+
     AddImage(e) {
         this.setState({
             url: e.target.value,
@@ -97,9 +120,9 @@ export default class Index extends Component {
         this.setState({ price: e.target.value });
     }
     //
-    
+
     // function thêm
-    addProduct() {
+    async addProduct() {
         this.setState({ errorsValue: [] });
         var errors = [];
         if (this.state.productName == "") {
@@ -125,47 +148,55 @@ export default class Index extends Component {
         }
 
         this.setState({ errorsValue: errors });
-        let formdata = {
-            productName: this.state.productName,
-            categoryId: this.state.categoryId,
-            price: this.state.price,
-            quantity: this.state.quantity,
-            description: this.state.description,
-            color: this.state.color,
-            imageAddress: this.state.url,
-        };
-        //http://127.0.0.1:8000/
-        axios
-            .post(
-                `https://laravel-react-sell-web.herokuapp.com/api/product`,
-                formdata
-            )
-            .then((response) => {
-                if (response.status == 200) {
-                    let products = this.state.listProducts;
-                    products.push(response.data.product);
-                    this.setState({ listProducts: products });
-                    alert('insert success')
-                } else {
-                    console.log("errors");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        if(errors.length==0)
+        {
+            let formdata = {
+                productName: this.state.productName,
+                categoryId: this.state.categoryId,
+                price: this.state.price,
+                quantity: this.state.quantity,
+                description: this.state.description,
+                color: this.state.color,
+                imageAddress: this.state.url,
+            };
+            //http://127.0.0.1:8000/
+            await axios
+                .post(
+                    `/api/product`,
+                    formdata
+                )
+                .then((response) => {
+                    if (response.status == 200) {
 
-        this.setState({ value: !this.state.value });
+                        let products = this.state.listProducts;
+
+                        products.push(response.data.product);
+
+                        this.setState({ listProducts: products });
+                        
+                        this.setState({ value: !this.state.value });
+                        alert('insert success')
+                    } else {
+                        console.log("errors");
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+        
     }
     // xoa san pham
-   
+
 
     render() {
         return (
             <>
-                
+
                 <div
                     className="conten-component-admin"
-                    disable={this.state.value}
+                    
                 >
                     <div className="add-button-admin">
                         <button
@@ -178,7 +209,7 @@ export default class Index extends Component {
                                 width="16"
                                 height="16"
                                 fill="currentColor"
-                                class="bi bi-file-plus"
+                                className="bi bi-file-plus"
                                 viewBox="0 0 16 16"
                             >
                                 <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z" />
@@ -202,10 +233,12 @@ export default class Index extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.listProducts.length==0 ? <Spinner style={{margin:"0 auto"}} type="grow" color="danger" >a</Spinner>:
-                                   this.state.listProducts.map((product, index) => (
-                                    <ProductItem key={index} product={product}   />
-                                ))
+                                this.state.listProducts.length == 0 ? <Spinner style={{ margin: "0 auto" }} type="grow" color="danger" >a</Spinner> :(
+                                    Array.isArray(this.state.listProducts) ?
+                                        this.state.listProducts.map((product, index) => (
+                                            <ProductItem key={index} product={product} category={this.state.listCategory}/>
+                                        )):"Data response is erro"
+                                )
                             }
                         </tbody>
                     </Table>
@@ -238,12 +271,25 @@ export default class Index extends Component {
                                             Danh Mục Sản Phẩm
                                         </Label>
                                     </InputGroupAddon>
-                                    <Input
+                                    {/* <Input
                                         onChange={(e) =>
                                             this.handleChangeCategoryId(e)
                                         }
-                                    />
+                                    /> */}
+                                    <Input type="select" onChange={(e) =>
+                                            this.handleChangeCategoryId(e)
+                                        }>
+                                            <option>Kích vào để chọn</option>
+                                        {
+                                            this.state.listCategory.map((category,index)=>
+                                            <option key={index} value={category.id}>{category.categoryName}</option>
+                                        )}
+                                        
+                                        
+                                    </Input>
                                 </InputGroup>
+
+
 
                                 <InputGroup>
                                     <InputGroupAddon addonType="append">
@@ -312,7 +358,7 @@ export default class Index extends Component {
                                     />
                                 </InputGroup>
                             </Form>
-                            <ul class="list-group alert-danger">
+                            <ul className="list-group alert-danger">
                                 {this.state.errorsValue.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}
@@ -329,7 +375,7 @@ export default class Index extends Component {
                         <Button
                             color="primary"
                             onClick={() => this.addProduct()}
-                            
+
                         >
                             Thêm
                         </Button>

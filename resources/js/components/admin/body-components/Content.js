@@ -11,7 +11,7 @@ import React, { Component, Suspense } from 'react'
 import Wellcome from '../admin-components/Wellcome'
 import Product from '../admin-components/product/Index'
 import Customer from '../admin-components/customer/index'
-import Order from '../admin-components/order/index'
+import Order from '../admin-components/order/Index'
 import Category from '../admin-components/category/index'
 import { Spinner } from "reactstrap"
 export default class Content extends Component {

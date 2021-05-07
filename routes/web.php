@@ -24,9 +24,9 @@ Route::get('/admin/{any}', function () {
     
     return view('home');
 })->middleware('auth');
-
+//;
 Route::get('/{any}', function () {
-    return view('welcome');
+    return view('welcome'); 
 })->where('any', '.*');
 
 

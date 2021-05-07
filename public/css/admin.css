@@ -4,10 +4,8 @@
   top: 10%;
   background-color: cornflowerblue;
   border-radius: 5px;
-}
-
-.Body {
-  display: flex;
+  width: 15%;
+  overflow: hidden;
 }
 
 img.image-product-admin {
@@ -15,9 +13,8 @@ img.image-product-admin {
 }
 
 .conten-component-admin {
-  position: absolute;
-  left: 20%;
-  top: 15%;
+  margin-left: 20%;
+  margin-top: 10%;
 }
 
 img.Card-Img-Detail.card-img {
@@ -41,4 +38,20 @@ label.label-insert-admin {
 
 .show-product-item-admin {
   display: none;
+}
+
+.footer-admin-page {
+  background: chartreuse;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 40px;
+}
+
+.modal-dialog.order-detail-customer-admin {
+  max-width: 100%;
+}
+
+.img-order-detail {
+  width: 10%;
 }

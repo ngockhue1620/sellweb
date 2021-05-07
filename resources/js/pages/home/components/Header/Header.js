@@ -11,13 +11,62 @@ export default function Header(props) {
     const user = useSelector((state) => state.user);
     return (
         <div className="Header">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <div class="container">
-                    <a class="navbar-brand" href="/">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div className="container">
+                    <a className="navbar-brand" href="/">
                         FCT TEAMWORK
                     </a>
+
+                    <li onClick={onClickCart} className="nav-item nav-item1">
+                        <a className="nav-link cart-icon-header">
+                            <Cart></Cart>
+                        </a>
+                    </li>
+                    {user ? (
+                        <li className="nav-item nav-item1">
+                            <a className="nav-link ">
+                                <UserAvatar></UserAvatar>
+                            </a>
+                        </li>
+                    ) : (
+                        <>
+                            <li className="nav-item sign-up nav-item1">
+                                <a className="nav-link" >
+                                    <span className="glyphicon glyphicon-user"></span>{" "}
+                                    <CustomModal
+                                        buttonLabel="Sign Up"
+                                        className="modal-signup"
+                                    ></CustomModal>
+                                </a>
+                            </li>
+                            <li className="nav-item nav-item1">
+                                <a className="nav-link">
+                                    <span className="glyphicon glyphicon-log-in"></span>{" "}
+                                    <CustomModal
+                                        buttonLabel="Login"
+                                        className="modal-login"
+                                    ></CustomModal>
+                                </a>
+                            </li>
+                        </>
+                    )}
                     <button
-                        class="navbar-toggler"
+                        onClick={onClickCart}
+                        className="nav-item"
+                        className="navbar-toggler"
+                        type="button"
+                        // data-toggle="collapse"
+                        data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                    // aria-label="Toggle navigation"
+                    >
+                        <a className="nav-link cart-icon-header">
+                            <Cart></Cart>
+                        </a>
+                    </button>
+                    <button
+                        className="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
                         data-target="#navbarResponsive"
@@ -25,51 +74,51 @@ export default function Header(props) {
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/">
+                    <div className="collapse navbar-collapse" id="navbarResponsive">
+                        <ul className="navbar-nav ">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="/">
                                     Home
-                                    <span class="sr-only">(current)</span>
+                                    <span className="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/about">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/about">
                                     About
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">
                                     Services
                                 </a>
                             </li>
-                            <li onClick={onClickCart} class="nav-item">
-                                <a class="nav-link cart-icon-header">
+                            <li onClick={onClickCart} className="nav-item">
+                                <a className="nav-link cart-icon-header">
                                     <Cart></Cart>
                                 </a>
                             </li>
                             {user ? (
-                                <li class="nav-item">
-                                    <a class="nav-link ">
+                                <li className="nav-item login">
+                                    <a className="nav-link ">
                                         <UserAvatar></UserAvatar>
                                     </a>
                                 </li>
                             ) : (
                                 <>
-                                    <li class="nav-item">
-                                        <a class="nav-link" >
-                                            <span class="glyphicon glyphicon-user"></span>{" "}
+                                    <li className="nav-item sign-up1">
+                                        <a className="nav-link" >
+                                            <span className="glyphicon glyphicon-user"></span>{" "}
                                             <CustomModal
                                                 buttonLabel="Sign Up"
                                                 className="modal-signup"
                                             ></CustomModal>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link">
-                                            <span class="glyphicon glyphicon-log-in"></span>{" "}
+                                    <li className="nav-item login">
+                                        <a className="nav-link">
+                                            <span className="glyphicon glyphicon-log-in"></span>{" "}
                                             <CustomModal
                                                 buttonLabel="Login"
                                                 className="modal-login"
@@ -82,6 +131,6 @@ export default function Header(props) {
                     </div>
                 </div>
             </nav>
-        </div>
+        </div >
     );
 }

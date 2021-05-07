@@ -30,10 +30,10 @@ Route::put('supplier/{id}','App\Http\Controllers\SupplierController@update');
 Route::delete('supplier/{id}','App\Http\Controllers\SupplierController@destroy');
 
 //category
-Route::post('category','App\Http\Controllers\CategoryController@store');
+Route::post('category','App\Http\Controllers\CategoryController@store')->middleware('auth.basic');
 Route::get('category','App\Http\Controllers\CategoryController@index');
-Route::put('category/{id}','App\Http\Controllers\CategoryController@update');
-Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy');
+Route::put('category/{id}','App\Http\Controllers\CategoryController@update')->middleware('auth.basic');
+Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy')->middleware('auth.basic');
 
 //product
 Route::post('product','App\Http\Controllers\ProductController@store')->middleware('auth.basic');
@@ -46,7 +46,7 @@ Route::post('customer','App\Http\Controllers\CustomerController@store');
 Route::post('login','App\Http\Controllers\CustomerController@login');
 Route::get('customer','App\Http\Controllers\CustomerController@index');
 // Route::get('customer/create','App\Http\Controllers\CustomerController@create');
-Route::get('customer/{id}','App\Http\Controllers\CustomerController@show')->middleware('auth');
+Route::get('customer/{id}','App\Http\Controllers\CustomerController@show');
 
 Route::put('customer/{id}','App\Http\Controllers\CustomerController@update');
 Route::delete('customer/{id}','App\Http\Controllers\CustomerController@destroy');
@@ -61,8 +61,14 @@ Route::delete('cart/{id}','App\Http\Controllers\In_CartController@destroy');
 
 //order
 Route::post('order','App\Http\Controllers\OrderController@store');
+
+// Route::get('order','App\Http\Controllers\OrderController@index')->middleware('auth.basic');
 Route::get('order','App\Http\Controllers\OrderController@index');
-// Route::put('order/{id}','App\Http\Controllers\CustomerController@update');
+Route::get('order/{id}','App\Http\Controllers\OrderController@show');
+Route::put('order/{id}','App\Http\Controllers\OrderController@update');
+
+
+
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
 
 //file
@@ -81,3 +87,4 @@ Route::get('files','App\Http\Controllers\FileController@index');
 
 //order detail
 Route::get('order-detail','App\Http\Controllers\Order_DetailController@index');
+Route::get('order-detail/{id}','App\Http\Controllers\Order_DetailController@show');
