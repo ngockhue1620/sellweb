@@ -17,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return Order::whereNull('isProcess')
+        return Order::where('isProcess',null)
         ->with(['orderDetail'])->get();
     }
 

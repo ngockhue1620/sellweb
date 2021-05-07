@@ -17,6 +17,7 @@ import {
     
 
 } from "reactstrap";
+
 import axios from "axios";
 
 export default class Index extends Component {
@@ -46,15 +47,15 @@ export default class Index extends Component {
     }
 
     async getProduct() {
-        await axios 
+        await axios
 
             .get(`/api/product`)
+
 
             .then((response) => {
                 this.setState({
                     listProducts: response.data,
                 });
-                console.log('pro',response.data)
             })
             
             .catch(function (error) {
@@ -65,7 +66,6 @@ export default class Index extends Component {
 
    async  getCategory() {
        await axios
-
             .get(`/api/category`)
 
             .then((response) => {
@@ -75,6 +75,7 @@ export default class Index extends Component {
                         listCategory: response.data,
                     });
                 }
+
             })
             .catch(function (error) {
                 console.log(error);
@@ -121,7 +122,7 @@ export default class Index extends Component {
     //
 
     // function thêm
-    addProduct() {
+    async addProduct() {
         this.setState({ errorsValue: [] });
         var errors = [];
         if (this.state.productName == "") {
@@ -159,7 +160,7 @@ export default class Index extends Component {
                 imageAddress: this.state.url,
             };
             //http://127.0.0.1:8000/
-            axios
+            await axios
                 .post(
                     `/api/product`,
                     formdata

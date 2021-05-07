@@ -34,12 +34,12 @@ export default class index extends Component {
             })
             .catch(function (error) {
                 console.log(error);
-            });    
+            });  
+            
     }
 
 
     render() {
-       
         
         
         return (

@@ -1,12 +1,8 @@
-
 import React, { useState,useEffect } from 'react'
 import {
     Button,
     Progress,
     Table
-
-
-
 } from 'reactstrap';
 import ConfimOrder from './ConfimOrder';
 import axios from 'axios';
@@ -15,6 +11,7 @@ export default function Index(){
     const [OrderList,setOrderList]=useState([])
 
     const [isProgress,setIsProgress]=useState(0)
+
 
     useEffect(() => {
         async function fetchData() {
@@ -31,8 +28,24 @@ export default function Index(){
         }
         fetchData();
     }, []);
+
+    
     
 
+    useEffect(() => {
+        async function fetchData() {
+            
+            await axiosAdmin
+            .get("api/order")
+            .then((data) => {
+                setOrderList(data)
+
+            }).catch(function (error) {
+                console.log(error);
+            });           
+        }
+        fetchData();
+    }, []);
    
     const isProgressSuccess=()=>         
     {

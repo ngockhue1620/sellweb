@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-// import { Spinner } from 'reactstrap';
+
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardImg, CardText } from 'reactstrap';
 
 import UpdateProduct from './UpdateProduct';
@@ -38,6 +38,7 @@ export default function ProductItem(props) {
 
     }
   }, [product]);
+
 
   const confirmDelete = (value) => {
     if (value == true) {
