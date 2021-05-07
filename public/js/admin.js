@@ -2615,8 +2615,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProductItem(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
-    "data-aos": "fade-up",
-    "data-aos-anchor-placement": "bottom-bottom",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
       scope: "row",
       children: props.product.id

@@ -5262,7 +5262,7 @@ function CartContainer(props) {
     "data-aos": "fade-left",
     "data-aos-anchor": "#example-anchor",
     "data-aos-offset": "500",
-    "data-aos-duration": "500",
+    "data-aos-duration": "1000",
     className: "cart-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
       className: "cart-container__paycontainer",
@@ -5392,6 +5392,8 @@ function CartItem(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
+    "data-aos": "fade-up",
+    "data-aos-anchor-placement": "top-center",
     className: "cart-item container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
       xs: "8",
@@ -6818,7 +6820,6 @@ function ProductCard(props) {
       description: description
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "product-grid4",
-      "data-aos": "fade-up",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "product-image4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {

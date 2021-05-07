@@ -21,8 +21,8 @@ export default function ProductCard(props) {
                 description={description}
             ></ProductDetail>
             <div
-                className="product-grid4"
-                data-aos="fade-up"
+           
+            className="product-grid4"               
                 
             >
                 <div className="product-image4">
