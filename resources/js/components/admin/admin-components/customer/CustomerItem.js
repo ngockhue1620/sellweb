@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React,{useState} from 'react'
 import {
     Badge,
@@ -8,8 +9,8 @@ import {
     Table
 
 } from 'reactstrap';
-import axiosAdmin from '../../axiosAdmin';
 import CustomerOrderDetail from './CustomerOrderDetail';
+
 export default function CustomerItem(props) {
 
     // show new customer
@@ -18,12 +19,12 @@ export default function CustomerItem(props) {
         var cdate = (new Date(props.customer.created_at))
         cdate = cdate.getFullYear() + (cdate.getMonth() + 1) + cdate.getDate();
 
-    const checkDate=(date)=>{
+    // const checkDate=(date)=>{
         
-        var cdate = (new Date(date));
-        cdate =  cdate.getDate() +'-'+ (cdate.getMonth() + 1) + '-' + +cdate.getFullYear();
-        return cdate;
-    }
+    //     var cdate = (new Date(date));
+    //     cdate =  cdate.getDate() +'-'+ (cdate.getMonth() + 1) + '-' + +cdate.getFullYear();
+    //     return cdate;
+    // }
     
     
 
@@ -38,10 +39,14 @@ export default function CustomerItem(props) {
     const [orderOfCustomer,setOrderOfCustomer]=useState([]);
 
     const getOrder =async ()=>{
-            await axiosAdmin
-            .get(`api/order/${props.customer.id}`)
+            await axios
+            .get(`/api/order/${props.customer.id}`)
             .then(response=>{
-                setOrderOfCustomer(response);
+                console.log(response.status)
+                if(response.status==200)
+                {
+                 setOrderOfCustomer(response.data);
+                }
                 
             })
             .catch(function (error) {
@@ -78,9 +83,12 @@ export default function CustomerItem(props) {
                                 
                            </thead>
                            <tbody>
-                                {orderOfCustomer.map((item,index)=>(
+                                {   
+                                Array.isArray(orderOfCustomer) ?
+                                    orderOfCustomer.map((item,index)=>(
                                     <CustomerOrderDetail order={item} key={index} num={index}/>
-                                ))}
+                                    )): "Data response is error"
+                            }
                            </tbody>
                        </Table>
                     </ModalBody>

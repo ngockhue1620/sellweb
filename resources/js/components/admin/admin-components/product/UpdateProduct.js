@@ -1,4 +1,4 @@
-import axiosAdmin from '../../axiosAdmin';
+
 import {React,useState} from 'react';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {
@@ -32,9 +32,9 @@ export default function UpdateProduct(props) {
     setproduct({...product,color:value})
   }
 
-  const confimUpdate=async ()=>{
-    await axiosAdmin
-    .put(`api/product/${product.id}`,product)
+  const confimUpdate=()=>{
+    axios
+    .put(`/api/product/${product.id}`,product)
     .then(response=>{
       
       if(response.data.status==true)

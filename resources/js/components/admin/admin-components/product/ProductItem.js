@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import axiosAdmin from '../../axiosAdmin';
+
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardImg, CardText } from 'reactstrap';
+
 import UpdateProduct from './UpdateProduct';
 
 export default function ProductItem(props) {
@@ -37,13 +38,12 @@ export default function ProductItem(props) {
 
     }
   }, [product]);
-  
+
+
   const confirmDelete = (value) => {
     if (value == true) {
-
-
-      axiosAdmin
-        .delete(`api/product/${product.id}`)
+      axios
+        .delete(`/api/product/${product.id}`)
         .then((response) => {
           if (response.status == 200) {
             alert('Delete Success success')

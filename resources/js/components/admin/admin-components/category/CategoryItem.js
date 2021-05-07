@@ -1,10 +1,24 @@
 
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardImg, CardText } from 'reactstrap';
 export default function CategoryItem(props) {
 
     const [modal, setModal] = useState(false);
+
     const toggle = () => setModal(!modal);
+
+    const detaleCategory =async () =>{
+        await axios
+            .delete(`/api/category/${props.category.id}`)
+            .then(response=>{
+                console.log(response)    
+
+            }).catch(error=>{
+                console.log(error)
+            })
+    }
+
 
 
 
@@ -33,7 +47,7 @@ export default function CategoryItem(props) {
                     </Card>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="secondary" onClick={toggle}>Đồng Ý</Button>
+                    <Button color="secondary" onClick={toggle,detaleCategory}>Đồng Ý</Button>
                     <Button color="secondary" onClick={toggle}>Close</Button>
                 </ModalFooter>
             </Modal>

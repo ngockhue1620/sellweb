@@ -1,20 +1,34 @@
-import axiosAdmin from '../../axiosAdmin'
 import React, { useState,useEffect } from 'react'
 import {
     Button,
     Progress,
     Table
-
-
-
 } from 'reactstrap';
-
 import ConfimOrder from './ConfimOrder';
+import axios from 'axios';
 export default function Index(){
 
     const [OrderList,setOrderList]=useState([])
 
     const [isProgress,setIsProgress]=useState(0)
+
+
+    useEffect(() => {
+        async function fetchData() {
+            
+            await axios
+            .get("/api/order")
+            .then((response) => {
+                console.log("data ne",response )
+                setOrderList(response.data)
+
+            }).catch(function (error) {
+                console.log(error);
+            });           
+        }
+        fetchData();
+    }, []);
+
     
     
 
@@ -68,12 +82,13 @@ export default function Index(){
                         <tbody>
                             
                             {
-                            OrderList.map((item,index)=>(
-                                
-                                 <ConfimOrder key={index} order={item} number={index} isProgressSuccess={isProgressSuccess} />
-                                
-                                
-                            ))}
+
+                               Array.isArray(OrderList) ?  
+                                                       OrderList.map((item,index)=>(                         
+                                                                    <ConfimOrder key={index} order={item} number={index} isProgressSuccess={isProgressSuccess} />                               
+                                                       )) 
+                                                         : "Có Một Chút Vấn Đề Sảy Ra"
+                            }
                         </tbody>
                     </Table>
                 </div>
