@@ -38,6 +38,7 @@ Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy')
 //product
 Route::post('product','App\Http\Controllers\ProductController@store')->middleware('auth.basic');
 Route::get('product','App\Http\Controllers\ProductController@index');
+Route::get('out-stock-product','App\Http\Controllers\ProductController@outStockProduct');
 Route::put('product/{id}','App\Http\Controllers\ProductController@update')->middleware('auth.basic');
 Route::delete('product/{id}','App\Http\Controllers\ProductController@destroy')->middleware('auth.basic');
 

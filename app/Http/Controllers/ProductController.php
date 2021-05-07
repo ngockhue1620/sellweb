@@ -147,4 +147,11 @@ class ProductController extends Controller
                 ],500);
         }
     }
+
+    public function outStockProduct()
+    {   
+        
+        $product= Product::where('quantity','<',15)->get();
+        return \response()->json(['product'=>$product,'status'=>true]);
+    }
 }

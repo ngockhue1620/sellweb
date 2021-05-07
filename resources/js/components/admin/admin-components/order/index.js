@@ -28,24 +28,6 @@ export default function Index(){
         }
         fetchData();
     }, []);
-
-    
-    
-
-    useEffect(() => {
-        async function fetchData() {
-            
-            await axiosAdmin
-            .get("api/order")
-            .then((data) => {
-                setOrderList(data)
-
-            }).catch(function (error) {
-                console.log(error);
-            });           
-        }
-        fetchData();
-    }, []);
    
     const isProgressSuccess=()=>         
     {
