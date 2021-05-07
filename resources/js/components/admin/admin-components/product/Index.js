@@ -209,7 +209,7 @@ export default class Index extends Component {
                                 width="16"
                                 height="16"
                                 fill="currentColor"
-                                class="bi bi-file-plus"
+                                className="bi bi-file-plus"
                                 viewBox="0 0 16 16"
                             >
                                 <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5V6z" />
@@ -358,7 +358,7 @@ export default class Index extends Component {
                                     />
                                 </InputGroup>
                             </Form>
-                            <ul class="list-group alert-danger">
+                            <ul className="list-group alert-danger">
                                 {this.state.errorsValue.map((item) => (
                                     <li key={item}>{item}</li>
                                 ))}

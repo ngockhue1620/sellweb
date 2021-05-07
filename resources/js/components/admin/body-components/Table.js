@@ -4,8 +4,8 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Table = () => {
     return (
-        <div class="Menu col-lg-2 menu-class">
-            <div class="list-group ">
+        <div className="Menu col-lg-2 menu-class">
+            <div className="list-group ">
                 <ListGroup>
                    
                     <ListGroupItem tag="a" href="/admin/category">Category</ListGroupItem>

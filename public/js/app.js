@@ -5190,7 +5190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Body() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    "class": "Body ",
+    className: "Body ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Menu_Menu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Content_Content__WEBPACK_IMPORTED_MODULE_1__.default, {})]
   });
 }
@@ -5774,141 +5774,141 @@ __webpack_require__.r(__webpack_exports__);
 function Footer() {
   return (
     /*#__PURE__*/
-    // <footer class="py-5 bg-dark">
-    //     <div class="container">
-    //         <p class="m-0 text-center text-white">
+    // <footer className="py-5 bg-dark">
+    //     <div className="container">
+    //         <p className="m-0 text-center text-white">
     //             Copyright &copy; Clothes Shop 2021
     //         </p>
     //     </div>
     // </footer>
     (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("footer", {
-      "class": "footer",
+      className: "footer",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "container",
+        className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          "class": "row",
+          className: "row",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            "class": "footer-col",
+            className: "footer-col",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-              "class": "h4-footer",
+              className: "h4-footer",
               children: "About Us"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-              "class": "ul-footer",
+              className: "ul-footer",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                  "class": "p-footer",
-                  children: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  className: "p-footer",
+                  children: "Lu\xF4n mang \u0111\u1EBFn nh\u1EEFng g\xEC t\u1ED1t nh\u1EA5t cho kh\xE1ch h\xE0ng"
                 })
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            "class": "footer-col",
+            className: "footer-col",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-              "class": "h4-footer",
+              className: "h4-footer",
               children: "get help"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-              "class": "ul-footer",
+              className: "ul-footer",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "about us"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "our services"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "privacy policy"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "affiliate program"
                 })
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            "class": "footer-col",
+            className: "footer-col",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-              "class": "h4-footer",
+              className: "h4-footer",
               children: "online shop"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-              "class": "ul-footer",
+              className: "ul-footer",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "watch"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "bag"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "shoes"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                "class": "li-footer",
+                className: "li-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                   href: "#",
-                  "class": "a-footer",
+                  className: "a-footer",
                   children: "dress"
                 })
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            "class": "footer-col",
+            className: "footer-col",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-              "class": "h4-footer",
+              className: "h4-footer",
               children: "follow us"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              "class": "social-links",
+              className: "social-links",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "#",
-                "class": "a-footer",
+                className: "a-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                  "class": "fab fa-facebook-f"
+                  className: "fab fa-facebook-f"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "#",
-                "class": "a-footer",
+                className: "a-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                  "class": "fab fa-twitter"
+                  className: "fab fa-twitter"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "#",
-                "class": "a-footer",
+                className: "a-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                  "class": "fab fa-instagram"
+                  className: "fab fa-instagram"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
                 href: "#",
-                "class": "a-footer",
+                className: "a-footer",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
-                  "class": "fab fa-linkedin-in"
+                  className: "fab fa-linkedin-in"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-                "class": "h2-footer",
+                className: "h2-footer",
                 children: "Coppy right@Clothes Shop 2021"
               })]
             })]
@@ -5958,44 +5958,44 @@ function Header(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "Header",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
-      "class": "navbar navbar-expand-lg navbar-dark bg-dark fixed-top",
+      className: "navbar navbar-expand-lg navbar-dark bg-dark fixed-top",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        "class": "container",
+        className: "container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          "class": "navbar-brand",
+          className: "navbar-brand",
           href: "/",
           children: "FCT TEAMWORK"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
           onClick: onClickCart,
-          "class": "nav-item nav-item1",
+          className: "nav-item nav-item1",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-            "class": "nav-link cart-icon-header",
+            className: "nav-link cart-icon-header",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
           })
         }), user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-          "class": "nav-item nav-item1",
+          className: "nav-item nav-item1",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-            "class": "nav-link ",
+            className: "nav-link ",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_3__.default, {})
           })
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-            "class": "nav-item sign-up nav-item1",
+            className: "nav-item sign-up nav-item1",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-              "class": "nav-link",
+              className: "nav-link",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                "class": "glyphicon glyphicon-user"
+                className: "glyphicon glyphicon-user"
               }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
                 buttonLabel: "Sign Up",
                 className: "modal-signup"
               })]
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-            "class": "nav-item nav-item1",
+            className: "nav-item nav-item1",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-              "class": "nav-link",
+              className: "nav-link",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                "class": "glyphicon glyphicon-log-in"
+                className: "glyphicon glyphicon-log-in"
               }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
                 buttonLabel: "Login",
                 className: "modal-login"
@@ -6004,12 +6004,12 @@ function Header(props) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", (_jsx2 = {
           onClick: onClickCart,
-          "class": "nav-item"
-        }, _defineProperty(_jsx2, "class", "navbar-toggler"), _defineProperty(_jsx2, "type", "button"), _defineProperty(_jsx2, "data-target", "#navbarResponsive"), _defineProperty(_jsx2, "aria-controls", "navbarResponsive"), _defineProperty(_jsx2, "aria-expanded", "false"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-          "class": "nav-link cart-icon-header",
+          className: "nav-item"
+        }, _defineProperty(_jsx2, "className", "navbar-toggler"), _defineProperty(_jsx2, "type", "button"), _defineProperty(_jsx2, "data-target", "#navbarResponsive"), _defineProperty(_jsx2, "aria-controls", "navbarResponsive"), _defineProperty(_jsx2, "aria-expanded", "false"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+          className: "nav-link cart-icon-header",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
         })), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-          "class": "navbar-toggler",
+          className: "navbar-toggler",
           type: "button",
           "data-toggle": "collapse",
           "data-target": "#navbarResponsive",
@@ -6017,68 +6017,68 @@ function Header(props) {
           "aria-expanded": "false",
           "aria-label": "Toggle navigation",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-            "class": "navbar-toggler-icon"
+            className: "navbar-toggler-icon"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          "class": "collapse navbar-collapse",
+          className: "collapse navbar-collapse",
           id: "navbarResponsive",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
-            "class": "navbar-nav ",
+            className: "navbar-nav ",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              "class": "nav-item active",
+              className: "nav-item active",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-                "class": "nav-link",
+                className: "nav-link",
                 href: "/",
                 children: ["Home", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                  "class": "sr-only",
+                  className: "sr-only",
                   children: "(current)"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              "class": "nav-item",
+              className: "nav-item",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                "class": "nav-link",
+                className: "nav-link",
                 href: "/about",
                 children: "About"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              "class": "nav-item",
+              className: "nav-item",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                "class": "nav-link",
+                className: "nav-link",
                 href: "/",
                 children: "Services"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               onClick: onClickCart,
-              "class": "nav-item",
+              className: "nav-item",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                "class": "nav-link cart-icon-header",
+                className: "nav-link cart-icon-header",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_0__.default, {})
               })
             }), user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-              "class": "nav-item login",
+              className: "nav-item login",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                "class": "nav-link ",
+                className: "nav-link ",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_3__.default, {})
               })
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                "class": "nav-item sign-up1",
+                className: "nav-item sign-up1",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-                  "class": "nav-link",
+                  className: "nav-link",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                    "class": "glyphicon glyphicon-user"
+                    className: "glyphicon glyphicon-user"
                   }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
                     buttonLabel: "Sign Up",
                     className: "modal-signup"
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                "class": "nav-item login",
+                className: "nav-item login",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-                  "class": "nav-link",
+                  className: "nav-link",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                    "class": "glyphicon glyphicon-log-in"
+                    className: "glyphicon glyphicon-log-in"
                   }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CustomModal_CustomModal__WEBPACK_IMPORTED_MODULE_4__.default, {
                     buttonLabel: "Login",
                     className: "modal-login"
@@ -6139,7 +6139,7 @@ function InputField(props) {
       "for": name,
       children: [label, ":"]
     }), type === "area" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", _objectSpread(_objectSpread({
-      "class": "form-control",
+      className: "form-control",
       id: name
     }, field), {}, {
       disabled: disabled,
@@ -6460,7 +6460,7 @@ function Menu(props) {
         height: 32,
         src: _assets_menu_svg__WEBPACK_IMPORTED_MODULE_3__.default
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
-        "class": classnames__WEBPACK_IMPORTED_MODULE_7___default()("ul-category", "ul-category-responsive", {
+        className: classnames__WEBPACK_IMPORTED_MODULE_7___default()("ul-category", "ul-category-responsive", {
           none: collapsed
         }),
         children: categoryList.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
@@ -6470,7 +6470,7 @@ function Menu(props) {
           children: "a"
         }) : categoryList.map(function (category, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
-            "class": "li-category",
+            className: "li-category",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Category_Category__WEBPACK_IMPORTED_MODULE_5__.default, {
               idClick: idClick,
               handelCategoryClick: handelCategoryClick,
@@ -6482,12 +6482,12 @@ function Menu(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
       className: "Menu__laptop",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        "class": "sidebar-category",
+        className: "sidebar-category",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
-          "class": "text-category",
+          className: "text-category",
           children: "categories"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("ul", {
-          "class": "ul-category",
+          className: "ul-category",
           children: categoryList.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
             className: "container",
             type: "grow",
@@ -6495,7 +6495,7 @@ function Menu(props) {
             children: "a"
           }) : categoryList.map(function (category, index) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
-              "class": "li-category",
+              className: "li-category",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Category_Category__WEBPACK_IMPORTED_MODULE_5__.default, {
                 idClick: idClick,
                 handelCategoryClick: handelCategoryClick,
@@ -6812,40 +6812,40 @@ function ProductCard(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    "class": "ProductCard col-lg-3  ",
+    className: "ProductCard col-lg-3  ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ProductDetail_ProductDetail__WEBPACK_IMPORTED_MODULE_3__.default, {
       productName: productName,
       description: description
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      "class": "product-grid4",
+      className: "product-grid4",
       "data-aos": "fade-up",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        "class": "product-image4",
+        className: "product-image4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            "class": "pic-1",
+            className: "pic-1",
             src: imageAddress
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          "class": "product-new-label",
+          className: "product-new-label",
           children: "New"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          "class": "product-discount-label",
+          className: "product-discount-label",
           children: "LIMITED"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        "class": "product-content",
+        className: "product-content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          "class": "title",
+          className: "title",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
             href: "#",
             children: productName
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          "class": "price",
+          className: "price",
           children: [price, " VND"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          "class": "add-to-cart",
+          className: "add-to-cart",
           onClick: function onClick() {
             return _onClick();
           },
@@ -7124,14 +7124,14 @@ __webpack_require__.r(__webpack_exports__);
 function Slider() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     id: "carouselExampleIndicators",
-    "class": "Slider carousel slide my-4",
+    className: "Slider carousel slide my-4",
     "data-ride": "carousel",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ol", {
-      "class": "carousel-indicators",
+      className: "carousel-indicators",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
         "data-target": "#carouselExampleIndicators",
         "data-slide-to": "0",
-        "class": "active"
+        className: "active"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
         "data-target": "#carouselExampleIndicators",
         "data-slide-to": "1"
@@ -7140,51 +7140,51 @@ function Slider() {
         "data-slide-to": "2"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      "class": "carousel-inner",
+      className: "carousel-inner",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "carousel-item active",
+        className: "carousel-item active",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          "class": "d-block w-100",
+          className: "d-block w-100",
           src: "https://ipx.image-gmkt.com/imageproxy/?src=http%3A%2F%2Fvisualkorea0.cafe24.com%2Fshare%2F0609_banner_10_980.jpg&scw=-1&remake=Y",
           alt: "First slide"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "carousel-item",
+        className: "carousel-item",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          "class": "d-block w-100",
+          className: "d-block w-100",
           src: "https://martina.com.vn/image/cache/catalog/mau-dam-dong-phuc-cong-so-09-900x350.png",
           alt: "Second slide"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        "class": "carousel-item",
+        className: "carousel-item",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-          "class": "d-block w-100",
+          className: "d-block w-100",
           src: "https://www.danielamiller.com/wp-content/uploads/2012/02/image-1-900x350.png",
           alt: "Third slide"
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-      "class": "carousel-control-prev",
+      className: "carousel-control-prev",
       href: "#carouselExampleIndicators",
       role: "button",
       "data-slide": "prev",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        "class": "carousel-control-prev-icon",
+        className: "carousel-control-prev-icon",
         "aria-hidden": "true"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        "class": "sr-only",
+        className: "sr-only",
         children: "Previous"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
-      "class": "carousel-control-next",
+      className: "carousel-control-next",
       href: "#carouselExampleIndicators",
       role: "button",
       "data-slide": "next",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        "class": "carousel-control-next-icon",
+        className: "carousel-control-next-icon",
         "aria-hidden": "true"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        "class": "sr-only",
+        className: "sr-only",
         children: "Next"
       })]
     })]

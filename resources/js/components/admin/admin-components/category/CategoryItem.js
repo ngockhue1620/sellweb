@@ -34,7 +34,6 @@ export default function CategoryItem(props) {
             .then(response => {
                 if (response.data.status == true) {
                     alert(response.data.message);
-
                     setClassName('show-product-item-admin')
                     toggle()
                 }
@@ -56,7 +55,7 @@ export default function CategoryItem(props) {
         {
             console.log("chay")
             await axios
-                .put(`/api/category/${props.category.id}`, { categoryName: categoryName })
+                .put(`/api/category/${props.category.id}`, { categoryName:categoryName })
                 .then(response => {                   
                     
                        if(response.data.status==true)
@@ -137,7 +136,7 @@ export default function CategoryItem(props) {
                             />
                         </InputGroup>
                     </Form>
-                    <ul class="list-group alert-danger">
+                    <ul className="list-group alert-danger">
                         {errorsValue.map((item) => (
                             <li key={item}>{item}</li>
                         ))}
