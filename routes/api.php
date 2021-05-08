@@ -67,6 +67,7 @@ Route::post('order','App\Http\Controllers\OrderController@store');
 Route::get('order','App\Http\Controllers\OrderController@index');
 Route::get('order/{id}','App\Http\Controllers\OrderController@show');
 Route::put('order/{id}','App\Http\Controllers\OrderController@update');
+Route::get('history/{id}','App\Http\Controllers\OrderController@historyOrder');
 
 
 

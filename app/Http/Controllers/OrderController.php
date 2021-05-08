@@ -173,4 +173,11 @@ class OrderController extends Controller
                 ],500);
         }
     }
+
+    public function historyOrder($id)
+    {
+        $order = Order::where('customer_id','=',$id)                        
+                        ->with(['orderDetail'])->get();
+        return $order;
+    }
 }
