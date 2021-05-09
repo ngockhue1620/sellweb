@@ -83,6 +83,7 @@ export default function App() {
     };
     return (
         <Router>
+            
             <Suspense fallback={<div>Loading...</div>}>
                 <Header
                     onClickCart={isClickCart}

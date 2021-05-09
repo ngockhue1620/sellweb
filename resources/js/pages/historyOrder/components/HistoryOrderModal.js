@@ -6,6 +6,8 @@ import {
     ModalFooter,
     ModalHeader,
     Table,
+    Toast, ToastBody, ToastHeader  ,
+    Badge 
 } from "reactstrap";
 import productApi from "../../../api/productApi";
 
@@ -19,10 +21,10 @@ export default function HistoryOrderModal(props) {
     const toggle = () => setModal(!modal);
     useEffect(() => {
         async function fetchData() {
-            
-           
+
+
             const response = await productApi.getAll();
-          
+
             if (response) {
                 setProducts(response);
             }
@@ -30,53 +32,76 @@ export default function HistoryOrderModal(props) {
         fetchData();
     }, []);
     return (
-        <div className="order-modal">
-            <div onClick={toggle}>
-                <Label>Phone: {order.recipientPhone}</Label>
+        <div className="order-modal ">
+            
+                <Toast onClick={toggle} className="p-3 bg-info my-2 rounded container">
+                    <ToastHeader>
+                        aaaaa
+                    </ToastHeader>
+                    <ToastBody>
+                        <Label>Số Điện Thoại: {order.recipientPhone}</Label>
+                        <br></br>
+                        <Label>Tên Người Nhận: {order.recipientName}</Label>
+                        <br></br>
+                        <Label>Địa Chỉ Giao Hàng: {order.recipientAddress}</Label>
+                        <br></br>
+                        <Label>Ghi Chú: {order.note}</Label>
+                        <br></br>
+                        <Label>
+                        Trạng Thái <Badge href="#" color="danger"> {order.isProcess ? "Đã Xác Nhận" : "Chưa Xác Nhận"}</Badge>
+                            
+                        </Label>
+                        <br></br>
+                        <Label>Ngày Đặt Hàng: {order.created_at}</Label>
+                        <br></br>
+                    </ToastBody>
+                </Toast>
+           
+            {/* <div onClick={toggle}>
+                <Label>Số Điện Thoại: {order.recipientPhone}</Label>
                 <br></br>
-                <Label>Name: {order.recipientName}</Label>
+                <Label>Tên Người Nhận: {order.recipientName}</Label>
                 <br></br>
-                <Label>Address: {order.recipientAddress}</Label>
+                <Label>Địa Chỉ Giao Hàng: {order.recipientAddress}</Label>
                 <br></br>
-                <Label>Note: {order.note}</Label>
+                <Label>Ghi Chú: {order.note}</Label>
                 <br></br>
                 <Label>
-                    Status: {order.isProcess ? "Process" : "NonProcess"}
+                    Trạng Thái: {order.isProcess ? "Đã Xác Nhận" : "Chưa Xác Nhận"}
                 </Label>
                 <br></br>
-                <Label>Day Order: {order.created_at}</Label>
+                <Label>Ngày Đặt Hàng: {order.created_at}</Label>
                 <br></br>
-            </div>
+            </div> */}
             <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Order Details</ModalHeader>
+                <ModalHeader toggle={toggle}>Chi Tiết Đơn Hàng</ModalHeader>
                 <ModalBody>
                     <Table>
                         <thead>
                             <tr>
-                                <th>Index</th>
-                                <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Số Lượng</th>
+                                <th>Hình Ảnh</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Giá</th>
+                                <th>Số Lượng</th>
+                                <th>Thành Tiền</th>
                             </tr>
                         </thead>
                         <tbody>
                             {order_detail.map((product, index) => {
-                                
+
                                 let imageAddress = "",
                                     productName = "";
-                                    products.map((e)=>{
-                                        if(e.id==product.product_id)
-                                        {
-                                            imageAddress=e.imageAddress;
-                                            productName=e.productName
-                                        }
-                                    })
-                                
+                                products.map((e) => {
+                                    if (e.id == product.product_id) {
+                                        imageAddress = e.imageAddress;
+                                        productName = e.productName
+                                    }
+                                })
+
 
                                 const { price, quantity, total } = product;
-                               
+
                                 totalMoney += total;
 
                                 return (
@@ -100,7 +125,7 @@ export default function HistoryOrderModal(props) {
                     </Table>
                 </ModalBody>
                 <ModalFooter>
-                    <Label>Total: {totalMoney}đ</Label>
+                    <Label>Tổng Tiền: {totalMoney}đ</Label>
                 </ModalFooter>
             </Modal>
         </div>
