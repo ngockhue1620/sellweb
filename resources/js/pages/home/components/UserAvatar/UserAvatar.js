@@ -1,5 +1,5 @@
-import { unwrapResult } from "@reduxjs/toolkit";
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import {
@@ -13,23 +13,23 @@ import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
 export default function UserAvatar() {
     const dispatch = useDispatch();
-    const history=useHistory()
+    
+    const user = useSelector((state) => state.user);
+    const history = useHistory();
     const [dropdownOpen, setDropdownOpen] = useState(false);
+
+   
     const handleLogout = async () => {
-        
-        
         const actionResult = await dispatch(
             login({
                 email: "",
                 password: "",
             })
         );
-        history.push('/homepage')
-        
-        const user = unwrapResult(actionResult);
+        history.push("/homepage");
     };
     const toggle = () => setDropdownOpen((prevState) => !prevState);
-    const user = useSelector((state) => state.user);
+
     return (
         <Dropdown className="user-avt" isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle className="user-avt__toggle">
@@ -37,7 +37,7 @@ export default function UserAvatar() {
                     className="user-avt__card__img"
                     top
                     width="100%"
-                    src={userAvatar}
+                    src={user.photoURL ? user.photoURL : userAvatar}
                     alt="Card image cap"
                 />
             </DropdownToggle>
