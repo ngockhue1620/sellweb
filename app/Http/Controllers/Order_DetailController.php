@@ -46,7 +46,22 @@ class Order_DetailController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+           $order_detail=OrderDetail::where('order_id','=',$id)
+                                    ->with(['getProduct'])->get();
+            return $order_detail;
+            
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -57,7 +72,7 @@ class Order_DetailController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

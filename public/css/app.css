@@ -10698,19 +10698,25 @@ img.card-img-top {
     justify-content: space-between;
     text-align: center;
   }
-
-  .nav-item.nav-item1 {
+  .navbar-nav1 li.nav-item.sign-up {
+    display: none;
+  }
+  .navbar-nav1 li.nav-item.sign-up1 {
+    display: block;
+  }
+  .navbar-nav1 li.nav-item.login {
+    display: none;
+  }
+  .navbar-nav1 .nav-item.nav-item1 {
     width: 100%;
     height: 100%;
     display: inline-block;
     font-size: 25px;
   }
-
-  .nav-link {
+  .navbar-nav1 .nav-link {
     padding: 5px;
   }
-
-  .cart .quantity {
+  .navbar-nav1 .cart .quantity {
     text-align: center;
     position: absolute;
     z-index: 1;
@@ -10719,26 +10725,32 @@ img.card-img-top {
     top: 4px;
     right: 4px;
   }
-
-  img.user-avt__card__img.card-img-top {
+  .navbar-nav1 img.user-avt__card__img.card-img-top {
     width: 20px;
   }
-
-  a.nav-link.cart-icon-header {
+  .navbar-nav1 a.nav-link.cart-icon-header {
     height: 2.3rem;
   }
-
-  .list-group-item {
+  .navbar-nav1 .list-group-item {
     font-size: 15px;
     color: white;
     font-weight: bold;
   }
-  .list-group-item:hover {
+  .navbar-nav1 .list-group-item:hover {
     text-decoration: none;
   }
-
-  .cart-container {
+  .navbar-nav1 .cart-container {
     width: 100%;
     height: 100%;
   }
+}
+.history-page {
+  margin-top: 5rem;
+  height: 40rem;
+}
+
+img.teamimage {
+  width: 554px;
+  padding: 5px;
+  margin-bottom: 24px;
 }

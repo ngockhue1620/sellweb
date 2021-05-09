@@ -72,7 +72,7 @@ export default function OrderForm(props) {
         let orderDetails = [];
         cartProducts.map((product) => {
             orderDetails.push({
-                productId: product.product.id,
+                product_id: product.product.id,
                 quantity: product.quantity,
                 price: product.product.price,
                 total: product.quantity * product.product.price,
@@ -91,6 +91,7 @@ export default function OrderForm(props) {
         const res = await orderApi.postOrder(order);
         console.log(res.errors);
         if (res.status) {
+            console.log("thanh cong")
             setResOrder(res.order);
             setIsOrder(true);
             setTitle("Order Success! This is details for your order.");

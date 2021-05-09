@@ -10,7 +10,7 @@ class OrderDetailSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
-     * protected $fillable =[er_id','productId','quantity','price','total'];
+     * protected $fillable =[er_id','product_id','quantity','price','total'];
      */
     public function run()
     {
@@ -18,7 +18,7 @@ class OrderDetailSeeder extends Seeder
             [
                 
                 'order_id'   =>1,
-                'productId'=>1,
+                'product_id'=>1,
                 'quantity'   =>1,
                 'price'      =>350000,
                 'total'      =>350000,
@@ -28,7 +28,7 @@ class OrderDetailSeeder extends Seeder
             [
                 
                 'order_id'   =>2,
-                'productId'=>2,
+                'product_id'=>2,
                 'quantity'   =>1,
                 'price'      =>150000,
                 'total'      =>150000,
@@ -38,7 +38,7 @@ class OrderDetailSeeder extends Seeder
             [
                 
                 'order_id'   =>3,
-                'productId'=>3,
+                'product_id'=>3,
                 'quantity'   =>1,
                 'price'      =>50000,
                 'total'      =>50000,
@@ -48,7 +48,7 @@ class OrderDetailSeeder extends Seeder
             [
                 
                 'order_id'   =>4,
-                'productId'=>4,
+                'product_id'=>4,
                 'quantity'   =>1,
                 'price'      =>499000,
                 'total'      =>499000,
@@ -58,7 +58,7 @@ class OrderDetailSeeder extends Seeder
             [
                 
                 'order_id'   =>5,
-                'productId'=>5,
+                'product_id'=>5,
                 'quantity'   =>1,
                 'price'      =>550000,
                 'total'      =>550000,

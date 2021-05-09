@@ -2,9 +2,16 @@ import { unwrapResult } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-
+import firebase from "firebase";
 import { login } from "../../../../reducers/userSlice";
 import CustomForm from "../CustomForm/CustomForm";
+import { StyledFirebaseAuth } from "react-firebaseui";
+
+const uiConfig = {
+    signInFlow: "popup",
+    signInSuccessUrl: "/homepage",
+    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+};
 
 export default function LoginForm(props) {
     const [message, setMessage] = useState("");
@@ -25,23 +32,27 @@ export default function LoginForm(props) {
     ];
 
     const handleSubmit = async (values) => {
-        console.log(values)
         const actionResult = await dispatch(login(values));
         const user = unwrapResult(actionResult);
 
         if (user) {
-            console.log("user", user);
             onToggle();
         } else {
             setMessage("Email or password is wrong!!!");
         }
     };
     return (
-        <CustomForm
-        btnLabel="Login"
-            message={message}
-            onSubmit={handleSubmit}
-            listFormGroups={listFormGroups}
-        ></CustomForm>
+        <div>
+            <CustomForm
+                btnLabel="Login"
+                message={message}
+                onSubmit={handleSubmit}
+                listFormGroups={listFormGroups}
+            ></CustomForm>
+            <StyledFirebaseAuth
+                uiConfig={uiConfig}
+                firebaseAuth={firebase.auth()}
+            />
+        </div>
     );
 }

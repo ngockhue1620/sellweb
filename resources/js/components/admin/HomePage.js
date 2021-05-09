@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Body from './body-components/Body'
-import Header from './body-components/Header'
 import Table from './body-components/Table'
-import Content from './body-components/Content'
 import Footer from './body-components/Footer'
 
 export default class HomePage extends Component {
@@ -11,10 +9,10 @@ export default class HomePage extends Component {
             <div>
                 {/* <Header /> */}
                 <Body>
-                    <Table />
-                    <Content />
+                    <Table />                   
+                    <Footer/>
                 </Body>
-                <Footer/>
+                
             </div>
         )
     }

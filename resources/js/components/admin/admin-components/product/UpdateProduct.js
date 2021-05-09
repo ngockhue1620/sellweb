@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import {React,useState} from 'react';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {
@@ -34,7 +34,7 @@ export default function UpdateProduct(props) {
 
   const confimUpdate=()=>{
     axios
-    .put(`https://laravel-react-sell-web.herokuapp.com/api/product/${product.id}`,product)
+    .put(`/api/product/${product.id}`,product)
     .then(response=>{
       
       if(response.data.status==true)

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\InCart;
 use App\Models\Product;
+use App\Models\OrderDetail;
 use DB;
 
 class OrderController extends Controller
@@ -17,7 +18,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return Order::with(['orderDetail'])->get();
+        return Order::where('isProcess',null)
+        ->with(['orderDetail'])->get();
     }
 
     /**
@@ -49,7 +51,7 @@ class OrderController extends Controller
         foreach( $request->orderDetails as $value)
         {   
             
-            $product = Product::find($value['productId']);
+            $product = Product::find($value['product_id']);
             if($product->quantity<$value['quantity'])
             {  
                 array_push($errors,$product->productName.' còn '.$product->quantity . ' sản phẩm');
@@ -96,7 +98,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where('customer_id','=',$id)->with(['orderDetail'])->get();
+        $order = Order::where('customer_id','=',$id)
+                        ->whereNotNull('isProcess')
+                        ->with(['orderDetail'])->get();
         return $order;
     }
 
@@ -120,7 +124,23 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        try{
+            $order=Order::find($id);
+            $order->isProcess=$request->isProcess;
+            $order->save();
+            return \response()->json(['status'=>true]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json([
+                'error'=>[
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                    'message' => $e->getMessage()
+                ]
+                ],500);
+        }
     }
 
     /**
@@ -153,5 +173,17 @@ class OrderController extends Controller
                 ]
                 ],500);
         }
+    }
+
+    public function historyOrder($id)
+    {
+        $order = Order::where('customer_id','=',$id)                        
+                        ->with(['orderDetail'])
+                        ->orderBy('created_at','desc')
+                        ->get();
+        return $order;
+
+        
+        
     }
 }

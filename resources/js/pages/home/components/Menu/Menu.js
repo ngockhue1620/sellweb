@@ -43,7 +43,7 @@ export default function Menu(props) {
             <div className="Menu__mobie">
                 <i class="fas fa-plus icon" onClick={toggleNavbar}></i>
                 <ul
-                    class={className("ul-category", "ul-category-responsive", {
+                    className={className("ul-category", "ul-category-responsive", {
                         none: collapsed,
                     })}
                 >
@@ -57,7 +57,7 @@ export default function Menu(props) {
                         </Spinner>
                     ) : (
                         categoryList.map((category, index) => (
-                            <li class="li-category">
+                            <li key={index} className="li-category">
                                 <Category
                                     idClick={idClick}
                                     handelCategoryClick={handelCategoryClick}
@@ -70,9 +70,9 @@ export default function Menu(props) {
                 </ul>
             </div>
             <div className="Menu__laptop">
-                <div class="sidebar-category">
-                    <h3 class="text-category">categories</h3>
-                    <ul class="ul-category">
+                <div className="sidebar-category">
+                    <h3 className="text-category">categories</h3>
+                    <ul className="ul-category">
                         {categoryList.length == 0 ? (
                             <Spinner
                                 className="container"
@@ -83,7 +83,7 @@ export default function Menu(props) {
                             </Spinner>
                         ) : (
                             categoryList.map((category, index) => (
-                                <li class="li-category">
+                                <li key={index} className="li-category">
                                     <Category
                                         idClick={idClick}
                                         handelCategoryClick={
