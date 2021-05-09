@@ -5592,7 +5592,7 @@ function CartContainer(props) {
     "data-aos": "fade-left",
     "data-aos-anchor": "#example-anchor",
     "data-aos-offset": "500",
-    "data-aos-duration": "500",
+    "data-aos-duration": "1000",
     className: "cart-container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
       className: "cart-container__paycontainer",
@@ -5722,6 +5722,8 @@ function CartItem(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
+    "data-aos": "fade-up",
+    "data-aos-anchor-placement": "top-center",
     className: "cart-item container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
       xs: "8",
@@ -7111,80 +7113,9 @@ function OrderForm(props) {
 /*!***********************************************************************!*\
   !*** ./resources/js/pages/home/components/ProductCard/ProductCard.js ***!
   \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ProductCard)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../reducers/cartSlice */ "./resources/js/reducers/cartSlice.js");
-/* harmony import */ var _ProductDetail_ProductDetail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ProductDetail/ProductDetail */ "./resources/js/pages/home/components/ProductDetail/ProductDetail.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-function ProductCard(props) {
-  var _props$product = props.product,
-      imageAddress = _props$product.imageAddress,
-      productName = _props$product.productName,
-      price = _props$product.price,
-      description = _props$product.description;
-  var index = props.index;
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
-
-  var _onClick = function onClick() {
-    dispatch((0,_reducers_cartSlice__WEBPACK_IMPORTED_MODULE_2__.addProduct)(props.product));
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "ProductCard col-lg-3  ",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ProductDetail_ProductDetail__WEBPACK_IMPORTED_MODULE_3__.default, {
-      productName: productName,
-      description: description
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "product-grid4",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "product-image4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            className: "pic-1",
-            src: imageAddress
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "product-new-label",
-          children: "New"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "product-discount-label",
-          children: "LIMITED"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "product-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-          className: "title",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-            href: "#",
-            children: productName
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "price",
-          children: [price, " VND"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-          className: "add-to-cart",
-          onClick: function onClick() {
-            return _onClick();
-          },
-          children: "ADD TO CART"
-        })]
-      })]
-    })]
-  });
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\congcuvaptpm\\sellweb\\resources\\js\\pages\\home\\components\\ProductCard\\ProductCard.js: Unexpected token (23:1)\n\n\u001b[0m \u001b[90m 21 |\u001b[39m                 description\u001b[33m=\u001b[39m{description}\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m             \u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mProductDetail\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"product-grid4\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[0m\n    at Object._raise (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Object.raiseWithData (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Object.raise (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Object.unexpected (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:9735:16)\n    at Object.jsxParseIdentifier (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:4947:12)\n    at Object.jsxParseNamespacedName (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:4957:23)\n    at Object.jsxParseElementName (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:4968:21)\n    at Object.jsxParseOpeningElementAt (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:5055:22)\n    at Object.jsxParseElementAt (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:5088:33)\n    at Object.jsxParseElementAt (D:\\congcuvaptpm\\sellweb\\node_modules\\@babel\\parser\\lib\\index.js:5104:32)");
 
 /***/ }),
 
@@ -50406,12 +50337,9 @@ var index = react__WEBPACK_IMPORTED_MODULE_0__.createContext || createReactConte
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n692 │         position: absolute;\r\n    │                           ^\n    ╵\n  D:\\congcuvaptpm\\sellweb\\resources\\sass\\app.scss 692:27  root stylesheet\n    at processResult (D:\\congcuvaptpm\\sellweb\\node_modules\\webpack\\lib\\NormalModule.js:676:19)\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\webpack\\lib\\NormalModule.js:778:5\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (D:\\congcuvaptpm\\sellweb\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at D:\\congcuvaptpm\\sellweb\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:92439:16)\n    at _render_closure1.call$2 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:80990:12)\n    at _RootZone.runBinary$3$3 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:27220:18)\n    at _FutureListener.handleError$1 (D:\\congcuvaptpm\\sellweb\\node_modules\\sass\\sass.dart.js:25776:19)");
 
 /***/ }),
 
@@ -96467,7 +96395,6 @@ module.exports = warning;
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
 /******/ 			"css/admin": 0
 /******/ 		};
 /******/ 		
@@ -96516,9 +96443,9 @@ module.exports = warning;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin"], () => (__webpack_require__("./resources/sass/admin/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin"], () => (__webpack_require__("./resources/sass/admin/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

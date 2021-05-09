@@ -20,10 +20,10 @@ export default function CartContainer(props) {
 
     return (
         <Container
-            data-aos="fade-left"
+                data-aos="fade-left"
             data-aos-anchor="#example-anchor"
             data-aos-offset="500"
-            data-aos-duration="500"
+            data-aos-duration="1000"
             className="cart-container"
         >
             <Row className="cart-container__paycontainer">

@@ -6,12 +6,12 @@ const Table = () => {
     return (
         <div className="Menu col-lg-2 menu-class">
             <div className="list-group ">
-                <ListGroup>
-                   
+                <ListGroup>                   
                     <ListGroupItem tag="a" href="/admin/category">Category</ListGroupItem>
                     <ListGroupItem tag="a" href="/admin/customer">Customer</ListGroupItem>                    
                     <ListGroupItem tag="a" href="/admin/order">Order</ListGroupItem>
                     <ListGroupItem tag="a" href="/admin/product">Product</ListGroupItem>
+                    <ListGroupItem tag="a" href="/admin/">Note</ListGroupItem>
                 </ListGroup>
             </div>
         </div>
