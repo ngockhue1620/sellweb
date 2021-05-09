@@ -16,19 +16,11 @@ export default function ProductCard(props) {
     return (
         <div className="ProductCard col-lg-3  ">
             <ProductDetail
-                
                 productName={productName}
                 description={description}
             ></ProductDetail>
-<<<<<<< HEAD
+
             <div className="product-grid4">
-=======
-            <div
-           
-            className="product-grid4"               
-                
-            >
->>>>>>> b584868dae00ca8a045b21db767a82584bf358de
                 <div className="product-image4">
                     <a>
                         <img className="pic-1" src={imageAddress}></img>
