@@ -67,7 +67,8 @@ export default function Changepassword() {
 
     return (
         <div className="container changepassword-page">
-            {isSuccess ? (
+            {user ? <div>
+                {isSuccess ? (
                 <div>
                     <Label>Change password success!</Label>
                     <br></br>
@@ -83,6 +84,8 @@ export default function Changepassword() {
                     listFormGroups={listFormGroups}
                 ></CustomForm>
             )}
+            </div> : <span>Ban chua dang nhap</span>}
+            
         </div>
     );
 }

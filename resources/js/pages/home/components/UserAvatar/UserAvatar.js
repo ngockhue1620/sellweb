@@ -1,6 +1,7 @@
 import { unwrapResult } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import {
     CardImg,
     Dropdown,
@@ -12,17 +13,19 @@ import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
 export default function UserAvatar() {
     const dispatch = useDispatch();
-
+    const history=useHistory()
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const handleLogout = async () => {
-        console.log("logout");
+        
+        
         const actionResult = await dispatch(
             login({
                 email: "",
                 password: "",
             })
         );
-
+        history.push('/homepage')
+        
         const user = unwrapResult(actionResult);
     };
     const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -42,7 +45,7 @@ export default function UserAvatar() {
                 <a href="/account">
                     <DropdownItem>Information Account</DropdownItem>
                 </a>
-                <a href="/account">
+                <a href="/history">
                     <DropdownItem>History order</DropdownItem>
                 </a>
                 <a href="/changepassword">

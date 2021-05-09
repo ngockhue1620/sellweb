@@ -3866,6 +3866,36 @@ function Index() {
 
     fetchData();
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    function fetchData() {
+      return _fetchData2.apply(this, arguments);
+    }
+
+    function _fetchData2() {
+      _fetchData2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axiosAdmin.get("api/order").then(function (data) {
+                  setOrderList(data);
+                })["catch"](function (error) {
+                  console.log(error);
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+      return _fetchData2.apply(this, arguments);
+    }
+
+    fetchData();
+  }, []);
 
   var isProgressSuccess = function isProgressSuccess() {
     var getProgress = isProgress + 1;

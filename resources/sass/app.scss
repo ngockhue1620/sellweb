@@ -681,14 +681,17 @@ img.card-img-top {
 }
 
 .ProductCard {
+
     position: relative;
     & > .product-detail {
         z-index: 100;
+
         position: absolute;
         background-color: whitesmoke;
         display: none;
     }
     &:hover .product-detail {
+       
         display: block;
     }
 }
@@ -781,4 +784,8 @@ img.card-img-top {
     a.nav-link.cart-icon-header {
         height: 2.3rem;
     }
+}
+.history-page{
+    margin-top: 5rem;
+    height: 40rem;
 }

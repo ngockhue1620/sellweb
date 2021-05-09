@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Table, Button, Label, Input } from "reactstrap";
 import userApi from "../../api/userApi";
@@ -6,8 +6,8 @@ import { login } from "../../reducers/userSlice";
 
 export default function Account() {
     const user = useSelector((state) => state.user);
-    const [inputName, setInputName] = useState(user.customerName);
-    const [inputPhone, setInputPhone] = useState(user.phone);
+    const [inputName, setInputName] = useState("");
+    const [inputPhone, setInputPhone] = useState("");
     const [isEdit, setIsEdit] = useState(false);
     const dispatch = useDispatch();
     const [message, setMessage] = useState("");
@@ -61,48 +61,60 @@ export default function Account() {
             setInputPhone(e.target.value);
         }
     };
+    useEffect(() => {
+        if (user) {
+            setInputName(user.customerName);
+            setInputPhone(user.phone);
+        }
+    });
     return (
         <div className="account-page container">
-            <Table>
-                <tbody>
-                    <tr>
-                        <th scope="row">Name</th>
-                        <td>
-                            {isEdit ? (
-                                <Input
-                                    autoFocus
-                                    onChange={onChange}
-                                    type="text"
-                                    name="name"
-                                    value={inputName}
-                                ></Input>
-                            ) : (
-                                <Label>{user.customerName}</Label>
-                            )}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Phone</th>
-                        <td>
-                            {isEdit ? (
-                                <Input
-                                    onChange={onChange}
-                                    type="text"
-                                    name="phone"
-                                    value={inputPhone}
-                                ></Input>
-                            ) : (
-                                <Label>{user.phone}</Label>
-                            )}
-                        </td>
-                    </tr>
-                </tbody>
-            </Table>
-            <Label className="error">{message}</Label>
-            <br></br>
-            <Button onClick={onClick} color="primary">
-                {isEdit ? "Save" : "Edit"}
-            </Button>
+            {user ? (
+                <div>
+                    <Table>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Name</th>
+                                <td>
+                                    {isEdit ? (
+                                        <Input
+                                            autoFocus
+                                            onChange={onChange}
+                                            type="text"
+                                            name="name"
+                                            value={inputName}
+                                        ></Input>
+                                    ) : (
+                                        <Label>{user.customerName}</Label>
+                                    )}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone</th>
+                                <td>
+                                    {isEdit ? (
+                                        <Input
+                                            onChange={onChange}
+                                            type="text"
+                                            name="phone"
+                                            value={inputPhone}
+                                        ></Input>
+                                    ) : (
+                                        <Label>{user.phone}</Label>
+                                    )}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                    <Label className="error">{message}</Label>
+                    <br></br>
+                    <Button onClick={onClick} color="primary">
+                        {isEdit ? "Save" : "Edit"}
+                    </Button>
+                </div>
+            ) : (
+                <span>Bạn chưa đăng nhập</span>
+            )}
         </div>
     );
 }

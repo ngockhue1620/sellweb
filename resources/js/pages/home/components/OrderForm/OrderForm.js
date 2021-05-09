@@ -91,6 +91,7 @@ export default function OrderForm(props) {
         const res = await orderApi.postOrder(order);
         console.log(res.errors);
         if (res.status) {
+            console.log("thanh cong")
             setResOrder(res.order);
             setIsOrder(true);
             setTitle("Order Success! This is details for your order.");
