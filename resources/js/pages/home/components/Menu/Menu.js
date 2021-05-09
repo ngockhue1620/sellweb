@@ -63,7 +63,7 @@ export default function Menu(props) {
                         </Spinner>
                     ) : (
                         categoryList.map((category, index) => (
-                            <li className="li-category">
+                            <li key={index} className="li-category">
                                 <Category
                                     idClick={idClick}
                                     handelCategoryClick={handelCategoryClick}
@@ -89,7 +89,7 @@ export default function Menu(props) {
                             </Spinner>
                         ) : (
                             categoryList.map((category, index) => (
-                                <li className="li-category">
+                                <li key={index} className="li-category">
                                     <Category
                                         idClick={idClick}
                                         handelCategoryClick={

@@ -19,6 +19,7 @@ const rootReducer=combineReducers({
     products:productReducer,
     cartProducts:cartReducer,
     user:userReducer
+    
 })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

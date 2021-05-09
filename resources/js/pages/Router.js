@@ -16,8 +16,11 @@ import CartContainer from "./home/components/CartContainer/CartContainer";
 import Footer from "./home/components/Footer/Footer";
 import Account from "./account/Account";
 import Changepassword from "./changepassword/Changepassword";
+import { useSelector } from "react-redux";
+import HistoryOrder from "./historyOrder/HistoryPage";
 
 export default function App() {
+    const user = useSelector((state) => state.user);
     const [isShowCart, setIsShowCart] = useState(false);
 
     const isClickCart = () => {
@@ -50,9 +53,13 @@ export default function App() {
                         render={(props) => <Account {...props} />}
                     />
 
-<Route
+                    <Route
                         path="/changepassword"
                         render={(props) => <Changepassword {...props} />}
+                    />
+                    <Route
+                        path="/history"
+                        render={(props) => <HistoryOrder {...props} />}
                     />
                 </Switch>
                 <Footer />

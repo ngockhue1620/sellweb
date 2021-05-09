@@ -14,17 +14,13 @@ export default function ProductCard(props) {
     };
 
     return (
-        <div className="ProductCard col-lg-3  "
-        >
+        <div className="ProductCard col-lg-3  ">
             <ProductDetail
+                
                 productName={productName}
                 description={description}
             ></ProductDetail>
-            <div
-                className="product-grid4"
-                data-aos="fade-up"
-                
-            >
+            <div className="product-grid4">
                 <div className="product-image4">
                     <a>
                         <img className="pic-1" src={imageAddress}></img>
