@@ -30,10 +30,10 @@ Route::put('supplier/{id}','App\Http\Controllers\SupplierController@update');
 Route::delete('supplier/{id}','App\Http\Controllers\SupplierController@destroy');
 
 //category
-Route::post('category','App\Http\Controllers\CategoryController@store');
+Route::post('category','App\Http\Controllers\CategoryController@store')->middleware('auth.basic');
 Route::get('category','App\Http\Controllers\CategoryController@index');
-Route::put('category/{id}','App\Http\Controllers\CategoryController@update');
-Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy');
+Route::put('category/{id}','App\Http\Controllers\CategoryController@update')->middleware('auth.basic');
+Route::delete('category/{id}','App\Http\Controllers\CategoryController@destroy')->middleware('auth.basic');
 
 //product
 Route::post('product','App\Http\Controllers\ProductController@store')->middleware('auth.basic');
@@ -61,8 +61,13 @@ Route::delete('cart/{id}','App\Http\Controllers\In_CartController@destroy');
 
 //order
 Route::post('order','App\Http\Controllers\OrderController@store');
+
+Route::get('order','App\Http\Controllers\OrderController@index');   
+// Route::put('order/{id}','App\Http\Controllers\CustomerController@update');
+
 Route::get('order','App\Http\Controllers\OrderController@index');
 Route::get('order/{id}','App\Http\Controllers\OrderController@show');
+
 Route::delete('order/{id}','App\Http\Controllers\OrderController@destroy');
 
 //file

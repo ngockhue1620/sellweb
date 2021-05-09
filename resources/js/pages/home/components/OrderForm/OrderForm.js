@@ -4,6 +4,12 @@ import { Button, Label, Table } from "reactstrap";
 import orderApi from "../../../../api/orderApi";
 import { removeAll } from "../../../../reducers/cartSlice";
 import CustomForm from "../CustomForm/CustomForm";
+import {
+    ListGroup,
+    ListGroupItem,
+    
+  
+  } from "reactstrap";
 
 export default function OrderForm(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
@@ -15,6 +21,8 @@ export default function OrderForm(props) {
     const [isOrder, setIsOrder] = useState(false);
 
     const [message, setMessage] = useState("");
+
+    const [errors, setError] = useState([]);
 
     const { onToggle, setTitle } = props;
 
@@ -81,14 +89,17 @@ export default function OrderForm(props) {
         };
 
         const res = await orderApi.postOrder(order);
+        console.log(res.errors);
         if (res.status) {
             setResOrder(res.order);
+            setIsOrder(true);
             setTitle("Order Success! This is details for your order.");
         } else {
-            setTitle("Oops!!!Order failed");
+            setTitle("Một vài sản phẩm không đủ số lượng");
+            setError(res.errors);
         }
 
-        setIsOrder(true);
+        
     };
     const onClickComeBack = () => {
         onToggle();
@@ -159,12 +170,19 @@ export default function OrderForm(props) {
                     </Button>
                 </div>
             ) : (
+                <>
+
                 <CustomForm
                     btnLabel="Order"
                     message={message}
                     onSubmit={handleSubmit}
                     listFormGroups={listFormGroups}
                 ></CustomForm>
+                <ListGroup>
+                    {errors.map(item=><ListGroupItem color="danger">{item}</ListGroupItem>)}
+                    
+                </ListGroup>
+                </>
             )}
         </div>
     );
