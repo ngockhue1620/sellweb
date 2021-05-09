@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
@@ -12,15 +11,16 @@ import {
 import { Link } from "react-router-dom";
 import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
+import firebase from "firebase";
 export default function UserAvatar() {
     const dispatch = useDispatch();
-    
+
     const user = useSelector((state) => state.user);
     const history = useHistory();
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-   
     const handleLogout = async () => {
+        firebase.auth().signOut();
         const actionResult = await dispatch(
             login({
                 email: "",
