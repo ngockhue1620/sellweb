@@ -34,7 +34,8 @@ export default function App() {
         const unregisterAuthObserver = firebase
             .auth()
             .onAuthStateChanged(async (user) => {
-                if(User) return;
+                
+                if(User) return;    
                 if (!user) {
                     // user logs out, handle something here
                     return;
