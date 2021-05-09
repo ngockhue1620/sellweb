@@ -28,10 +28,13 @@ const config = {
 firebase.initializeApp(config);
 export default function App() {
     const dispatch = useDispatch();
+    const User = useSelector((state) => state.user);
+
     useEffect(() => {
         const unregisterAuthObserver = firebase
             .auth()
             .onAuthStateChanged(async (user) => {
+                if(User) return;
                 if (!user) {
                     // user logs out, handle something here
 
@@ -71,7 +74,7 @@ export default function App() {
         return () => unregisterAuthObserver();
     }, []);
 
-    const user = useSelector((state) => state.user);
+    
     const [isShowCart, setIsShowCart] = useState(false);
 
     const isClickCart = () => {
