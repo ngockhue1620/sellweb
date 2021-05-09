@@ -9,6 +9,7 @@ import {
     DropdownMenu,
     DropdownToggle,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
 export default function UserAvatar() {
@@ -42,15 +43,15 @@ export default function UserAvatar() {
                 />
             </DropdownToggle>
             <DropdownMenu>
-                <a href="/account">
+                <Link to="/account">
                     <DropdownItem>Information Account</DropdownItem>
-                </a>
-                <a href="/history">
+                </Link>
+                <Link to="/history">
                     <DropdownItem>History order</DropdownItem>
-                </a>
-                <a href="/changepassword">
+                </Link>
+                <Link to="/changepassword">
                     <DropdownItem>Change password</DropdownItem>
-                </a>
+                </Link>
                 <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
             </DropdownMenu>
         </Dropdown>
