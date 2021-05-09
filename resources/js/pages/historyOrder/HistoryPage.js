@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { ListGroup, ListGroupItem } from "reactstrap";
+import { ListGroup, ListGroupItem,Label } from "reactstrap";
 
 import orderApi from "../../api/orderApi";
 import HistoryOrderModal from "./components/HistoryOrderModal";
@@ -23,7 +23,8 @@ export default function HistoryOrder() {
         fetchData();
     }, []);
     return (
-        <div className="history-page container">
+        <div style={{marginTop:'100px'}} className="container HomePage">
+            <Label>Kích Vào Đơn Hàng Để Xem Chi Tiết</Label>
             {!user  ? (
                 <span>Bạn chưa đăng nhập</span>
             ) : (

@@ -7,7 +7,7 @@ const orderApi = {
       return axiosClient.post(url,data);
     },
     getHistoryOrders:(id)=>{
-      const url=`api/order/${id}`
+      const url=`api/history/${id}`
       return axiosClient.get(url);
     }
   

@@ -10729,3 +10729,9 @@ img.card-img-top {
   margin-top: 5rem;
   height: 40rem;
 }
+
+img.teamimage {
+  width: 554px;
+  padding: 5px;
+  margin-bottom: 24px;
+}

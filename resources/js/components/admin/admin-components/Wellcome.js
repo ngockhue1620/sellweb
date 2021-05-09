@@ -47,40 +47,57 @@ export default function Wellcome() {
         fetchData();
     }, []);
 
+    //time
+
+
+    function formatDtae(date) {
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        return `${hours}:${minutes}:${seconds}`;
+    }
+    const [timeString,setTimeString]=useState('');
+    setInterval(() => {
+        const now = new Date();
+        const newTimeString = formatDtae(now);
+        setTimeString(newTimeString);
+    }, 1000);
+
+
     return (
         <div className="conten-component-admin">
-            <h1>Đây Là Trang Admin</h1>
-            
+            <h1>Bây Giờ Là {timeString}</h1>
+
             {
-                Array.isArray(note) && note.length > 0  ?
+                Array.isArray(note) && note.length > 0 ?
                     (
-                        
+
                         note.map(item => (
-                            <div className="p-3 bg-danger my-2 rounded"> 
-                            <Toast>
-                                <ToastHeader>
-                                   Các Sản Phẩm Gần Hết Hàng ({note.length})
+                            <div className="p-3 bg-danger my-2 rounded">
+                                <Toast>
+                                    <ToastHeader>
+                                        Các Sản Phẩm Gần Hết Hàng ({note.length})
                                 </ToastHeader>
-                                <ToastBody>
-                                    {note.map((item,index)=>(
-                                        <Alert key={index} color="warning">
-                                            {item.productName}
-                                      </Alert>
-                                    ))}
-                                 </ToastBody>
-                            </Toast>
-                            </div>   
+                                    <ToastBody>
+                                        {note.map((item, index) => (
+                                            <Alert key={index} color="warning">
+                                                {item.productName}
+                                            </Alert>
+                                        ))}
+                                    </ToastBody>
+                                </Toast>
+                            </div>
                         ))
-                                             
+
 
                     ) :
                     (
                         "Hệ Thống Đang Ở Trạng Thái Tốt"
                     )
-                }
-                {
-                    Array.isArray(OrderList) && OrderList.length > 0 ?(
-                        <div className="p-3 my-2 rounded">     
+            }
+            {
+                Array.isArray(OrderList) && OrderList.length > 0 ? (
+                    <div className="p-3 my-2 rounded">
                         <Toast>
                             <ToastHeader>
                                 Đơn Hàng Mới
@@ -89,12 +106,12 @@ export default function Wellcome() {
                                 có {OrderList.length} Đơn Hàng Mới Chờ Xác Nhận
                         </ToastBody>
                         </Toast>
-                        </div>
-                    ):
+                    </div>
+                ) :
                     (
                         ""
                     )
-                }
+            }
         </div>
     )
 }
