@@ -34,10 +34,10 @@ export default function App() {
         const unregisterAuthObserver = firebase
             .auth()
             .onAuthStateChanged(async (user) => {
-                if(User) return;
+                
+                if(User) return;    
                 if (!user) {
                     // user logs out, handle something here
-
                     return;
                 }
                 let listUsers = await userApi.getAll();
@@ -45,21 +45,24 @@ export default function App() {
                     return element.email === user.email;
                 };
                 const idExist = listUsers.findIndex(isExist);
+                let id;
                 if (idExist < 0) {
-                    await userApi.signUp({
+                   const userSignUpdSuccess= await userApi.signUp({
                         customerName: user.displayName,
                         email: user.email,
-                        password: "",
-                        phone: "",
+                        password: user.providerData[0].uid,
+                        phone: user.providerData[0].phoneNumber,
                     });
+                    console.log(user.providerData[0].uid);
+                    id =userSignUpdSuccess.customer.id;
                 }
-                listUsers = await userApi.getAll();
-                let id;
-                listUsers.map((item) => {
-                    if (item.email === user.email) {
-                        id = item.id;
-                    }
-                });
+                // listUsers = await userApi.getAll();
+                
+                // listUsers.map((item) => {
+                //     if (item.email === user.email) {
+                //         id = item.id;
+                //     }
+                // });
                 await dispatch(
                     setUser({
                         id: id,
