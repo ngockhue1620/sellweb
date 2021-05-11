@@ -468,8 +468,7 @@ nav {
         }
     }
 }
-
-.LoginSignUp_btn {
+.Order_btn {
     text-transform: uppercase;
     justify-content: center;
     color: white;
@@ -488,8 +487,17 @@ nav {
         background-color: #1b1b1b;
     }
 }
+.LoginSignUp_btn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0px 0px;
+    &:hover {
+        color: cyan;
+    }
+}
 
-.aboutComponet {
+.AboutComponent {
     margin-top: 70px;
 }
 img.card-img-top {
@@ -723,6 +731,11 @@ img.card-img-top {
 
 // response gio hang
 @media screen and (max-width: 768px) {
+    .LoginSignUp_btn {
+        color: #3490db;
+        padding-top: 0px;
+        font-size: 23px;
+    }
     .cart-container {
         width: 100%;
         height: 100%;
@@ -825,6 +838,18 @@ img.card-img-top {
 .history-page {
     margin-top: 5rem;
     min-height: 40rem;
+}
+.modal-content {
+    & .modal-body {
+        & .ComebackBtn {
+            background-color: red;
+
+            & .navbar-brand {
+                font-weight: 800;
+                color: white;
+            }
+        }
+    }
 }
 //about//
 .AboutComponent {

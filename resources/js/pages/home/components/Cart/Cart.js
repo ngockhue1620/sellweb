@@ -10,13 +10,7 @@ export default function Cart() {
         }, 0);
     };
     return (
-        <div
-            className="cart"
-            // data-aos="fade-left"
-            // data-aos-anchor="#example-anchor"
-            // data-aos-offset="500"
-            // data-aos-duration="500"
-        >
+        <div className="cart">
             <i class="fas fa-shopping-cart"></i>
             <div className="quantity">{countQuantity()}</div>
         </div>

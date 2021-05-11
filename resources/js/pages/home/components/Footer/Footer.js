@@ -10,8 +10,10 @@ export default function Footer() {
                         <ul className="ul-footer">
                             <li className="li-footer">
                                 <p className="p-footer">
-                                    Luôn mang đến những gì tốt nhất cho khách
-                                    hàng
+                                    The site is created by the FCT-team that
+                                    includes elite members in developing
+                                    products using languages ​​such as PHP,
+                                    ReactJS, ...
                                 </p>
                             </li>
                         </ul>

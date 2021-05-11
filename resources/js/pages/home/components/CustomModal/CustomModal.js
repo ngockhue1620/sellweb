@@ -35,12 +35,13 @@ export default function CustomModal(props) {
         <div>
             <Button
                 color="black"
-                className="LoginSignUp_btn"
-                onClick={buttonLabel === "Order" ? clickOrder:toggle}
-                
+                className={
+                    buttonLabel === "Order" ? "Order_btn" : "LoginSignUp_btn"
+                }
+                onClick={buttonLabel === "Order" ? clickOrder : toggle}
             >
                 {isMobie && className === "modal-login" && (
-                    <i class="fas fa-sign-in-alt"></i>
+                    <i class="fas fa-user"></i>
                 )}
                 {isMobie && className === "modal-signup" && (
                     <i class="fas fa-user-plus"></i>

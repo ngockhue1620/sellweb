@@ -4,17 +4,12 @@ import { Button, Label, Table } from "reactstrap";
 import orderApi from "../../../../api/orderApi";
 import { removeAll } from "../../../../reducers/cartSlice";
 import CustomForm from "../CustomForm/CustomForm";
-import {
-    ListGroup,
-    ListGroupItem,
-    
-  
-  } from "reactstrap";
+import { ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 
 export default function OrderForm(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
-    const [orderDetails,setOrderDetails]=useState([])
+    const [orderDetails, setOrderDetails] = useState([]);
     const user = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
@@ -58,7 +53,8 @@ export default function OrderForm(props) {
     const handleSubmit = async (values) => {
         const { name, phone, address, note } = values;
 
-        let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
+        let regExp =
+            /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
         if (!regExp.test(name)) {
             setMessage("Name is invalid!");
@@ -92,24 +88,20 @@ export default function OrderForm(props) {
         const res = await orderApi.postOrder(order);
         console.log(res.errors);
         if (res.status) {
-
-            console.log("thanh cong")
+            console.log("thanh cong");
             setResOrder(res.order);
             setIsOrder(true);
             setTitle("Order Success! This is details for your order.");
-            setOrderDetails(cartProducts)
+            setOrderDetails(cartProducts);
             dispatch(removeAll());
         } else {
             setTitle("Một vài sản phẩm không đủ số lượng");
             setError(res.errors);
         }
-
-        
     };
     const onClickComeBack = () => {
         onToggle();
         setIsOrder(false);
-        
     };
     return (
         <div>
@@ -170,24 +162,25 @@ export default function OrderForm(props) {
                     </Table>
                     <Label>Total: {total} đ</Label>
                     <br></br>
-                    <Button onClick={onClickComeBack}>
-                        <Link className="navbar-brand" to='/'>Comeback to Homepage</Link>
-                        
+                    <Button onClick={onClickComeBack} className="ComebackBtn">
+                        <Link className="navbar-brand" to="/">
+                            Back to Homepage
+                        </Link>
                     </Button>
                 </div>
             ) : (
                 <>
-
-                <CustomForm
-                    btnLabel="Order"
-                    message={message}
-                    onSubmit={handleSubmit}
-                    listFormGroups={listFormGroups}
-                ></CustomForm>
-                <ListGroup>
-                    {errors.map(item=><ListGroupItem color="danger">{item}</ListGroupItem>)}
-                    
-                </ListGroup>
+                    <CustomForm
+                        btnLabel="Order"
+                        message={message}
+                        onSubmit={handleSubmit}
+                        listFormGroups={listFormGroups}
+                    ></CustomForm>
+                    <ListGroup>
+                        {errors.map((item) => (
+                            <ListGroupItem color="danger">{item}</ListGroupItem>
+                        ))}
+                    </ListGroup>
                 </>
             )}
         </div>
