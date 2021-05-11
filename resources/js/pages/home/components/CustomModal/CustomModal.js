@@ -4,10 +4,12 @@ import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import LoginForm from "../LoginForm/LoginForm";
 import OrderForm from "../OrderForm/OrderForm";
 import SignUpForm from "../SignUpForm/SignUpForm";
-
+CustomModal.defaultProps = {
+    isMobie: false,
+};
 export default function CustomModal(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
-    const { buttonLabel, className } = props;
+    const { buttonLabel, className, isMobie } = props;
     const user = useSelector((state) => state.user);
     const [modal, setModal] = useState(false);
     const [title, setTitle] = useState(
@@ -16,6 +18,9 @@ export default function CustomModal(props) {
             : buttonLabel
     );
     const toggle = () => {
+        setModal(!modal);
+    };
+    const clickOrder = () => {
         if (buttonLabel === "Order" && cartProducts.length < 1) {
             alert("Your cart is empty");
             return;
@@ -24,14 +29,23 @@ export default function CustomModal(props) {
             alert("You are not logged in");
             return;
         }
-
-        setModal(!modal);
+        toggle();
     };
-
     return (
         <div>
-            <Button color="black" className="LoginSignUp_btn" onClick={toggle}>
-                {buttonLabel}
+            <Button
+                color="black"
+                className="LoginSignUp_btn"
+                onClick={buttonLabel === "Order" ? clickOrder:toggle}
+                
+            >
+                {isMobie && className === "modal-login" && (
+                    <i class="fas fa-sign-in-alt"></i>
+                )}
+                {isMobie && className === "modal-signup" && (
+                    <i class="fas fa-user-plus"></i>
+                )}
+                {!isMobie && buttonLabel}
             </Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}>{title}</ModalHeader>

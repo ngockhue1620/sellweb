@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import userAvatar from "../../../../assets/userAvatar.svg";
-import { login } from "../../../../reducers/userSlice";
+import { logout } from "../../../../reducers/userSlice";
 import firebase from "firebase";
 export default function UserAvatar() {
     const dispatch = useDispatch();
@@ -21,12 +21,7 @@ export default function UserAvatar() {
 
     const handleLogout = async () => {
         firebase.auth().signOut();
-        const actionResult = await dispatch(
-            login({
-                email: "",
-                password: "",
-            })
-        );
+        const actionResult = await dispatch(logout());
         history.push("/homepage");
     };
     const toggle = () => setDropdownOpen((prevState) => !prevState);

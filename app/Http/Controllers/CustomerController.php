@@ -69,7 +69,7 @@ class CustomerController extends Controller
                     
                     array_push($erro,"SDt đã tồn tại");
                 }
-                return response()->json(["status"=>$erro]);
+                return response()->json(["status"=>$erro,"id"=>$customer[0]->id]);
             }
             
             $customer = Customer::Create($request->all());

@@ -77,7 +77,7 @@ export default function ConfimOrder(props) {
             <div>
 
                 <Modal isOpen={isOpen} toggle={toggle} className="order-detail-customer-admin" >
-                    <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                    <ModalHeader toggle={toggle}>Chi Tiết Đơn Hàng</ModalHeader>
                     <ModalBody>
                         <Table>
                             <thead>
@@ -99,7 +99,7 @@ export default function ConfimOrder(props) {
                         </Table>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+                       
                         <Button color="secondary" onClick={toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>

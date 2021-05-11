@@ -12,14 +12,14 @@ export default function Cart() {
     return (
 
         <div className="cart"
-        data-aos="fade-left"
-        data-aos-anchor="#example-anchor"
-        data-aos-offset="500"
-        data-aos-duration="500"
+        // data-aos="fade-left"
+        // data-aos-anchor="#example-anchor"
+        // data-aos-offset="500"
+        // data-aos-duration="500"
         >
 
             <div className="quantity">{countQuantity()}</div>
-            <img src={cart} height={32} width={32}></img>
+            <i class="fas fa-shopping-cart"></i>
         </div>
     );
 }
