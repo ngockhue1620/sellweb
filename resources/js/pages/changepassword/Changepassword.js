@@ -29,15 +29,15 @@ export default function Changepassword() {
     ];
 
     const handleSubmit = async (values) => {
-        console.log(values);
-        const listUsers = await userApi.getAll();
+        console.log("day la value",values);
+        // const listUsers = await userApi.getAll();
 
         const oldPassword = values["password"];
         const newPassword = values["new password"];
         const repearNewPassword = values["repeat new password"];
 
         if (user.password != oldPassword) {
-            setMassage("Password is wrong!");
+            setMessage("Old Password is wrong!");
             return;
         }
 
