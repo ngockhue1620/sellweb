@@ -41,19 +41,11 @@ export default function App() {
                     return;
                 }
 
-                
-                let listUsers = await userApi.getAll();
-                const isExist = (element, index, array) => {
-                    return element.email === user.email;
-                };
-                const idExist = listUsers.findIndex(isExist);
-
                 let id;
                 // login thành công với google  cho đăng ký lun
-                // đăng ký thành công thì mail chưa có 
+                // nếu  đăng ký thành công thì  có nghĩa mail chưa có 
                 // đăng ký không thành công thì mail đã có
-                console.log(user)
-                console.log(user.uid)
+               
                 const userSignUpdSuccess = await userApi.signUp({
                     customerName: user.displayName,
                     email: user.email,
@@ -61,12 +53,14 @@ export default function App() {
                     phone: user.uid,
                 });
                 
+                // nếu đăng ký thành công thì gán cho state user = thông tin nhận được từ google
+                // user id là id được trả về lại sai khi tạo thành công 1 user
                 if(userSignUpdSuccess.status==true)
                 {
-                    id = userSignUpdSuccess.customer.id;
-                    
+                    id = userSignUpdSuccess.customer.id;                    
 
                 }
+                // ngược lại nếu email đã trùng thì trả về id của user có mail trùng trên
                 else
                 {
                     id = userSignUpdSuccess.id;

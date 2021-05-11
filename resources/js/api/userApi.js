@@ -1,8 +1,7 @@
 import axiosClient from './axiosClient'
 
 const userApi = {
-    login: (data) => {
-     
+    login: (data) => {     
       const url = 'api/login';
       return axiosClient.post(url,data);
     },
