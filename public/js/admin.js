@@ -3596,6 +3596,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalBody.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Table.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/ModalFooter.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Alert.js");
 /* harmony import */ var _Detail__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Detail */ "./resources/js/components/admin/admin-components/order/Detail.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
@@ -3645,6 +3646,11 @@ function ConfimOrder(props) {
       _useState8 = _slicedToArray(_useState7, 2),
       orderDetail = _useState8[0],
       setOrderDetail = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+      _useState10 = _slicedToArray(_useState9, 2),
+      styleof = _useState10[0],
+      setStyle = _useState10[1];
 
   var getOrderDetailById = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -3706,6 +3712,38 @@ function ConfimOrder(props) {
     };
   }();
 
+  var isDelete = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_3___default().delete("/api/order/".concat(order.id)).then(function (response) {
+                if (response.data.status == true) {
+                  alert('Hủy Thành Công');
+                  setStyle({
+                    display: "none"
+                  });
+                  toggleDelete();
+                } else {
+                  alert('Có Lỗi Xảy Ra Liện Hệ Kỹ Thuật Để Giải Quyết');
+                }
+              });
+
+            case 2:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function isDelete() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
   var totalMoney = function totalMoney() {
     var money = 0;
     order.order_detail.map(function (item) {
@@ -3718,8 +3756,18 @@ function ConfimOrder(props) {
     return setIsOpen(!isOpen);
   };
 
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      isOpenTodelete = _useState12[0],
+      setIsOpenTodelete = _useState12[1];
+
+  var toggleDelete = function toggleDelete() {
+    return setIsOpenTodelete(!isOpenTodelete);
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
+      style: styleof,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
         scope: "row",
         children: props.number + 1
@@ -3741,13 +3789,24 @@ function ConfimOrder(props) {
           children: "Detail"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("td", {
-        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+        style: {
+          display: "flex"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
           disabled: !isShow,
           color: "primary",
           onClick: function onClick() {
             return props.isProgressSuccess(), isDisabled();
           },
           children: "X\xE1c Nh\u1EADn"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+          style: {
+            marginLeft: "5px"
+          },
+          disabled: !isShow,
+          color: "primary",
+          onClick: toggleDelete,
+          children: "H\u1EE7y"
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3788,6 +3847,32 @@ function ConfimOrder(props) {
             onClick: toggle,
             children: "Cancel"
           })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+        isOpen: isOpenTodelete,
+        toggle: toggleDelete,
+        className: "order-detail-customer-admin",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+          toggle: toggleDelete,
+          children: "X\xE1c Nh\u1EADn H\u1EE7y"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
+            color: "warning",
+            children: "B\u1EA1n Ch\u1EAFc Ch\u1EAFn Mu\u1ED1n H\u1EE6y \u0110\u01A1n H\xE0ng N\xE0y"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_10__.default, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+            onClick: function onClick() {
+              return props.isProgressSuccess(), isDelete();
+            },
+            children: "X\xE1c Nh\u1EADn"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+            color: "secondary",
+            onClick: toggleDelete,
+            children: "Cancel"
+          })]
         })]
       })
     })]
