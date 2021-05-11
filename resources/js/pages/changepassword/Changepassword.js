@@ -56,12 +56,7 @@ export default function Changepassword() {
             id: user.id,
             password: newPassword,
         });
-        await dispatch(
-            login({
-                email: "",
-                password: "",
-            })
-        );
+        
         setIsSuccess(true);
     };
 
