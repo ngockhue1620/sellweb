@@ -32,12 +32,10 @@ export default function LoginForm(props) {
     ];
 
     const handleSubmit = async (values) => {
-        
         const actionResult = await dispatch(login(values));
         const user = unwrapResult(actionResult);
 
         if (user) {
-            
             onToggle();
         } else {
             setMessage("Email or password is wrong!!!");
