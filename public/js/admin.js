@@ -4863,15 +4863,47 @@ function UpdateProduct(props) {
     }));
   };
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errors = _useState4[0],
+      setErrors = _useState4[1];
+
   var confimUpdate = function confimUpdate() {
-    axios.put("/api/product/".concat(product.id), product).then(function (response) {
-      if (response.data.status == true) {
-        alert('update successful');
-        props.handleClickUpdate(product);
-      } else {
-        alert('update fail');
-      }
-    });
+    var iserrors = [];
+    setErrors([]);
+
+    if (product.productName == "") {
+      iserrors.push("Bạn chưa nhập tên sản phẩm");
+    }
+
+    if (product.color == "") {
+      iserrors.push("Ban Chua Nhap mau san pham");
+    }
+
+    if (product.description == "") {
+      iserrors.push("Ban Chua Nhap đoạn mô tả sản phâm");
+    }
+
+    if (product.price == "") {
+      iserrors.push("Ban Chua Nhap giá cho sản phẩm");
+    }
+
+    if (product.quantity == "") {
+      iserrors.push("Ban Chua Nhap số lượng sản phẩm");
+    }
+
+    setErrors(iserrors); //
+
+    if (iserrors.length == 0) {
+      axios.put("/api/product/".concat(product.id), product).then(function (response) {
+        if (response.data.status == true) {
+          alert('update successful');
+          props.handleClickUpdate(product);
+        } else {
+          alert('update fail');
+        }
+      });
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
@@ -4886,8 +4918,8 @@ function UpdateProduct(props) {
           children: "C\u1EADp Nh\u1EADp S\u1EA3n Ph\u1EA9m"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
               src: product.imageAddress
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.default, {
@@ -4914,7 +4946,7 @@ function UpdateProduct(props) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
                 type: "select",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                  children: "K\xEDch v\xE0o \u0111\u1EC3 ch\u1ECDn"
+                  children: "Kh\xF4ng \u0111\u1ED5i th\xEC \u0111\u1EC3 tr\u1ED1ng"
                 }), props.category.map(function (category, index) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
                     value: category.id,
@@ -4995,7 +5027,12 @@ function UpdateProduct(props) {
                 }
               })]
             })]
-          })
+          }), Array.isArray(errors) ? errors.map(function (item, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+              color: "danger",
+              children: item
+            }, index);
+          }) : ""]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_13__.default, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_14__.default, {
