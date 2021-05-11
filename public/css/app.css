@@ -10749,8 +10749,108 @@ img.card-img-top {
   height: 40rem;
 }
 
-img.teamimage {
-  width: 554px;
-  padding: 5px;
-  margin-bottom: 24px;
+.AboutComponent {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ddd;
+}
+.AboutComponent .ContainerAboutUs {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding: 0 100px;
+  margin-bottom: 10rem;
+}
+.AboutComponent .ContainerAboutUs .TeamMember {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 80px;
+  text-align: center;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person {
+  width: auto;
+  margin-bottom: 50px;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person .avatar {
+  width: 250px;
+  background: #c4c4c4;
+  border-radius: 50%;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person .avatar img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person .person_content {
+  margin-top: 40px;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person .person_content .person_name {
+  font-size: 20px;
+  line-height: 0px;
+  color: #00154e;
+  text-transform: uppercase;
+}
+.AboutComponent .ContainerAboutUs .TeamMember .person .person_content .person_position {
+  font-size: 18px;
+  line-height: 18px;
+  color: #4f4f4f;
+  margin: 0;
+  font-style: italic;
+}
+.AboutComponent .ContainerAboutUs .TitleAboutUs {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.AboutComponent .ContainerAboutUs .TitleAboutUs h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.AboutComponent .ContainerAboutUs .ContentSectionAboutUs {
+  float: left;
+  width: 55%;
+}
+.AboutComponent .ContainerAboutUs .ContentSectionAboutUs .ContentAboutUs {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.AboutComponent .ContainerAboutUs .ImageSectionAboutUs {
+  float: right;
+  width: 40%;
+}
+.AboutComponent .ContainerAboutUs .ImageSectionAboutUs .ImageAboutUs {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutComponent .ContainerAboutUs {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .AboutComponent .ContainerAboutUs .TitleAboutUs {
+    text-align: center;
+    font-size: 19px;
+  }
+  .AboutComponent .ContainerAboutUs .ContentSectionAboutUs {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .AboutComponent .ContainerAboutUs .ImageSectionAboutUs {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
 }
