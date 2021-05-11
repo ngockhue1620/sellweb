@@ -50,13 +50,13 @@ export default function App() {
                 // login thành công với google  cho đăng ký lun
                 // đăng ký thành công thì mail chưa có 
                 // đăng ký không thành công thì mail đã có
-                
-
+                console.log(user)
+                console.log(user.uid)
                 const userSignUpdSuccess = await userApi.signUp({
                     customerName: user.displayName,
                     email: user.email,
                     password: user.providerData[0].uid,
-                    phone: user.providerData[0].phoneNumber,
+                    phone: user.uid,
                 });
                 
                 if(userSignUpdSuccess.status==true)
