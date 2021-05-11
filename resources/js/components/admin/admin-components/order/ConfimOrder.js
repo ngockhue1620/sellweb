@@ -1,8 +1,9 @@
 import React, { useState ,useCallback} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Table } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Table,Alert } from 'reactstrap';
 import Detail from './Detail'
 
 import axios from 'axios'
+
 
 export default function ConfimOrder(props) {
 
@@ -14,6 +15,7 @@ export default function ConfimOrder(props) {
 
     const [orderDetail, setOrderDetail] = useState([]);
 
+    const [styleof,setStyle]= useState({})
     
    
     const getOrderDetailById=async () =>{
@@ -32,9 +34,7 @@ export default function ConfimOrder(props) {
 
     }
 
-    const isDisabled =async () => {
-
-
+    const isDisabled =async () => {   
        await axios
             .put(`/api/order/${order.id}`, { isProcess: true })
             .then(response => {
@@ -44,10 +44,26 @@ export default function ConfimOrder(props) {
                 } else {
                     alert('Có Lỗi Xảy Ra Liện Hệ Kỹ Thuật Để Giải Quyết')
                 }
-
-
             })
     }
+
+    const isDelete = async()=>{
+        await axios
+            .delete(`/api/order/${order.id}`)
+            .then(response => {
+                if (response.data.status == true) {
+                   
+                    alert('Hủy Thành Công')
+                    setStyle({display:"none"})
+                    toggleDelete()
+                } else {
+                    alert('Có Lỗi Xảy Ra Liện Hệ Kỹ Thuật Để Giải Quyết')
+                }
+            })
+        
+
+    }
+
     const totalMoney = () => {
         let money = 0;
         order.order_detail.map((item) => money += item.total)
@@ -56,12 +72,15 @@ export default function ConfimOrder(props) {
 
     const toggle = () => setIsOpen(!isOpen);
 
+    const[isOpenTodelete,setIsOpenTodelete]=useState(false)
+    const toggleDelete = () => setIsOpenTodelete(!isOpenTodelete);
+
     
 
     return (
 
         <>
-            <tr >
+            <tr style={styleof}>
                 <th scope="row">{props.number + 1}</th>
                 <td>{order.recipientName}</td>
                 <td>{order.recipientPhone}</td>
@@ -71,12 +90,14 @@ export default function ConfimOrder(props) {
                     <Button color="primary" onClick={getOrderDetailById} style={{ marginBottom: '1rem' }}>Detail</Button>
 
                 </td>
-                <td> <Button disabled={!isShow} color="primary" onClick={() => (props.isProgressSuccess(), isDisabled())} >Xác Nhận</Button></td>
+                <td style={{display:"flex"}}> 
+                    <Button disabled={!isShow} color="primary" onClick={() => (props.isProgressSuccess(), isDisabled())} >Xác Nhận</Button>
+                    <Button  style={{marginLeft:"5px"}} disabled={!isShow} color="primary" onClick={toggleDelete}>Hủy</Button>
+                </td>
 
 
             </tr>
-            <div>
-                
+            <div>                
                 <Modal isOpen={isOpen} toggle={toggle} className="order-detail-customer-admin" >
                     <ModalHeader toggle={toggle}>Chi Tiết Đơn Hàng</ModalHeader>
                     <ModalBody>
@@ -102,6 +123,21 @@ export default function ConfimOrder(props) {
                     <ModalFooter>
                        
                         <Button color="secondary" onClick={toggle}>Cancel</Button>
+                    </ModalFooter>
+                </Modal>
+            </div>
+            {/* huy don hang */}
+            <div>                
+                <Modal isOpen={isOpenTodelete} toggle={toggleDelete} className="order-detail-customer-admin" >
+                    <ModalHeader toggle={toggleDelete}>Xác Nhận Hủy</ModalHeader>
+                    <ModalBody>
+                        
+                        <Alert color="warning">Bạn Chắc Chắn Muốn HỦy Đơn Hàng Này</Alert>
+                    </ModalBody>
+                    <ModalFooter>
+                        
+                        <Button  onClick={() => (props.isProgressSuccess(), isDelete())} >Xác Nhận</Button>
+                        <Button color="secondary" onClick={toggleDelete}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>
