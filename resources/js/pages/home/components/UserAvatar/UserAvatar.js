@@ -1,6 +1,7 @@
-import { unwrapResult } from "@reduxjs/toolkit";
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import {
     CardImg,
     Dropdown,
@@ -8,25 +9,28 @@ import {
     DropdownMenu,
     DropdownToggle,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import userAvatar from "../../../../assets/userAvatar.svg";
 import { login } from "../../../../reducers/userSlice";
 export default function UserAvatar() {
     const dispatch = useDispatch();
-
+    
+    const user = useSelector((state) => state.user);
+    const history = useHistory();
     const [dropdownOpen, setDropdownOpen] = useState(false);
+
+   
     const handleLogout = async () => {
-        console.log("logout");
         const actionResult = await dispatch(
             login({
                 email: "",
                 password: "",
             })
         );
-
-        const user = unwrapResult(actionResult);
+        history.push("/homepage");
     };
     const toggle = () => setDropdownOpen((prevState) => !prevState);
-    const user = useSelector((state) => state.user);
+
     return (
         <Dropdown className="user-avt" isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle className="user-avt__toggle">
@@ -34,20 +38,20 @@ export default function UserAvatar() {
                     className="user-avt__card__img"
                     top
                     width="100%"
-                    src={userAvatar}
+                    src={user.photoURL ? user.photoURL : userAvatar}
                     alt="Card image cap"
                 />
             </DropdownToggle>
             <DropdownMenu>
-                <a href="/account">
+                <Link to="/account">
                     <DropdownItem>Information Account</DropdownItem>
-                </a>
-                <a href="/account">
+                </Link>
+                <Link to="/history">
                     <DropdownItem>History order</DropdownItem>
-                </a>
-                <a href="/changepassword">
+                </Link>
+                <Link to="/changepassword">
                     <DropdownItem>Change password</DropdownItem>
-                </a>
+                </Link>
                 <DropdownItem onClick={handleLogout}>Logout</DropdownItem>
             </DropdownMenu>
         </Dropdown>

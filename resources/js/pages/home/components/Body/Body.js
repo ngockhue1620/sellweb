@@ -8,7 +8,7 @@ import Menu from "../Menu/Menu";
 
 export default function Body() {
     return (
-        <div class="Body ">
+        <div className="Body ">
             <Menu></Menu>
             <Content></Content>
             

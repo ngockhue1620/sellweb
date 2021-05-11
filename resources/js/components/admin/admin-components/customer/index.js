@@ -1,11 +1,12 @@
-
-
+import axios from 'axios';
 import React, { Component } from 'react'
-import axiosAdmin from '../../axiosAdmin'
 import {
-    Table
+    Table,
+    Spinner
 } from 'reactstrap';
+
 import CustomerItem from './CustomerItem';
+
 export default class index extends Component {
     constructor(props)
     {
@@ -22,21 +23,23 @@ export default class index extends Component {
 
     async getCustomer()
     {
-        await axiosAdmin
-            .get('api/customer')
+        await axios
+            .get('/api/customer')
             .then(response=>
             {   
-                
-                this.setState({listCustomer:response})
+                if(response.status==200)
+                {
+                    this.setState({listCustomer:response.data})
+                }
             })
             .catch(function (error) {
                 console.log(error);
-            });    
+            });  
+            
     }
 
 
     render() {
-        console.log(this.state.listCustomers);
         
         
         return (
@@ -57,9 +60,16 @@ export default class index extends Component {
                         <tbody>
                             
                             {
-                            this.state.listCustomer.map((item,index)=>(                                
-                                 <CustomerItem key={index} customer={item} num={index}/>
-                            ))}
+                            Array.isArray( this.state.listCustomer) ?     
+                                                                     this.state.listCustomer.map((item,index)=>(                                
+                                                                         <CustomerItem key={index} customer={item} num={index}/>
+                                                                    )) :
+                                                                    <div>
+                                                                       
+                                                                        <Spinner type="grow" color="danger" >Error!!!</Spinner>
+                                                                        <h5>Data Response is Error</h5>
+                                                                    </div> 
+                        }
                         </tbody>
 
                 </Table>

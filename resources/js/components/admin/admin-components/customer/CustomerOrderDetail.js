@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, { useState, useCallback } from 'react';
-import axiosAdmin from '../../axiosAdmin'
+
 import {
-    
+    Button,
     Modal, ModalHeader, ModalBody, ModalFooter,
     
     Table
@@ -24,10 +25,13 @@ export default function CustomerOrderDetail(props) {
     const toggle = () => setModal(!modal);
    
     const getOrderDetailById = useCallback(function () {
-        axiosAdmin
-            .get(`api/order-detail/${props.order.id}`)
+        axios
+            .get(`/api/order-detail/${props.order.id}`)
             .then(response => {
-                setOrderDetail(response);
+                if(response.status==200)
+                {
+                    setOrderDetail(response.data);
+                }
             })
             .catch(function (error) {
                 console.log(error);
@@ -60,12 +64,12 @@ export default function CustomerOrderDetail(props) {
                         </thead>
                         <tbody>
                             {
-                           
+                           Array.isArray(orderDetail)?
                             orderDetail.map((item, index) => (
 
                                 totalMoney+=item.total,
                                 <OrderDetail orderDetail={item} key={index} />
-                            ))
+                            )):"Data response is error"
                             }
                             <tr>
                                 <td></td>

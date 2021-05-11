@@ -5,7 +5,7 @@ export default class Body extends Component {
     render() {
         const {children} =this.props
         return (
-            <div class="Body ">
+            <div className="Body ">
                 {children}
             </div>
         )

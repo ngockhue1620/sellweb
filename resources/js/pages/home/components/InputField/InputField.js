@@ -15,7 +15,7 @@ export default function InputField(props) {
             {label && <Label for={name}>{label}:</Label>}
             {type === "area" ? (
                 <textarea
-                    class="form-control"
+                    className="form-control"
                     id={name}
                     {...field}
                     disabled={disabled}

@@ -30,16 +30,16 @@ export default function CustomModal(props) {
 
     return (
         <div>
-            <Button  color="black" className="LoginSignUp_btn" onClick={toggle}>
+            <Button color="black" className="LoginSignUp_btn" onClick={toggle}>
                 {buttonLabel}
             </Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}>{title}</ModalHeader>
                 <ModalBody>
-                    {buttonLabel === "Login" && (
+                    {className === "modal-login" && (
                         <LoginForm onToggle={toggle}></LoginForm>
                     )}
-                    {buttonLabel === "Sign Up" && (
+                    {className === "modal-signup" && (
                         <SignUpForm onToggle={toggle}></SignUpForm>
                     )}
                     {buttonLabel === "Order" && (

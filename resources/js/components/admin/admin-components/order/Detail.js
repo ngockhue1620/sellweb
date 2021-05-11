@@ -1,12 +1,14 @@
 import React from 'react'
 
 export default function Detail(props) {
-    console.log(props.item)
+    
     return (
         <tr>
-            <td>{props.item.product_id}</td>
-            <td>{props.item.quantity}</td>
-            <td>{props.item.price}</td>
-        </tr>
+                <td><img className="img-order-detail" src={props.orderDetail.get_product.imageAddress}/></td>
+                <td>{props.orderDetail.get_product.productName}</td>
+                <td>{props.orderDetail.price}</td>
+                <td>{props.orderDetail.quantity}</td>
+                <td>{props.orderDetail.total}</td>
+            </tr>
     )
 }

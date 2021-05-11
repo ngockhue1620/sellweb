@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\InCart;
 use App\Models\Product;
+use App\Models\OrderDetail;
 use DB;
 
 class OrderController extends Controller
@@ -17,7 +18,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return Order::whereNull('isProcess')
+        return Order::where('isProcess',null)
         ->with(['orderDetail'])->get();
     }
 
@@ -172,5 +173,17 @@ class OrderController extends Controller
                 ]
                 ],500);
         }
+    }
+
+    public function historyOrder($id)
+    {
+        $order = Order::where('customer_id','=',$id)                        
+                        ->with(['orderDetail'])
+                        ->orderBy('created_at','desc')
+                        ->get();
+        return $order;
+
+        
+        
     }
 }
