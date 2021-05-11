@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Table } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 import Detail from './Detail'
 export default function ConfimOrder(props) {
 
@@ -51,7 +51,7 @@ export default function ConfimOrder(props) {
 
             </tr>
             <div>
-                
+
                 <Modal isOpen={isOpen} toggle={toggle} >
                     <ModalHeader toggle={toggle}>Modal title</ModalHeader>
                     <ModalBody>
@@ -64,11 +64,11 @@ export default function ConfimOrder(props) {
                                 </tr>
                             </thead>
                             <tbody>
-                            {
-                            order.order_detail.map((item,index) =>(
-                                
-                               <Detail item={item} key={index}/> 
-                            ))}
+                                {
+                                    order.order_detail.map((item, index) => (
+
+                                        <Detail item={item} key={index} />
+                                    ))}
                             </tbody>
                         </Table>
                     </ModalBody>
