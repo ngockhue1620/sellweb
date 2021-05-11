@@ -9,7 +9,7 @@ const userApi = {
     signUp:(data)=>{
       const url = 'api/customer';
       const result= axiosClient.post(url,data);
-     
+      result.then(response=>console.log(response))
       return result;
     },
     getAll:()=>{
