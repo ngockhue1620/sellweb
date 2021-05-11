@@ -1,10 +1,10 @@
 
-import {React,useState} from 'react';
+import { React, useState } from 'react';
 import { Spinner, Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {
   Form,
-  CardImg,  
-  Input,  
+  CardImg,
+  Input,
   Card,
   InputGroupAddon,
   InputGroup,
@@ -13,42 +13,65 @@ import {
 } from "reactstrap";
 export default function UpdateProduct(props) {
   const [product, setproduct] = useState(props.product)
-  const onChangeDescription=(value)=>{
-    setproduct({...product,description:value})
+  const onChangeDescription = (value) => {
+    setproduct({ ...product, description: value })
   }
-  const onChangeProductName=(value)=>{
-    setproduct({...product,productName:value})
+  const onChangeProductName = (value) => {
+    setproduct({ ...product, productName: value })
   }
-  const onchangePrice=(value)=>{
-    setproduct({...product,price:value})
+  const onchangePrice = (value) => {
+    setproduct({ ...product, price: value })
   }
-  const onChangeQuantity=(value)=>{
-    setproduct({...product,quantity:value})
+  const onChangeQuantity = (value) => {
+    setproduct({ ...product, quantity: value })
   }
-  const onChangeImageAddreess=(value)=>{
-    setproduct({...product,imageAddress:value})
+  const onChangeImageAddreess = (value) => {
+    setproduct({ ...product, imageAddress: value })
   }
-  const onChangeColor=(value)=>{
-    setproduct({...product,color:value})
+  const onChangeColor = (value) => {
+    setproduct({ ...product, color: value })
   }
 
-  const confimUpdate=()=>{
-    axios
-    .put(`/api/product/${product.id}`,product)
-    .then(response=>{
-      
-      if(response.data.status==true)
-      {
-        alert('update successful')
-        props.handleClickUpdate(product)
-      }
-      else
-      {
-        alert('update fail')
-      }
-    })
+  const [errors,setErrors]=useState([])
+  const confimUpdate = () => {
+
+    var iserrors = [];
+    setErrors([])
+    if (product.productName == "") {
+      iserrors.push("Bạn chưa nhập tên sản phẩm");
+    }
+
+    if (product.color == "") {
+      iserrors.push("Ban Chua Nhap mau san pham");
+    }
+    if (product.description == "") {
+      iserrors.push("Ban Chua Nhap đoạn mô tả sản phâm");
+    }
+    if (product.price == "") {
+      iserrors.push("Ban Chua Nhap giá cho sản phẩm");
+    }
+    if (product.quantity == "") {
+      iserrors.push("Ban Chua Nhap số lượng sản phẩm");
+    }
+    setErrors(iserrors)
+    
+    //
+    if (iserrors.length == 0) {
+      axios
+        .put(`/api/product/${product.id}`, product)
+        .then(response => {
+
+          if (response.data.status == true) {
+            alert('update successful')
+            props.handleClickUpdate(product)
+          }
+          else {
+            alert('update fail')
+          }
+        })
+    }
   }
-  
+
   return (
     <>
       <Modal isOpen={props.isUpdate}>
@@ -65,10 +88,10 @@ export default function UpdateProduct(props) {
                 </InputGroupAddon>
 
                 <Input
-                  type="text"                   
-                  
+                  type="text"
+
                   placeholder="không đổi thì để trống"
-                  onChange={e=>onChangeImageAddreess(e.target.value)}                
+                  onChange={e => onChangeImageAddreess(e.target.value)}
                 />
               </InputGroup>
 
@@ -78,13 +101,13 @@ export default function UpdateProduct(props) {
                     Danh Mục Sản Phẩm
                   </Label>
                 </InputGroupAddon>
-                
-                <Input type="select" >               
-                  <option>Kích vào để chọn</option>
+
+                <Input type="select" >
+                  <option>Không đổi thì để trống</option>
                   {
                     props.category.map((category, index) =>
                       <option key={index} value={category.id}>{category.categoryName}</option>
-                  )}
+                    )}
                 </Input>
               </InputGroup>
               <InputGroup>
@@ -94,12 +117,12 @@ export default function UpdateProduct(props) {
                    </Label>
                 </InputGroupAddon>
                 <Input
-                required
-                type="text"
-                value={product.productName}
-                onChange={e=>onChangeProductName(e.target.value)}
-                
-                
+                  required
+                  type="text"
+                  value={product.productName}
+                  onChange={e => onChangeProductName(e.target.value)}
+
+
                 />
               </InputGroup>
 
@@ -110,10 +133,10 @@ export default function UpdateProduct(props) {
                    </Label>
                 </InputGroupAddon>
                 <Input
-                 required
+                  required
                   type="number"
                   value={product.price}
-                  onChange={e=>onchangePrice(e.target.value)}
+                  onChange={e => onchangePrice(e.target.value)}
                 />
               </InputGroup>
 
@@ -124,10 +147,10 @@ export default function UpdateProduct(props) {
                   </Label>
                 </InputGroupAddon>
                 <Input
-                required
+                  required
                   type="number"
                   value={product.quantity}
-                  onChange={e=>onChangeQuantity(e.target.value)}
+                  onChange={e => onChangeQuantity(e.target.value)}
                 />
               </InputGroup>
 
@@ -138,9 +161,9 @@ export default function UpdateProduct(props) {
                   </Label>
                 </InputGroupAddon>
                 <Input
-                required
+                  required
                   value={product.color}
-                  onChange={e=>onChangeColor(e.target.value)}
+                  onChange={e => onChangeColor(e.target.value)}
                 />
               </InputGroup>
 
@@ -151,20 +174,21 @@ export default function UpdateProduct(props) {
                   </Label>
                 </InputGroupAddon>
                 <Input
-                  value ={product.description}
-                  onChange={e=>onChangeDescription(e.target.value)}
-                  
+                  value={product.description}
+                  onChange={e => onChangeDescription(e.target.value)}
+
                 ></Input>
               </InputGroup>
-              
+
             </Form>
-            </Card>
+                    {Array.isArray(errors)? errors.map((item,index)=><Alert color="danger" key={index} >{item}</Alert>):""}
+          </Card>
         </ModalBody>
-          <ModalFooter >
-            <Button color="success" onClick={confimUpdate}>Update</Button>
-            <Button color="secondary" onClick={() => props.handleClickUpdate(false)}>Close</Button>
-          </ModalFooter>
-          <Spinner className="container" type="grow" color="danger" >a</Spinner>
+        <ModalFooter >
+          <Button color="success" onClick={confimUpdate}>Update</Button>
+          <Button color="secondary" onClick={() => props.handleClickUpdate(false)}>Close</Button>
+        </ModalFooter>
+        <Spinner className="container" type="grow" color="danger" >a</Spinner>
       </Modal>
     </>
   )
