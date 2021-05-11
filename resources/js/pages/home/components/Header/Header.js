@@ -20,12 +20,12 @@ export default function Header(props) {
                     </a>
                     <ul class="navbar-nav1">
                         <li class="nav-item nav-item1">
-                            <a class="nav-link">
+                            <a class="nav-link" href="/homepage">
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
                         <li class="nav-item nav-item1">
-                            <a class="nav-link">
+                            <a class="nav-link" href="/about">
                                 <i class="fas fa-users"></i>
                             </a>
                         </li>
@@ -52,12 +52,20 @@ export default function Header(props) {
                             <>
                                 <li class="nav-item nav-item1">
                                     <a class="nav-link">
-                                        <i class="fas fa-lock"></i>
+                                        <CustomModal
+                                            buttonLabel="Login"
+                                            className="modal-login"
+                                            isMobie="true"
+                                        ></CustomModal>
                                     </a>
                                 </li>
                                 <li class="nav-item nav-item1">
                                     <a class="nav-link">
-                                        <i class="fas fa-user-plus"></i>
+                                    <CustomModal
+                                            buttonLabel="Sign Up"
+                                            className="modal-signup"
+                                            isMobie="true"
+                                        ></CustomModal>
                                     </a>
                                 </li>
                             </>
