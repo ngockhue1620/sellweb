@@ -10,6 +10,7 @@ import {
     
   
   } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default function OrderForm(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
@@ -167,7 +168,8 @@ export default function OrderForm(props) {
                     <Label>Total: {total} đ</Label>
                     <br></br>
                     <Button onClick={onClickComeBack}>
-                        Comeback to Homepage
+                        <Link className="navbar-brand" to='/'>Comeback to Homepage</Link>
+                        
                     </Button>
                 </div>
             ) : (

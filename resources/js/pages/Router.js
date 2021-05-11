@@ -40,12 +40,16 @@ export default function App() {
                     // user logs out, handle something here
                     return;
                 }
-                let listUsers = await userApi.getAll();
-                const isExist = (element, index, array) => {
-                    return element.email === user.email;
-                };
-                const idExist = listUsers.findIndex(isExist);
+                // let listUsers = await userApi.getAll();
+                // const isExist = (element, index, array) => {
+                //     return element.email === user.email;
+                // };
+                // const idExist = listUsers.findIndex(isExist);
                 let id;
+                // login thành công với google  cho đăng ký lun
+                // đăng ký thành công thì mail chưa có 
+                // đăng ký không thành công thì mail đã có
+
                 if (idExist < 0) {
                    const userSignUpdSuccess= await userApi.signUp({
                         customerName: user.displayName,
