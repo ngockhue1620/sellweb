@@ -23,7 +23,7 @@ export default function HistoryOrder() {
         fetchData();
     }, []);
     return (
-        <div style={{marginTop:'100px'}} className="container HomePage">
+        <div  className="container history-page">
             <Label>Kích Vào Đơn Hàng Để Xem Chi Tiết</Label>
             {!user  ? (
                 <span>Bạn chưa đăng nhập</span>

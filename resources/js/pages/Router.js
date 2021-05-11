@@ -35,11 +35,12 @@ export default function App() {
             .auth()
             .onAuthStateChanged(async (user) => {
                 
-                if(User) return;    
+                // if(User) return;    
                 if (!user) {
                     // user logs out, handle something here
                     return;
                 }
+                
                 let listUsers = await userApi.getAll();
                 const isExist = (element, index, array) => {
                     return element.email === user.email;

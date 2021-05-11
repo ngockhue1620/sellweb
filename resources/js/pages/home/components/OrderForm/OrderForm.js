@@ -13,7 +13,7 @@ import {
 
 export default function OrderForm(props) {
     const cartProducts = useSelector((state) => state.cartProducts);
-
+    const [orderDetails,setOrderDetails]=useState([])
     const user = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
@@ -91,10 +91,13 @@ export default function OrderForm(props) {
         const res = await orderApi.postOrder(order);
         console.log(res.errors);
         if (res.status) {
+
             console.log("thanh cong")
             setResOrder(res.order);
             setIsOrder(true);
             setTitle("Order Success! This is details for your order.");
+            setOrderDetails(cartProducts)
+            dispatch(removeAll());
         } else {
             setTitle("Một vài sản phẩm không đủ số lượng");
             setError(res.errors);
@@ -105,7 +108,7 @@ export default function OrderForm(props) {
     const onClickComeBack = () => {
         onToggle();
         setIsOrder(false);
-        dispatch(removeAll());
+        
     };
     return (
         <div>
@@ -136,7 +139,7 @@ export default function OrderForm(props) {
                             </tr>
                         </thead>
                         <tbody>
-                            {cartProducts.map((product, index) => {
+                            {orderDetails.map((product, index) => {
                                 total =
                                     total +
                                     product.quantity * product.product.price;
