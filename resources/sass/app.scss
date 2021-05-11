@@ -470,28 +470,22 @@ nav {
 }
 
 .LoginSignUp_btn {
-    // background-color: #1b1b1b;
+    text-transform: uppercase;
+    justify-content: center;
     color: white;
     border: none;
     font-size: 18px;
-    padding-top: 0;
+    padding-top: 5px;
+    font-weight: 700;
+    background-color: red;
+
     &:hover {
         color: cyan;
+        background-color: blue;
     }
     &:focus {
         box-shadow: none;
         background-color: #1b1b1b;
-    }
-}
-
-.quantity {
-    padding-left: 1.75rem;
-    padding-bottom: 3rem;
-    > input {
-        outline: none;
-        border-left: none;
-        border-right: none;
-        border-top: none;
     }
 }
 
@@ -537,12 +531,18 @@ img.card-img-top {
 .cart {
     position: relative;
     .quantity {
+        text-align: center;
         position: absolute;
         z-index: 1;
-        color: red;
-        font-weight: 800;
-        top: -10px;
-        right: -4px;
+        color: white;
+        font-weight: 900;
+        font-size: 1rem;
+        right: -20px;
+        top: -14px;
+        width: 2rem;
+        font-size: small;
+        background-color: red;
+        border-radius: 50px;
     }
 }
 .cart-container {
@@ -622,11 +622,16 @@ img.card-img-top {
         }
         &__quantity {
             & .quantity {
+                padding-left: 1.75rem;
+                padding-bottom: 3rem;
                 margin-right: 15px;
                 width: 1rem;
                 input {
                     width: 2.5rem;
                     outline: none;
+                    border-left: none;
+                    border-right: none;
+                    border-top: none;
                     text-align: center;
                 }
 
@@ -654,10 +659,6 @@ img.card-img-top {
     height: 20rem;
 }
 
-.cart-icon-header {
-    background: aliceblue;
-    border-radius: 7px;
-}
 .user-avt {
     // width: 50%;
     height: 2rem;
@@ -722,6 +723,10 @@ img.card-img-top {
 
 // response gio hang
 @media screen and (max-width: 768px) {
+    .cart-container {
+        width: 100%;
+        height: 100%;
+    }
     .navbar {
         height: 4rem;
     }
@@ -785,14 +790,19 @@ img.card-img-top {
             padding: 5px;
         }
 
-        .cart .quantity {
-            text-align: center;
-            position: absolute;
-            z-index: 1;
-            color: red;
-            font-weight: 800;
-            top: 4px;
-            right: 4px;
+        .cart {
+            top: 2px;
+            font-size: 22px;
+            & .quantity {
+                text-align: center;
+                position: absolute;
+                z-index: 1;
+                color: white;
+                font-weight: 700;
+                top: -10px;
+                right: -24px;
+                background-color: red;
+            }
         }
 
         img.user-avt__card__img.card-img-top {
@@ -802,24 +812,19 @@ img.card-img-top {
         a.nav-link.cart-icon-header {
             height: 2.3rem;
         }
-
-        .list-group-item {
-            font-size: 15px;
-            color: white;
-            font-weight: bold;
-            &:hover {
-                text-decoration: none;
-            }
-        }
-        .cart-container {
-            width: 100%;
-            height: 100%;
+    }
+    .list-group-item {
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+        &:hover {
+            text-decoration: none;
         }
     }
 }
 .history-page {
     margin-top: 5rem;
-    height: 40rem;
+    min-height: 40rem;
 }
 //about//
 .AboutComponent {

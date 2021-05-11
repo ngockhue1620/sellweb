@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Button, Col, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import CartItem from "../CartItem/CartItem";
-import CustomForm from "../CustomForm/CustomForm";
+
 import CustomModal from "../CustomModal/CustomModal";
 
 export default function CartContainer(props) {

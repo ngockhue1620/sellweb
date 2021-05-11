@@ -1,7 +1,8 @@
+
 import { FastField, Form, Formik } from "formik";
 import React from "react";
 
-import { Button, FormGroup, Label, Spinner } from "reactstrap";
+import { Button, FormGroup, Label, Spinner,Alert } from "reactstrap";
 import InputField from "../InputField/InputField";
 
 export default function CustomForm(props) {
@@ -34,7 +35,9 @@ export default function CustomForm(props) {
                                 ></FastField>
                             );
                         })}
-                        <Label className="error">{message}</Label>
+                        
+                     {  Array.isArray(message)&&message.length>0 ? 
+                                message.map((item,index)=><Alert key={index} className="error">{item}</Alert>):"" }
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}
