@@ -36,16 +36,18 @@ export default function App() {
             .auth()
             .onAuthStateChanged(async (user) => {
 
-                if (User) return;
                 if (!user) {
                     // user logs out, handle something here
                     return;
                 }
-                // let listUsers = await userApi.getAll();
-                // const isExist = (element, index, array) => {
-                //     return element.email === user.email;
-                // };
-                // const idExist = listUsers.findIndex(isExist);
+
+                
+                let listUsers = await userApi.getAll();
+                const isExist = (element, index, array) => {
+                    return element.email === user.email;
+                };
+                const idExist = listUsers.findIndex(isExist);
+
                 let id;
                 // login thành công với google  cho đăng ký lun
                 // đăng ký thành công thì mail chưa có 

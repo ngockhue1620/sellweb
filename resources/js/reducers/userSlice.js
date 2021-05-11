@@ -18,8 +18,10 @@ const userSlice = createSlice({
     initialState: null,
     reducers: {
         setUser: (state, action) => {
-            // const newPhoto = action.payload;
             return action.payload;
+        },
+        logout: (state) => {
+            return null;
         },
     },
     extraReducers: {
@@ -30,5 +32,5 @@ const userSlice = createSlice({
 });
 
 const { reducer: userReducer, actions } = userSlice;
-export const { setUser } = actions;
+export const { setUser ,logout} = actions;
 export default userReducer;
