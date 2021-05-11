@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import menuIcon from "../../../../assets/plus-solid.svg";
 import { getAll } from "../../../../reducers/categorySlice";
 import Category from "../Category/Category";
 import {
-    Collapse,
-    Nav,
-    Navbar,
-    NavbarToggler,
-    NavItem,
-    NavLink,
+    
     Spinner,
 } from "reactstrap";
 
