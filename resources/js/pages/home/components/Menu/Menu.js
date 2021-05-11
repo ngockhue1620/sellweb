@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import menuIcon from "../../../../assets/menu.svg";
+import menuIcon from "../../../../assets/plus-solid.svg";
 import { getAll } from "../../../../reducers/categorySlice";
 import Category from "../Category/Category";
 import {
@@ -41,13 +41,7 @@ export default function Menu(props) {
     return (
         <div className="Menu col-lg-3">
             <div className="Menu__mobie">
-                <img
-                    onClick={toggleNavbar}
-                    widt={32}
-                    height={32}
-                    src={menuIcon}
-                ></img>
-
+                <i class="fas fa-plus icon" onClick={toggleNavbar}></i>
                 <ul
                     className={className("ul-category", "ul-category-responsive", {
                         none: collapsed,
