@@ -27,9 +27,11 @@ export default function CustomForm(props) {
                                     placeholder={formGroup.placeholder}
                                 ></FastField>
                             );
+
                         })}
 
                         {message&&<Alert className="error">{message}</Alert>}
+
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}

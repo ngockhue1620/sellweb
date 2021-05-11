@@ -39,7 +39,7 @@ export default function LoginForm(props) {
         if (user) {
             onToggle();
         } else {
-            setMessage(["Email or password is wrong!!!"]);
+            setMessage("Email or password is wrong!!!");
         }
     };
     return (

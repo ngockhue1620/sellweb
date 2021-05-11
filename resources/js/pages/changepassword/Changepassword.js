@@ -31,15 +31,13 @@ export default function Changepassword() {
     ];
 
     const handleSubmit = async (values) => {
-        
-        const listUsers = await userApi.getAll();
 
         const oldPassword = values["password"];
         const newPassword = values["new password"];
         const repearNewPassword = values["repeat new password"];
 
         if (user.password != oldPassword) {
-            setMassage("Password is wrong!");
+            setMessage("Old Password is wrong!");
             return;
         }
 
@@ -61,6 +59,7 @@ export default function Changepassword() {
         alert("Change password success!Please,login againt!")
         await dispatch(logout())
         
+
     };
 
     return (
