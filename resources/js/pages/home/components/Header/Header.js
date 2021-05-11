@@ -52,7 +52,7 @@ export default function Header(props) {
                             <>
                                 <li class="nav-item nav-item1">
                                     <a class="nav-link">
-                                        <i class="fas fa-lock"></i>
+                                        <i class="fas fa-user"></i>
                                     </a>
                                 </li>
                                 <li class="nav-item nav-item1">
@@ -63,82 +63,7 @@ export default function Header(props) {
                             </>
                         )}{" "}
                     </ul>
-                    {/* <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button> */}
                 </div>
-                {/* <div class="container">
-                    <a class="navbar-brand" href="/">
-                        FCT TEAMWORK
-                    </Link>
-
-                    <li onClick={onClickCart} className="nav-item nav-item1">
-                        <a className="nav-link cart-icon-header">
-                            <Cart></Cart>
-                        </a>
-                    </li>
-                    {user ? (
-                        <li className="nav-item nav-item1">
-                            <a className="nav-link ">
-                                <UserAvatar></UserAvatar>
-                            </a>
-                        </li>
-                    ) : (
-                        <>
-                            <li className="nav-item sign-up nav-item1">
-                                <a className="nav-link" >
-                                    <span className="glyphicon glyphicon-user"></span>{" "}
-                                    <CustomModal
-                                        buttonLabel="Sign Up"
-                                        className="modal-signup"
-                                    ></CustomModal>
-                                </a>
-                            </li>
-                            <li className="nav-item nav-item1">
-                                <a className="nav-link">
-                                    <span className="glyphicon glyphicon-log-in"></span>{" "}
-                                    <CustomModal
-                                        buttonLabel="Login"
-                                        className="modal-login"
-                                    ></CustomModal>
-                                </a>
-                            </li>
-                        </>
-                    )}
-                    <button
-                        onClick={onClickCart}
-                        className="nav-item"
-                        className="navbar-toggler"
-                        type="button"
-                        // data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive"
-                        aria-expanded="false"
-                        // aria-label="Toggle navigation"
-                    >
-                        <a className="nav-link cart-icon-header">
-                            <Cart></Cart>
-                        </a>
-                    </button>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button> */}
 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ">

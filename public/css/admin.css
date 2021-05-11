@@ -1,8 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css);
 .Menu.col-lg-2.menu-class {
   height: 500px;
   position: fixed;
   top: 10%;
-  background-color: cornflowerblue;
+  background-color: none;
   border-radius: 5px;
   width: 15%;
   overflow: hidden;
@@ -41,12 +43,95 @@ label.label-insert-admin {
   display: none;
 }
 
-.footer-admin-page {
-  background: chartreuse;
-  display: flex;
-  justify-content: space-between;
+.footer {
+  line-height: 1.5;
+  background-color: #24262b;
+  padding: 20px 0;
+  margin-bottom: -30px;
+}
+.footer .container {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer .h2-footer {
+  padding-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 35px;
+  font-weight: 500;
   position: relative;
-  top: 40px;
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer .ul-footer {
+  list-style: none;
+}
+.footer .footer-col {
+  width: 25%;
+  padding: 0 20px;
+}
+.footer .footer-col .h4-footer {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer .footer-col .h4-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer .footer-col .p-footer {
+  color: #fff;
+}
+.footer .footer-col .ul-footer .li-footer {
+  margin-left: -32px;
+}
+.footer .footer-col .ul-footer .li-footer:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer .footer-col .ul-footer .li-footer .a-footer {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 400;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer .footer-col .ul-footer .li-footer .a-footer:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer .footer-col .social-links .a-footer {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer .footer-col .social-links .a-footer:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+.footer .footer-col:nth-child(1) {
+  width: 18rem;
 }
 
 .modal-dialog.order-detail-customer-admin {
