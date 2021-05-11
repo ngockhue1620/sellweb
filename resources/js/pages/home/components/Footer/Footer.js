@@ -2,13 +2,6 @@ import React from "react";
 
 export default function Footer() {
     return (
-        // <footer className="py-5 bg-dark">
-        //     <div className="container">
-        //         <p className="m-0 text-center text-white">
-        //             Copyright &copy; Clothes Shop 2021
-        //         </p>
-        //     </div>
-        // </footer>
         <footer className="footer">
             <div className="container">
                 <div className="row">
@@ -17,7 +10,10 @@ export default function Footer() {
                         <ul className="ul-footer">
                             <li className="li-footer">
                                 <p className="p-footer">
-                                    Luôn mang đến những gì tốt nhất cho khách hàng
+                                    The site is created by the FCT-team that
+                                    includes elite members in developing
+                                    products using languages ​​such as PHP,
+                                    ReactJS, ...
                                 </p>
                             </li>
                         </ul>
