@@ -35,7 +35,7 @@ export default function CustomModal(props) {
         <div>
             <Button
                 color="black"
-                className="LoginSignUp_btn"
+                className={buttonLabel === "Order" ? "Order_btn":"LoginSignUp_btn"}
                 onClick={buttonLabel === "Order" ? clickOrder:toggle}
                 
             >

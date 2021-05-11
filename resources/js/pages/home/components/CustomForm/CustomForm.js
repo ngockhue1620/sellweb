@@ -1,25 +1,18 @@
-
 import { FastField, Form, Formik } from "formik";
 import React from "react";
 
-import { Button, FormGroup, Label, Spinner,Alert } from "reactstrap";
+import { Button, FormGroup, Label, Spinner, Alert } from "reactstrap";
 import InputField from "../InputField/InputField";
 
 export default function CustomForm(props) {
-    
-    const { btnLabel,listFormGroups ,message} = props;
-   
+    const { btnLabel, listFormGroups, message } = props;
+
     const initialValues = {};
     return (
-        <Formik
-        
-            initialValues={initialValues}
-            onSubmit={props.onSubmit}
-        >
+        <Formik initialValues={initialValues} onSubmit={props.onSubmit}>
             {(formikProps) => {
                 const { values, errors, touched, isSubmitting } = formikProps;
                 // console.log({ values, errors, touched });
-                
 
                 return (
                     <Form>
@@ -34,9 +27,11 @@ export default function CustomForm(props) {
                                     placeholder={formGroup.placeholder}
                                 ></FastField>
                             );
-                        })}                        
-                           
-                        {  message!="" ? <Alert color="danger">{message}</Alert>   :""    }
+
+                        })}
+
+                        {message&&<Alert className="error">{message}</Alert>}
+
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}

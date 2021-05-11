@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import userApi from "../../api/userApi";
 import CustomForm from "../home/components/CustomForm/CustomForm";
-import { login } from "../../reducers/userSlice";
+import { login, logout } from "../../reducers/userSlice";
 import { Button, Label } from "reactstrap";
+
 export default function Changepassword() {
+    
     const dispatch = useDispatch();
     const [message, setMessage] = useState("");
     const user = useSelector((state) => state.user);
-    const [isSuccess, setIsSuccess] = useState(false);
+    
     const listFormGroups = [
         {
             label: "Password",
@@ -29,8 +31,6 @@ export default function Changepassword() {
     ];
 
     const handleSubmit = async (values) => {
-        console.log("day la value",values);
-        // const listUsers = await userApi.getAll();
 
         const oldPassword = values["password"];
         const newPassword = values["new password"];
@@ -56,30 +56,20 @@ export default function Changepassword() {
             id: user.id,
             password: newPassword,
         });
+        alert("Change password success!Please,login againt!")
+        await dispatch(logout())
         
-        setIsSuccess(true);
+
     };
 
     return (
         <div className="container changepassword-page">
-            {user ? <div>
-                {isSuccess ? (
-                <div>
-                    <Label>Change password success!</Label>
-                    <br></br>
-                    <Button color="primary">
-                        <a href="/homepage">Comeback to homepage</a>
-                    </Button>
-                </div>
-            ) : (
-                <CustomForm
+            {user ? <CustomForm
                     message={message}
                     onSubmit={handleSubmit}
                     btnLabel="Change Password"
                     listFormGroups={listFormGroups}
-                ></CustomForm>
-            )}
-            </div> : <span>Ban chua dang nhap</span>}
+                ></CustomForm> : <span>You are not logged in!!!</span>}
             
         </div>
     );

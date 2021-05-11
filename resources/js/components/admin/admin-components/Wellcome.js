@@ -72,7 +72,7 @@ export default function Wellcome() {
                 Array.isArray(note) && note.length > 0 ?
                     (
 
-                        note.map(item => (
+                        
                             <div className="p-3 bg-danger my-2 rounded">
                                 <Toast>
                                     <ToastHeader>
@@ -87,7 +87,7 @@ export default function Wellcome() {
                                     </ToastBody>
                                 </Toast>
                             </div>
-                        ))
+                        
 
 
                     ) :
