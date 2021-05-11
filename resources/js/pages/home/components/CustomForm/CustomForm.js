@@ -34,10 +34,9 @@ export default function CustomForm(props) {
                                     placeholder={formGroup.placeholder}
                                 ></FastField>
                             );
-                        })}
-                        
-                     {  Array.isArray(message)&&message.length>0 ? 
-                                message.map((item,index)=><Alert key={index} className="error">{item}</Alert>):"" }
+                        })}                        
+                   
+                        {  message!="" ? <Alert color="danger">{message}</Alert>   :""    }
                         <FormGroup>
                             <Button type="submit" color="primary">
                                 {isSubmitting && <Spinner size="sm" />}
