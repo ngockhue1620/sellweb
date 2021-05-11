@@ -7,7 +7,7 @@ import CustomForm from "../CustomForm/CustomForm";
 
 export default function SignUpForm(props) {
     const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState([]);
     const { onToggle } = props;
 
     const listFormGroups = [
@@ -40,7 +40,7 @@ export default function SignUpForm(props) {
 
     const handleSubmit = async (values) => {
         
-        const listUsers = await userApi.getAll();
+        // const listUsers = await userApi.getAll();
 
         const { name, email, password, phone } = values;
 
@@ -49,49 +49,58 @@ export default function SignUpForm(props) {
         let regExp = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/;
 
         if (!regExp.test(name)) {
-            setMessage("Your Name is invalid!");
+            setMessage(["Your Name is invalid!"]);
             return;
         }
         
-        let isExist = (element, index, array) => {
-            return element.email === email;
-        };
-        let idExist = listUsers.findIndex(isExist);
-        if (idExist >= 0) {
-            setMessage("Your Email is exist");
-            return;
-        }
+        // let isExist = (element, index, array) => {
+        //     return element.email === email;
+        // };
+        // let idExist = listUsers.findIndex(isExist);
+        // if (idExist >= 0) {
+        //     setMessage("Your Email is exist");
+        //     return;
+        // }
 
         regExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         if (!phone.match(regExp)) {
-            setMessage("Your Phone number is invalid!");
+            setMessage(["Your Phone number is invalid!"]);
             return;
         }
-        isExist = (element, index, array) => {
-            return element.phone === phone;
-        };
-        idExist = listUsers.findIndex(isExist);
-        if (idExist >= 0) {
-            setMessage("Your phone number is exist");
-            return;
-        }
+        // isExist = (element, index, array) => {
+        //     return element.phone === phone;
+        // };
+        // idExist = listUsers.findIndex(isExist);
+        // if (idExist >= 0) {
+        //     setMessage("Your phone number is exist");
+        //     return;
+        // }
         regExp = /[a-zA-Z0-9!@#$%^&*]{8,}/;
 
         if (!regExp.test(password)) {
-            setMessage("Minimum 8 character for password!");
+            setMessage(["Minimum 8 character for password!"]);
             return;
         }
         if (passwordAgaint != password) {
-            setMessage("Password againt is not true!");
+            setMessage(["Password againt is not true!"]);
             return;
         }
-        await userApi.signUp({
+        const resultSignup= await userApi.signUp({
             email: email,
             password: password,
             phone: phone,
             customerName: name,
         });
-        setIsSignUpSuccess(true);
+        console.log("resultSignup",resultSignup)
+        if(resultSignup.status==true)
+        {
+            setIsSignUpSuccess(true);
+        }
+        else
+        {
+            setMessage(resultSignup.status)
+        }
+       
     };
     const onClickComeBack = () => {
         setIsSignUpSuccess(false);
