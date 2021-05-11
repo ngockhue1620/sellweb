@@ -83,7 +83,7 @@ export default function OrderForm(props) {
         const order = {
             customer_id: user.id,
             recipientPhone: phone,
-            recipientName: user.customerName,
+            recipientName: name,
             recipientAddress: address,
             note: note,
             orderDetails: orderDetails,

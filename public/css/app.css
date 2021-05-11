@@ -10739,7 +10739,7 @@ img.card-img-top {
 }
 .history-page {
   margin-top: 5rem;
-  height: 40rem;
+  min-height: 40rem;
 }
 
 .AboutComponent {
