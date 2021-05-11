@@ -31,33 +31,49 @@ export default function App() {
     const User = useSelector((state) => state.user);
 
     useEffect(() => {
+        console.log("chay vo day")
         const unregisterAuthObserver = firebase
             .auth()
             .onAuthStateChanged(async (user) => {
-                
-                if(User) return;    
+
+                if (User) return;
                 if (!user) {
                     // user logs out, handle something here
                     return;
                 }
-                let listUsers = await userApi.getAll();
-                const isExist = (element, index, array) => {
-                    return element.email === user.email;
-                };
-                const idExist = listUsers.findIndex(isExist);
+                // let listUsers = await userApi.getAll();
+                // const isExist = (element, index, array) => {
+                //     return element.email === user.email;
+                // };
+                // const idExist = listUsers.findIndex(isExist);
                 let id;
-                if (idExist < 0) {
-                   const userSignUpdSuccess= await userApi.signUp({
-                        customerName: user.displayName,
-                        email: user.email,
-                        password: user.providerData[0].uid,
-                        phone: user.providerData[0].phoneNumber,
-                    });
-                    console.log(user.providerData[0].uid);
-                    id =userSignUpdSuccess.customer.id;
-                }
-                // listUsers = await userApi.getAll();
+                // login thành công với google  cho đăng ký lun
+                // đăng ký thành công thì mail chưa có 
+                // đăng ký không thành công thì mail đã có
                 
+
+                const userSignUpdSuccess = await userApi.signUp({
+                    customerName: user.displayName,
+                    email: user.email,
+                    password: user.providerData[0].uid,
+                    phone: user.providerData[0].phoneNumber,
+                });
+                
+                if(userSignUpdSuccess.status==true)
+                {
+                    id = userSignUpdSuccess.customer.id;
+                    
+
+                }
+                else
+                {
+                    id = userSignUpdSuccess.id;
+                   
+                }
+                
+
+                // listUsers = await userApi.getAll();
+
                 // listUsers.map((item) => {
                 //     if (item.email === user.email) {
                 //         id = item.id;
@@ -77,7 +93,7 @@ export default function App() {
         return () => unregisterAuthObserver();
     }, []);
 
-    
+
     const [isShowCart, setIsShowCart] = useState(false);
 
     const isClickCart = () => {
@@ -85,7 +101,7 @@ export default function App() {
     };
     return (
         <Router>
-            
+
             <Suspense fallback={<div>Loading...</div>}>
                 <Header
                     onClickCart={isClickCart}
