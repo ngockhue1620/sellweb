@@ -14,8 +14,8 @@ import HomePage from './components/admin/HomePage';
 
 ReactDOM.render(
 
-  
-    <HomePage />
+
+  <HomePage />
   ,
 
   document.getElementById('root')

@@ -9,10 +9,10 @@ export default class HomePage extends Component {
             <div>
                 {/* <Header /> */}
                 <Body>
-                    <Table />                   
-                    <Footer/>
+                    <Table />
+                    <Footer />
                 </Body>
-                
+
             </div>
         )
     }
