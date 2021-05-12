@@ -10707,8 +10707,11 @@ img.card-img-top {
     display: none;
   }
 
-  .footer-col {
-    width: 50%;
+  .footer .container {
+    width: 80%;
+  }
+  .footer .container .row .footer-col {
+    width: 80%;
     margin-bottom: 30px;
   }
 
@@ -10782,103 +10785,117 @@ img.card-img-top {
 
 .AboutComponent {
   margin: 0;
+  margin-top: 65px;
   padding: 0;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
   width: 100%;
-  min-height: 100vh;
-  background-color: #ddd;
+  min-height: 200vh;
+  background-color: #34495e;
 }
-.AboutComponent .ContainerAboutUs {
+.AboutComponent .TeamSection {
+  overflow: hidden;
+  text-align: center;
+  padding: 60px;
+}
+.AboutComponent .TeamSection h1 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+}
+.AboutComponent .TeamSection .Border {
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: 3px;
+  background: #3498db;
+  margin-bottom: 40px;
+}
+.AboutComponent .TeamSection .TeamMember {
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+.AboutComponent .TeamSection .TeamMember a {
+  display: inline-block;
+  margin: 0 30px;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: 0.5s all;
+  filter: grayscale(100%);
+}
+.AboutComponent .TeamSection .TeamMember a img {
+  width: 100%;
+}
+.AboutComponent .TeamSection .TeamMember a:hover {
+  transform: scale(1.25);
+  filter: none;
+}
+.AboutComponent .TeamSection .TeamMember h3 {
+  margin-top: 35px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.AboutComponent .TeamSection .TeamMember p {
+  font-size: 20px;
+  font-style: italic;
+  color: red;
+}
+.AboutComponent .ContentTeam {
   width: 80%;
   display: block;
   margin: auto;
-  padding: 0 100px;
-  margin-bottom: 10rem;
+  padding-bottom: 30rem;
 }
-.AboutComponent .ContainerAboutUs .TeamMember {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 80px;
-  text-align: center;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person {
-  width: auto;
-  margin-bottom: 50px;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person .avatar {
-  width: 250px;
-  background: #c4c4c4;
-  border-radius: 50%;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person .avatar img {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person .person_content {
-  margin-top: 40px;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person .person_content .person_name {
-  font-size: 20px;
-  line-height: 0px;
-  color: #00154e;
-  text-transform: uppercase;
-}
-.AboutComponent .ContainerAboutUs .TeamMember .person .person_content .person_position {
-  font-size: 18px;
-  line-height: 18px;
-  color: #4f4f4f;
-  margin: 0;
-  font-style: italic;
-}
-.AboutComponent .ContainerAboutUs .TitleAboutUs {
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.AboutComponent .ContainerAboutUs .TitleAboutUs h1 {
-  font-size: 28px;
-  font-weight: bold;
-}
-.AboutComponent .ContainerAboutUs .ContentSectionAboutUs {
+.AboutComponent .ContentTeam .Content {
   float: left;
-  width: 55%;
+  width: 50%;
+  text-align: justify;
+  color: white;
 }
-.AboutComponent .ContainerAboutUs .ContentSectionAboutUs .ContentAboutUs {
-  margin-top: 10px;
+.AboutComponent .ContentTeam .Content p {
+  font-size: 17px;
   font-family: sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
 }
-.AboutComponent .ContainerAboutUs .ImageSectionAboutUs {
+.AboutComponent .ContentTeam .ImageTeam {
   float: right;
-  width: 40%;
+  width: 45%;
+  height: 260px;
 }
-.AboutComponent .ContainerAboutUs .ImageSectionAboutUs .ImageAboutUs {
+.AboutComponent .ContentTeam .ImageTeam img {
   width: 100%;
   height: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .AboutComponent .ContainerAboutUs {
-    width: 80%;
+  .AboutComponent .TeamSection {
+    width: 100%;
     display: block;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 65px;
   }
-  .AboutComponent .ContainerAboutUs .TitleAboutUs {
-    text-align: center;
-    font-size: 19px;
+  .AboutComponent .TeamSection .TeamMember {
+    display: block;
   }
-  .AboutComponent .ContainerAboutUs .ContentSectionAboutUs {
+  .AboutComponent .TeamSection .TeamMember .Member {
+    padding-top: 30px;
+  }
+  .AboutComponent .ContentTeam {
+    padding-bottom: 80px;
+  }
+  .AboutComponent .ContentTeam .Content {
     float: none;
     width: 100%;
     display: block;
     margin: auto;
   }
-  .AboutComponent .ContainerAboutUs .ImageSectionAboutUs {
+  .AboutComponent .ContentTeam .ImageTeam {
     float: none;
     width: 100%;
     display: block;
