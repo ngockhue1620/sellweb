@@ -981,3 +981,64 @@ img.card-img-top {
     }
 }
 //responsive about page//
+// user avatar//
+.navbar-nav1 .user-avt {
+    display: none;
+}
+.navbar-nav {
+    & .user-avt {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+        &__toggle {
+            width: 45px;
+            padding-top: 4px;
+            margin-left: 10px;
+            height: 45px;
+            border-radius: 50px;
+            background-color: white;
+            &:hover {
+                box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+            }
+
+            & .user-avt__card__img {
+                width: auto;
+                height: auto;
+                transform: scale(1.9);
+                border-radius: 50px;
+            }
+        }
+    }
+}
+// user avatar//
+// responive user avatar //
+@media screen and (max-width: 768px) {
+    .navbar-nav1 {
+        & .user-avt {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: inline;
+
+            &__toggle {
+                width: 45px;
+                padding-top: 4px;
+                height: 45px;
+                border-radius: 50px;
+                background-color: white;
+                &:hover {
+                    box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+                }
+
+                & .user-avt__card__img {
+                    width: auto;
+                    height: auto;
+                    transform: scale(1.9);
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}
+// responive user avatar //

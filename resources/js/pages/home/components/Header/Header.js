@@ -43,11 +43,7 @@ export default function Header(props) {
                             </a>
                         </button>
                         {user ? (
-                            <li class="nav-item nav-item1">
-                                <a class="nav-link ">
-                                    <UserAvatar></UserAvatar>
-                                </a>
-                            </li>
+                            <UserAvatar></UserAvatar>
                         ) : (
                             <>
                                 <li class="nav-item nav-item1">
@@ -93,11 +89,7 @@ export default function Header(props) {
                             </a>
                         </li>
                         {user ? (
-                            <li class="nav-item login">
-                                <a class="nav-link ">
-                                    <UserAvatar></UserAvatar>
-                                </a>
-                            </li>
+                            <UserAvatar></UserAvatar>
                         ) : (
                             <>
                                 <li class="nav-item sign-up">
