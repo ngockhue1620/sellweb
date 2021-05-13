@@ -10902,3 +10902,54 @@ img.card-img-top {
     margin: auto;
   }
 }
+.navbar-nav1 .user-avt {
+  display: none;
+}
+
+.navbar-nav .user-avt {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.navbar-nav .user-avt__toggle {
+  width: 45px;
+  padding-top: 4px;
+  margin-left: 10px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: white;
+}
+.navbar-nav .user-avt__toggle:hover {
+  box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+}
+.navbar-nav .user-avt__toggle .user-avt__card__img {
+  width: auto;
+  height: auto;
+  transform: scale(1.9);
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav1 .user-avt {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: inline;
+  }
+  .navbar-nav1 .user-avt__toggle {
+    width: 45px;
+    padding-top: 4px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: white;
+  }
+  .navbar-nav1 .user-avt__toggle:hover {
+    box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+  }
+  .navbar-nav1 .user-avt__toggle .user-avt__card__img {
+    width: auto;
+    height: auto;
+    transform: scale(1.9);
+    border-radius: 50px;
+  }
+}
