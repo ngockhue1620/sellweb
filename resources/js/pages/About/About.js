@@ -33,7 +33,7 @@ export default class About extends Component {
                                 href="https://www.facebook.com/khaminh.dao"
                                 id=""
                             >
-                                <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/35396415_2036910123295354_1367601429102985216_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=ad2b24&_nc_ohc=L9WOe1I-JPcAX9KEmSU&_nc_ht=scontent-hkg4-1.xx&oh=ff7f2298122251558b61cc70b24d054c&oe=60C2BBE3"></img>
+                                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-0/s206x206/186452041_210030707378955_5824184711389156923_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=58c789&_nc_ohc=QgzpljkbxDoAX9hwwzk&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=7&oh=9de0278f7953ce0fc112ea2834f4d412&oe=60C063A2"></img>
                             </a>
                             <h3>Đào ngọc khuê</h3>
                             <p>sub-leader</p>

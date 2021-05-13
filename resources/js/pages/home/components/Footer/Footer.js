@@ -84,7 +84,7 @@ export default function Footer() {
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
                             <h2 className="h2-footer">
-                                Coppy right@Clothes Shop 2021
+                                Copy right@Clothes Shop 2021
                             </h2>
                         </div>
                     </div>
