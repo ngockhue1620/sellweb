@@ -36,14 +36,14 @@ export default class About extends Component {
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.15752-0/s206x206/186452041_210030707378955_5824184711389156923_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=58c789&_nc_ohc=QgzpljkbxDoAX9hwwzk&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=7&oh=9de0278f7953ce0fc112ea2834f4d412&oe=60C063A2"></img>
                             </a>
                             <h3>Đào ngọc khuê</h3>
-                            <p>sub-leader</p>
+                            <p>Product Owenr</p>
                         </div>
                         <div className="Member">
                             <a href="https://www.facebook.com/hl0507">
                                 <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.6435-9/173061322_826011571660621_1127473885884237763_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=VdPwdRUnGUEAX_Vl4Jw&_nc_ht=scontent-hkt1-2.xx&oh=fe1532211cfe9140040fc52d1e159c7c&oe=60BFB88B"></img>
                             </a>
                             <h3>phan thanh hoàng long</h3>
-                            <p>leader</p>
+                            <p>Scrum Master</p>
                         </div>
                         <div className="Member">
                             <a
