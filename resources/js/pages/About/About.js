@@ -13,10 +13,10 @@ export default class About extends Component {
                                 href="https://www.facebook.com/quoclam.duong.562/"
                                 id=""
                             >
-                                <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-1/c4.0.320.320a/p320x320/84569222_491709528423703_801483636653162496_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=7206a8&_nc_ohc=nIWNoNdCrPYAX_VYgtg&_nc_ht=scontent-hkg4-1.xx&tp=27&oh=bdc43163319b88e9a13df6faee747e2e&oe=60C07181"></img>
+                                <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/l/t1.6435-9/45520499_185144449080214_5629757352509964288_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=174925&_nc_ohc=pUcyk07rC3kAX-JJ6Mj&_nc_ht=scontent.fdad3-3.fna&oh=27957cd5b37935409ec7d55b35809b2a&oe=60C4D619"></img>
                             </a>
                             <h3>dương quốc lâm</h3>
-                            <p>developer</p>
+                            <p>designer</p>
                         </div>
                         <div className="Member">
                             <a
@@ -33,10 +33,10 @@ export default class About extends Component {
                                 href="https://www.facebook.com/khaminh.dao"
                                 id=""
                             >
-                                <img src="https://scontent.xx.fbcdn.net/v/t1.15752-0/s206x206/186452041_210030707378955_5824184711389156923_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=58c789&_nc_ohc=QgzpljkbxDoAX9hwwzk&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=7&oh=9de0278f7953ce0fc112ea2834f4d412&oe=60C063A2"></img>
+                                <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/t1.15752-9/186452041_210030707378955_5824184711389156923_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_ohc=zAZhYz2xyUUAX8fxo4L&_nc_ht=scontent.fdad3-3.fna&oh=7e95ce8744a02277e34cd6c526d349a4&oe=60C29AC4"></img>
                             </a>
                             <h3>Đào ngọc khuê</h3>
-                            <p>Product Owenr</p>
+                            <p>Product Owner</p>
                         </div>
                         <div className="Member">
                             <a href="https://www.facebook.com/hl0507">
