@@ -838,6 +838,15 @@ img.card-img-top {
             text-decoration: none;
         }
     }
+    .cart-item {
+        width: 23.5rem;
+        &__container__quantity .quantity {
+            padding-left: 1.3rem;
+            padding-bottom: 0;
+            margin-right: 10px;
+            width: 1rem;
+        }
+    }
 }
 .history-page {
     margin-top: 5rem;
