@@ -45,8 +45,8 @@
                 <input type="submit" value="Sign in" name="">
             </div>
             <div class="inputBx">
-            <p>Don't have account?<a href="http://127.0.0.1:8000/register">Register Now</a></p>
-                
+            {{-- <p>Don't have account?<a href="http://127.0.0.1:8000/register">Register Now</a></p>
+                 --}}
             </div>
         </form>
     </div>
