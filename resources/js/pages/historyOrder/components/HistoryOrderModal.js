@@ -36,7 +36,7 @@ export default function HistoryOrderModal(props) {
             
                 <Toast onClick={toggle} className="p-3 bg-info my-2 rounded container">
                     <ToastHeader>
-                        aaaaa
+                        Lịch sử đơn hàng
                     </ToastHeader>
                     <ToastBody>
                         <Label>Số Điện Thoại: {order.recipientPhone}</Label>
