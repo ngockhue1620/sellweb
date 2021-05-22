@@ -118,7 +118,7 @@ export default function CategoryItem(props) {
             </Modal>
 
             <Modal isOpen={isUpdate} toggle={toggleUpdate} >
-                <ModalHeader toggle={toggleUpdate}>Xóa sản phẩm</ModalHeader>
+                <ModalHeader toggle={toggleUpdate}>Cập Nhập sản phẩm</ModalHeader>
                 <ModalBody>
                     <Form>
 
@@ -143,8 +143,9 @@ export default function CategoryItem(props) {
                     </ul>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="danger" onClick={ UpdateCategory}>Vẫn Tiếp Tục</Button>
+                   
                     <Button color="success" onClick={toggleUpdate}>Close</Button>
+                    <Button color="warning" onClick={ UpdateCategory}>Vẫn Tiếp Tục</Button>
                 </ModalFooter>
             </Modal>
             
