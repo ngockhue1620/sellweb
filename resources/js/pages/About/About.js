@@ -16,7 +16,7 @@ export default class About extends Component {
                                 <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/l/t1.6435-9/45520499_185144449080214_5629757352509964288_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=174925&_nc_ohc=pUcyk07rC3kAX-JJ6Mj&_nc_ht=scontent.fdad3-3.fna&oh=27957cd5b37935409ec7d55b35809b2a&oe=60C4D619"></img>
                             </a>
                             <h3>dương quốc lâm</h3>
-                            <p>designer</p>
+                            <p>Designer</p>
                         </div>
                         <div className="Member">
                             <a
@@ -26,7 +26,7 @@ export default class About extends Component {
                                 <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/135547839_1030364914144705_9151011061314656208_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=kYD6z90Y2mEAX-3hx4b&_nc_ht=scontent-hkg4-1.xx&oh=7b00191085444427905992df88b23104&oe=60C34F5D"></img>
                             </a>
                             <h3>Lưu kim hoàng</h3>
-                            <p>developer</p>
+                            <p>Developer</p>
                         </div>
                         <div className="Member">
                             <a
@@ -53,7 +53,7 @@ export default class About extends Component {
                                 <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-1/s320x320/44074966_2232563840305740_2722930921165553664_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=7206a8&_nc_ohc=o5c-t7jOaq0AX-_JJxW&_nc_ht=scontent-hkg4-1.xx&tp=7&oh=183b0f2b61fe013180088095d7f25019&oe=60C182B0"></img>
                             </a>
                             <h3>huỳnh văn sang</h3>
-                            <p>tester</p>
+                            <p>Tester</p>
                         </div>
                     </div>
 
