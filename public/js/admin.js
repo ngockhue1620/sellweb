@@ -2563,7 +2563,7 @@ function CategoryItem(props) {
       toggle: toggleUpdate,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
         toggle: toggleUpdate,
-        children: "X\xF3a s\u1EA3n ph\u1EA9m"
+        children: "C\u1EADp Nh\u1EADp s\u1EA3n ph\u1EA9m"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_8__.default, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_12__.default, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_13__.default, {
@@ -2590,13 +2590,13 @@ function CategoryItem(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_11__.default, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-          color: "danger",
-          onClick: UpdateCategory,
-          children: "V\u1EABn Ti\u1EBFp T\u1EE5c"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
           color: "success",
           onClick: toggleUpdate,
           children: "Close"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+          color: "warning",
+          onClick: UpdateCategory,
+          children: "V\u1EABn Ti\u1EBFp T\u1EE5c"
         })]
       })]
     }), isShowDetail ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ShowProduct__WEBPACK_IMPORTED_MODULE_3__.default, {
