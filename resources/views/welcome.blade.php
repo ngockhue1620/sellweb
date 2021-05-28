@@ -13,13 +13,13 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5S0VMMS61E"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QR3SM3MGY3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-5S0VMMS61E');
+  gtag('config', 'G-QR3SM3MGY3');
 </script>
         
 
